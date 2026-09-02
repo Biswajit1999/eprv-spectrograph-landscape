@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from eprv_landscape.data import load_instruments
+from eprv_landscape.data import load_instruments, load_performance_claims
 
 
 def test_committed_instrument_table_is_valid():
@@ -27,3 +27,12 @@ def test_rejects_uncontrolled_performance_category(tmp_path):
     source.to_csv(path, index=False)
     with pytest.raises(ValueError):
         load_instruments(path)
+
+
+def test_performance_claims_are_linked_and_caveated():
+    instruments = load_instruments("data/instruments.csv")
+    claims = load_performance_claims("data/performance_claims.csv", instruments)
+    assert claims["claim_id"].is_unique
+    assert set(claims["instrument"]).issubset(set(instruments["instrument"]))
+    assert claims["caveat"].str.len().min() >= 10
+    assert claims["source_url"].str.startswith(("https://", "http://")).all()

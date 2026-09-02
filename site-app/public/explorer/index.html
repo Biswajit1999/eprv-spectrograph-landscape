@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A source-traceable study of precision radial-velocity spectrographs and their non-equivalent performance claims." />
+    <title>Precision RV Spectrograph Landscape</title>
+    <script type="module" crossorigin src="/assets/index-BsYA3ArS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-wneL3kuc.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Precision RV landscape home"><span>RV</span> measurement landscape</a>
+      <nav aria-label="Primary"><a href="#instruments">Instruments</a><a href="#evidence">Evidence</a><a href="#barriers">Open problems</a><a href="#method">Method</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="kicker">Literature synthesis · checked 2 September 2026</div>
+        <h1>Precision is a measurement context, not a leaderboard.</h1>
+        <p class="lede">A source-linked comparison of optical and near-infrared Doppler spectrographs: their reported results, present status, and the coupled errors between a stellar spectrum and a published velocity.</p>
+        <div class="hero-actions"><a class="button primary" href="#instruments">Explore instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
+        <div class="notice"><strong>Scope note.</strong> Nineteen systems form the detailed review-defined core. Planned and regionally important additions are labelled separately. Requirements, calibration residuals, internal uncertainties and stellar RMS are never treated as equivalent.</div>
+      </section>
+      <section class="stats" aria-label="Dataset summary">
+        <article><strong id="instrument-count">—</strong><span>instrument records</span></article>
+        <article><strong id="claim-count">—</strong><span>quantitative claims</span></article>
+        <article><strong id="operational-count">—</strong><span>operational or caveated</span></article>
+        <article><strong>0</strong><span>rank scores</span></article>
+      </section>
+      <section id="instruments" class="section">
+        <div class="section-head"><div><span class="eyebrow">Instrument registry</span><h2>Compare specifications and status</h2></div><p>Wavelength limits and resolving power are representative modes, not acceptance-test values.</p></div>
+        <div class="filters" role="search">
+          <label>Search <input id="search" type="search" placeholder="Instrument or facility" /></label>
+          <label>Status <select id="status-filter"><option value="">All statuses</option></select></label>
+          <label>Band <select id="band-filter"><option value="">All bands</option><option value="optical">Optical</option><option value="near_infrared">Near infrared</option><option value="optical_and_near_infrared">Optical + NIR</option></select></label>
+        </div>
+        <p id="table-result" class="result" aria-live="polite"></p>
+        <div class="table-wrap"><table><thead><tr><th scope="col">Instrument</th><th scope="col">Facility</th><th scope="col">Coverage</th><th scope="col">R</th><th scope="col">Status</th><th scope="col">Evidence class</th></tr></thead><tbody id="instrument-body"></tbody></table></div>
+      </section>
+      <section id="evidence" class="section shade">
+        <div class="section-head"><div><span class="eyebrow">Claim-level evidence</span><h2>What did each number measure?</h2></div><p>Open a card to see its target, baseline, limitation and primary source.</p></div>
+        <div class="context-key"><span><i class="goal"></i>Goal or requirement</span><span><i class="cal"></i>Calibration</span><span><i class="sky"></i>On-sky result</span></div>
+        <div id="claim-grid" class="claim-grid"></div>
+      </section>
+      <section id="barriers" class="section">
+        <div class="section-head"><div><span class="eyebrow">Interpretation</span><h2>Nine coupled error domains</h2></div><p>No component operates alone; improving one term can expose another.</p></div>
+        <ol class="barrier-grid">
+          <li><b>Stellar variability</b><span>Oscillations, granulation, spots and faculae reshape spectral lines.</span></li><li><b>Photon information</b><span>Throughput, spectrum and rotation matter with resolution.</span></li><li><b>Calibration transfer</b><span>Reference light does not perfectly share the stellar path.</span></li><li><b>Fibre illumination</b><span>Scrambling and modal noise couple seeing and guiding into the spectrum.</span></li><li><b>Instrument eras</b><span>Maintenance and thermal cycles create offsets and state changes.</span></li><li><b>Detector physics</b><span>Pixel geometry, charge transfer, persistence and non-linearity matter.</span></li><li><b>Tellurics</b><span>Masking loses information; modelling introduces atmospheric uncertainty.</span></li><li><b>Barycentric timing</b><span>The effective exposure midpoint can be wavelength dependent.</span></li><li><b>Pipelines</b><span>Extraction, templates and outlier policy shape the reported statistic.</span></li>
+        </ol>
+      </section>
+      <section id="method" class="section method">
+        <div><span class="eyebrow">Method</span><h2>Traceable by construction</h2><p>Each quantitative row carries a metric, measurement context, target or sample, baseline, caveat, source URL and access date. Automated checks reject unknown instruments, duplicate claim IDs and uncaveated claims.</p></div>
+        <div class="method-links"><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/METHODS.md">Inclusion protocol</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/CLAIMS.md">Claim ledger</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/REPORT.md">Scientific report</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/tree/main/data">Download tables</a></div>
+      </section>
+    </main>
+    <footer><p>Independent research software by Biswajit Jana. No observatory or consortium endorsement is implied.</p><p>Code: MIT · External facts remain attributed to their sources.</p></footer>
+  </body>
+</html>

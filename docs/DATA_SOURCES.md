@@ -8,6 +8,9 @@ Access checked: **2026-09-02**.
   Report*, [arXiv:2107.14291](https://arxiv.org/abs/2107.14291).
   Establishes the approximate 10 cm/s and multi-year-stability challenge
   and separates instrumentation from stellar variability.
+- Burt, Dumusque & Halverson, *Precise Radial Velocities*,
+  [doi:10.1146/annurev-astro-120425-105551](https://doi.org/10.1146/annurev-astro-120425-105551).
+  Defines the detailed 19-system core; it is not an exhaustive census.
 
 ## Instrument and performance references
 
@@ -41,6 +44,26 @@ Access checked: **2026-09-02**.
 - MAROON-X: Seifahrt, [EPRV5 status report](https://conference.ipac.caltech.edu/eprv5/system/media_files/binaries/6/original/seifahrt.pdf).
 - HARPS3: [Terra Hunting Experiment instrument/status page](https://www.terrahunting.org/harps3.html).
 - ANDES: [ESO ELT instrument page](https://elt.eso.org/instrument/ANDES/).
+- SOPHIE+: Bouchy et al. 2013,
+  [doi:10.1051/0004-6361/201219979](https://doi.org/10.1051/0004-6361/201219979).
+- APF/Levy: Vogt et al. 2014,
+  [doi:10.1086/676120](https://doi.org/10.1086/676120), and the
+  [APF facility description](https://apf.ucolick.org/intro.html).
+- CARMENES survey precision: [A&A 692, A138](https://www.aanda.org/articles/aa/pdf/2024/12/aa50836-24.pdf).
+- iSHELL: Cale et al. 2019,
+  [doi:10.3847/1538-3881/ab3b0f](https://doi.org/10.3847/1538-3881/ab3b0f).
+- IRD: Hirano et al. 2020,
+  [doi:10.1093/pasj/psaa085](https://doi.org/10.1093/pasj/psaa085).
+- PFS: Crane et al. 2010,
+  [doi:10.1117/12.857792](https://doi.org/10.1117/12.857792).
+- PARVI: Gibson et al. 2023,
+  [doi:10.1117/1.JATIS.9.3.038006](https://doi.org/10.1117/1.JATIS.9.3.038006),
+  and [Caltech Exoplanet Technology Laboratory](https://etlab.astro.caltech.edu/).
+- PARAS-2: [2024 stellar study](https://www.aanda.org/articles/aa/pdf/2024/11/aa50934-24.pdf)
+  and [official description](https://www.prl.res.in/~miro/paras2.html).
+- G-CLEF: [Giant Magellan Telescope](https://www.gmto.org/instrument/g-clef/).
+- NEID status: [WIYN observer information](https://www.wiyn.org/Instruments/wiynneid_observers.html).
+- HARPS3 phase: [ING instruments](https://www.ing.iac.es/astronomy/instr.html).
 
 ## Reuse policy
 

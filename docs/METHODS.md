@@ -9,7 +9,7 @@ needed for temperate terrestrial planets?
 
 ## Inclusion protocol
 
-An instrument is included in v0.1 when it satisfies all of the following:
+An instrument is included in the detailed comparison when it satisfies all of the following:
 
 1. It is a fibre-fed or equivalently stabilized high-resolution
    spectrograph built substantially for exoplanet radial velocities.
@@ -18,9 +18,13 @@ An instrument is included in v0.1 when it satisfies all of the following:
 4. Its inclusion adds a distinct generation, wavelength domain,
    calibration approach, or operational lesson.
 
-The list is intentionally representative rather than exhaustive. Legacy
-instruments without a strong EPRV design role and general-purpose
-high-resolution spectrographs are outside v0.1.
+The 19-system performance core follows Table 1 of Burt, Dumusque & Halverson
+(2026), which covers current or upcoming visible instruments capable of at
+least 1 m/s or near-infrared instruments capable of at least 3 m/s. ANDES and
+G-CLEF are tracked as planned systems; PARAS-2 is a regional addition supported
+by a 2024 on-sky paper. The list is not exhaustive. A physical instrument, an
+observing mode, a detector upgrade and a pipeline version are not counted as
+four independent instruments.
 
 ## Evidence hierarchy
 
@@ -33,9 +37,9 @@ Facts are classified before comparison:
   photon, atmospheric, analysis, and astrophysical contributions.
 - `not_comparably_reported`: no safe like-for-like number was extracted.
 
-The code refuses uncontrolled labels such as “best.” The free-text
-performance column is retained because reducing heterogeneous experiments
-to a single numeric column would create a false ranking.
+The code refuses uncontrolled labels such as “best.” A numeric claim is stored
+only with its metric, context, sample, baseline and caveat. Heterogeneous values
+are never combined into a merit score.
 
 ## Specification extraction
 
@@ -53,6 +57,6 @@ performance is never silently rewritten to match a current outage.
 
 ## Reproducibility
 
-`eprv-landscape build` validates the schema, writes three derived CSV
-summaries, two plots, and `results/manifest.json`. Every plotted number is
-read from `data/instruments.csv`; no values are embedded in plotting code.
+`eprv-landscape build` validates both source tables, writes four derived CSV
+summaries, three plots, and `results/manifest.json`. Every plotted number is
+read from committed CSV data; no values are embedded in plotting code.

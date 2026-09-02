@@ -19,3 +19,16 @@ jobs:
       - run: ruff check src tests
       - run: pytest -q
       - run: eprv-landscape build --out results-ci
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.14"
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci
+        working-directory: website
+      - run: npm run build
+        working-directory: website
+      - run: npm ci
+        working-directory: site-app
+      - run: npm run build
+        working-directory: site-app

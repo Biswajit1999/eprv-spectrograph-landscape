@@ -23,3 +23,11 @@ def performance_evidence_summary(df: pd.DataFrame) -> pd.DataFrame:
         df.groupby("performance_class", dropna=False).size()
         .rename("n_instruments").reset_index().sort_values("performance_class")
     )
+
+
+def claim_context_summary(claims: pd.DataFrame) -> pd.DataFrame:
+    """Count quantitative claims by measurement context without ranking instruments."""
+    return (
+        claims.groupby("measurement_context", dropna=False).size()
+        .rename("n_claims").reset_index().sort_values("measurement_context")
+    )

@@ -1,6 +1,7 @@
 status,n_instruments
 commissioning,1
+legacy,1
 offline,1
-operational,9
+operational,15
 operational_with_caveat,1
-planned,1
+planned,2
