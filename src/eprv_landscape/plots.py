@@ -4,8 +4,8 @@ from __future__ import annotations
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
 import pandas as pd
+from matplotlib.patches import Patch
 
 STATUS_COLOURS = {
     "operational": "#2a9d8f",
