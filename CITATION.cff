@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or synthesis, please cite it as below."
+title: "Extreme-Precision Radial-Velocity Spectrograph Landscape"
+type: software
+authors:
+  - family-names: "Jana"
+    given-names: "Biswajit"
+version: 0.1.0
+date-released: 2026-09-02
+url: "https://github.com/Biswajit1999/eprv-spectrograph-landscape"
+license: MIT
+keywords:
+  - radial-velocity
+  - spectrographs
+  - exoplanets
+  - instrumentation
+  - literature-review

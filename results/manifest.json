@@ -1,0 +1,12 @@
+{
+  "n_instruments": 13,
+  "status_as_of_min": "2026-07-03",
+  "status_as_of_max": "2026-09-02",
+  "performance_classes": [
+    "commissioning_report",
+    "design_requirement",
+    "laboratory_calibration",
+    "on_sky_stability"
+  ],
+  "warning": "Reported performance statements use non-equivalent definitions and are not ranked."
+}
