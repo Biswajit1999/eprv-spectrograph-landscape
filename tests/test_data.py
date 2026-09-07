@@ -93,7 +93,11 @@ def test_instrument_dossiers_resolve_papers_and_label_proposals():
     with open("data/instrument_dossiers.json", encoding="utf-8") as source:
         dossiers = json.load(source)
     papers = pd.concat(
-        [pd.read_csv("data/expres_papers.csv"), pd.read_csv("data/harps_papers.csv")],
+        [
+            pd.read_csv("data/expres_papers.csv"),
+            pd.read_csv("data/harps_papers.csv"),
+            pd.read_csv("data/espresso_papers.csv"),
+        ],
         ignore_index=True,
     )
     paper_ids = set(papers["paper_id"])
@@ -107,6 +111,9 @@ def test_instrument_dossiers_resolve_papers_and_label_proposals():
     harps = next(item for item in dossiers if item["instrument_id"] == "lasilla-harps")
     assert harps["paper_count"] == 6
     assert "final report" in harps["latest_problem"]
+    espresso = next(item for item in dossiers if item["instrument_id"] == "paranal-espresso")
+    assert espresso["paper_count"] == 7
+    assert "precision with absolute accuracy" in espresso["candidate_project"]["question"]
 
 
 def test_beginner_guide_has_sources_boundaries_and_taxonomy():

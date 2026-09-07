@@ -102,6 +102,14 @@ are not presented as achieved stellar time-series precision.
 candidate era-transfer study. The proposal is blocked on suitable public
 post-upgrade standards and final characterisation.
 
+## ESPRESSO reading note
+
+Seven selected records are stored in `data/espresso_papers.csv`. They include
+instrument commissioning, two stellar applications, independent calibration
+work, an end-to-end iodine-cell test and dated ESO laser-comb notices.
+`docs/ESPRESSO_READING_NOTE.md` keeps differential precision, absolute accuracy
+and light-path sensitivity separate and labels the monitoring idea as a proposal.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

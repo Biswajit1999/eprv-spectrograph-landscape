@@ -114,3 +114,15 @@ caveat. The checked page says a final performance report will follow. The
 candidate era-transfer notebook is therefore explicitly blocked on suitable
 public post-upgrade standards and final characterisation; it is an inference and
 proposal, not an instrument-team plan.
+
+## ESPRESSO dossier question
+
+The seven-source synthesis in `docs/ESPRESSO_READING_NOTE.md` asks how on-sky
+repeatability, absolute wavelength accuracy and validation of the science light
+path differ. `data/espresso_papers.csv` records every selected source and the
+interpretation limit attached to its numerical statement.
+
+The proposed calibration-consistency monitor follows from the 2021 structured
+wavelength comparisons, the 2025 iodine-cell test and ESO's dated comb-status
+notices. It is labelled as a proposal dependent on suitable calibration and
+engineering products, not as completed work or a team priority.

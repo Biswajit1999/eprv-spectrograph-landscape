@@ -3,6 +3,7 @@
   "n_quantitative_claims": 22,
   "n_expres_papers_reviewed": 13,
   "n_harps_sources_reviewed": 6,
+  "n_espresso_sources_reviewed": 7,
   "status_as_of_min": "2026-07-03",
   "status_as_of_max": "2026-09-02",
   "performance_classes": [

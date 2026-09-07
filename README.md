@@ -32,6 +32,8 @@ residuals are different quantities. The data model keeps them separate.
 - A [HARPS reading note](docs/HARPS_READING_NOTE.md) following six technical
   sources through commissioning, wavelength calibration and the 2015/2026
   hardware-era boundaries.
+- An [ESPRESSO reading note](docs/ESPRESSO_READING_NOTE.md) separating on-sky
+  precision, absolute wavelength accuracy and science-light-path validation.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's

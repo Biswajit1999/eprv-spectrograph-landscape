@@ -89,5 +89,50 @@
       "HARPS-2003-COMMISSION", "HARPS-2013-LFC", "HARPS-2015-FIBRES",
       "HARPS-2019-WAVE", "HARPS-2020-LSF", "HARPS-2026-UPGRADE"
     ]
+  },
+  {
+    "instrument_id": "paranal-espresso",
+    "research_depth": "selected_paper_dossier",
+    "reviewed_through": "2026-09-07",
+    "paper_count": 7,
+    "title": "ESPRESSO: on-sky precision, wavelength accuracy, and light-path validation",
+    "reading_boundary": "Seven selected instrument, calibration, science and status sources. This is not a complete bibliography of ESPRESSO science programmes.",
+    "current_status": "ESO lists ESPRESSO as offered, and its instrument news states that the laser frequency comb returned to full operations in November 2025 with updated performance guidance in 2026.",
+    "current_status_url": "https://www.eso.org/sci/facilities/paranal/instruments/espresso/news.html",
+    "short_summary": "ESPRESSO demonstrates sub-m/s on-sky measurements in several contexts, while its calibration literature exposes a second problem: internal sources can be precise without independently validating the entire path followed by stellar light. The temporary iodine-cell experiment turns that distinction into a practical end-to-end test.",
+    "latest_problem": "The 2025 iodine-cell study reported sub-0.20 m/s end-to-end stability in its experiment but only few-m/s absolute wavelength accuracy, and found sensitivity to fibre-injection geometry. ESO separately records that laser-comb background variability affected line shapes before the comb returned to full operation. These results motivate a monitoring tool that reports precision, accuracy and illumination sensitivity separately.",
+    "latest_problem_source": "https://arxiv.org/abs/2504.18485",
+    "lessons": [
+      "The 0.10 m/s instrumental scale inferred at commissioning is not the same as every stellar time-series RMS.",
+      "Photon uncertainty, filtered short-cadence RMS and planet-model residuals answer different questions.",
+      "A dense internal calibrator can reveal structure but does not automatically validate the telescope-to-product science path.",
+      "Absolute wavelength accuracy for fundamental-constant work and differential repeatability for exoplanet RV work require different tests.",
+      "Calibration-source state and fibre-injection geometry should be explicit metadata rather than hidden pipeline assumptions."
+    ],
+    "candidate_project": {
+      "title": "ESPRESSO calibration-consistency monitor",
+      "status": "proposal for discussion, not a completed pipeline and dependent on access to suitable calibration and engineering products",
+      "question": "Can an open diagnostic compare ThAr, Fabry-Perot, laser-comb and occasional end-to-end reference measurements without confusing precision with absolute accuracy?",
+      "basis": "The 2021 calibration comparison maps structured solution differences, the 2025 iodine experiment tests the science path, and ESO's dated notices show that calibrator state changes with time.",
+      "steps": [
+        "Version every exposure by DRS, observing mode, calibrator state and fibre-injection configuration.",
+        "Compute order- and detector-position residual maps between available calibration families.",
+        "Track line-shape, background and wavelength residual summaries through time with maintenance boundaries.",
+        "Evaluate differential repeatability and absolute accuracy as separate outputs.",
+        "Hold out complete nights and hardware states; flag unfamiliar configurations rather than extrapolating silently.",
+        "Test whether any proposed correction preserves injected Doppler shifts before applying it to science targets."
+      ],
+      "success_tests": [
+        "Reproduce published calibration comparisons on the same data definition.",
+        "Detect known state changes without using science outcomes as labels.",
+        "Preserve injected shifts across wavelength and illumination conditions.",
+        "Publish uncertainties and missing-metadata flags with every diagnostic."
+      ],
+      "first_conversation": "I followed the commissioning, wavelength-calibration, laser-comb status and iodine-cell validation papers. I would like to test a small calibration-consistency monitor that keeps differential precision, absolute accuracy and illumination sensitivity as separate outputs. Which public calibration products and one validation night would make that exercise useful to the ESPRESSO team?"
+    },
+    "paper_ids": [
+      "ESP-2020-PROXIMA", "ESP-2021-INSTRUMENT", "ESP-2021-WAVECAL",
+      "ESP-2022-ALPHA", "ESP-2024-EINDI", "ESP-2025-IODINE", "ESP-2026-LFC"
+    ]
   }
 ]

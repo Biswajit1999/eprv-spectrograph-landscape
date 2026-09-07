@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.0] - 2026-09-07
+
+- Added a seven-source ESPRESSO reading note spanning commissioning, stellar
+  measurements, wavelength calibration, iodine-cell validation and current
+  laser-frequency-comb status.
+- Added a bounded calibration-consistency monitor proposal that reports
+  differential precision, absolute accuracy and illumination sensitivity
+  separately.
+
 ## [0.6.0] - 2026-09-07
 
 - Added a six-source HARPS reading note separating commissioning measurements,
