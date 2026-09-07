@@ -24,7 +24,7 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperText,beginnerText]=await Promise.all([
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,expresPaperText,harpsPaperText,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
@@ -32,11 +32,12 @@ async function main(){
     fetchText('./data/challenge_profiles.json'),
     fetchText('./data/instrument_dossiers.json'),
     fetchText('./data/expres_papers.csv'),
+    fetchText('./data/harps_papers.csv'),
     fetchText('./data/beginner_guide.json'),
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
-  const dossiers=JSON.parse(dossierText), papers=parseCSV(paperText);
+  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(expresPaperText),...parseCSV(harpsPaperText)];
   const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));
@@ -73,7 +74,7 @@ async function main(){
   }
   function depthFor(item){
     const dossier=dossiersById.get(item.instrument_id);
-    if(dossier)return {label:`Full reading note · ${dossier.paper_count} papers`,className:'full'};
+    if(dossier)return {label:`Selected reading note · ${dossier.paper_count} papers`,className:'full'};
     if(matchingClaims(item).length)return {label:'Numbers from published studies',className:'quantitative'};
     return {label:'Source-linked instrument note',className:'source'};
   }
@@ -81,7 +82,7 @@ async function main(){
     if(!dossier)return '';
     const selected=papers.filter(paper=>dossier.paper_ids.includes(paper.paper_id));
     const project=dossier.candidate_project;
-    return `<section class="dossier-block"><div class="dossier-label">Full reading note · ${esc(dossier.paper_count)} papers · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><p class="reading-boundary"><b>Reading boundary:</b> ${esc(dossier.reading_boundary)}</p><h4>What the latest study changes</h4><p>${esc(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the 2026 primary paper</a><h4>Five lessons from the reading path</h4><ol>${dossier.lessons.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h4>Selected papers, in time order</h4><div class="paper-list">${selected.map(paper=>`<article><div><span>${esc(paper.year)} · ${esc(paper.paper_type)}</span><h5>${esc(paper.title)}</h5><p>${esc(paper.what_was_studied)}</p><p><b>Reported:</b> ${esc(paper.numerical_result)}</p><p><b>Still open:</b> ${esc(paper.remaining_question)}</p></div><a href="${esc(paper.source_url)}" rel="noreferrer">Primary source</a></article>`).join('')}</div><div class="project-note"><span class="dossier-label">Candidate project for discussion</span><h4>${esc(project.title)}</h4><p><b>Question:</b> ${esc(project.question)}</p><p>${esc(project.basis)}</p><p class="reading-boundary"><b>Boundary:</b> ${esc(project.status)}.</p><h5>Proposed checks</h5><ol>${project.steps.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h5>How I would open the conversation</h5><blockquote>${esc(project.first_conversation)}</blockquote></div></section>`;
+    return `<section class="dossier-block"><div class="dossier-label">Selected reading note · ${esc(dossier.paper_count)} papers · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><p class="reading-boundary"><b>Reading boundary:</b> ${esc(dossier.reading_boundary)}</p><h4>What the latest source changes</h4><p>${esc(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the latest primary or official source</a><h4>Five lessons from the reading path</h4><ol>${dossier.lessons.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h4>Selected papers, in time order</h4><div class="paper-list">${selected.map(paper=>`<article><div><span>${esc(paper.year)} · ${esc(paper.paper_type)}</span><h5>${esc(paper.title)}</h5><p>${esc(paper.what_was_studied)}</p><p><b>Reported:</b> ${esc(paper.numerical_result)}</p><p><b>Still open:</b> ${esc(paper.remaining_question)}</p></div><a href="${esc(paper.source_url)}" rel="noreferrer">Primary source</a></article>`).join('')}</div><div class="project-note"><span class="dossier-label">Candidate project for discussion</span><h4>${esc(project.title)}</h4><p><b>Question:</b> ${esc(project.question)}</p><p>${esc(project.basis)}</p><p class="reading-boundary"><b>Boundary:</b> ${esc(project.status)}.</p><h5>Proposed checks</h5><ol>${project.steps.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h5>How I would open the conversation</h5><blockquote>${esc(project.first_conversation)}</blockquote></div></section>`;
   }
   function openProfile(id,updateHistory=true){
     const item=census.find(row=>row.instrument_id===id); if(!item)return;
@@ -120,8 +121,7 @@ async function main(){
 
   document.querySelector('#barrier-articles').innerHTML=challenges.map((item,index)=>`<article class="barrier-article" id="${esc(item.id)}"><header><span>${String(index+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.question)}</p></div></header><div class="barrier-body"><section><h4>Physical mechanism</h4><p>${esc(item.mechanism)}</p></section><section><h4>Published example</h4><p>${esc(item.evidence)}</p></section><section><h4>Mitigation and remaining limit</h4><p>${esc(item.mitigation)}</p><p><b>Residual:</b> ${esc(item.residual)}</p></section><div class="source-links">${item.sources.map(source=>`<a href="${esc(source.url)}" rel="noreferrer">${esc(source.label)}</a>`).join('')}</div></div></article>`).join('');
 
-  const expres=dossiersById.get('lowell-expres');
-  document.querySelector('#featured-dossier').innerHTML=`<div><span class="eyebrow">First full reading note</span><h2>${esc(expres.title)}</h2><p>${esc(expres.short_summary)}</p><ul class="featured-lessons">${expres.lessons.slice(0,3).map(item=>`<li>${esc(item)}</li>`).join('')}</ul><button type="button" class="button primary" onclick="openInstrumentProfile('lowell-expres')">Read all ${esc(expres.paper_count)} paper notes and project plan</button></div><figure><img src="./figures/expres_published_comparisons.png" alt="Two within-paper before and after comparisons for EXPRES methods" width="1800" height="900" loading="lazy"><figcaption>Two paired results reproduced from the stated papers. The panels describe different data and are not compared with each other.</figcaption></figure>`;
+  document.querySelector('#featured-dossier').innerHTML=`<header><span class="eyebrow">Instrument reading notes</span><h2>From published measurements to testable project questions</h2><p>Each note follows a selected paper trail, keeps measurement contexts separate, and ends with a proposal to discuss—not a claim that the instrument team has endorsed the idea.</p></header><div class="dossier-index">${dossiers.map(dossier=>`<article><span>${esc(dossier.paper_count)} selected sources</span><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><button type="button" class="button primary" onclick="openInstrumentProfile('${esc(dossier.instrument_id)}')">Read paper notes and project checks</button></article>`).join('')}</div>`;
 
   const hash=decodeURIComponent(location.hash);
   if(hash.startsWith('#instrument=')) openProfile(hash.slice(12),false);

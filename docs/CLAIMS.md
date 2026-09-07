@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 instruments, 22 quantitative claims, and 13 selected EXPRES papers | `results/manifest.json` |
+| 21 instruments, 22 quantitative claims, 13 selected EXPRES papers and six selected HARPS sources | `results/manifest.json` |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |
@@ -33,5 +33,9 @@ metric, value, sample, baseline and caveat. Derived counts map to
 The wider EXPRES reading statements are mapped paper by paper in
 `data/expres_papers.csv`; interpretation and proposal boundaries are stated in
 `docs/EXPRES_READING_NOTE.md`.
+
+The HARPS commissioning, calibration and hardware-era statements are mapped in
+`data/harps_papers.csv`; their contexts and the boundary around the proposed
+era-transfer study are stated in `docs/HARPS_READING_NOTE.md`.
 
 The values are not averaged, scored or ranked because their definitions differ.

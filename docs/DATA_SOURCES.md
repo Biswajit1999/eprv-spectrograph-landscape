@@ -89,6 +89,19 @@ compared only within the same paper; the panels are not treated as an instrument
 ranking. `docs/EXPRES_READING_NOTE.md` states the boundary between published
 findings and the author's proposed validation study.
 
+## HARPS reading note
+
+The six-source path in `data/harps_papers.csv` covers the 2003 commissioning
+measurements, a laser-comb comparison, the 2015 fibre intervention, a joint
+ThAr/Fabry–Pérot calibration, line-profile modelling and ESO's dated 2026
+upgrade notices. Numerical statements retain their measurement context; in
+particular, local wavelength-solution distortions and motivating cm/s scales
+are not presented as achieved stellar time-series precision.
+
+`docs/HARPS_READING_NOTE.md` separates source findings from the author's
+candidate era-transfer study. The proposal is blocked on suitable public
+post-upgrade standards and final characterisation.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

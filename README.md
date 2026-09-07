@@ -27,8 +27,11 @@ residuals are different quantities. The data model keeps them separate.
 - Four original figures generated only from committed CSV data.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles and nine extended challenge explainers.
-- A first full [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
+- A selected [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
   selected primary papers to a clearly labelled candidate validation project.
+- A [HARPS reading note](docs/HARPS_READING_NOTE.md) following six technical
+  sources through commissioning, wavelength calibration and the 2015/2026
+  hardware-era boundaries.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's

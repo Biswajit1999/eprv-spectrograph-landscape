@@ -87,3 +87,30 @@ The proposed era-aware correction audit is an inference from the validation gaps
 identified in the 2022 method comparison and the diagnostics demonstrated in the
 2026 long-baseline study. It is labelled as a candidate project, not attributed
 to the source authors and not presented as completed work.
+
+## HARPS dossier question
+
+Which measurements established short-term HARPS performance, which later
+calibration studies exposed detector-scale structure, and how should the 2015
+and 2026 hardware changes constrain any cross-era analysis?
+
+The synthesis is maintained in `docs/HARPS_READING_NOTE.md`; the six selected
+records and their interpretation limits are in `data/harps_papers.csv`.
+
+The 2003 commissioning article supports distinct 0.1 m/s simultaneous-reference
+tracking, 0.51 m/s alpha Cen B sequence dispersion and 0.17 m/s per-measurement
+photon-noise statements. They are not interchangeable. Molaro et al. (2013)
+supports the approximately plus-or-minus 40 m/s local comb-versus-ThAr order
+structure, not a 40 m/s stellar-RV claim. Lo Curto et al. (2015) supports an
+approximately 40% throughput gain at 550 nm and a star-dependent velocity
+discontinuity after the fibre exchange. Cersullo et al. (2019) supports treating
+pre/post-2015 wavelength solutions separately. Milaković and Jethwa (2020) use
+3 cm/s as the motivating Earth-analogue scale; this report does not relabel it as
+achieved long-term stellar precision.
+
+ESO's current HARPS notice records the 2026 detector, electronics, cooling and
+HAM-fibre intervention, the 20 June return to operations and the 3 July ADC
+caveat. The checked page says a final performance report will follow. The
+candidate era-transfer notebook is therefore explicitly blocked on suitable
+public post-upgrade standards and final characterisation; it is an inference and
+proposal, not an instrument-team plan.

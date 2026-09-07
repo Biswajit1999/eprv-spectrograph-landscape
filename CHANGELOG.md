@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0] - 2026-09-07
+
+- Added a six-source HARPS reading note separating commissioning measurements,
+  local wavelength-calibration structure and stellar time-series performance.
+- Added an explicit 2015/2026 instrument-era boundary and a held-out,
+  injection-tested transfer-study proposal, pending final post-upgrade evidence.
+- Replaced the single featured reading note with a two-instrument reading index.
+
 ## [0.5.0] - 2026-09-07
 
 - Added a beginner-first chapter tracing dispersed starlight through wavelength

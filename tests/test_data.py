@@ -89,13 +89,24 @@ def test_expres_reading_list_and_paired_metrics_are_linked():
     assert (metrics["after_mps"] < metrics["before_mps"]).all()
 
 
-def test_expres_dossier_is_explicitly_a_proposal_not_a_claim():
+def test_instrument_dossiers_resolve_papers_and_label_proposals():
     with open("data/instrument_dossiers.json", encoding="utf-8") as source:
         dossiers = json.load(source)
+    papers = pd.concat(
+        [pd.read_csv("data/expres_papers.csv"), pd.read_csv("data/harps_papers.csv")],
+        ignore_index=True,
+    )
+    paper_ids = set(papers["paper_id"])
+    for dossier in dossiers:
+        assert dossier["paper_count"] == len(dossier["paper_ids"])
+        assert set(dossier["paper_ids"]) <= paper_ids
+        assert "proposal for discussion" in dossier["candidate_project"]["status"]
+
     expres = next(item for item in dossiers if item["instrument_id"] == "lowell-expres")
-    assert expres["paper_count"] == len(expres["paper_ids"])
-    assert "proposal for discussion" in expres["candidate_project"]["status"]
     assert "not a complete bibliography" in expres["reading_boundary"]
+    harps = next(item for item in dossiers if item["instrument_id"] == "lasilla-harps")
+    assert harps["paper_count"] == 6
+    assert "final report" in harps["latest_problem"]
 
 
 def test_beginner_guide_has_sources_boundaries_and_taxonomy():

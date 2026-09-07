@@ -45,5 +45,49 @@
       "EXP-2022-ESSP2", "EXP-2023-SOLAR", "EXP-2024-RC", "EXP-2026-SYSTEMATICS",
       "EXP-2026-FACTOR"
     ]
+  },
+  {
+    "instrument_id": "lasilla-harps",
+    "research_depth": "selected_paper_dossier",
+    "reviewed_through": "2026-09-07",
+    "paper_count": 6,
+    "title": "HARPS: calibration structure, instrument eras, and the 2026 hardware change",
+    "reading_boundary": "Six selected technical and methods sources, not a complete bibliography of the HARPS planet surveys or all papers using archival spectra.",
+    "current_status": "ESO records that HARPS returned to normal operations on 20 June 2026 after a detector, electronics, cooling and fibre upgrade; its atmospheric-dispersion corrector was then listed out of operation on 3 July.",
+    "current_status_url": "https://eso.org/sci/facilities/lasilla/instruments/harps/news.html",
+    "short_summary": "HARPS established the stable, fibre-fed architecture used by later precision-RV instruments. Its literature also gives a clear warning against treating a long archive as one homogeneous time series: calibration changes, the 2015 fibre exchange and the 2026 detector-era change create measurable boundaries.",
+    "latest_problem": "The 2026 upgrade replaced several coupled subsystems at once. ESO has posted operational notices and a work-in-progress performance file, but the checked page says a final report will follow. Any cross-era correction should therefore be measured from standards and overlapping diagnostics rather than assumed from the earlier instrument.",
+    "latest_problem_source": "https://eso.org/sci/facilities/lasilla/instruments/harps/news.html",
+    "lessons": [
+      "Resolving power and spectrograph stability enable precise RV extraction but do not themselves define long-term accuracy.",
+      "Laser-comb tests exposed local wavelength-solution structure that a single global residual could hide.",
+      "The 2015 octagonal fibres improved illumination scrambling and throughput while introducing a star-dependent velocity offset.",
+      "Calibration solutions must be versioned on both sides of hardware changes; one offset is not automatically valid for every spectrum.",
+      "The 2026 detector, electronics, cooling and fibre work begins another measurement era whose transfer function still needs a final public characterization."
+    ],
+    "candidate_project": {
+      "title": "HARPS 2015-to-2026 era transfer notebook",
+      "status": "proposal for discussion, blocked on suitable public post-upgrade standards and final performance documentation",
+      "question": "Which observable diagnostics best predict star-dependent offsets across the 2015 and 2026 hardware boundaries without absorbing astrophysical signals?",
+      "basis": "The 2015 fibre report measured spectral-type-dependent offsets, while the 2019 calibration paper treats the pre/post-2015 solutions separately and ESO now documents a new 2026 era.",
+      "steps": [
+        "Define the hardware and pipeline eras from dated ESO notices before combining any radial velocities.",
+        "Select stable stars observed on both sides of each boundary and retain spectral type, mask, signal-to-noise and line-width information.",
+        "Estimate hierarchical offsets with star-level partial pooling and compare them with a single-offset baseline.",
+        "Hold out entire stars and time blocks; test injected low-amplitude sinusoids through the full correction.",
+        "Publish only a reproducible validation notebook and uncertainty table until the team confirms the relevant post-2026 diagnostics."
+      ],
+      "success_tests": [
+        "Out-of-star and out-of-time validation improves over one global era offset.",
+        "Recovered injected amplitudes remain unbiased within their stated uncertainty.",
+        "Results change transparently when masks or spectral-type groupings change.",
+        "No post-2026 performance claim precedes the final instrument characterization."
+      ],
+      "first_conversation": "I traced the wavelength-calibration work, the measured 2015 fibre discontinuity and the current 2026 upgrade notices. I would like to build a small cross-era validation notebook using public standards, with held-out stars and injection tests. Which post-upgrade diagnostics and stable-star set would make that comparison scientifically useful to the HARPS team?"
+    },
+    "paper_ids": [
+      "HARPS-2003-COMMISSION", "HARPS-2013-LFC", "HARPS-2015-FIBRES",
+      "HARPS-2019-WAVE", "HARPS-2020-LSF", "HARPS-2026-UPGRADE"
+    ]
   }
 ]
