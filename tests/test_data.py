@@ -59,7 +59,7 @@ def test_nres_units_are_physical_records_and_exohspec_is_present():
     assert len(nres) == 4
     assert len({row["facility_id"] for row in nres}) == 4
     assert by_id["lco-nres-wise"]["current_status"] == "decommissioned"
-    assert by_id["tno-exohspec"]["current_status"] == "installed_testing"
+    assert by_id["tno-exohspec"]["current_status"] == "status_conflict"
 
 
 def test_status_corrections_are_not_overstated():

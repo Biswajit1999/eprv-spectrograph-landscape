@@ -50,6 +50,9 @@ only to locate primary pages and are not evidence records.
 - NRES is excluded from the detailed table pending unit-level records for its
   four physical spectrographs and current post-2026B offering state.
 - Las Cumbres Observatory and Las Campanas Observatory are distinct facilities.
+- EXOhSPEC is now a current-status conflict: the current NARIT TNO page labels
+  it under construction, while an earlier NARIT technology page describes it as
+  installed and tested. Neither statement is silently chosen over the other.
 
 ## Completion gate
 

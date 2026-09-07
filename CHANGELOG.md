@@ -17,6 +17,9 @@
   approximate shared-site markers.
 - Replaced the single verification badge and filter with independent visible
   checks for existence evidence, dated current status and mapped location.
+- Changed EXOhSPEC from a settled installed/testing label to a visible status
+  conflict because current and earlier NARIT pages disagree; retained the
+  design-versus-achieved precision boundary.
 
 ## [0.4.0] - 2026-09-07
 
