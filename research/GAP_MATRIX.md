@@ -9,7 +9,7 @@
 | Quantitative performance | 22 contextualized claims | complete for this release | Add mode/era-specific rows |
 | Global physical-instrument census | 53 source-linked physical records across 33 represented facilities | in progress | Resolve open fields and continue facility-by-facility saturation passes |
 | NRES network | four site-specific physical records | complete at site level | Obtain public hardware serial identities; monitor non-offered nodes |
-| Facility coordinates | schema exists; values not yet normalized | in progress | Verify one official/geodetic source per site and record datum |
+| Facility coordinates | all 33 represented facilities have a source-linked coordinate; notes distinguish exact telescope values from shared-site markers | complete for represented facilities | Replace lower-authority or shared-site markers when a current telescope-pier survey is published |
 | Throughput and detector eras | narrative only | deferred | Version mode-level configuration table |
 | Homogeneous data comparison | no shared raw reduction | out of scope | Define benchmark spectra and pipelines |
 | Full instrument reading notes | EXPRES: 13 selected primary papers | in progress | Apply the same template to one instrument at a time; do not imply completion for all 53 |

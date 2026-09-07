@@ -30,8 +30,8 @@ the Bouchy et al. photon limit is not described as long-baseline performance.
   operational regional system.
 - **Not counted separately:** observing modes, detector upgrades, pipelines,
   survey programmes, telescope sites and individual papers.
-- **Deferred:** a global historical census, facility coordinates, throughput
-  curves, raw-spectrum re-reduction and a complete detector-era table.
+- **Deferred:** a globally saturated historical census, throughput curves,
+  raw-spectrum re-reduction and a complete detector-era table.
 
 ## Evidence hierarchy
 
@@ -57,6 +57,17 @@ The current release passes when all quantitative report statements appear in
 `docs/CLAIMS.md`, all claim rows resolve to an instrument, every claim has a
 caveat and source, generated results are reproducible, tests pass, and the site
 build succeeds. It does not claim a saturated global census.
+
+## Map coordinate boundary
+
+The map contains all 33 facilities represented by the current 53 instrument
+records. A marker is exact only when the cited source identifies the relevant
+telescope or pier. For shared observatory sites, the facility record states
+when a published site or neighbouring-telescope coordinate is used. Coordinates
+serve discovery and orientation; they are not inputs to barycentric correction.
+The source ledger records datum information where the source states it (for
+example WGS-84, NAD83 or NAD27), rather than silently treating every coordinate
+as a homogeneous geodetic survey.
 
 ## EXPRES dossier question
 

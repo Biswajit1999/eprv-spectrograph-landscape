@@ -12,6 +12,11 @@
   instrument into the ground-based EPRV directory.
 - Added structured, tested website data for the five-step guide, techniques,
   equations and taxonomy.
+- Added a source-linked coordinate for every represented facility and an
+  accessible world location plot; notes distinguish telescope coordinates from
+  approximate shared-site markers.
+- Replaced the single verification badge and filter with independent visible
+  checks for existence evidence, dated current status and mapped location.
 
 ## [0.4.0] - 2026-09-07
 

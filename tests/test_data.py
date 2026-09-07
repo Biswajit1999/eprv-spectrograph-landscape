@@ -109,3 +109,16 @@ def test_beginner_guide_has_sources_boundaries_and_taxonomy():
     assert "Gaia RVS" in by_name
     assert "JWST NIRSpec" in by_name
     assert all(not item["belongs_in_census"] for item in guide["taxonomy"] if "space" in item["class_name"].lower() or "survey" in item["class_name"].lower())
+
+
+def test_every_represented_facility_has_a_source_linked_map_coordinate():
+    records = load_census("data/census_registry.jsonl", "data/facilities.jsonl")
+    with open("data/facilities.jsonl", encoding="utf-8") as source:
+        facilities = [json.loads(line) for line in source if line.strip()]
+    represented = {row["facility_id"] for row in records}
+    mapped = {row["facility_id"]: row for row in facilities if row["facility_id"] in represented}
+    assert set(mapped) == represented
+    for facility in mapped.values():
+        assert -90 <= facility["latitude_deg"] <= 90
+        assert -180 <= facility["longitude_deg"] <= 180
+        assert facility["coordinate_source_url"].startswith("https://")

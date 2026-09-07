@@ -39,6 +39,7 @@ async function main(){
   const dossiers=JSON.parse(dossierText), papers=parseCSV(paperText);
   const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
+  const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));
   document.querySelector('#census-count').textContent=census.length;
   document.querySelector('#claim-count').textContent=claims.length;
   document.querySelector('#facility-count').textContent=new Set(census.map(d=>d.facility_id)).size;
@@ -50,6 +51,11 @@ async function main(){
   document.querySelector('#taxonomy-boundary').textContent=beginner.boundary;
   document.querySelector('#taxonomy-body').innerHTML=beginner.taxonomy.map(item=>`<tr><td>${esc(item.class_name)}</td><td>${esc(item.example)}</td><td>${esc(item.typical_scale)}</td><td><span class="scope-badge ${item.belongs_in_census?'inside':'outside'}">${item.belongs_in_census?'Yes':'Comparator only'}</span></td></tr>`).join('');
   document.querySelector('#space-comparators').innerHTML=beginner.comparators.map(item=>`<article><span>Space comparison</span><h4>${esc(item.name)}</h4><p>${esc(item.why_here)}</p><p><b>Published scope:</b> ${esc(item.fact)}</p><a href="${esc(item.source_url)}" rel="noreferrer">Official documentation</a></article>`).join('');
+
+  const mappedFacilities=facilities.filter(item=>Number.isFinite(item.latitude_deg)&&Number.isFinite(item.longitude_deg)&&census.some(row=>row.facility_id===item.facility_id));
+  document.querySelector('#world-map').insertAdjacentHTML('beforeend',mappedFacilities.map(item=>{const left=(item.longitude_deg+180)/360*100;const top=(90-item.latitude_deg)/180*100;const count=census.filter(row=>row.facility_id===item.facility_id).length;return `<button type="button" class="map-marker" style="left:${left}%;top:${top}%" aria-label="${esc(item.official_name)}, ${esc(item.site)}; ${count} instrument records" title="${esc(item.official_name)} · ${count} records" onclick="focusFacility('${esc(item.facility_id)}')"><span>${count}</span></button>`}).join(''));
+  document.querySelector('#map-summary').textContent=`${mappedFacilities.length} of ${facilities.filter(item=>census.some(row=>row.facility_id===item.facility_id)).length} represented facilities currently have a source-linked coordinate.`;
+  document.querySelector('#map-sites').innerHTML=mappedFacilities.map(item=>`<article><b>${esc(item.official_name)}</b><span>${esc(item.latitude_deg.toFixed(4))}, ${esc(item.longitude_deg.toFixed(4))}</span><a href="${esc(item.coordinate_source_url)}" rel="noreferrer">Coordinate source</a></article>`).join('');
 
   const censusSearch=document.querySelector('#census-search');
   const tierFilter=document.querySelector('#tier-filter');
@@ -93,13 +99,16 @@ async function main(){
     const query=censusSearch.value.trim().toLowerCase();
     const filtered=census.filter(item=>{
       const haystack=[item.official_name,item.acronym,item.telescope,item.site,item.physical_country_or_territory,item.facility_id,...(item.aliases||[])].join(' ').toLowerCase();
-      return (!query||haystack.includes(query))&&(!tierFilter.value||item.inclusion_tier===tierFilter.value)&&(!verificationFilter.value||item.verification_state===verificationFilter.value);
+      const hasDatedStatus=Boolean(item.status_source_url&&item.status_as_of&&item.current_status!=='not_verified');
+      const statusMatches=!verificationFilter.value||(verificationFilter.value==='dated'?hasDatedStatus:!hasDatedStatus);
+      return (!query||haystack.includes(query))&&(!tierFilter.value||item.inclusion_tier===tierFilter.value)&&statusMatches;
     });
     document.querySelector('#census-result').textContent=`Showing ${filtered.length} of ${census.length} physical-instrument records`;
-    document.querySelector('#census-grid').innerHTML=filtered.map(item=>{const depth=depthFor(item);return `<article class="census-card"><div class="card-top"><span class="tier">${esc(tierLabels[item.inclusion_tier])}</span><span class="verification ${esc(item.verification_state)}">${item.verification_state==='verified'?'Verified':'Open fields'}</span></div><h3>${esc(item.acronym||item.official_name)}</h3><p>${esc(item.official_name)}</p><span class="depth ${esc(depth.className)}">${esc(depth.label)}</span><dl><dt>Site</dt><dd>${esc(item.site)}</dd><dt>Status</dt><dd>${esc(words(item.current_status))}</dd></dl><button type="button" onclick="openInstrumentProfile('${esc(item.instrument_id)}')">Read note and sources</button></article>`}).join('');
+    document.querySelector('#census-grid').innerHTML=filtered.map(item=>{const depth=depthFor(item);const facility=facilitiesById.get(item.facility_id);const dated=Boolean(item.status_source_url&&item.status_as_of&&item.current_status!=='not_verified');const located=Boolean(facility&&Number.isFinite(facility.latitude_deg));return `<article class="census-card"><div class="card-top"><span class="tier">${esc(tierLabels[item.inclusion_tier])}</span></div><h3>${esc(item.acronym||item.official_name)}</h3><p>${esc(item.official_name)}</p><div class="evidence-checks" aria-label="Evidence checks"><span class="checked">Existence source</span><span class="${dated?'checked':'open'}">${dated?'Dated status':'Status check open'}</span><span class="${located?'checked':'open'}">${located?'Mapped':'Coordinate open'}</span></div><span class="depth ${esc(depth.className)}">${esc(depth.label)}</span><dl><dt>Site</dt><dd>${esc(item.site)}</dd><dt>Status</dt><dd>${esc(words(item.current_status))}</dd></dl><button type="button" onclick="openInstrumentProfile('${esc(item.instrument_id)}')">Read note and sources</button></article>`}).join('');
   }
   [censusSearch,tierFilter,verificationFilter].forEach(el=>el.addEventListener('input',renderCensus));
   renderCensus();
+  window.focusFacility=id=>{const facility=facilitiesById.get(id);if(!facility)return;censusSearch.value=facility.site;renderCensus();document.querySelector('#census').scrollIntoView();};
 
   const statusSelect=document.querySelector('#status-filter'), bandSelect=document.querySelector('#band-filter'), search=document.querySelector('#search');
   [...new Set(instruments.map(d=>d.status))].sort().forEach(status=>statusSelect.add(new Option(words(status),status)));
