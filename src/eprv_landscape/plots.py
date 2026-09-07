@@ -84,3 +84,25 @@ def plot_claim_context(claims: pd.DataFrame, output: str | Path) -> None:
     fig.tight_layout()
     fig.savefig(output, dpi=180)
     plt.close(fig)
+
+
+def plot_expres_paired_metrics(metrics: pd.DataFrame, output: str | Path) -> None:
+    """Plot only before/after values reported within the same paper and context."""
+    fig, axes = plt.subplots(1, len(metrics), figsize=(10, 5), squeeze=False)
+    for axis, row in zip(axes[0], metrics.itertuples(), strict=True):
+        values = [row.before_mps, row.after_mps]
+        axis.plot([0, 1], values, color="#174ea6", linewidth=2.5, marker="o", markersize=8)
+        for index, value in enumerate(values):
+            offset = (7, 9) if index == 0 else (-7, 9)
+            alignment = "left" if index == 0 else "right"
+            axis.annotate(f"{value:.2f} m/s", (index, value), xytext=offset,
+                          textcoords="offset points", ha=alignment, fontweight="bold")
+        axis.set_xticks([0, 1], ["Published baseline", "Published method"])
+        axis.set_title(row.label, fontsize=10, wrap=True)
+        axis.set_ylim(0, max(values) * 1.25)
+        axis.grid(axis="y", alpha=0.25)
+    fig.suptitle("EXPRES before/after results within their original measurement contexts")
+    fig.supxlabel("These panels are not comparable instrument rankings")
+    fig.tight_layout()
+    fig.savefig(output, dpi=180)
+    plt.close(fig)

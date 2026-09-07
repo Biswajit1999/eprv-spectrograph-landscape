@@ -1,0 +1,49 @@
+[
+  {
+    "instrument_id": "lowell-expres",
+    "research_depth": "full_paper_dossier",
+    "reviewed_through": "2026-09-07",
+    "paper_count": 13,
+    "title": "EXPRES: design, measured performance, and the long-baseline stability problem",
+    "reading_boundary": "A selected reading path through 13 primary papers. It is not a complete bibliography of every science paper that used EXPRES.",
+    "current_status": "Lowell's 2026A observer material lists EXPRES as available, including remote observing, after prior commissioning and general-use phases.",
+    "current_status_url": "https://confluence.lowell.edu/display/LDTOI/2026A+LDT+Call+for+Proposals",
+    "short_summary": "EXPRES demonstrates that excellent short-term calibration and sub-m/s stellar residuals do not guarantee multi-year stability. Later work increasingly treats wavelength calibration, stellar line-shape change and instrument state as linked time-series problems.",
+    "latest_problem": "The 2026 seven-year study found a coherent 2.8 m/s trough-to-peak drift around the 2022 temperature excursion. A regression using echellogram geometry, comb-line shapes and telemetry reduced the solar trend RMS from 1.32 to 0.43 m/s, but a deployable correction still needs era-aware validation and planet-signal preservation tests.",
+    "latest_problem_source": "https://arxiv.org/abs/2601.02296",
+    "lessons": [
+      "A calibration residual, a formal photon error and stellar time-series RMS answer different questions.",
+      "Dense laser-frequency-comb information can improve wavelength models, but the resulting change in stellar RMS can be much smaller than the calibration improvement.",
+      "Activity-correction methods can lower scatter while disagreeing on the corrected velocities; injected-signal recovery and interpretable diagnostics are therefore essential.",
+      "Simultaneous solar observations across instruments provide a practical way to distinguish astrophysical variability from instrument-specific behaviour.",
+      "Long-baseline maintenance, temperature and detector-state changes must be modelled as data eras rather than assumed stationary."
+    ],
+    "candidate_project": {
+      "title": "Era-aware EXPRES correction audit with planet-preservation tests",
+      "status": "proposal for discussion, not a completed pipeline and not a statement of the EXPRES team's priorities",
+      "question": "Can a correction learned from instrument-state diagnostics remain valid across maintenance and temperature regimes while preserving low-amplitude Keplerian signals?",
+      "basis": "This extends the validation questions raised by the 2022 method comparison and the diagnostics demonstrated in the 2026 long-baseline study.",
+      "steps": [
+        "Align science and solar RVs with laser-comb image shifts, scale and rotation, comb-line bisectors, environmental telemetry and maintenance dates.",
+        "Define instrument eras before fitting; hold out complete time blocks and at least one era rather than randomly splitting exposures.",
+        "Fit a small interpretable baseline first, then compare it with nonlinear models using the same blocked folds.",
+        "Inject Keplerian signals before correction across period, phase and semi-amplitude; report recovery bias, completeness and false positives.",
+        "Emit per-exposure state flags, correction uncertainty and an out-of-distribution warning instead of silently correcting unfamiliar states.",
+        "Reproduce the published solar and quiet-star checks before proposing any scientific use."
+      ],
+      "success_tests": [
+        "Lower held-out solar and quiet-star scatter without absorbing injected Keplerian amplitude.",
+        "Stable coefficients or documented model changes across instrument eras.",
+        "No improvement claim based only on training-set RMS.",
+        "Reproducible figures and machine-readable fold assignments."
+      ],
+      "first_conversation": "I reviewed the design, commissioning pipeline, wavelength-calibration, stellar-signal comparisons and the seven-year systematics study. I would like to test an era-held-out, injection-recovery extension of the published instrument-state correction. Before building against science products, which diagnostics can be shared and which validation case would be most useful to the team?"
+    },
+    "paper_ids": [
+      "EXP-2016-DESIGN", "EXP-2019-TELLURIC", "EXP-2020-PERFORMANCE", "EXP-2020-PIPELINE",
+      "EXP-2020-HD3651", "EXP-2020-ESSP1", "EXP-2020-ATMOSPHERE", "EXP-2021-EXCALIBUR",
+      "EXP-2022-ESSP2", "EXP-2023-SOLAR", "EXP-2024-RC", "EXP-2026-SYSTEMATICS",
+      "EXP-2026-FACTOR"
+    ]
+  }
+]

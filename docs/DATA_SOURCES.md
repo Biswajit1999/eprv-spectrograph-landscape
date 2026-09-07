@@ -75,6 +75,20 @@ Access checked: **2026-09-02 to 2026-09-07**.
 - PARVI status conflict: [Palomar observer instrument list](https://phat.caltech.edu/palomar/observer/P200observers.html)
   and [Caltech Exoplanet Technology Laboratory](https://etlab.caltech.edu/).
 
+## EXPRES reading note
+
+The selected 13-paper reading path is stored in `data/expres_papers.csv`. Each
+row states what was studied, the reported result, a remaining question, the
+primary-source URL and the review date. The path includes design, commissioning,
+reduction, calibration, stellar-signal comparisons, solar comparison, science
+use and the 2026 long-baseline instrument study.
+
+The two before/after values in the EXPRES figure are copied into
+`data/expres_metrics.csv` with their original context and paper ID. They are
+compared only within the same paper; the panels are not treated as an instrument
+ranking. `docs/EXPRES_READING_NOTE.md` states the boundary between published
+findings and the author's proposed validation study.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

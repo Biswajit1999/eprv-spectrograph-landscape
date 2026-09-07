@@ -55,7 +55,7 @@ def load_instruments(path: str | Path) -> pd.DataFrame:
     if bad_statuses:
         raise ValueError(f"unknown statuses: {sorted(bad_statuses)}")
     if df[["primary_reference", "status_source", "status_as_of"]].isna().any().any():
-        raise ValueError("every row requires dated scientific and status provenance")
+        raise ValueError("every row requires a dated scientific source and status source")
     return df
 
 
@@ -84,6 +84,49 @@ def load_performance_claims(path: str | Path, instruments: pd.DataFrame) -> pd.D
     if claims[required_text].eq("").any().any():
         raise ValueError("every claim requires a source, result, caveat and access date")
     return claims
+
+
+REQUIRED_EXPRES_PAPER_COLUMNS = {
+    "paper_id", "year", "title", "authors_short", "paper_type", "what_was_studied",
+    "numerical_result", "remaining_question", "source_url", "reviewed_on",
+}
+
+
+def load_expres_papers(path: str | Path) -> pd.DataFrame:
+    """Load the selected EXPRES reading list and reject incomplete paper notes."""
+    papers = pd.read_csv(path, keep_default_na=False)
+    missing = REQUIRED_EXPRES_PAPER_COLUMNS - set(papers.columns)
+    if missing:
+        raise ValueError(f"missing EXPRES paper columns: {sorted(missing)}")
+    if papers["paper_id"].duplicated().any():
+        raise ValueError("EXPRES paper identifiers must be unique")
+    if not papers["source_url"].str.startswith("https://").all():
+        raise ValueError("every EXPRES paper requires an HTTPS primary-source URL")
+    required = ["title", "what_was_studied", "numerical_result", "remaining_question"]
+    if papers[required].eq("").any().any():
+        raise ValueError("every EXPRES paper note requires a result and remaining question")
+    return papers
+
+
+def load_expres_metrics(path: str | Path, papers: pd.DataFrame) -> pd.DataFrame:
+    """Load paired, within-paper EXPRES metrics used by the comparison figure."""
+    metrics = pd.read_csv(path, keep_default_na=False)
+    required = {
+        "metric_id", "paper_id", "label", "before_mps", "after_mps", "context", "source_url"
+    }
+    missing = required - set(metrics.columns)
+    if missing:
+        raise ValueError(f"missing EXPRES metric columns: {sorted(missing)}")
+    if metrics["metric_id"].duplicated().any():
+        raise ValueError("EXPRES metric identifiers must be unique")
+    unknown = set(metrics["paper_id"]) - set(papers["paper_id"])
+    if unknown:
+        raise ValueError(f"EXPRES metrics reference unknown papers: {sorted(unknown)}")
+    for field in ("before_mps", "after_mps"):
+        metrics[field] = pd.to_numeric(metrics[field], errors="raise")
+        if (metrics[field] <= 0).any():
+            raise ValueError(f"{field} values must be positive")
+    return metrics
 
 
 def load_jsonl(path: str | Path) -> list[dict]:

@@ -3,7 +3,13 @@ import json
 import pandas as pd
 import pytest
 
-from eprv_landscape.data import load_census, load_instruments, load_performance_claims
+from eprv_landscape.data import (
+    load_census,
+    load_expres_metrics,
+    load_expres_papers,
+    load_instruments,
+    load_performance_claims,
+)
 
 
 def test_committed_instrument_table_is_valid():
@@ -72,3 +78,21 @@ def test_challenge_profiles_are_cited_and_complete():
         assert all(profile[field] for field in ("mechanism", "evidence", "mitigation", "residual"))
         assert len(profile["sources"]) >= 2
         assert all(source["url"].startswith("https://") for source in profile["sources"])
+
+
+def test_expres_reading_list_and_paired_metrics_are_linked():
+    papers = load_expres_papers("data/expres_papers.csv")
+    metrics = load_expres_metrics("data/expres_metrics.csv", papers)
+    assert len(papers) >= 12
+    assert {2016, 2020, 2026} <= set(papers["year"])
+    assert set(metrics["paper_id"]).issubset(set(papers["paper_id"]))
+    assert (metrics["after_mps"] < metrics["before_mps"]).all()
+
+
+def test_expres_dossier_is_explicitly_a_proposal_not_a_claim():
+    with open("data/instrument_dossiers.json", encoding="utf-8") as source:
+        dossiers = json.load(source)
+    expres = next(item for item in dossiers if item["instrument_id"] == "lowell-expres")
+    assert expres["paper_count"] == len(expres["paper_ids"])
+    assert "proposal for discussion" in expres["candidate_project"]["status"]
+    assert "not a complete bibliography" in expres["reading_boundary"]

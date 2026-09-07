@@ -1,11 +1,12 @@
-# Precision Radial-Velocity Spectrograph Landscape
+# Precision Radial-Velocity Spectrograph Reading Guide
 
 [![CI](https://github.com/Biswajit1999/eprv-spectrograph-landscape/actions/workflows/ci.yml/badge.svg)](https://github.com/Biswajit1999/eprv-spectrograph-landscape/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-An independent, source-traceable study of precision radial-velocity
-spectrographs: where physical instruments are deployed, what published
-measurements establish, their dated status, and which measurement problems remain.
+My source-linked reading guide to precision radial-velocity spectrographs: where
+physical instruments are deployed, what their papers measure, their dated status,
+which problems remain, and which bounded software studies may be worth discussing
+with instrument teams.
 
 **Public website:** https://biswajit1999.github.io/eprv-spectrograph-landscape/
 
@@ -23,15 +24,17 @@ residuals are different quantities. The data model keeps them separate.
   caveat, source and access date.
 - A literature-based [scientific report](docs/REPORT.md), explicit
   [inclusion protocol](docs/METHODS.md) and [claim ledger](docs/CLAIMS.md).
-- Three original figures generated only from committed CSV data.
+- Four original figures generated only from committed CSV data.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles and nine extended challenge explainers.
+- A first full [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
+  selected primary papers to a clearly labelled candidate validation project.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's
 2026 review, with planned and regional additions clearly labelled. This is a
-curated evidence map, not a claim to enumerate every astronomical echelle or
-every observing mode ever built. The broader census is stored separately in
+structured reading set, not a claim to enumerate every astronomical echelle or
+every observing mode ever built. The broader directory is stored separately in
 `data/census_registry.jsonl`; unresolved fields are part of each record rather
 than hidden.
 
@@ -54,6 +57,8 @@ sequence and website instructions.
 
 ![Reported velocity scales by measurement context](results/figures/reported_velocity_scales.png)
 
+![Within-paper EXPRES before and after comparisons](results/figures/expres_published_comparisons.png)
+
 The third figure is deliberately not a ranking: its bars describe different
 experiments. Read each definition in `data/performance_claims.csv`.
 
@@ -64,6 +69,8 @@ experiments. Read each definition in `data/performance_claims.csv`.
 - Status is dated and kept separate from historical performance.
 - No paper figure, observatory logo or substantial third-party text is copied.
 - The project is independent and not endorsed by a listed facility or team.
+- Proposed projects are the author's research questions, not claims about a
+  team's priorities or completed work.
 
 Code is MIT licensed. Bibliographic metadata and factual specifications remain
 attributed to their primary papers and official facility pages.

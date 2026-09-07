@@ -24,15 +24,19 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText]=await Promise.all([
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
     fetchText('./data/facilities.jsonl'),
     fetchText('./data/challenge_profiles.json'),
+    fetchText('./data/instrument_dossiers.json'),
+    fetchText('./data/expres_papers.csv'),
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
+  const dossiers=JSON.parse(dossierText), papers=parseCSV(paperText);
+  const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   document.querySelector('#census-count').textContent=census.length;
   document.querySelector('#claim-count').textContent=claims.length;
   document.querySelector('#facility-count').textContent=new Set(census.map(d=>d.facility_id)).size;
@@ -52,12 +56,25 @@ async function main(){
     const keys=[item.acronym,item.official_name,...(item.aliases||[])].filter(Boolean).map(v=>v.toLowerCase());
     return claims.filter(claim=>keys.some(key=>claim.instrument.toLowerCase()===key || key.includes(claim.instrument.toLowerCase())));
   }
+  function depthFor(item){
+    const dossier=dossiersById.get(item.instrument_id);
+    if(dossier)return {label:`Full reading note · ${dossier.paper_count} papers`,className:'full'};
+    if(matchingClaims(item).length)return {label:'Numbers from published studies',className:'quantitative'};
+    return {label:'Source-linked instrument note',className:'source'};
+  }
+  function renderDossier(dossier){
+    if(!dossier)return '';
+    const selected=papers.filter(paper=>dossier.paper_ids.includes(paper.paper_id));
+    const project=dossier.candidate_project;
+    return `<section class="dossier-block"><div class="dossier-label">Full reading note · ${esc(dossier.paper_count)} papers · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><p class="reading-boundary"><b>Reading boundary:</b> ${esc(dossier.reading_boundary)}</p><h4>What the latest study changes</h4><p>${esc(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the 2026 primary paper</a><h4>Five lessons from the reading path</h4><ol>${dossier.lessons.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h4>Selected papers, in time order</h4><div class="paper-list">${selected.map(paper=>`<article><div><span>${esc(paper.year)} · ${esc(paper.paper_type)}</span><h5>${esc(paper.title)}</h5><p>${esc(paper.what_was_studied)}</p><p><b>Reported:</b> ${esc(paper.numerical_result)}</p><p><b>Still open:</b> ${esc(paper.remaining_question)}</p></div><a href="${esc(paper.source_url)}" rel="noreferrer">Primary source</a></article>`).join('')}</div><div class="project-note"><span class="dossier-label">Candidate project for discussion</span><h4>${esc(project.title)}</h4><p><b>Question:</b> ${esc(project.question)}</p><p>${esc(project.basis)}</p><p class="reading-boundary"><b>Boundary:</b> ${esc(project.status)}.</p><h5>Proposed checks</h5><ol>${project.steps.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h5>How I would open the conversation</h5><blockquote>${esc(project.first_conversation)}</blockquote></div></section>`;
+  }
   function openProfile(id,updateHistory=true){
     const item=census.find(row=>row.instrument_id===id); if(!item)return;
     const related=matchingClaims(item);
+    const depth=depthFor(item), dossier=dossiersById.get(item.instrument_id);
     const unresolved=item.unresolved_fields?.length?`<section class="profile-warning"><h3>Still unresolved</h3><ul>${item.unresolved_fields.map(value=>`<li>${esc(value)}</li>`).join('')}</ul></section>`:'';
     const evidence=related.length?`<section><h3>Published quantitative evidence in this release</h3>${related.map(claim=>`<article class="profile-claim"><strong>${esc(claim.reported_result)}</strong><p>${esc(words(claim.measurement_context))}; ${esc(claim.target_or_sample)}; ${esc(claim.baseline)}.</p><p><b>Limit:</b> ${esc(claim.caveat)}</p><a href="${esc(claim.source_url)}" rel="noreferrer">Read the primary source</a></article>`).join('')}</section>`:`<section><h3>Performance evidence</h3><p>No claim-level precision record has passed this release's extraction gate. The census row is not a performance claim.</p></section>`;
-    dialogContent.innerHTML=`<h2 id="dialog-title">${esc(item.acronym||item.official_name)}</h2><p class="profile-name">${esc(item.official_name)}</p><div class="profile-meta"><div><span>Facility</span><b>${esc(item.site)}</b></div><div><span>Telescope</span><b>${esc(item.telescope)}</b></div><div><span>Status</span><b>${esc(words(item.current_status))}${item.status_as_of?` · ${esc(item.status_as_of)}`:''}</b></div><div><span>Evidence gate</span><b>${esc(words(item.verification_state))}</b></div></div><section><h3>What the record establishes</h3><p>${esc(item.notes)}</p></section>${evidence}${unresolved}<section><h3>Sources and project pages</h3><div class="source-links"><a href="${esc(item.primary_source_url)}" rel="noreferrer">Primary paper or technical source</a><a href="${esc(item.official_instrument_url)}" rel="noreferrer">Official instrument page</a>${item.status_source_url?`<a href="${esc(item.status_source_url)}" rel="noreferrer">Dated status source</a>`:''}</div></section>`;
+    dialogContent.innerHTML=`<h2 id="dialog-title">${esc(item.acronym||item.official_name)}</h2><p class="profile-name">${esc(item.official_name)}</p><div class="profile-meta"><div><span>Facility</span><b>${esc(item.site)}</b></div><div><span>Telescope</span><b>${esc(item.telescope)}</b></div><div><span>Status</span><b>${esc(words(item.current_status))}${item.status_as_of?` · ${esc(item.status_as_of)}`:''}</b></div><div><span>Research status</span><b>${esc(depth.label)}</b></div></div><section><h3>What I could verify</h3><p>${esc(item.notes)}</p></section>${renderDossier(dossier)}${evidence}${unresolved}<section><h3>Sources and instrument pages</h3><div class="source-links"><a href="${esc(item.primary_source_url)}" rel="noreferrer">Primary paper or technical source</a><a href="${esc(item.official_instrument_url)}" rel="noreferrer">Official instrument page</a>${item.status_source_url?`<a href="${esc(item.status_source_url)}" rel="noreferrer">Dated status source</a>`:''}</div></section>`;
     if(!dialog.open)dialog.showModal();
     if(updateHistory)history.replaceState(null,'',`#instrument=${encodeURIComponent(id)}`);
   }
@@ -70,7 +87,7 @@ async function main(){
       return (!query||haystack.includes(query))&&(!tierFilter.value||item.inclusion_tier===tierFilter.value)&&(!verificationFilter.value||item.verification_state===verificationFilter.value);
     });
     document.querySelector('#census-result').textContent=`Showing ${filtered.length} of ${census.length} physical-instrument records`;
-    document.querySelector('#census-grid').innerHTML=filtered.map(item=>`<article class="census-card"><div class="card-top"><span class="tier">${esc(tierLabels[item.inclusion_tier])}</span><span class="verification ${esc(item.verification_state)}">${item.verification_state==='verified'?'Verified':'Open fields'}</span></div><h3>${esc(item.acronym||item.official_name)}</h3><p>${esc(item.official_name)}</p><dl><dt>Site</dt><dd>${esc(item.site)}</dd><dt>Status</dt><dd>${esc(words(item.current_status))}</dd></dl><button type="button" onclick="openInstrumentProfile('${esc(item.instrument_id)}')">Read profile and sources</button></article>`).join('');
+    document.querySelector('#census-grid').innerHTML=filtered.map(item=>{const depth=depthFor(item);return `<article class="census-card"><div class="card-top"><span class="tier">${esc(tierLabels[item.inclusion_tier])}</span><span class="verification ${esc(item.verification_state)}">${item.verification_state==='verified'?'Verified':'Open fields'}</span></div><h3>${esc(item.acronym||item.official_name)}</h3><p>${esc(item.official_name)}</p><span class="depth ${esc(depth.className)}">${esc(depth.label)}</span><dl><dt>Site</dt><dd>${esc(item.site)}</dd><dt>Status</dt><dd>${esc(words(item.current_status))}</dd></dl><button type="button" onclick="openInstrumentProfile('${esc(item.instrument_id)}')">Read note and sources</button></article>`}).join('');
   }
   [censusSearch,tierFilter,verificationFilter].forEach(el=>el.addEventListener('input',renderCensus));
   renderCensus();
@@ -84,6 +101,9 @@ async function main(){
   document.querySelector('#claim-grid').innerHTML=claims.map(c=>`<article class="claim ${cardClass(c)}"><header><h3>${esc(c.instrument)}</h3><span class="value">${esc(c.comparison==='upper_bound'?'< ':c.comparison==='approximately'?'≈ ':'')}${esc(c.value_mps)} m/s</span></header><p>${esc(c.reported_result)}</p><p class="context">${esc(words(c.measurement_context))}</p><details><summary>Context and source</summary><dl><dt>Metric</dt><dd>${esc(words(c.metric))}</dd><dt>Sample</dt><dd>${esc(c.target_or_sample)}</dd><dt>Baseline</dt><dd>${esc(c.baseline)}</dd><dt>Limit</dt><dd>${esc(c.caveat)}</dd></dl><a href="${esc(c.source_url)}" rel="noreferrer">Primary source</a></details></article>`).join('');
 
   document.querySelector('#barrier-articles').innerHTML=challenges.map((item,index)=>`<article class="barrier-article" id="${esc(item.id)}"><header><span>${String(index+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.question)}</p></div></header><div class="barrier-body"><section><h4>Physical mechanism</h4><p>${esc(item.mechanism)}</p></section><section><h4>Published example</h4><p>${esc(item.evidence)}</p></section><section><h4>Mitigation and remaining limit</h4><p>${esc(item.mitigation)}</p><p><b>Residual:</b> ${esc(item.residual)}</p></section><div class="source-links">${item.sources.map(source=>`<a href="${esc(source.url)}" rel="noreferrer">${esc(source.label)}</a>`).join('')}</div></div></article>`).join('');
+
+  const expres=dossiersById.get('lowell-expres');
+  document.querySelector('#featured-dossier').innerHTML=`<div><span class="eyebrow">First full reading note</span><h2>${esc(expres.title)}</h2><p>${esc(expres.short_summary)}</p><ul class="featured-lessons">${expres.lessons.slice(0,3).map(item=>`<li>${esc(item)}</li>`).join('')}</ul><button type="button" class="button primary" onclick="openInstrumentProfile('lowell-expres')">Read all ${esc(expres.paper_count)} paper notes and project plan</button></div><figure><img src="./figures/expres_published_comparisons.png" alt="Two within-paper before and after comparisons for EXPRES methods" width="1800" height="900" loading="lazy"><figcaption>Two paired results reproduced from the stated papers. The panels describe different data and are not compared with each other.</figcaption></figure>`;
 
   const hash=decodeURIComponent(location.hash);
   if(hash.startsWith('#instrument=')) openProfile(hash.slice(12),false);

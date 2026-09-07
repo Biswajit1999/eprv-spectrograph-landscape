@@ -12,8 +12,9 @@ pytest -q
 eprv-landscape build --data data/instruments.csv --claims data/performance_claims.csv --out results
 ```
 
-The build validates controlled vocabularies, claim identifiers, numeric values
-and claim-to-instrument references, then regenerates every file under `results/`.
+The build validates controlled vocabularies, claim identifiers, numeric values,
+claim-to-instrument references, the EXPRES paper list and its paired figure
+values, then regenerates every file under `results/`.
 The test suite also validates `data/census_registry.jsonl` against
 `data/facilities.jsonl`.
 

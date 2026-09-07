@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.0] - 2026-09-07
+
+- Added a 13-paper EXPRES reading path from design and commissioning through the
+  2026 long-baseline instrument-state study.
+- Added a paper table, a structured instrument dossier and a paired within-paper
+  figure whose source values and limitations are machine-readable.
+- Added an era-aware correction-audit proposal with blocked validation,
+  injection recovery and planet-preservation checks; labelled it as a proposal
+  for discussion rather than completed work or a team priority.
+- Added research-depth labels to every instrument profile and a full EXPRES
+  reading-note experience to the public website.
+- Reworded visible headings around a personal reading guide rather than an
+  institutional-sounding performance product.
+
 ## [0.3.0] - 2026-09-07
 
 - Added a 53-record broader physical-instrument census across 33 represented

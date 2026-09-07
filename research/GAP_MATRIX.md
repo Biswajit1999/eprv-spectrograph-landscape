@@ -10,5 +10,7 @@
 | Facility coordinates | not normalized | deferred | Add coordinate source and datum |
 | Throughput and detector eras | narrative only | deferred | Version mode-level configuration table |
 | Homogeneous data comparison | no shared raw reduction | out of scope | Define benchmark spectra and pipelines |
+| Full instrument reading notes | EXPRES: 13 selected primary papers | in progress | Apply the same template to one instrument at a time; do not imply completion for all 53 |
+| EXPRES project discussion | Published long-baseline diagnostics and a bounded validation proposal | ready for team feedback | Confirm data access, diagnostic availability and a team-useful validation target |
 
 “Complete” means complete for the stated release question, not globally exhaustive.

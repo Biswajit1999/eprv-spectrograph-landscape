@@ -12,8 +12,18 @@ from .analysis import (
     spectral_coverage_summary,
     status_summary,
 )
-from .data import load_instruments, load_performance_claims
-from .plots import plot_claim_context, plot_resolution_coverage, plot_wavelength_coverage
+from .data import (
+    load_expres_metrics,
+    load_expres_papers,
+    load_instruments,
+    load_performance_claims,
+)
+from .plots import (
+    plot_claim_context,
+    plot_expres_paired_metrics,
+    plot_resolution_coverage,
+    plot_wavelength_coverage,
+)
 
 
 @click.group()
@@ -28,6 +38,8 @@ def main() -> None:
 def build_cmd(data_path: str, out_dir: str, claims_path: str) -> None:
     df = load_instruments(data_path)
     claims = load_performance_claims(claims_path, df)
+    expres_papers = load_expres_papers("data/expres_papers.csv")
+    expres_metrics = load_expres_metrics("data/expres_metrics.csv", expres_papers)
     out = Path(out_dir)
     figures = out / "figures"
     figures.mkdir(parents=True, exist_ok=True)
@@ -38,9 +50,11 @@ def build_cmd(data_path: str, out_dir: str, claims_path: str) -> None:
     plot_wavelength_coverage(df, figures / "wavelength_coverage.png")
     plot_resolution_coverage(df, figures / "resolution_vs_coverage.png")
     plot_claim_context(claims, figures / "reported_velocity_scales.png")
+    plot_expres_paired_metrics(expres_metrics, figures / "expres_published_comparisons.png")
     manifest = {
         "n_instruments": len(df),
         "n_quantitative_claims": len(claims),
+        "n_expres_papers_reviewed": len(expres_papers),
         "status_as_of_min": str(df["status_as_of"].min()),
         "status_as_of_max": str(df["status_as_of"].max()),
         "performance_classes": sorted(df["performance_class"].unique()),

@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 instruments and 22 quantitative claims | `results/manifest.json` |
+| 21 instruments, 22 quantitative claims, and 13 selected EXPRES papers | `results/manifest.json` |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |
@@ -28,5 +28,10 @@ metric, value, sample, baseline and caveat. Derived counts map to
 | PARAS-2 2.65 m/s | `PERF-018` |
 | NIRPS below 1 m/s commissioning result | `PERF-019` |
 | HARPS3, ANDES, G-CLEF 0.10 m/s goals | `PERF-020`–`PERF-022` |
+| EXPRES paired values: 1.17 to 1.05 m/s and 1.32 to 0.43 m/s | `data/expres_metrics.csv`, linked to `EXP-2021-EXCALIBUR` and `EXP-2026-SYSTEMATICS` |
+
+The wider EXPRES reading statements are mapped paper by paper in
+`data/expres_papers.csv`; interpretation and proposal boundaries are stated in
+`docs/EXPRES_READING_NOTE.md`.
 
 The values are not averaged, scored or ranked because their definitions differ.

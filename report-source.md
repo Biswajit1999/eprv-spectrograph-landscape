@@ -46,3 +46,19 @@ The current release passes when all quantitative report statements appear in
 `docs/CLAIMS.md`, all claim rows resolve to an instrument, every claim has a
 caveat and source, generated results are reproducible, tests pass, and the site
 build succeeds. It does not claim a saturated global census.
+
+## EXPRES dossier question
+
+How did the EXPRES literature move from design and commissioning to the current
+long-baseline limitation, and what small software study could be discussed with
+the team without overstating the published evidence?
+
+The direct answer and paper-by-paper synthesis are maintained in
+`docs/EXPRES_READING_NOTE.md`. The single source table is
+`data/expres_papers.csv`; paired numerical values used in the original figure
+are recorded separately in `data/expres_metrics.csv`.
+
+The proposed era-aware correction audit is an inference from the validation gaps
+identified in the 2022 method comparison and the diagnostics demonstrated in the
+2026 long-baseline study. It is labelled as a candidate project, not attributed
+to the source authors and not presented as completed work.

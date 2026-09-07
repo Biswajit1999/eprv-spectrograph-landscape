@@ -1,0 +1,3 @@
+metric_id,paper_id,label,before_mps,after_mps,context,source_url
+EXPM-001,EXP-2021-EXCALIBUR,HD 34411 wavelength-calibration comparison,1.17,1.05,"Stellar RMS over the paper's ten-month data set; not a general instrument floor",https://arxiv.org/abs/2010.13786
+EXPM-002,EXP-2026-SYSTEMATICS,Solar instrumental-trend correction,1.32,0.43,"Solar trend RMS after the paper's telemetry and image-diagnostic regression",https://arxiv.org/abs/2601.02296
