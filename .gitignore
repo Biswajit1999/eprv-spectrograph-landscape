@@ -6,6 +6,6 @@ __pycache__/
 *.egg-info/
 website/node_modules/
 website/dist/
-site-app/node_modules/
-site-app/dist/
+/site-app/
+/design-system/
 .wrangler/

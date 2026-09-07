@@ -7,26 +7,88 @@ const parseCSV = text => {
   return rows.map(values=>Object.fromEntries(headers.map((h,i)=>[h,values[i]??''])));
 };
 
+const parseJSONL = text => text.split(/\r?\n/).filter(Boolean).map(line => JSON.parse(line));
+const esc = value => String(value ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const words = value => String(value ?? '').replaceAll('_',' ');
+const tierLabels = {
+  A_dedicated_prv_eprv: 'A · Dedicated PRV/EPRV',
+  B_general_high_resolution_with_rv_evidence: 'B · High-resolution with RV evidence',
+  C_historical_prototype_or_specialist: 'C · Historical or specialist',
+  D_funded_construction_or_commissioning: 'D · Construction or commissioning',
+};
+
+async function fetchText(path){
+  const response=await fetch(path);
+  if(!response.ok) throw new Error(`${path} unavailable`);
+  return response.text();
+}
+
 async function main(){
-const [instrumentText,claimText]=await Promise.all([
-  fetch('/data/instruments.csv').then(r=>{if(!r.ok)throw new Error('instrument data unavailable');return r.text()}),
-  fetch('/data/performance_claims.csv').then(r=>{if(!r.ok)throw new Error('claim data unavailable');return r.text()})
-]);
-const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
-const statusSelect=document.querySelector('#status-filter'), bandSelect=document.querySelector('#band-filter'), search=document.querySelector('#search');
-document.querySelector('#instrument-count').textContent=instruments.length;
-document.querySelector('#claim-count').textContent=claims.length;
-document.querySelector('#operational-count').textContent=instruments.filter(d=>d.status.startsWith('operational')).length;
-[...new Set(instruments.map(d=>d.status))].sort().forEach(status=>statusSelect.add(new Option(status.replaceAll('_',' '),status)));
+  const [instrumentText,claimText,censusText,facilityText,challengeText]=await Promise.all([
+    fetchText('./data/instruments.csv'),
+    fetchText('./data/performance_claims.csv'),
+    fetchText('./data/census_registry.jsonl'),
+    fetchText('./data/facilities.jsonl'),
+    fetchText('./data/challenge_profiles.json'),
+  ]);
+  const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
+  const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
+  document.querySelector('#census-count').textContent=census.length;
+  document.querySelector('#claim-count').textContent=claims.length;
+  document.querySelector('#facility-count').textContent=new Set(census.map(d=>d.facility_id)).size;
+  document.querySelector('#verified-count').textContent=census.filter(d=>d.verification_state==='verified').length;
 
-const esc=value=>String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-function renderInstruments(){const q=search.value.trim().toLowerCase();const filtered=instruments.filter(d=>(!q||`${d.instrument} ${d.facility}`.toLowerCase().includes(q))&&(!statusSelect.value||d.status===statusSelect.value)&&(!bandSelect.value||d.spectral_domain===bandSelect.value));document.querySelector('#table-result').textContent=`Showing ${filtered.length} of ${instruments.length} records`;document.querySelector('#instrument-body').innerHTML=filtered.map(d=>`<tr><td>${esc(d.instrument)}</td><td>${esc(d.facility)}</td><td>${esc(d.wave_min_nm)}–${esc(d.wave_max_nm)} nm</td><td>${Number(d.resolving_power).toLocaleString()}</td><td><span class="pill ${esc(d.status)}">${esc(d.status.replaceAll('_',' '))}</span></td><td>${esc(d.performance_class.replaceAll('_',' '))}</td></tr>`).join('')}
-[search,statusSelect,bandSelect].forEach(el=>el.addEventListener('input',renderInstruments));renderInstruments();
+  const censusSearch=document.querySelector('#census-search');
+  const tierFilter=document.querySelector('#tier-filter');
+  const verificationFilter=document.querySelector('#verification-filter');
+  Object.entries(tierLabels).forEach(([value,label])=>tierFilter.add(new Option(label,value)));
+  const dialog=document.querySelector('#instrument-dialog');
+  const dialogContent=document.querySelector('#dialog-content');
+  const closeDialog=()=>{dialog.close();history.replaceState(null,'',location.pathname+location.search+'#census')};
+  document.querySelector('#dialog-close').addEventListener('click',closeDialog);
+  dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
 
-const cardClass=c=>c.measurement_context.includes('requirement')?'requirement':c.measurement_context.includes('calibration')?'calibration':'sky';
-document.querySelector('#claim-grid').innerHTML=claims.map(c=>`<article class="claim ${cardClass(c)}"><header><h3>${esc(c.instrument)}</h3><span class="value">${esc(c.comparison==='upper_bound'?'< ':c.comparison==='approximately'?'≈ ':'')}${esc(c.value_mps)} m/s</span></header><p>${esc(c.reported_result)}</p><p class="context">${esc(c.measurement_context.replaceAll('_',' '))}</p><details><summary>Context and source</summary><dl><dt>Metric</dt><dd>${esc(c.metric.replaceAll('_',' '))}</dd><dt>Sample</dt><dd>${esc(c.target_or_sample)}</dd><dt>Baseline</dt><dd>${esc(c.baseline)}</dd><dt>Limit</dt><dd>${esc(c.caveat)}</dd></dl><a href="${esc(c.source_url)}" rel="noreferrer">Primary source</a></details></article>`).join('');
+  function matchingClaims(item){
+    const keys=[item.acronym,item.official_name,...(item.aliases||[])].filter(Boolean).map(v=>v.toLowerCase());
+    return claims.filter(claim=>keys.some(key=>claim.instrument.toLowerCase()===key || key.includes(claim.instrument.toLowerCase())));
+  }
+  function openProfile(id,updateHistory=true){
+    const item=census.find(row=>row.instrument_id===id); if(!item)return;
+    const related=matchingClaims(item);
+    const unresolved=item.unresolved_fields?.length?`<section class="profile-warning"><h3>Still unresolved</h3><ul>${item.unresolved_fields.map(value=>`<li>${esc(value)}</li>`).join('')}</ul></section>`:'';
+    const evidence=related.length?`<section><h3>Published quantitative evidence in this release</h3>${related.map(claim=>`<article class="profile-claim"><strong>${esc(claim.reported_result)}</strong><p>${esc(words(claim.measurement_context))}; ${esc(claim.target_or_sample)}; ${esc(claim.baseline)}.</p><p><b>Limit:</b> ${esc(claim.caveat)}</p><a href="${esc(claim.source_url)}" rel="noreferrer">Read the primary source</a></article>`).join('')}</section>`:`<section><h3>Performance evidence</h3><p>No claim-level precision record has passed this release's extraction gate. The census row is not a performance claim.</p></section>`;
+    dialogContent.innerHTML=`<h2 id="dialog-title">${esc(item.acronym||item.official_name)}</h2><p class="profile-name">${esc(item.official_name)}</p><div class="profile-meta"><div><span>Facility</span><b>${esc(item.site)}</b></div><div><span>Telescope</span><b>${esc(item.telescope)}</b></div><div><span>Status</span><b>${esc(words(item.current_status))}${item.status_as_of?` · ${esc(item.status_as_of)}`:''}</b></div><div><span>Evidence gate</span><b>${esc(words(item.verification_state))}</b></div></div><section><h3>What the record establishes</h3><p>${esc(item.notes)}</p></section>${evidence}${unresolved}<section><h3>Sources and project pages</h3><div class="source-links"><a href="${esc(item.primary_source_url)}" rel="noreferrer">Primary paper or technical source</a><a href="${esc(item.official_instrument_url)}" rel="noreferrer">Official instrument page</a>${item.status_source_url?`<a href="${esc(item.status_source_url)}" rel="noreferrer">Dated status source</a>`:''}</div></section>`;
+    if(!dialog.open)dialog.showModal();
+    if(updateHistory)history.replaceState(null,'',`#instrument=${encodeURIComponent(id)}`);
+  }
+  window.openInstrumentProfile=openProfile;
+
+  function renderCensus(){
+    const query=censusSearch.value.trim().toLowerCase();
+    const filtered=census.filter(item=>{
+      const haystack=[item.official_name,item.acronym,item.telescope,item.site,item.physical_country_or_territory,item.facility_id,...(item.aliases||[])].join(' ').toLowerCase();
+      return (!query||haystack.includes(query))&&(!tierFilter.value||item.inclusion_tier===tierFilter.value)&&(!verificationFilter.value||item.verification_state===verificationFilter.value);
+    });
+    document.querySelector('#census-result').textContent=`Showing ${filtered.length} of ${census.length} physical-instrument records`;
+    document.querySelector('#census-grid').innerHTML=filtered.map(item=>`<article class="census-card"><div class="card-top"><span class="tier">${esc(tierLabels[item.inclusion_tier])}</span><span class="verification ${esc(item.verification_state)}">${item.verification_state==='verified'?'Verified':'Open fields'}</span></div><h3>${esc(item.acronym||item.official_name)}</h3><p>${esc(item.official_name)}</p><dl><dt>Site</dt><dd>${esc(item.site)}</dd><dt>Status</dt><dd>${esc(words(item.current_status))}</dd></dl><button type="button" onclick="openInstrumentProfile('${esc(item.instrument_id)}')">Read profile and sources</button></article>`).join('');
+  }
+  [censusSearch,tierFilter,verificationFilter].forEach(el=>el.addEventListener('input',renderCensus));
+  renderCensus();
+
+  const statusSelect=document.querySelector('#status-filter'), bandSelect=document.querySelector('#band-filter'), search=document.querySelector('#search');
+  [...new Set(instruments.map(d=>d.status))].sort().forEach(status=>statusSelect.add(new Option(words(status),status)));
+  function renderInstruments(){const q=search.value.trim().toLowerCase();const filtered=instruments.filter(d=>(!q||`${d.instrument} ${d.facility}`.toLowerCase().includes(q))&&(!statusSelect.value||d.status===statusSelect.value)&&(!bandSelect.value||d.spectral_domain===bandSelect.value));document.querySelector('#table-result').textContent=`Showing ${filtered.length} of ${instruments.length} performance-core records`;document.querySelector('#instrument-body').innerHTML=filtered.map(d=>`<tr><td>${esc(d.instrument)}</td><td>${esc(d.facility)}</td><td>${esc(d.wave_min_nm)}–${esc(d.wave_max_nm)} nm</td><td>${Number(d.resolving_power).toLocaleString()}</td><td><span class="pill ${esc(d.status)}">${esc(words(d.status))}</span></td><td>${esc(words(d.performance_class))}</td></tr>`).join('')}
+  [search,statusSelect,bandSelect].forEach(el=>el.addEventListener('input',renderInstruments));renderInstruments();
+
+  const cardClass=c=>c.measurement_context.includes('requirement')?'requirement':c.measurement_context.includes('calibration')?'calibration':'sky';
+  document.querySelector('#claim-grid').innerHTML=claims.map(c=>`<article class="claim ${cardClass(c)}"><header><h3>${esc(c.instrument)}</h3><span class="value">${esc(c.comparison==='upper_bound'?'< ':c.comparison==='approximately'?'≈ ':'')}${esc(c.value_mps)} m/s</span></header><p>${esc(c.reported_result)}</p><p class="context">${esc(words(c.measurement_context))}</p><details><summary>Context and source</summary><dl><dt>Metric</dt><dd>${esc(words(c.metric))}</dd><dt>Sample</dt><dd>${esc(c.target_or_sample)}</dd><dt>Baseline</dt><dd>${esc(c.baseline)}</dd><dt>Limit</dt><dd>${esc(c.caveat)}</dd></dl><a href="${esc(c.source_url)}" rel="noreferrer">Primary source</a></details></article>`).join('');
+
+  document.querySelector('#barrier-articles').innerHTML=challenges.map((item,index)=>`<article class="barrier-article" id="${esc(item.id)}"><header><span>${String(index+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.question)}</p></div></header><div class="barrier-body"><section><h4>Physical mechanism</h4><p>${esc(item.mechanism)}</p></section><section><h4>Published example</h4><p>${esc(item.evidence)}</p></section><section><h4>Mitigation and remaining limit</h4><p>${esc(item.mitigation)}</p><p><b>Residual:</b> ${esc(item.residual)}</p></section><div class="source-links">${item.sources.map(source=>`<a href="${esc(source.url)}" rel="noreferrer">${esc(source.label)}</a>`).join('')}</div></div></article>`).join('');
+
+  const hash=decodeURIComponent(location.hash);
+  if(hash.startsWith('#instrument=')) openProfile(hash.slice(12),false);
 }
 
 main().catch(error=>{
-  document.querySelector('#table-result').textContent=`Data could not be loaded: ${error.message}`;
+  document.querySelector('#census-result').textContent=`Data could not be loaded: ${error.message}`;
 });

@@ -1,6 +1,6 @@
 # Precision radial-velocity spectrographs: evidence and open problems
 
-Status and sources checked **2 September 2026**. This is an independent
+Status and sources checked between **2 and 7 September 2026**. This is an independent
 literature synthesis, not an observatory or consortium product.
 
 ## Summary
@@ -18,6 +18,32 @@ the 2026 *Annual Review of Astronomy and Astrophysics* review of precise radial
 velocities. ANDES and G-CLEF are included only as planned systems. PARAS-2 adds
 an operational southern instrument with a published 2024 stellar stability
 test. No single-number ranking is calculated.
+
+## Broader census and instrument profiles
+
+The public explorer now separates a 53-record physical-instrument census from
+the 21-record quantitative performance core. The broader layer covers 33
+facilities and includes dedicated Doppler systems, general high-resolution
+spectrographs with stellar-RV evidence, historical prototypes, and funded or
+commissioning instruments. This is an expanding, tiered discovery census—not a
+claim of global completeness. Thirty-four source records inherited from the
+first facility pass still have explicitly named open fields.
+
+EXOhSPEC is included as a physical instrument at the Thai National Telescope.
+NARIT states that it has been installed and tested and has resolving power above
+70,000. Its design literature specifies 400–700 nm coverage and a 3 m/s
+short-term requirement; the requirement is not represented as achieved stellar
+precision. The earlier ING deployment was decommissioned on 27 May 2024. A
+published TNT stellar-RV validation and a dated transition to routine operations
+remain open research fields.
+
+NRES is represented as four physical spectrographs rather than one abstract
+network entry. LCO identifies units in Chile, Texas, Israel and South Africa.
+The Wise unit is explicitly decommissioned from 1 August 2026. LCO also states
+that NRES is not offered from semester 2026B; the remaining three units are
+therefore labelled `not_offered`, not decommissioned. The LCO pages report a
+design goal of 3 m/s and achieved accuracy around 10 m/s; the two quantities
+must not be collapsed into one “precision” value.
 
 ## How to read a precision number
 
@@ -115,6 +141,12 @@ G-CLEF are future ELT/GMT instruments; their entries are engineering
 requirements. None is represented as achieved stellar performance.
 
 ## Nine coupled barriers
+
+The website's expanded sections are generated from
+`data/challenge_profiles.json`. Each section contains a physical mechanism, a
+published numerical or operational example where available, mitigation methods,
+the remaining limitation, and direct links to primary papers. The short summary
+below is an index to those longer source-linked explanations.
 
 1. **Stellar line-profile variability:** granulation, oscillations, spots and
    faculae are structured, wavelength-dependent signals.

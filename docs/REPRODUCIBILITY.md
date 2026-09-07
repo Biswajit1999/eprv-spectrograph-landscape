@@ -14,7 +14,18 @@ eprv-landscape build --data data/instruments.csv --claims data/performance_claim
 
 The build validates controlled vocabularies, claim identifiers, numeric values
 and claim-to-instrument references, then regenerates every file under `results/`.
+The test suite also validates `data/census_registry.jsonl` against
+`data/facilities.jsonl`.
 
-Serve the static website with `python -m http.server 8000` and open
-`http://localhost:8000/site/`. It also works when `site/index.html` is opened
-directly in a modern browser.
+Build and serve the static website:
+
+```bash
+cd website
+npm ci
+npm run build
+npm run preview
+```
+
+The Vite build uses relative asset and data paths so the same artifact works at
+the GitHub Pages repository subpath. `.github/workflows/pages.yml` publishes
+`website/dist` after a successful push to `main`.

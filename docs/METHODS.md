@@ -7,7 +7,17 @@ current operational state, and which obstacles remain before approximately
 10 cm/s Doppler measurements can be sustained over the multi-year cadence
 needed for temperate terrestrial planets?
 
-## Inclusion protocol
+## Two-layer inclusion protocol
+
+The project separates discovery from quantitative comparison. The **broader
+physical-instrument census** has four labelled tiers: dedicated PRV/EPRV
+systems; general high-resolution instruments with published stellar-RV
+evidence; historical prototypes or specialist systems; and funded,
+construction, or commissioning projects. One row represents one physical
+instrument. Networks such as NRES are split by physical site. A row may remain
+`partially_verified`, but it must name every unresolved field.
+
+The **performance core** applies the stricter rules below.
 
 An instrument is included in the detailed comparison when it satisfies all of the following:
 
@@ -55,8 +65,13 @@ Current status is taken from facility or consortium pages and stamped with
 stale once its source has not been checked for 180 days. Historical
 performance is never silently rewritten to match a current outage.
 
+Conflicting official pages produce `status_conflict`, not an arbitrary choice.
+“Installed and tested” produces `installed_testing`, not “operational.”
+
 ## Reproducibility
 
-`eprv-landscape build` validates both source tables, writes four derived CSV
+`eprv-landscape build` validates the quantitative source tables, writes four derived CSV
 summaries, three plots, and `results/manifest.json`. Every plotted number is
 read from committed CSV data; no values are embedded in plotting code.
+`load_census` separately enforces unique physical identifiers, resolved facility
+references, HTTPS sources, controlled inclusion tiers, and declared open fields.

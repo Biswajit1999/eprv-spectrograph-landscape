@@ -10,24 +10,35 @@
     <a class="skip" href="#main">Skip to content</a>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Precision RV landscape home"><span>RV</span> measurement landscape</a>
-      <nav aria-label="Primary"><a href="#instruments">Instruments</a><a href="#evidence">Evidence</a><a href="#barriers">Open problems</a><a href="#method">Method</a></nav>
+      <nav aria-label="Primary"><a href="#census">Census</a><a href="#instruments">Performance core</a><a href="#barriers">Challenges</a><a href="#method">Method</a></nav>
     </header>
     <main id="main">
       <section class="hero" id="top">
-        <div class="kicker">Literature synthesis · checked 2 September 2026</div>
+        <div class="kicker">Independent literature synthesis · updated 7 September 2026</div>
         <h1>Precision is a measurement context, not a leaderboard.</h1>
-        <p class="lede">A source-linked comparison of optical and near-infrared Doppler spectrographs: their reported results, present status, and the coupled errors between a stellar spectrum and a published velocity.</p>
-        <div class="hero-actions"><a class="button primary" href="#instruments">Explore instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
-        <div class="notice"><strong>Scope note.</strong> Nineteen systems form the detailed review-defined core. Planned and regionally important additions are labelled separately. Requirements, calibration residuals, internal uncertainties and stellar RMS are never treated as equivalent.</div>
+        <p class="lede">A source-linked guide to optical and near-infrared Doppler spectrographs: where each instrument is located, what its papers establish, its dated status, and the coupled errors between a stellar spectrum and a published velocity.</p>
+        <div class="hero-actions"><a class="button primary" href="#census">Browse the census</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
+        <div class="notice"><strong>How to read this site.</strong> The broader census and the quantitative performance core have different evidence gates. A candidate record can be useful without having a comparable precision result. Requirements, calibration residuals, internal uncertainties and stellar RMS are never treated as equivalent.</div>
       </section>
       <section class="stats" aria-label="Dataset summary">
-        <article><strong id="instrument-count">—</strong><span>instrument records</span></article>
+        <article><strong id="census-count">—</strong><span>physical census records</span></article>
         <article><strong id="claim-count">—</strong><span>quantitative claims</span></article>
-        <article><strong id="operational-count">—</strong><span>operational or caveated</span></article>
-        <article><strong>0</strong><span>rank scores</span></article>
+        <article><strong id="facility-count">—</strong><span>facilities represented</span></article>
+        <article><strong id="verified-count">—</strong><span>fully verified census rows</span></article>
+      </section>
+      <section id="census" class="section">
+        <div class="section-head"><div><span class="eyebrow">Physical-instrument census</span><h2>One record per spectrograph</h2></div><p>This wider discovery layer includes dedicated EPRV systems, general high-resolution instruments with RV evidence, historical prototypes, and funded or commissioning projects.</p></div>
+        <div class="filters" role="search">
+          <label for="census-search">Search <input id="census-search" type="search" placeholder="Name, facility, site, country" /></label>
+          <label for="tier-filter">Inclusion tier <select id="tier-filter"><option value="">All tiers</option></select></label>
+          <label for="verification-filter">Verification <select id="verification-filter"><option value="">All records</option><option value="verified">Verified</option><option value="partially_verified">Partially verified</option></select></label>
+        </div>
+        <p id="census-result" class="result" aria-live="polite"></p>
+        <div id="census-grid" class="census-grid"></div>
+        <p class="scope-line">A partially verified row states exactly what remains unresolved. It is not presented as a completed scientific profile.</p>
       </section>
       <section id="instruments" class="section">
-        <div class="section-head"><div><span class="eyebrow">Instrument registry</span><h2>Compare specifications and status</h2></div><p>Wavelength limits and resolving power are representative modes, not acceptance-test values.</p></div>
+        <div class="section-head"><div><span class="eyebrow">Quantitative performance core</span><h2>Compare specifications and evidence classes</h2></div><p>These 21 records have claim-level performance evidence. Wavelength limits and resolving power are representative modes, not acceptance-test values.</p></div>
         <div class="filters" role="search">
           <label>Search <input id="search" type="search" placeholder="Instrument or facility" /></label>
           <label>Status <select id="status-filter"><option value="">All statuses</option></select></label>
@@ -42,16 +53,22 @@
         <div id="claim-grid" class="claim-grid"></div>
       </section>
       <section id="barriers" class="section">
-        <div class="section-head"><div><span class="eyebrow">Interpretation</span><h2>Nine coupled error domains</h2></div><p>No component operates alone; improving one term can expose another.</p></div>
-        <ol class="barrier-grid">
-          <li><b>Stellar variability</b><span>Oscillations, granulation, spots and faculae reshape spectral lines.</span></li><li><b>Photon information</b><span>Throughput, spectrum and rotation matter with resolution.</span></li><li><b>Calibration transfer</b><span>Reference light does not perfectly share the stellar path.</span></li><li><b>Fibre illumination</b><span>Scrambling and modal noise couple seeing and guiding into the spectrum.</span></li><li><b>Instrument eras</b><span>Maintenance and thermal cycles create offsets and state changes.</span></li><li><b>Detector physics</b><span>Pixel geometry, charge transfer, persistence and non-linearity matter.</span></li><li><b>Tellurics</b><span>Masking loses information; modelling introduces atmospheric uncertainty.</span></li><li><b>Barycentric timing</b><span>The effective exposure midpoint can be wavelength dependent.</span></li><li><b>Pipelines</b><span>Extraction, templates and outlier policy shape the reported statistic.</span></li>
-        </ol>
+        <div class="section-head"><div><span class="eyebrow">Paper-based interpretation</span><h2>Nine coupled error domains</h2></div><p>Each section states the mechanism, a published example, common mitigations, the residual problem, and links to the papers.</p></div>
+        <div id="barrier-articles" class="barrier-articles"></div>
+      </section>
+      <section id="figures" class="section shade">
+        <div class="section-head"><div><span class="eyebrow">Original figures</span><h2>Context before comparison</h2></div><p>Figures are generated from the committed tables. No third-party paper figure is reproduced.</p></div>
+        <div class="figure-grid">
+          <figure><img src="./figures/wavelength_coverage.png" alt="Horizontal intervals showing wavelength coverage, grouped by current status" width="1600" height="1100" loading="lazy" /><figcaption>Representative wavelength coverage and dated status for the performance core.</figcaption></figure>
+          <figure><img src="./figures/reported_velocity_scales.png" alt="Reported velocity values grouped by non-equivalent measurement context" width="1600" height="1100" loading="lazy" /><figcaption>Reported velocity scales separated by measurement context; this is not a ranking.</figcaption></figure>
+        </div>
       </section>
       <section id="method" class="section method">
         <div><span class="eyebrow">Method</span><h2>Traceable by construction</h2><p>Each quantitative row carries a metric, measurement context, target or sample, baseline, caveat, source URL and access date. Automated checks reject unknown instruments, duplicate claim IDs and uncaveated claims.</p></div>
         <div class="method-links"><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/METHODS.md">Inclusion protocol</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/CLAIMS.md">Claim ledger</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/REPORT.md">Scientific report</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/tree/main/data">Download tables</a></div>
       </section>
     </main>
+    <dialog id="instrument-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><span class="eyebrow">Instrument profile</span><button id="dialog-close" type="button" aria-label="Close instrument profile">Close</button></div><div id="dialog-content"></div></dialog>
     <footer><p>Independent research software by Biswajit Jana. No observatory or consortium endorsement is implied.</p><p>Code: MIT · External facts remain attributed to their sources.</p></footer>
     <script type="module" src="/src/main.js"></script>
   </body>

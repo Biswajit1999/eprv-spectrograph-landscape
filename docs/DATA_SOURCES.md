@@ -1,6 +1,6 @@
 # Primary sources and access record
 
-Access checked: **2026-09-02**.
+Access checked: **2026-09-02 to 2026-09-07**.
 
 ## Programme-level context
 
@@ -64,6 +64,16 @@ Access checked: **2026-09-02**.
 - G-CLEF: [Giant Magellan Telescope](https://www.gmto.org/instrument/g-clef/).
 - NEID status: [WIYN observer information](https://www.wiyn.org/Instruments/wiynneid_observers.html).
 - HARPS3 phase: [ING instruments](https://www.ing.iac.es/astronomy/instr.html).
+- HARPS3 commissioning/shared-risk phase: [ING 2026B call for proposals](https://www.ing.iac.es/astronomy/observing/ING_CfP_2026B.pdf).
+- EXOhSPEC deployment and testing: [NARIT official page](https://www.narit.or.th/en/technology-development/advanced-optics/EXOhSPEC);
+  design and performance requirement: Lhospice et al.,
+  [University of Hertfordshire record](https://researchprofiles.herts.ac.uk/en/publications/exohspec-folded-design-optimization-and-performance-estimation/);
+  earlier ING deployment status: [ING instrument record](https://www.ing.iac.es/PR/inst.php?inst=EXOhSPEC&tel=int).
+- NRES network design and reported accuracy: [LCO instrument page](https://lco.global/observatory/instruments/nres/);
+  2026B offering statement: [LCO instrument roster](https://lco.global/observatory/instruments/);
+  Wise decommissioning: [LCO status page](https://lco.global/observatory/status/).
+- PARVI status conflict: [Palomar observer instrument list](https://phat.caltech.edu/palomar/observer/P200observers.html)
+  and [Caltech Exoplanet Technology Laboratory](https://etlab.caltech.edu/).
 
 ## Reuse policy
 

@@ -4,8 +4,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An independent, source-traceable study of precision radial-velocity
-spectrographs: what published measurements establish, which systems are
-operational as of **2 September 2026**, and which measurement problems remain.
+spectrographs: where physical instruments are deployed, what published
+measurements establish, their dated status, and which measurement problems remain.
+
+**Public website:** https://biswajit1999.github.io/eprv-spectrograph-landscape/
 
 The repository does not calculate a “best instrument” score. Requirements,
 calibration residuals, internal uncertainties, stellar RMS and planet-fit
@@ -13,20 +15,25 @@ residuals are different quantities. The data model keeps them separate.
 
 ## Contents
 
-- **21 instrument records** spanning operational, caveated, offline,
+- **53 physical-instrument census records** across 33 represented facilities, with verified
+  and partially verified rows visibly separated.
+- **21 performance-core records** spanning operational, caveated, offline,
   commissioning, legacy and planned systems.
 - **22 quantitative claim records**, each with a metric, sample, baseline,
   caveat, source and access date.
 - A literature-based [scientific report](docs/REPORT.md), explicit
   [inclusion protocol](docs/METHODS.md) and [claim ledger](docs/CLAIMS.md).
 - Three original figures generated only from committed CSV data.
-- An accessible, filterable [research website](website/).
+- An accessible, filterable [research website](website/) with source-linked
+  instrument profiles and nine extended challenge explainers.
 - A tested Python package and command-line build.
 
-The detailed core follows the instrument set in Burt, Dumusque & Halverson's
+The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's
 2026 review, with planned and regional additions clearly labelled. This is a
 curated evidence map, not a claim to enumerate every astronomical echelle or
-every observing mode ever built.
+every observing mode ever built. The broader census is stored separately in
+`data/census_registry.jsonl`; unresolved fields are part of each record rather
+than hidden.
 
 ## Reproduce
 

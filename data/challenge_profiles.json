@@ -1,0 +1,119 @@
+[
+  {
+    "id": "stellar-variability",
+    "title": "Stellar variability",
+    "question": "How much of an apparent Doppler shift was produced by the star rather than orbital motion?",
+    "mechanism": "Oscillations, granulation, active regions and magnetic cycles change the depths, asymmetries and convective shifts of absorption lines. The signal depends on line species, formation depth, wavelength and cadence, so it is not a single additive noise term.",
+    "evidence": "The HARPS-N solar study analysed 34,550 spectra over three years. A wavelength-solution correction reduced day-to-day scatter from 1.27 to 1.07 m/s, but the remaining solar variability was still much larger than a 0.10 m/s Earth-analogue scale.",
+    "mitigation": "Combine line-by-line velocities, chromospheric indicators, photometry, cadence matched to oscillation and granulation timescales, and statistical or physical activity models.",
+    "residual": "A correction trained on one star, activity state or wavelength interval does not automatically transfer to another.",
+    "sources": [
+      {"label": "Extreme Precision Radial Velocity Working Group report", "url": "https://arxiv.org/abs/2107.14291"},
+      {"label": "HARPS-N solar time-series analysis", "url": "https://doi.org/10.1051/0004-6361/202039350"}
+    ]
+  },
+  {
+    "id": "photon-information",
+    "title": "Photon information",
+    "question": "What velocity information is present in the recorded photons?",
+    "mechanism": "The photon-limited uncertainty depends on signal-to-noise, line gradients, wavelength span, spectral resolution, rotational broadening and the star's spectrum. Resolving power alone is therefore not a precision score.",
+    "evidence": "The CARMENES survey reported a median internal precision of 1.6 m/s at median signal-to-noise 95 and an information-scaled value of 0.8 m/s at signal-to-noise 200. The change is a controlled scaling, not a second achieved survey precision.",
+    "mitigation": "Model target-specific information content, throughput and exposure time together; report the signal-to-noise definition and sampling used.",
+    "residual": "Different spectral types and rotation rates contain different Doppler information even when observed by the same instrument.",
+    "sources": [
+      {"label": "Photon-noise limits to radial-velocity measurements", "url": "https://doi.org/10.1051/0004-6361:20010730"},
+      {"label": "CARMENES survey precision analysis", "url": "https://www.aanda.org/articles/aa/pdf/2024/12/aa50836-24.pdf"}
+    ]
+  },
+  {
+    "id": "calibration-transfer",
+    "title": "Calibration transfer",
+    "question": "Does the wavelength reference experience the same optical changes as starlight?",
+    "mechanism": "A laser frequency comb, etalon or lamp constrains wavelength drift, but a simultaneous reference may follow a different fibre, illumination pattern and detector trace from the star.",
+    "evidence": "EXPRES reported calibration precision below 0.10 m/s while explicitly excluding photon noise and stellar variability. That result establishes a subsystem scale, not end-to-end stellar accuracy.",
+    "mitigation": "Use dense stabilized references, simultaneous calibration, reference cross-checks and a calibration history tied to hardware and pipeline versions.",
+    "residual": "A stable calibrator cannot identify every change in the stellar line-spread function or illumination path.",
+    "sources": [
+      {"label": "EXPRES performance verification", "url": "https://doi.org/10.3847/1538-3881/ab811d"},
+      {"label": "EPRV Working Group report", "url": "https://arxiv.org/abs/2107.14291"}
+    ]
+  },
+  {
+    "id": "fibre-illumination",
+    "title": "Fibre illumination and modal noise",
+    "question": "How do guiding, seeing and fibre propagation alter the spectrograph input?",
+    "mechanism": "Near-field and far-field illumination changes can move or reshape the line-spread function. Coherent modal patterns are especially important in the near infrared.",
+    "evidence": "After SOPHIE's octagonal-fibre upgrade, reported standard-star repeatability improved from 5–6 m/s to 1–2 m/s. The before-and-after result demonstrates that input illumination was a measurable part of the error budget.",
+    "mitigation": "Apply non-circular fibres, double scramblers, agitation, stabilized guiding and illumination monitoring.",
+    "residual": "Reference and science fibres may not reproduce the same modal distribution, so simultaneous calibration does not guarantee common-path correction.",
+    "sources": [
+      {"label": "SOPHIE+ octagonal-fibre results", "url": "https://doi.org/10.1051/0004-6361/201219979"},
+      {"label": "NEID fibre-injection study", "url": "https://arxiv.org/abs/2307.12403"}
+    ]
+  },
+  {
+    "id": "instrument-eras",
+    "title": "Instrument eras",
+    "question": "Which hardware and environmental state produced each exposure?",
+    "mechanism": "Pressure, temperature, stress, vacuum cycles, detector events and component replacement can shift the wavelength solution or create a new statistical regime.",
+    "evidence": "Keck's status record states that KPF is offline until further notice after an April 2026 vacuum-pump failure. Measurements before and after intervention cannot be assumed to share one unchanged instrument state.",
+    "mitigation": "Maintain dated intervention logs, environmental telemetry and explicit era identifiers in every released time series.",
+    "residual": "Small undocumented interventions or slow environmental changes can remain hidden inside a nominally continuous dataset.",
+    "sources": [
+      {"label": "KPF current status", "url": "https://www2.keck.hawaii.edu/realpublic/observing/public_instrument_info/kpf/status/"},
+      {"label": "KPF as-built design", "url": "https://authors.library.caltech.edu/records/gn5gn-t9r95"}
+    ]
+  },
+  {
+    "id": "detector-physics",
+    "title": "Detector physics",
+    "question": "How does the detector map photons into line positions and shapes?",
+    "mechanism": "Pixel-size variation, charge transfer, non-linearity, persistence, inter-pixel capacitance and read noise can distort extracted spectra. CCD and infrared-array effects differ.",
+    "evidence": "The EXPRES verification programme treats detector effects as terms within an instrument error budget rather than assuming an ideal pixel grid. Instrument upgrades that replace detectors also define new data eras.",
+    "mitigation": "Characterize pixel geometry and response, measure non-linearity and persistence, and propagate detector calibrations through forward models.",
+    "residual": "Detector behaviour evolves with illumination history, temperature and age, and can couple to extraction choices.",
+    "sources": [
+      {"label": "EXPRES performance verification", "url": "https://doi.org/10.3847/1538-3881/ab811d"},
+      {"label": "EPRV Working Group report", "url": "https://arxiv.org/abs/2107.14291"}
+    ]
+  },
+  {
+    "id": "tellurics",
+    "title": "Telluric absorption",
+    "question": "Which spectral structures were introduced by Earth's atmosphere?",
+    "mechanism": "Water, oxygen, methane and other atmospheric species produce time-variable absorption and emission. Wind and vertical structure can shift and reshape those lines.",
+    "evidence": "SPIRou standard-star measurements approached 0.5 m/s photon uncertainty while showing about 2 m/s RMS over weeks. The gap contains multiple terms, including the much denser near-infrared telluric spectrum.",
+    "mitigation": "Mask contaminated pixels, fit atmospheric transmission, use meteorological constraints and compare results across masking thresholds.",
+    "residual": "Masking removes Doppler information; modelling depends on line databases, atmospheric state and the fidelity of the instrumental profile.",
+    "sources": [
+      {"label": "SPIRou first performance study", "url": "https://doi.org/10.1093/mnras/staa2569"},
+      {"label": "EPRV Working Group report", "url": "https://arxiv.org/abs/2107.14291"}
+    ]
+  },
+  {
+    "id": "barycentric-timing",
+    "title": "Barycentric timing",
+    "question": "When, and at which wavelength, did the exposure effectively occur?",
+    "mechanism": "Earth's motion must be projected at a photon-weighted exposure time. Atmospheric extinction and guiding make that midpoint chromatic rather than a single universal timestamp.",
+    "evidence": "Modern EPRV instruments use exposure meters because a header midpoint alone does not describe the wavelength-dependent photon arrival history needed for centimetre-per-second work.",
+    "mitigation": "Record chromatic exposure-meter time series and use relativistic barycentric calculations with documented coordinates and time standards.",
+    "residual": "Clouds, seeing and guiding changes can make the photon-weighted midpoint noisy or poorly sampled in individual wavelength channels.",
+    "sources": [
+      {"label": "EXPRES performance verification", "url": "https://doi.org/10.3847/1538-3881/ab811d"},
+      {"label": "EPRV Working Group report", "url": "https://arxiv.org/abs/2107.14291"}
+    ]
+  },
+  {
+    "id": "pipelines",
+    "title": "Pipelines and analysis choices",
+    "question": "Which reduction and velocity model produced the reported statistic?",
+    "mechanism": "Extraction, wavelength solutions, templates, masks, activity models, quality cuts and uncertainty rescaling all change the final velocity series.",
+    "evidence": "In the HARPS-N solar analysis, wavelength-solution changes reduced day-to-day scatter from 1.27 to 1.07 m/s. A software or calibration-model change can therefore be astrophysically significant.",
+    "mitigation": "Release versioned code, configuration, masks, manifests and intermediate products; rerun fixed datasets across pipeline versions.",
+    "residual": "Published values from different pipelines are not automatically commensurate, even when they come from the same instrument.",
+    "sources": [
+      {"label": "HARPS-N solar time-series analysis", "url": "https://doi.org/10.1051/0004-6361/202039350"},
+      {"label": "EXPRES radial-velocity pipeline", "url": "https://arxiv.org/abs/2003.08851"}
+    ]
+  }
+]

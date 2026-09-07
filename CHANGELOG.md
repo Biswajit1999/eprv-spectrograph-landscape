@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.0] - 2026-09-07
+
+- Added a 53-record broader physical-instrument census across 33 represented
+  facilities, linked to 39 normalized facility records, while retaining the
+  21-record quantitative performance core.
+- Added EXOhSPEC with its installed/testing status, design-versus-achieved
+  distinction, official NARIT page, and primary technical reference.
+- Split NRES into four site-specific physical records; recorded the Wise unit's
+  decommissioning and kept three other nodes as “not offered,” not decommissioned.
+- Corrected HARPS3 to commissioning/shared-risk and PARVI to an explicit official
+  status conflict.
+- Rebuilt the website as a source-linked learning platform with instrument
+  profiles, extended challenge explanations, filters, and original plots.
+- Added a direct GitHub Pages deployment and removed the obsolete hosting wrapper.
+
 ## [0.2.0] - 2026-09-02
 
 - Expanded the registry from 13 to 21 physical instrument records using a
