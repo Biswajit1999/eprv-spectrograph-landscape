@@ -96,3 +96,16 @@ def test_expres_dossier_is_explicitly_a_proposal_not_a_claim():
     assert expres["paper_count"] == len(expres["paper_ids"])
     assert "proposal for discussion" in expres["candidate_project"]["status"]
     assert "not a complete bibliography" in expres["reading_boundary"]
+
+
+def test_beginner_guide_has_sources_boundaries_and_taxonomy():
+    with open("data/beginner_guide.json", encoding="utf-8") as source:
+        guide = json.load(source)
+    assert len(guide["steps"]) == 5
+    assert len(guide["techniques"]) >= 3
+    assert len(guide["equations"]) >= 3
+    assert all(item["source_url"].startswith("https://") for item in guide["steps"])
+    by_name = {item["name"]: item for item in guide["comparators"]}
+    assert "Gaia RVS" in by_name
+    assert "JWST NIRSpec" in by_name
+    assert all(not item["belongs_in_census"] for item in guide["taxonomy"] if "space" in item["class_name"].lower() or "survey" in item["class_name"].lower())

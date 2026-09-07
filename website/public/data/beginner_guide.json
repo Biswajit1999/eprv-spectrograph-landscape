@@ -1,0 +1,135 @@
+{
+  "updated": "2026-09-07",
+  "title": "From starlight to a radial-velocity time series",
+  "boundary": "This guide explains high-resolution stellar Doppler work. It does not treat every astronomical spectrograph as a precision-RV instrument.",
+  "steps": [
+    {
+      "id": "spectrum",
+      "number": "01",
+      "title": "Record a spectrum",
+      "plain_language": "A spectrograph spreads starlight by wavelength. Dark absorption lines form a repeatable pattern, but the recorded pattern is also shaped by the atmosphere, telescope, fibre, optics and detector.",
+      "technical_note": "Resolving power is R = lambda / delta-lambda. It describes separation of nearby wavelengths; it is not the same quantity as radial-velocity accuracy.",
+      "source_label": "Bouchy, Pepe & Queloz (2001)",
+      "source_url": "https://doi.org/10.1051/0004-6361:20010730"
+    },
+    {
+      "id": "reference",
+      "number": "02",
+      "title": "Attach a wavelength reference",
+      "plain_language": "Known reference features connect detector pixels to wavelength and reveal instrumental drift. The reference may be imprinted on the stellar beam or recorded through a second fibre.",
+      "technical_note": "Iodine-cell modelling solves the wavelength scale and line-spread function in each exposure. Stabilized instruments may instead combine ThAr, Fabry-Perot and laser-comb information.",
+      "source_label": "Butler et al. (1996); ESO ESPRESSO QC",
+      "source_url": "https://doi.org/10.1086/133755"
+    },
+    {
+      "id": "extract",
+      "number": "03",
+      "title": "Extract a relative shift",
+      "plain_language": "Software compares the observed line pattern with a mask or a high-signal template. The measured displacement is a relative Doppler shift, not yet a planet measurement.",
+      "technical_note": "Cross-correlation compresses many lines into a mean profile. Template matching fits more of the pixel-level spectrum. Both depend on masking, weights, interpolation and outlier decisions.",
+      "source_label": "Rajpaul et al. (2020); Dumusque (2018)",
+      "source_url": "https://doi.org/10.1093/mnras/staa173"
+    },
+    {
+      "id": "barycentric",
+      "number": "04",
+      "title": "Remove the observer's motion",
+      "plain_language": "Earth rotates and orbits while the exposure is being taken. A barycentric correction transforms the measured shift to a reference frame centred on the Solar System barycentre.",
+      "technical_note": "Centimetre-per-second work requires relativistic terms, accurate coordinates and timing, and photon-weighted exposure information. A geometric exposure midpoint can be insufficient.",
+      "source_label": "Wright & Eastman (2014); Tronsgaard et al. (2019)",
+      "source_url": "https://arxiv.org/abs/1409.4774"
+    },
+    {
+      "id": "interpret",
+      "number": "05",
+      "title": "Interpret a time series",
+      "plain_language": "A planet can create a repeating stellar reflex signal, but spots, faculae, oscillations, convection, tellurics and instrumental changes can also move or reshape spectral lines.",
+      "technical_note": "A Keplerian semi-amplitude depends on period, planet mass, stellar mass, inclination and eccentricity. Radial velocity usually constrains M sin(i), not the true mass by itself.",
+      "source_label": "NASA Exoplanet Archive; Dumusque et al. (2017)",
+      "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/poet_calculations.html"
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Iodine absorption cell",
+      "reference_path": "Reference and stellar lines share the same beam.",
+      "what_it_solves": "Models wavelength, instrumental profile and Doppler shift for each exposure.",
+      "tradeoff": "The iodine forest occupies a limited optical range and must be disentangled from the stellar spectrum.",
+      "example": "Classical Lick/Keck Doppler programmes",
+      "source_url": "https://doi.org/10.1086/133755"
+    },
+    {
+      "name": "Simultaneous reference fibre",
+      "reference_path": "Star and calibrator use separate fibres and are recorded together.",
+      "what_it_solves": "Tracks spectrograph drift during the science exposure.",
+      "tradeoff": "The calibrator does not perfectly share the stellar optical path, so fibre illumination and transfer errors remain.",
+      "example": "HARPS simultaneous ThAr or Fabry-Perot modes",
+      "source_url": "https://www.eso.org/sci/facilities/lasilla/instruments/harps/inst/scimodes.html"
+    },
+    {
+      "name": "Stabilized spectrograph plus template matching",
+      "reference_path": "A stable wavelength solution supports comparison to a high-signal stellar template.",
+      "what_it_solves": "Uses the observed spectrum directly instead of reducing every line to one binary-mask profile.",
+      "tradeoff": "Template construction, telluric masking, interpolation and stellar variability can still bias the result.",
+      "example": "HARPS-TERRA and SERVAL-style extraction",
+      "source_url": "https://doi.org/10.1093/mnras/staa173"
+    }
+  ],
+  "taxonomy": [
+    {
+      "class_name": "Dedicated precision-RV spectrograph",
+      "example": "HARPS, ESPRESSO, EXPRES, NEID",
+      "typical_scale": "High resolving power, controlled illumination and stability designed for repeated stellar Doppler measurements.",
+      "belongs_in_census": true
+    },
+    {
+      "class_name": "General high-resolution spectrograph with RV work",
+      "example": "UVES, HDS, HRS",
+      "typical_scale": "Can support radial-velocity studies, but its design and operating modes serve a broader spectroscopy programme.",
+      "belongs_in_census": true
+    },
+    {
+      "class_name": "Survey radial-velocity spectrograph",
+      "example": "Gaia RVS",
+      "typical_scale": "Gaia RVS has R about 11,500 and measures many millions of stars, with km/s-scale performance depending on magnitude and spectral type.",
+      "belongs_in_census": false
+    },
+    {
+      "class_name": "General-purpose space spectrograph",
+      "example": "JWST NIRSpec",
+      "typical_scale": "NIRSpec spans 0.6–5.3 micrometres at R about 100, 1,000 or 2,700 for galaxy, stellar-population and exoplanet-atmosphere spectroscopy.",
+      "belongs_in_census": false
+    }
+  ],
+  "equations": [
+    {
+      "name": "Small Doppler shift",
+      "expression": "Delta lambda / lambda approximately equals v_r / c",
+      "meaning": "A line pattern shifted by a tiny fraction of its wavelength corresponds to a line-of-sight velocity. Precision comes from combining information across many pixels and lines."
+    },
+    {
+      "name": "Resolving power",
+      "expression": "R = lambda / delta lambda",
+      "meaning": "R describes spectral resolution. Sub-pixel modelling of many lines can measure shifts much smaller than one resolution element, but accuracy still depends on calibration and stability."
+    },
+    {
+      "name": "Photon-limited uncertainty",
+      "expression": "sigma_v = c / (Q sqrt(N_e))",
+      "meaning": "In the Bouchy et al. formulation, Q represents the Doppler information in the spectrum and N_e is the detected photoelectron count. This is a statistical floor, not a complete long-term error budget."
+    }
+  ],
+  "comparators": [
+    {
+      "name": "Gaia RVS",
+      "why_here": "A useful example of a space radial-velocity survey, but not an extreme-precision exoplanet spectrograph.",
+      "fact": "R approximately 11,500 over 845–872 nm; Gaia DR3 contains median radial velocities for about 33 million stars.",
+      "source_url": "https://www.cosmos.esa.int/web/gaia/science-performance"
+    },
+    {
+      "name": "JWST NIRSpec",
+      "why_here": "A useful example showing that the word spectrograph covers instruments built for very different measurements.",
+      "fact": "0.6–5.3 micrometres and R approximately 100, 1,000 or 2,700 across four observing modes.",
+      "source_url": "https://jwst-docs.stsci.edu/jwst-near-infrared-spectrograph"
+    }
+  ]
+}

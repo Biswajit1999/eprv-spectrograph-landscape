@@ -24,7 +24,7 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperText]=await Promise.all([
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperText,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
@@ -32,15 +32,24 @@ async function main(){
     fetchText('./data/challenge_profiles.json'),
     fetchText('./data/instrument_dossiers.json'),
     fetchText('./data/expres_papers.csv'),
+    fetchText('./data/beginner_guide.json'),
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
   const dossiers=JSON.parse(dossierText), papers=parseCSV(paperText);
+  const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   document.querySelector('#census-count').textContent=census.length;
   document.querySelector('#claim-count').textContent=claims.length;
   document.querySelector('#facility-count').textContent=new Set(census.map(d=>d.facility_id)).size;
   document.querySelector('#verified-count').textContent=census.filter(d=>d.verification_state==='verified').length;
+
+  document.querySelector('#measurement-flow').innerHTML=beginner.steps.map(step=>`<article><span>${esc(step.number)}</span><h3>${esc(step.title)}</h3><p>${esc(step.plain_language)}</p><details><summary>Technical note and source</summary><p>${esc(step.technical_note)}</p><a href="${esc(step.source_url)}" rel="noreferrer">${esc(step.source_label)}</a></details></article>`).join('');
+  document.querySelector('#equation-grid').innerHTML=beginner.equations.map(item=>`<article><span>${esc(item.name)}</span><strong>${esc(item.expression)}</strong><p>${esc(item.meaning)}</p></article>`).join('');
+  document.querySelector('#technique-grid').innerHTML=beginner.techniques.map(item=>`<article><h4>${esc(item.name)}</h4><dl><dt>Reference path</dt><dd>${esc(item.reference_path)}</dd><dt>What it solves</dt><dd>${esc(item.what_it_solves)}</dd><dt>Trade-off</dt><dd>${esc(item.tradeoff)}</dd><dt>Example</dt><dd>${esc(item.example)}</dd></dl><a href="${esc(item.source_url)}" rel="noreferrer">Method source</a></article>`).join('');
+  document.querySelector('#taxonomy-boundary').textContent=beginner.boundary;
+  document.querySelector('#taxonomy-body').innerHTML=beginner.taxonomy.map(item=>`<tr><td>${esc(item.class_name)}</td><td>${esc(item.example)}</td><td>${esc(item.typical_scale)}</td><td><span class="scope-badge ${item.belongs_in_census?'inside':'outside'}">${item.belongs_in_census?'Yes':'Comparator only'}</span></td></tr>`).join('');
+  document.querySelector('#space-comparators').innerHTML=beginner.comparators.map(item=>`<article><span>Space comparison</span><h4>${esc(item.name)}</h4><p>${esc(item.why_here)}</p><p><b>Published scope:</b> ${esc(item.fact)}</p><a href="${esc(item.source_url)}" rel="noreferrer">Official documentation</a></article>`).join('');
 
   const censusSearch=document.querySelector('#census-search');
   const tierFilter=document.querySelector('#tier-filter');

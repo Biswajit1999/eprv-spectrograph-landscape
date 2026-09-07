@@ -6,11 +6,22 @@ claim-level evidence record.
 
 ## Question decomposition
 
-1. Which physical instruments belong in a defensible precision-RV core?
-2. What does each published numerical result measure?
-3. What is each instrument's current operational state?
-4. Which coupled errors prevent routine 0.10 m/s stellar accuracy over years?
-5. Which candidates remain outside the comparison and why?
+1. How does a beginner get from dispersed starlight to an RV time series?
+2. Which physical instruments belong in a defensible precision-RV core?
+3. What does each published numerical result measure?
+4. What is each instrument's current operational state?
+5. Which coupled errors prevent routine 0.10 m/s stellar accuracy over years?
+6. Which candidates remain outside the comparison and why?
+
+## Beginner-guide evidence boundary
+
+The beginner chapter uses primary methods papers for photon information,
+absorption-cell modelling, extraction, barycentric correction, stellar noise
+and tellurics. Current official documentation is used for operational examples
+and the Gaia RVS/JWST NIRSpec scope comparison. The small-shift Doppler equation
+is explicitly labelled explanatory; it is not substituted for the relativistic
+barycentric calculation. Resolving power is not described as RV accuracy, and
+the Bouchy et al. photon limit is not described as long-baseline performance.
 
 ## Coverage decisions
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0] - 2026-09-07
+
+- Added a beginner-first chapter tracing dispersed starlight through wavelength
+  calibration, RV extraction, barycentric correction and time-series interpretation.
+- Added three equations with explicit interpretation limits, plus comparisons of
+  iodine cells, simultaneous reference fibres and stabilized template matching.
+- Separated dedicated precision-RV systems from general high-resolution,
+  survey-RV and general-purpose space spectrographs.
+- Added official Gaia RVS and JWST NIRSpec comparisons without mixing either
+  instrument into the ground-based EPRV directory.
+- Added structured, tested website data for the five-step guide, techniques,
+  equations and taxonomy.
+
 ## [0.4.0] - 2026-09-07
 
 - Added a 13-paper EXPRES reading path from design and commissioning through the

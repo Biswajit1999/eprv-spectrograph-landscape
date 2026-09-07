@@ -10,15 +10,28 @@
     <a class="skip" href="#main">Skip to content</a>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Precision RV reading guide home"><span>RV</span> spectrograph reading guide</a>
-      <nav aria-label="Primary"><a href="#census">Instruments</a><a href="#dossiers">Reading notes</a><a href="#instruments">Published numbers</a><a href="#barriers">Challenges</a><a href="#method">How it was made</a></nav>
+      <nav aria-label="Primary"><a href="#learn">How RV works</a><a href="#census">Instruments</a><a href="#dossiers">Reading notes</a><a href="#instruments">Published numbers</a><a href="#barriers">Challenges</a><a href="#method">Methods</a></nav>
     </header>
     <main id="main">
       <section class="hero" id="top">
         <div class="kicker">Independent literature synthesis · updated 7 September 2026</div>
         <h1>What the papers actually say about precision RV spectrographs.</h1>
         <p class="lede">My source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which small research projects may be worth discussing with instrument teams.</p>
-        <div class="hero-actions"><a class="button primary" href="#dossiers">Start with the EXPRES reading note</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
+        <div class="hero-actions"><a class="button primary" href="#learn">Begin with the measurement</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
         <div class="notice"><strong>A careful boundary.</strong> A design goal, calibration test, formal uncertainty and stellar time-series RMS are different measurements. “Full reading note” means I reviewed the listed papers; it does not mean every paper ever written about that instrument.</div>
+      </section>
+      <section id="learn" class="section learn-section">
+        <div class="section-head"><div><span class="eyebrow">Begin here</span><h2>From starlight to a velocity time series</h2></div><p>A five-step measurement chain, the equations behind it, and the places where apparently similar spectrographs become scientifically different.</p></div>
+        <div id="measurement-flow" class="measurement-flow"></div>
+        <div class="equation-grid" id="equation-grid"></div>
+        <div class="section-subhead"><span class="eyebrow">Calibration and extraction</span><h3>Three common measurement architectures</h3></div>
+        <div id="technique-grid" class="technique-grid"></div>
+        <div class="taxonomy-panel">
+          <div><span class="eyebrow">Scope boundary</span><h3>Not every spectrograph is an EPRV instrument</h3><p id="taxonomy-boundary"></p></div>
+          <div class="table-wrap"><table class="taxonomy-table"><thead><tr><th>Class</th><th>Examples</th><th>Measurement emphasis</th><th>In directory?</th></tr></thead><tbody id="taxonomy-body"></tbody></table></div>
+          <div id="space-comparators" class="comparator-grid"></div>
+        </div>
+        <p class="chapter-link"><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/BEGINNERS_GUIDE.md">Read the full beginner chapter with primary sources</a></p>
       </section>
       <section class="stats" aria-label="Dataset summary">
         <article><strong id="census-count">—</strong><span>physical instrument records</span></article>
