@@ -68,6 +68,9 @@ def test_status_corrections_are_not_overstated():
     by_id = {row["instrument_id"]: row for row in records}
     assert by_id["ing-harps3"]["current_status"] == "commissioning_shared_risk"
     assert by_id["palomar-parvi"]["current_status"] == "status_conflict"
+    assert by_id["keck-hires"]["current_status"] == "operational_planned_decommissioning"
+    assert by_id["aat-veloce"]["current_status"] == "shared_risk"
+    assert by_id["gemini-south-ghost"]["current_status"] == "operational_prv_mode_not_offered"
 
 
 def test_challenge_profiles_are_cited_and_complete():
@@ -96,7 +99,7 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     paper_files = sorted(Path("data").glob("*_papers.csv"))
     papers = pd.concat([pd.read_csv(path) for path in paper_files], ignore_index=True)
     paper_ids = set(papers["paper_id"])
-    assert len(paper_ids) == len(papers) == 125
+    assert len(paper_ids) == len(papers) == 153
     assert papers["source_url"].str.startswith("https://").all()
     assert papers["numerical_result"].str.len().min() >= 20
     for dossier in dossiers:
@@ -126,7 +129,7 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     census_ids = {
         row["instrument_id"] for row in load_census("data/census_registry.jsonl", "data/facilities.jsonl")
     }
-    assert len(dossiers) == 22
+    assert len(dossiers) == 28
     assert {item["instrument_id"] for item in dossiers} <= census_ids
     for instrument_id in (
         "keck-kpf",
@@ -145,6 +148,12 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
         "ing-harps3",
         "elt-andes",
         "gmt-gclef",
+        "keck-hires",
+        "paranal-uves",
+        "ctio-chiron",
+        "not-fies",
+        "gemini-south-ghost",
+        "aat-veloce",
     ):
         assert next(item for item in dossiers if item["instrument_id"] == instrument_id)
 

@@ -180,3 +180,11 @@ Operating, status-uncertain, conflicting, commissioning and planned systems are
 not assigned one common maturity label. In particular, HARPS3 shared-risk access,
 ANDES preliminary design, G-CLEF subsystem milestones and PARVI's conflicting
 public record remain explicit boundaries.
+
+## Archive and general-purpose wave
+
+The 28 selected records in `docs/ARCHIVE_AND_GENERAL_RV_NOTES.md` expand the
+website to 153 sources across 28 instrument profiles. HIRES, UVES, CHIRON, FIES,
+GHOST and Veloce are not ranked against the stabilized core. Each profile keeps
+catalog versions, instrument modes, status evidence and measurement definitions
+attached to its own source.

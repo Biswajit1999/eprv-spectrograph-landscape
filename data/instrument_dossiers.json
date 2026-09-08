@@ -674,5 +674,71 @@
     "lessons": ["Requirement and goal must be separate fields.", "Multiple observing modes have different stability paths.", "Exposure-meter design contributes to timing validation.", "A funded camera is not a commissioned spectrograph.", "On-sky performance depends on the future telescope interface."],
     "future_analysis": {"title": "G-CLEF requirement and subsystem evidence table", "status": "future analysis question based on public design material, not completed research", "question": "Which public subsystem milestones support each precision requirement and which tests remain future?", "basis": "Design papers and current notices can be connected without predicting commissioning results.", "steps": ["Normalize requirement identifiers and modes.", "Map each term to fibre, enclosure, calibration, detector or exposure meter.", "Record only dated subsystem evidence.", "Define later end-to-end tests separately."], "success_tests": ["Requirements never appear as measurements.", "Subsystem completion is not generalized.", "Mode-specific paths stay separate.", "Unknown dates remain unknown."]},
     "paper_ids": ["GCL-2014-OPTOMECH", "GCL-2016-OVERVIEW", "GCL-2026-DESIGN", "GCL-2026-CAMERA"]
+  },
+  {
+    "instrument_id": "keck-hires", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 6,
+    "title": "HIRES: iodine modelling, archive corrections, and a conditional retirement plan",
+    "reading_boundary": "Six selected instrument, method, archive, survey and status sources; not a complete HIRES science bibliography.",
+    "current_status": "HIRES remains in service, with decommissioning planned no earlier than the end of 2027B and conditional on ZShooter and KPF.", "current_status_url": "https://vmnexsci.ipac.caltech.edu/missions/KeckSolicitation/",
+    "short_summary": "Three decades of HIRES velocities span detector, template and reduction eras. Historical 3 m/s method performance, corrected public catalogs and long-baseline survey results must remain context-specific.",
+    "latest_problem": "The retirement date is conditional, while the public archive has already undergone systematic corrections and extensions.", "latest_problem_source": "https://vmnexsci.ipac.caltech.edu/missions/KeckSolicitation/",
+    "lessons": ["Iodine velocities depend on star-specific templates.", "Detector and reduction changes create non-stationary eras.", "Ensemble zero points need leakage checks.", "Planet-survey residuals do not isolate the instrument.", "Planned retirement is not completed decommissioning."],
+    "future_analysis": {"title": "HIRES catalog-version and hardware-era audit", "status": "future analysis question, not completed research", "question": "How stable are long-period signals across catalog corrections, detector eras and template choices?", "basis": "Multiple public releases and a finite remaining instrument horizon make row-level version tracing testable.", "steps": ["Join spectra and velocities to detector and catalog versions.", "Reproduce published zero-point corrections with held-out stars.", "Separate template epochs.", "Inject long-period signals across complete seasons."], "success_tests": ["Every velocity carries a version and era.", "Targets do not correct themselves.", "Signal attenuation is reported.", "The conditional retirement date remains explicit."]},
+    "paper_ids": ["HIR-1994-INSTRUMENT", "HIR-1996-IODINE", "HIR-2019-CORRECTION", "HIR-2021-LEGACY", "HIR-2025-CATALOG", "HIR-2026-STATUS"]
+  },
+  {
+    "instrument_id": "paranal-uves", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "title": "UVES: high-resolution versatility and wavelength-scale distortions",
+    "reading_boundary": "Four selected instrument, calibration and current-offering sources; UVES is not treated as a dedicated stabilized EPRV instrument.",
+    "current_status": "ESO lists UVES among the instruments offered for Period 118.", "current_status_url": "https://www.eso.org/sci/facilities/lpo/cfp/cfp118/instruments.html",
+    "short_summary": "UVES offers broad two-arm coverage and an iodine cell, but slit illumination and wavelength distortions limit any simple precision label. Absolute asteroid tests and iodine comparisons answer different questions.",
+    "latest_problem": "Historical wavelength distortions can be setting- and exposure-dependent; current availability does not make archival settings homogeneous.", "latest_problem_source": "https://arxiv.org/abs/1004.3325",
+    "lessons": ["Maximum resolving power is not RV precision.", "Slit illumination differs from fibre scrambling.", "Absolute accuracy differs from differential repeatability.", "Intra-order and long-range distortions need separate models.", "Archive analyses must retain setup metadata."],
+    "future_analysis": {"title": "UVES setting-level wavelength audit", "status": "future analysis question, not completed research", "question": "Which archival settings show repeatable wavelength distortions under independent asteroid or iodine checks?", "basis": "Published comparisons establish the mechanism while the archive supplies many configurations.", "steps": ["Group exposures by arm, setting, slit and detector era.", "Select calibration tests independently.", "Fit intra-order and long-range terms separately.", "Hold out complete nights."], "success_tests": ["No setting borrows another setting's correction.", "Absolute and differential metrics remain separate.", "Calibration scarcity is visible.", "Current offering is not used as a performance claim."]},
+    "paper_ids": ["UVE-2000-INSTRUMENT", "UVE-2008-ASTEROID", "UVE-2010-DISTORTION", "UVE-2026-OFFERING"]
+  },
+  {
+    "instrument_id": "ctio-chiron", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "title": "CHIRON: resolution modes, iodine use, and an open dated-status check",
+    "reading_boundary": "Four selected design, performance, instrument and official-page sources; not a complete CHIRON observing bibliography.",
+    "current_status": "The CTIO page maintains observer resources and describes CHIRON as operational, but lacks a dated 2026 semester statement.", "current_status_url": "https://www.ctio.noirlab.edu/noao/content/chiron",
+    "short_summary": "CHIRON is a fibre-fed visible spectrograph with several resolution modes and an iodine option. Performance statements must retain the selected mode, target, cadence and reduction.",
+    "latest_problem": "The public page is rich in technical material but does not close the dated-current-status field.", "latest_problem_source": "https://www.ctio.noirlab.edu/noao/content/chiron",
+    "lessons": ["Resolution varies strongly by observing mode.", "Iodine and non-iodine paths need separate reductions.", "Commissioning stability has a limited baseline.", "High cadence does not remove stellar variability.", "An undated operational page is not a 2026 availability check."],
+    "future_analysis": {"title": "CHIRON mode and cadence comparison", "status": "future analysis question, not completed research", "question": "How do resolution mode, iodine use and cadence affect stable-star repeatability?", "basis": "The instrument exposes distinct modes whose performance should not be pooled.", "steps": ["Partition by mode and calibration path.", "Match targets and signal-to-noise.", "Hold out observing runs.", "Report cadence windows with RMS."], "success_tests": ["Modes remain separate.", "RMS carries a target and baseline.", "No design goal becomes achieved performance.", "The dated-status gap remains open."]},
+    "paper_ids": ["CHI-2010-DESIGN", "CHI-2012-PERFORMANCE", "CHI-2013-INSTRUMENT", "CHI-2026-STATUS"]
+  },
+  {
+    "instrument_id": "not-fies", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "title": "FIES: fibre upgrades, wavelength fitting, and ten-month stability",
+    "reading_boundary": "Five selected instrument, technical-test and status sources; FIES is a general high-resolution spectrograph with documented RV work.",
+    "current_status": "NOT Period 73 material and the March 2026 schedule list FIES for current observing.", "current_status_url": "https://www.not.iac.es/observing/proposals/P73/",
+    "short_summary": "FIES was not originally built for extreme stability, but fibre, enclosure and calibration changes improved its RV use. The 3.3 m/s short sequence and 5 m/s ten-month report remain sample-specific.",
+    "latest_problem": "Technical work identifies wavelength-solution structure and exposure-meter placement as material limitations.", "latest_problem_source": "https://www.not.iac.es/instruments/fies/fies-commD.html",
+    "lessons": ["General-purpose design shapes the stability ceiling.", "Octagonal fibres changed scrambling.", "Calibration-only drift excludes the stellar path.", "Seven observations cannot define ten-month behaviour.", "Wavelength-fit complexity can add error."],
+    "future_analysis": {"title": "FIES wavelength-fit replay", "status": "future analysis question, not completed research", "question": "Does a lower-order drift model improve held-out stellar nights without hiding real velocity changes?", "basis": "The technical reports identify a concrete reduction term and provide separate calibration and stellar tests.", "steps": ["Reproduce the published calibration sequence.", "Lock model order before stellar testing.", "Hold out nights and runs.", "Inject spectral shifts before extraction."], "success_tests": ["Calibration and stellar paths stay separate.", "Model choice is preregistered.", "Improvement appears on held-out nights.", "Signal recovery is preserved."]},
+    "paper_ids": ["FIE-2014-INSTRUMENT", "FIE-2017-BUNDLE", "FIE-2023-THAR", "FIE-2025-STANDARD", "FIE-2026-STATUS"]
+  },
+  {
+    "instrument_id": "gemini-south-ghost", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "title": "GHOST: queue operation and a precision-RV mode still under development",
+    "reading_boundary": "Four selected performance, integration, roadmap and offering sources; general GHOST operation is separate from PRV-mode availability.",
+    "current_status": "GHOST is operational in standard modes, while 2026A material states that simultaneous-calibration precision-RV mode is not offered.", "current_status_url": "https://kgmt.kasi.re.kr/kgmtscience/node/314",
+    "short_summary": "GHOST provides broad high-resolution optical spectra in Gemini South queue operations. Its proposed 1–10 m/s PRV range remains a roadmap estimate, not an offered-mode validation.",
+    "latest_problem": "The instrument is operational but its specialist simultaneous-calibration PRV mode is not currently offered.", "latest_problem_source": "https://kgmt.kasi.re.kr/kgmtscience/node/314",
+    "lessons": ["General queue status and PRV-mode status differ.", "Expected metre-per-second performance is not achieved performance.", "Resolution modes have different fibre formats.", "ThXe calibration needs end-to-end validation.", "Exploratory standard sequences do not define a facility floor."],
+    "future_analysis": {"title": "GHOST PRV-mode acceptance table", "status": "future analysis question, not completed research and dependent on released mode data", "question": "Which on-sky tests are needed before the PRV roadmap can become a measured facility specification?", "basis": "The performance paper and roadmap define components while the current offering sets a clear boundary.", "steps": ["Separate standard and high-resolution modes.", "Track calibration and pseudo-slit diagnostics.", "Use predetermined standards.", "Report failures and unoffered configurations."], "success_tests": ["No roadmap estimate is called achieved.", "Mode availability is dated.", "Calibration and stellar metrics are separate.", "Queue acceptance requires held-out data."]},
+    "paper_ids": ["GHO-2024-PERFORMANCE", "GHO-2024-INTEGRATION", "GHO-2024-ROADMAP", "GHO-2026-OFFERING"]
+  },
+  {
+    "instrument_id": "aat-veloce", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "title": "Veloce: three-arm growth, fibre overlap, and shared-risk access",
+    "reading_boundary": "Five selected design, upgrade, verification, pipeline and status sources; sub-m/s language is retained as design intent.",
+    "current_status": "AAT lists Veloce Rosso as available on a shared-risk basis.", "current_status_url": "https://aat.anu.edu.au/science/instruments/current/status",
+    "short_summary": "Veloce expanded from Rosso to three arms, but overlapping fibre images complicate extraction and wavelength calibration. Its current public pipeline is explicitly for non-RV science.",
+    "latest_problem": "The 2026 pipeline paper identifies fibre-image overlap as limiting RV precision and does not claim a validated precision-RV reduction.", "latest_problem_source": "https://doi.org/10.1017/pasa.2026.10241",
+    "lessons": ["Sub-m/s was a design objective.", "Three-arm installation creates new extraction boundaries.", "Fibre-image overlap can produce cross-talk.", "A non-RV pipeline must not be used to claim RV accuracy.", "Shared-risk access is not routine acceptance."],
+    "future_analysis": {"title": "Veloce overlap-aware extraction test", "status": "future analysis question, not completed research", "question": "Can a cross-talk-aware extraction improve calibration consistency without distorting stellar line profiles?", "basis": "The current paper identifies the mechanism and supplies a public baseline for non-RV extraction.", "steps": ["Model neighbouring fibre profiles jointly.", "Hold out orders and calibration exposures.", "Compare line-shape residuals before RV fitting.", "Inject shifts and flux contrast changes."], "success_tests": ["The non-RV baseline remains labelled.", "Cross-talk falls on held-out orders.", "Line shapes are preserved.", "No shared-risk mode is called fully commissioned."]},
+    "paper_ids": ["VEL-2018-ROSSO", "VEL-2023-THREEARM", "VEL-2024-UPGRADE", "VEL-2026-PIPELINE", "VEL-2026-STATUS"]
   }
 ]

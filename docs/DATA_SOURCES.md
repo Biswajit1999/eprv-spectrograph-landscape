@@ -159,6 +159,18 @@ achieved performance. PARVI retains a status conflict. APF and IRD retain dated
 current-status gaps. These limitations are part of the dataset rather than being
 filled by inference.
 
+## Archive and general-purpose wave
+
+Six tables—`data/hires_papers.csv`, `data/uves_papers.csv`,
+`data/chiron_papers.csv`, `data/fies_papers.csv`, `data/ghost_papers.csv` and
+`data/veloce_papers.csv`—add 28 selected sources. The synthesis is
+`docs/ARCHIVE_AND_GENERAL_RV_NOTES.md`.
+
+These profiles do not assign dedicated-EPRV performance to a general-purpose
+mode. HIRES catalog versions, UVES configurations, CHIRON modes, FIES fibre and
+wavelength-solution eras, GHOST PRV-mode availability and Veloce shared-risk
+operation remain explicit boundaries.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

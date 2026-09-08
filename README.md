@@ -44,7 +44,10 @@ residuals are different quantities. The data model keeps them separate.
   NIRPS and Magellan PFS.
 - A [detailed-core completion chapter](docs/CORE_INSTRUMENT_READING_NOTES.md)
   covering SOPHIE, APF/Levy, iSHELL, IRD, PARVI, PARAS-2, HARPS3, ANDES and
-  G-CLEF. Together, the 22 dossiers contain 125 selected sources.
+  G-CLEF.
+- An [archive and general-purpose chapter](docs/ARCHIVE_AND_GENERAL_RV_NOTES.md)
+  covering HIRES, UVES, CHIRON, FIES, GHOST and Veloce. Together, the 28
+  dossiers contain 153 selected sources.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's

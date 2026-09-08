@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.12.0] - 2026-09-08
+
+- Added 28 selected source records for HIRES, UVES, CHIRON, FIES, GHOST and
+  Veloce, expanding the public site to 153 sources in 28 dossiers.
+- Corrected current-status framing for HIRES's conditional retirement plan,
+  Veloce shared-risk access and GHOST's unavailable precision-RV mode.
+- Fixed profile claim matching so similarly named instruments such as HARPS and
+  HARPS3 cannot inherit one another's quantitative evidence.
+- Added an archive-focused chapter separating catalog versions, hardware eras,
+  general spectrograph operation and specialist RV modes.
+
 ## [0.11.0] - 2026-09-08
 
 - Completed selected-source dossiers for all 21 instruments in the detailed

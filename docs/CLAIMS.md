@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 detailed-core instruments, 22 quantitative claims and 125 selected reading-note sources across 22 dossiers including EXOhSPEC | `results/manifest.json` and the 22 `data/*_papers.csv` tables |
+| 21 detailed-core instruments, 22 quantitative claims and 153 selected reading-note sources across 28 dossiers | `results/manifest.json` and the 28 `data/*_papers.csv` tables |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |
@@ -65,3 +65,7 @@ SOPHIE, APF/Levy, iSHELL, IRD, PARVI, PARAS-2, HARPS3, ANDES and G-CLEF.
 `docs/CORE_INSTRUMENT_READING_NOTES.md` preserves conditional simulations,
 commissioning tests, current-status conflicts and planned-instrument requirements
 as different evidence types.
+
+HIRES, UVES, CHIRON, FIES, GHOST and Veloce records are mapped in their six paper
+tables and `docs/ARCHIVE_AND_GENERAL_RV_NOTES.md`. Current operation, specialist
+mode availability, archive versions and historical configurations remain separate.
