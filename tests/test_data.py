@@ -97,10 +97,15 @@ def test_instrument_dossiers_resolve_papers_and_label_proposals():
             pd.read_csv("data/expres_papers.csv"),
             pd.read_csv("data/harps_papers.csv"),
             pd.read_csv("data/espresso_papers.csv"),
+            pd.read_csv("data/harpsn_papers.csv"),
+            pd.read_csv("data/neid_papers.csv"),
         ],
         ignore_index=True,
     )
     paper_ids = set(papers["paper_id"])
+    assert len(paper_ids) == len(papers) == 39
+    assert papers["source_url"].str.startswith("https://").all()
+    assert papers["numerical_result"].str.len().min() >= 20
     for dossier in dossiers:
         assert dossier["paper_count"] == len(dossier["paper_ids"])
         assert set(dossier["paper_ids"]) <= paper_ids
@@ -114,6 +119,20 @@ def test_instrument_dossiers_resolve_papers_and_label_proposals():
     espresso = next(item for item in dossiers if item["instrument_id"] == "paranal-espresso")
     assert espresso["paper_count"] == 7
     assert "precision with absolute accuracy" in espresso["candidate_project"]["question"]
+    harpsn = next(item for item in dossiers if item["instrument_id"] == "tng-harpsn")
+    assert harpsn["paper_count"] == 6
+    assert "signal-preservation" in harpsn["candidate_project"]["title"]
+    neid = next(item for item in dossiers if item["instrument_id"] == "wiyn-neid")
+    assert neid["paper_count"] == 7
+    assert "master-file versions" in neid["candidate_project"]["success_tests"][-1]
+
+
+def test_harpsn_now_has_a_dated_current_status_source():
+    records = load_census("data/census_registry.jsonl", "data/facilities.jsonl")
+    harpsn = next(row for row in records if row["instrument_id"] == "tng-harpsn")
+    assert harpsn["current_status"] == "operational"
+    assert harpsn["status_source_url"] == "https://tngweb.tng.iac.es/call/info.html"
+    assert not harpsn["unresolved_fields"]
 
 
 def test_beginner_guide_has_sources_boundaries_and_taxonomy():

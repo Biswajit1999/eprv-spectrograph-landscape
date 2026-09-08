@@ -34,6 +34,9 @@ residuals are different quantities. The data model keeps them separate.
   hardware-era boundaries.
 - An [ESPRESSO reading note](docs/ESPRESSO_READING_NOTE.md) separating on-sky
   precision, absolute wavelength accuracy and science-light-path validation.
+- [HARPS-N](docs/HARPS_N_READING_NOTE.md) and [NEID](docs/NEID_READING_NOTE.md)
+  notes connecting solar data selection, calibration versions and testable
+  signal-preservation questions.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's

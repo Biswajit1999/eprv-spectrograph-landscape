@@ -24,7 +24,7 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,expresPaperText,harpsPaperText,espressoPaperText,beginnerText]=await Promise.all([
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,expresPaperText,harpsPaperText,espressoPaperText,harpsnPaperText,neidPaperText,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
@@ -34,11 +34,13 @@ async function main(){
     fetchText('./data/expres_papers.csv'),
     fetchText('./data/harps_papers.csv'),
     fetchText('./data/espresso_papers.csv'),
+    fetchText('./data/harpsn_papers.csv'),
+    fetchText('./data/neid_papers.csv'),
     fetchText('./data/beginner_guide.json'),
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
-  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText)];
+  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText),...parseCSV(harpsnPaperText),...parseCSV(neidPaperText)];
   const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));

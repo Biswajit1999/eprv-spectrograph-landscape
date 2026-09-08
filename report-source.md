@@ -126,3 +126,19 @@ The proposed calibration-consistency monitor follows from the 2021 structured
 wavelength comparisons, the 2025 iodine-cell test and ESO's dated comb-status
 notices. It is labelled as a proposal dependent on suitable calibration and
 engineering products, not as completed work or a team priority.
+
+## HARPS-N and NEID research wave
+
+HARPS-N evidence is recorded in `data/harpsn_papers.csv` and synthesised in
+`docs/HARPS_N_READING_NOTE.md`. The 2021 reduction result (1.27 to 1.07 m/s),
+the 2025 decade statistics (0.49 m/s daily, 2.95 m/s raw decade and 0.41 m/s
+after activity modelling), and the 30 percent rejection fraction are not treated
+as interchangeable precision values. TNG AOT54 material now resolves the former
+current-status gap.
+
+NEID evidence is recorded in `data/neid_papers.csv` and synthesised in
+`docs/NEID_READING_NOTE.md`. The 0.4 mK environmental test, 0.27 m/s design
+requirement, 0.41–0.66 m/s selected solar results and current master-file
+limitations retain distinct contexts. The project proposal follows from current
+DRP era/version documentation and cross-instrument solar comparisons; it is not
+presented as completed work.

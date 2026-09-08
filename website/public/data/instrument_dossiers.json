@@ -134,5 +134,89 @@
       "ESP-2020-PROXIMA", "ESP-2021-INSTRUMENT", "ESP-2021-WAVECAL",
       "ESP-2022-ALPHA", "ESP-2024-EINDI", "ESP-2025-IODINE", "ESP-2026-LFC"
     ]
+  },
+  {
+    "instrument_id": "tng-harpsn",
+    "research_depth": "selected_paper_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 6,
+    "title": "HARPS-N: wavelength solutions, solar curation, and decade-scale interpretation",
+    "reading_boundary": "Six selected instrument, calibration, solar and current-status sources. It is not a complete bibliography of HARPS-N planet and atmosphere studies.",
+    "current_status": "TNG's AOT54 material lists HARPS-N for normal service or visitor operation and GIARPS without restrictions.",
+    "current_status_url": "https://tngweb.tng.iac.es/call/info.html",
+    "short_summary": "HARPS-N's solar programme shows why a stable spectrograph still needs evolving reduction and explicit data curation. Revised wavelength solutions improved three-year daily scatter, while the decade release identifies hardware and observing-quality boundaries and separates daily granulation from the solar magnetic cycle.",
+    "latest_problem": "The decade release retains 109466 spectra after rejecting 30 percent affected by weather or understood systematics. It reports 0.49 m/s median daily RMS, 2.95 m/s raw decade RMS, and 0.41 m/s after modelling the magnetic-cycle contribution. Those values describe different selections and corrections; a reusable pipeline needs machine-readable rejection reasons and leakage tests.",
+    "latest_problem_source": "https://arxiv.org/abs/2510.27635",
+    "lessons": [
+      "A wavelength solution can change by tens of m/s locally while the combined stellar RV changes much less.",
+      "Using calibrations closer in time and selecting stable ThAr lines reduced a measurable pipeline contribution.",
+      "Rejecting weather and hardware intervals is part of the measurement definition, not clerical cleaning.",
+      "Daily solar granulation and a decade magnetic cycle occupy different timescales and require different validation.",
+      "Contemporaneous instruments provide a stronger systematics test than one instrument fitted in isolation."
+    ],
+    "candidate_project": {
+      "title": "HARPS-N solar quality-mask and signal-preservation audit",
+      "status": "proposal for discussion, not a completed pipeline and dependent on the released spectra plus sufficient event metadata",
+      "question": "Can every rejected or corrected solar interval be represented by an auditable quality flag while preserving injected rotation and planet-like signals?",
+      "basis": "The three-year paper links improvement to wavelength recipes and calibration timing; the decade release adds explicit weather, drift, blaze and hardware curation across a much longer baseline.",
+      "steps": [
+        "Encode weather, calibration-lamp, detector warm-up, drift, blaze and pipeline-version intervals as separate flags.",
+        "Reproduce the published sample counts and daily statistics from the released products.",
+        "Train no correction on the held-out year used for evaluation.",
+        "Inject sinusoids before curation across rotation and habitable-zone periods and measure attenuation.",
+        "Compare HARPS-N residuals with overlapping NEID days to separate shared solar structure from local effects.",
+        "Publish a sensitivity table showing how each flag changes cadence, RMS and recovered amplitude."
+      ],
+      "success_tests": [
+        "Published counts and summary statistics reproduce within documented rounding.",
+        "Every excluded observation has a human-readable reason and source field.",
+        "Held-out signal recovery is reported alongside any RMS improvement.",
+        "Results remain traceable to raw product IDs and pipeline versions."
+      ],
+      "first_conversation": "I worked through the instrument paper, the three-year reduction study, the cross-instrument comparison and the decade solar release. I would like to reproduce the quality mask as an auditable table and test how each curation step affects injected signals. Which event metadata and one held-out year would make that validation useful to the HARPS-N solar team?"
+    },
+    "paper_ids": ["HN-2012-DESIGN", "HN-2017-COMB", "HN-2021-SOLAR", "HN-2023-CROSS", "HN-2025-DECADE", "HN-2026-STATUS"]
+  },
+  {
+    "instrument_id": "wiyn-neid",
+    "research_depth": "selected_paper_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 7,
+    "title": "NEID: environmental stability, illumination, solar baselines, and RV eras",
+    "reading_boundary": "Seven selected subsystem, operations, solar and pipeline sources. It is not a complete bibliography of NEID exoplanet results.",
+    "current_status": "WIYN describes NEID as commissioned and in full science operation; current proposal information documents the shared queue and long-term programmes.",
+    "current_status_url": "https://www.wiyn.org/Instruments/wiynneid_observers.html",
+    "short_summary": "NEID couples sub-mK environmental control with a fibre system designed to suppress illumination errors that a wavelength reference cannot necessarily calibrate. Its public solar archive and versioned DRP records make it suitable for testing how weather, hardware events, master files and barycentric or extinction treatment propagate into RV products.",
+    "latest_problem": "Current DRP documentation says the ThAr master wavelength solution has known systematics near order edges and versions etalon line lists around 2024 and 2025 changes. The 3.5-year solar release identifies 117060 usable observations, but curation alone does not show whether a correction preserves weak Doppler signals.",
+    "latest_problem_source": "https://neid.ipac.caltech.edu/docs/NEID-DRP/masterfiles.html",
+    "lessons": [
+      "A 0.4 mK laboratory thermal result is not a stellar RV measurement.",
+      "Illumination changes can create errors that do not share the calibrator's optical path.",
+      "The 0.27 m/s value is a single-visit instrument requirement, not a universal achieved RMS.",
+      "Solar RMS depends visibly on sky-quality selection and time baseline.",
+      "Hardware events and master calibration files define RV eras that must accompany reduced data."
+    ],
+    "candidate_project": {
+      "title": "NEID RV-era and calibration-master validation notebook",
+      "status": "proposal for discussion, not a completed pipeline and dependent on archive products and confirmed event metadata",
+      "question": "Can a version-aware validation notebook detect order-edge and era-dependent shifts while separating weather and solar variability from instrument changes?",
+      "basis": "The fibre paper identifies uncalibratable illumination paths, the cross-instrument study exposes a late-day trend, and DRP 1.5.2 publishes explicit wavelength-master limitations and RV eras.",
+      "steps": [
+        "Join every solar and standard-star product to DRP version, RV era, wavelength master, etalon list and observing conditions.",
+        "Measure residuals by order position and barycentric velocity before pooling a scalar RV.",
+        "Test late-day or high-airmass trends against overlapping EXPRES and HARPS-N solar observations.",
+        "Hold out complete hardware eras and nights when comparing correction models.",
+        "Inject wavelength-dependent Doppler shifts and verify recovery after masking or correction.",
+        "Emit an era card and out-of-scope warning with every result."
+      ],
+      "success_tests": [
+        "Known era boundaries are recovered without using planet-fit residuals as labels.",
+        "Order-edge diagnostics improve on a held-out era rather than only the training period.",
+        "Injected amplitudes remain unbiased within stated uncertainty.",
+        "Every output records data IDs, DRP and master-file versions."
+      ],
+      "first_conversation": "I reviewed the environmental-control, solar-feed, operations, fibre-illumination, cross-instrument and current DRP-era material. I would like to build a version-aware validation notebook using public solar and standard-star products, with held-out eras and injection tests. Which master-file transition and validation target would be most useful to the NEID team?"
+    },
+    "paper_ids": ["NEID-2019-ECS", "NEID-2021-SOLAR", "NEID-2022-OPS", "NEID-2023-FIBRE", "NEID-2023-CROSS", "NEID-2024-SOLAR", "NEID-2026-DRP"]
   }
 ]

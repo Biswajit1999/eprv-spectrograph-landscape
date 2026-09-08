@@ -12,9 +12,11 @@
 | Facility coordinates | all 33 represented facilities have a source-linked coordinate; notes distinguish exact telescope values from shared-site markers | complete for represented facilities | Replace lower-authority or shared-site markers when a current telescope-pier survey is published |
 | Throughput and detector eras | narrative only | deferred | Version mode-level configuration table |
 | Homogeneous data comparison | no shared raw reduction | out of scope | Define benchmark spectra and pipelines |
-| Full instrument reading notes | EXPRES: 13 selected papers; HARPS: six selected sources; ESPRESSO: seven selected sources | in progress | Apply the same template to one instrument at a time; do not imply completion for all 53 |
+| Full instrument reading notes | 39 selected sources across EXPRES, HARPS, ESPRESSO, HARPS-N and NEID | in progress | Apply the same template to one instrument at a time; do not imply completion for all 53 |
 | EXPRES project discussion | Published long-baseline diagnostics and a bounded validation proposal | ready for team feedback | Confirm data access, diagnostic availability and a team-useful validation target |
 | HARPS era-transfer discussion | Published 2015 star-dependent fibre offset, era-specific calibration treatment and current 2026 ESO notices | blocked on final post-upgrade characterisation and suitable public standards | Ask the team which diagnostics and stable-star set would make a held-out comparison useful |
 | ESPRESSO calibration monitor | Commissioning, wavelength-solution comparisons, iodine science-path validation and current LFC notices | proposal ready; data access unresolved | Identify one public validation night and calibration-product bundle before implementation |
+| HARPS-N quality mask | Three-year and decade solar reductions plus current status | proposal ready; event metadata unresolved | Reproduce curation counts and test held-out signal preservation |
+| NEID RV-era validation | Solar releases, illumination paper and current DRP master-file/era documentation | proposal ready; archive joins unresolved | Select one master transition and build a version-aware held-out test |
 
 “Complete” means complete for the stated release question, not globally exhaustive.

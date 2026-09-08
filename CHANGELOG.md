@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.8.0] - 2026-09-08
+
+- Added six-source HARPS-N and seven-source NEID reading notes with structured
+  paper records and bounded project proposals.
+- Reconciled HARPS-N's current status against TNG AOT54 material and removed its
+  stale unresolved-status flag.
+- Added quality-mask, RV-era and calibration-master validation questions with
+  held-out periods and signal-injection tests.
+
 ## [0.7.0] - 2026-09-07
 
 - Added a seven-source ESPRESSO reading note spanning commissioning, stellar

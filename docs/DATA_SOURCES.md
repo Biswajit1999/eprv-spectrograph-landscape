@@ -110,6 +110,18 @@ work, an end-to-end iodine-cell test and dated ESO laser-comb notices.
 `docs/ESPRESSO_READING_NOTE.md` keeps differential precision, absolute accuracy
 and light-path sensitivity separate and labels the monitoring idea as a proposal.
 
+## HARPS-N and NEID reading notes
+
+`data/harpsn_papers.csv` records six selected sources from the 2012 instrument
+description through the 2025 decade solar preprint and current TNG AOT54 status.
+`data/neid_papers.csv` records seven selected sources covering environmental
+control, the solar feed, operations, fibre illumination, cross-instrument solar
+comparison, the 3.5-year release and current DRP master-file documentation.
+
+The corresponding notes are `docs/HARPS_N_READING_NOTE.md` and
+`docs/NEID_READING_NOTE.md`. Counts, filtering fractions, RMS values, design
+requirements and subsystem tests retain their separate contexts.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to
