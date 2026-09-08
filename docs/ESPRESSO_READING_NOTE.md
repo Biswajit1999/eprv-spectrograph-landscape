@@ -52,7 +52,7 @@ therefore separate axes, not competing estimates of one number.
    2026 manual guidance. Availability does not retroactively validate every
    earlier exposure. [ESO notices](https://www.eso.org/sci/facilities/paranal/instruments/espresso/news.html)
 
-## Candidate project to discuss
+## Future analysis question
 
 A useful first project would be a calibration-consistency monitor, not another
 single “precision score.” It would version exposures by DRS, observing mode,
@@ -62,8 +62,8 @@ absolute accuracy separately. Complete nights and hardware states should be
 held out, and injected Doppler shifts should be recovered before any correction
 is used on science data.
 
-This is a proposal for discussion, dependent on access to suitable calibration
-and engineering products. It is not a completed pipeline or a statement of the
-ESPRESSO team’s priorities. Machine-readable source notes are in
-`data/espresso_papers.csv` and the project boundary is in
+This is a future analysis question, dependent on access to suitable calibration
+and engineering products. It is not completed research or a publication claim.
+Machine-readable source notes are in
+`data/espresso_papers.csv` and the future-analysis boundary is in
 `data/instrument_dossiers.json`.

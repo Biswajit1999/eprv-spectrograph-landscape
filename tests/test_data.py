@@ -89,7 +89,7 @@ def test_expres_reading_list_and_paired_metrics_are_linked():
     assert (metrics["after_mps"] < metrics["before_mps"]).all()
 
 
-def test_instrument_dossiers_resolve_papers_and_label_proposals():
+def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     with open("data/instrument_dossiers.json", encoding="utf-8") as source:
         dossiers = json.load(source)
     papers = pd.concat(
@@ -99,17 +99,19 @@ def test_instrument_dossiers_resolve_papers_and_label_proposals():
             pd.read_csv("data/espresso_papers.csv"),
             pd.read_csv("data/harpsn_papers.csv"),
             pd.read_csv("data/neid_papers.csv"),
+            pd.read_csv("data/exohspec_papers.csv"),
         ],
         ignore_index=True,
     )
     paper_ids = set(papers["paper_id"])
-    assert len(paper_ids) == len(papers) == 39
+    assert len(paper_ids) == len(papers) == 46
     assert papers["source_url"].str.startswith("https://").all()
     assert papers["numerical_result"].str.len().min() >= 20
     for dossier in dossiers:
         assert dossier["paper_count"] == len(dossier["paper_ids"])
         assert set(dossier["paper_ids"]) <= paper_ids
-        assert "proposal for discussion" in dossier["candidate_project"]["status"]
+        assert "not completed research" in dossier["future_analysis"]["status"]
+        assert "first_conversation" not in dossier["future_analysis"]
 
     expres = next(item for item in dossiers if item["instrument_id"] == "lowell-expres")
     assert "not a complete bibliography" in expres["reading_boundary"]
@@ -118,13 +120,17 @@ def test_instrument_dossiers_resolve_papers_and_label_proposals():
     assert "final report" in harps["latest_problem"]
     espresso = next(item for item in dossiers if item["instrument_id"] == "paranal-espresso")
     assert espresso["paper_count"] == 7
-    assert "precision with absolute accuracy" in espresso["candidate_project"]["question"]
+    assert "precision with absolute accuracy" in espresso["future_analysis"]["question"]
     harpsn = next(item for item in dossiers if item["instrument_id"] == "tng-harpsn")
     assert harpsn["paper_count"] == 6
-    assert "signal-preservation" in harpsn["candidate_project"]["title"]
+    assert "signal-preservation" in harpsn["future_analysis"]["title"]
     neid = next(item for item in dossiers if item["instrument_id"] == "wiyn-neid")
     assert neid["paper_count"] == 7
-    assert "master-file versions" in neid["candidate_project"]["success_tests"][-1]
+    assert "master-file versions" in neid["future_analysis"]["success_tests"][-1]
+    exohspec = next(item for item in dossiers if item["instrument_id"] == "tno-exohspec")
+    assert exohspec["paper_count"] == 7
+    assert "No completed on-sky stellar-RV" in exohspec["reading_boundary"]
+    assert "conflict" in exohspec["current_status"].lower()
 
 
 def test_harpsn_now_has_a_dated_current_status_source():

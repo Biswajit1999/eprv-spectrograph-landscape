@@ -1,9 +1,20 @@
 # Changelog
 
+## [0.9.0] - 2026-09-08
+
+- Added an EXOhSPEC-first reading note with seven design, laboratory,
+  calibration and official deployment/status sources.
+- Kept the current NARIT status conflict visible and separated the former ING
+  deployment from the Thai National Telescope instrument.
+- Removed public outreach scripts and reframed all dossier extensions as
+  future analysis questions rather than completed work or publication claims.
+- Expanded the selected source ledger from 39 to 46 records across six
+  instrument dossiers.
+
 ## [0.8.0] - 2026-09-08
 
 - Added six-source HARPS-N and seven-source NEID reading notes with structured
-  paper records and bounded project proposals.
+  paper records and bounded future-analysis questions.
 - Reconciled HARPS-N's current status against TNG AOT54 material and removed its
   stale unresolved-status flag.
 - Added quality-mask, RV-era and calibration-master validation questions with

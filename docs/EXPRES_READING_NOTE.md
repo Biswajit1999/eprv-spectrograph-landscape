@@ -104,13 +104,12 @@ HD 34411 and tau Ceti reach an approximately 30 cm/s instrumental scale in the
 reported analysis. The velocities are relative, and independent transfer tests
 remain necessary. [Journal article](https://doi.org/10.1093/mnras/stag334)
 
-## Candidate project for discussion
+## Future analysis question
 
 ### Era-aware EXPRES correction audit with planet-preservation tests
 
-This is a proposal derived from the published limitations. It is not a completed
-pipeline, a statement of the EXPRES team's priorities, or a claim that existing
-team software lacks these checks.
+This question is derived from published limitations. It is not completed
+research, a publication claim, or an endorsed instrument programme.
 
 **Question:** Can a correction learned from instrument-state diagnostics remain
 valid across maintenance and temperature regimes while preserving low-amplitude
@@ -142,8 +141,8 @@ An appropriate first message to the team would be:
 Future full notes should contain: instrument history; current dated status;
 design values separated from achieved results; a paper-by-paper chronology;
 within-paper numerical comparisons; unresolved limitations; a project question;
-required data; validation tests; and an explicit statement distinguishing the
-author's proposal from the source authors' conclusions.
+required data; validation tests; and an explicit statement distinguishing a
+future analysis question from the source authors' conclusions.
 
 The machine-readable version is in `data/instrument_dossiers.json`; the selected
 paper table is `data/expres_papers.csv`; and the paired values behind the original

@@ -48,15 +48,15 @@ modelling that long-term activity. These are three different statistics.
   service or visitor mode and GIARPS is unrestricted.
   [TNG call](https://tngweb.tng.iac.es/call/info.html)
 
-## Candidate project to discuss
+## Future analysis question
 
-The proposed first project is an auditable solar quality mask. It would encode
+One possible analysis is an auditable solar quality mask. It would encode
 weather, lamp, detector warm-up, drift, blaze and pipeline-version intervals as
 separate flags; reproduce published sample counts; hold out a complete year;
 and inject signals before curation to measure attenuation. Overlapping NEID days
 would provide an external check on whether a residual is solar or local.
 
-This is a proposal for discussion, dependent on released products and event
-metadata. It is not a completed pipeline or a statement of the HARPS-N team's
-priorities. Records are in `data/harpsn_papers.csv` and
+This is a future analysis question, dependent on released products and event
+metadata. It is not completed research or a publication claim. Records are in
+`data/harpsn_papers.csv` and
 `data/instrument_dossiers.json`.

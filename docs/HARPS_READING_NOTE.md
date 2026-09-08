@@ -114,7 +114,7 @@ operational caveats.
 - The 2026 configuration has documented operational notices, but final public
   post-upgrade performance was not available in the checked source.
 
-## Candidate project to discuss with the instrument team
+## Future analysis question
 
 ### Question
 
@@ -133,12 +133,11 @@ Can a hierarchical transfer model estimate star-dependent offsets across the
 6. Report results by era and target; do not publish one pooled RMS as proof of
    transfer.
 
-This is a proposal for discussion. It is not a completed pipeline, a statement
-of the HARPS team’s priorities or a claim that the necessary post-2026 products
-are public.
+This is a future analysis question. It is not completed research, a publication
+claim, or evidence that the necessary post-2026 products are public.
 
 ## Machine-readable records
 
 The selected sources and the context attached to each numerical statement are
-in `data/harps_papers.csv`. The website dossier and candidate-project boundary
+in `data/harps_papers.csv`. The website dossier and future-analysis boundary
 are in `data/instrument_dossiers.json`.

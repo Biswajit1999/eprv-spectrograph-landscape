@@ -75,18 +75,18 @@ as a homogeneous geodetic survey.
 ## EXPRES dossier question
 
 How did the EXPRES literature move from design and commissioning to the current
-long-baseline limitation, and what small software study could be discussed with
-the team without overstating the published evidence?
+long-baseline limitation, and what bounded future analysis follows without
+overstating the published evidence?
 
 The direct answer and paper-by-paper synthesis are maintained in
 `docs/EXPRES_READING_NOTE.md`. The single source table is
 `data/expres_papers.csv`; paired numerical values used in the original figure
 are recorded separately in `data/expres_metrics.csv`.
 
-The proposed era-aware correction audit is an inference from the validation gaps
+The future era-aware correction audit is an inference from the validation gaps
 identified in the 2022 method comparison and the diagnostics demonstrated in the
-2026 long-baseline study. It is labelled as a candidate project, not attributed
-to the source authors and not presented as completed work.
+2026 long-baseline study. It is not attributed to the source authors and is not
+presented as completed work or a publication claim.
 
 ## HARPS dossier question
 
@@ -111,9 +111,9 @@ achieved long-term stellar precision.
 ESO's current HARPS notice records the 2026 detector, electronics, cooling and
 HAM-fibre intervention, the 20 June return to operations and the 3 July ADC
 caveat. The checked page says a final performance report will follow. The
-candidate era-transfer notebook is therefore explicitly blocked on suitable
+future era-transfer notebook is therefore explicitly blocked on suitable
 public post-upgrade standards and final characterisation; it is an inference and
-proposal, not an instrument-team plan.
+not completed research.
 
 ## ESPRESSO dossier question
 
@@ -122,10 +122,10 @@ repeatability, absolute wavelength accuracy and validation of the science light
 path differ. `data/espresso_papers.csv` records every selected source and the
 interpretation limit attached to its numerical statement.
 
-The proposed calibration-consistency monitor follows from the 2021 structured
+The future calibration-consistency monitor follows from the 2021 structured
 wavelength comparisons, the 2025 iodine-cell test and ESO's dated comb-status
-notices. It is labelled as a proposal dependent on suitable calibration and
-engineering products, not as completed work or a team priority.
+notices. It depends on suitable calibration and engineering products and is not
+presented as completed work or a publication claim.
 
 ## HARPS-N and NEID research wave
 
@@ -139,6 +139,16 @@ current-status gap.
 NEID evidence is recorded in `data/neid_papers.csv` and synthesised in
 `docs/NEID_READING_NOTE.md`. The 0.4 mK environmental test, 0.27 m/s design
 requirement, 0.41–0.66 m/s selected solar results and current master-file
-limitations retain distinct contexts. The project proposal follows from current
+limitations retain distinct contexts. The future analysis question follows from current
 DRP era/version documentation and cross-instrument solar comparisons; it is not
 presented as completed work.
+
+## EXOhSPEC research focus
+
+EXOhSPEC evidence is recorded in `data/exohspec_papers.csv` and synthesised in
+`docs/EXOHSPEC_READING_NOTE.md`. The record separates the 2019 design targets,
+the approximately 4 m/s laboratory prototype result, the 2024 fibre experiment,
+the 2025 metalon test and three official deployment/status records. The current
+NARIT technology and observatory pages conflict, so the status remains unresolved.
+No checked source is used to claim completed stellar-RV performance for the Thai
+National Telescope instrument.

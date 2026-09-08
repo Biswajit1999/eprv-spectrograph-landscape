@@ -24,13 +24,14 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,expresPaperText,harpsPaperText,espressoPaperText,harpsnPaperText,neidPaperText,beginnerText]=await Promise.all([
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,exohspecPaperText,expresPaperText,harpsPaperText,espressoPaperText,harpsnPaperText,neidPaperText,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
     fetchText('./data/facilities.jsonl'),
     fetchText('./data/challenge_profiles.json'),
     fetchText('./data/instrument_dossiers.json'),
+    fetchText('./data/exohspec_papers.csv'),
     fetchText('./data/expres_papers.csv'),
     fetchText('./data/harps_papers.csv'),
     fetchText('./data/espresso_papers.csv'),
@@ -40,7 +41,7 @@ async function main(){
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
-  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText),...parseCSV(harpsnPaperText),...parseCSV(neidPaperText)];
+  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(exohspecPaperText),...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText),...parseCSV(harpsnPaperText),...parseCSV(neidPaperText)];
   const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));
@@ -84,8 +85,8 @@ async function main(){
   function renderDossier(dossier){
     if(!dossier)return '';
     const selected=papers.filter(paper=>dossier.paper_ids.includes(paper.paper_id));
-    const project=dossier.candidate_project;
-    return `<section class="dossier-block"><div class="dossier-label">Selected reading note · ${esc(dossier.paper_count)} papers · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><p class="reading-boundary"><b>Reading boundary:</b> ${esc(dossier.reading_boundary)}</p><h4>What the latest source changes</h4><p>${esc(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the latest primary or official source</a><h4>Five lessons from the reading path</h4><ol>${dossier.lessons.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h4>Selected papers, in time order</h4><div class="paper-list">${selected.map(paper=>`<article><div><span>${esc(paper.year)} · ${esc(paper.paper_type)}</span><h5>${esc(paper.title)}</h5><p>${esc(paper.what_was_studied)}</p><p><b>Reported:</b> ${esc(paper.numerical_result)}</p><p><b>Still open:</b> ${esc(paper.remaining_question)}</p></div><a href="${esc(paper.source_url)}" rel="noreferrer">Primary source</a></article>`).join('')}</div><div class="project-note"><span class="dossier-label">Candidate project for discussion</span><h4>${esc(project.title)}</h4><p><b>Question:</b> ${esc(project.question)}</p><p>${esc(project.basis)}</p><p class="reading-boundary"><b>Boundary:</b> ${esc(project.status)}.</p><h5>Proposed checks</h5><ol>${project.steps.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h5>How I would open the conversation</h5><blockquote>${esc(project.first_conversation)}</blockquote></div></section>`;
+    const project=dossier.future_analysis;
+    return `<section class="dossier-block"><div class="dossier-label">Selected reading note · ${esc(dossier.paper_count)} sources · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><p class="reading-boundary"><b>Reading boundary:</b> ${esc(dossier.reading_boundary)}</p><h4>What the latest source changes</h4><p>${esc(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the latest primary or official source</a><h4>Five lessons from the reading path</h4><ol>${dossier.lessons.map(item=>`<li>${esc(item)}</li>`).join('')}</ol><h4>Selected sources, in time order</h4><div class="paper-list">${selected.map(paper=>`<article><div><span>${esc(paper.year)} · ${esc(paper.paper_type)}</span><h5>${esc(paper.title)}</h5><p>${esc(paper.what_was_studied)}</p><p><b>Reported:</b> ${esc(paper.numerical_result)}</p><p><b>Still open:</b> ${esc(paper.remaining_question)}</p></div><a href="${esc(paper.source_url)}" rel="noreferrer">Primary or official source</a></article>`).join('')}</div><div class="project-note"><span class="dossier-label">Future analysis question</span><h4>${esc(project.title)}</h4><p><b>Question:</b> ${esc(project.question)}</p><p>${esc(project.basis)}</p><p class="reading-boundary"><b>Boundary:</b> ${esc(project.status)}.</p><h5>Possible checks</h5><ol>${project.steps.map(item=>`<li>${esc(item)}</li>`).join('')}</ol></div></section>`;
   }
   function openProfile(id,updateHistory=true){
     const item=census.find(row=>row.instrument_id===id); if(!item)return;
@@ -106,7 +107,7 @@ async function main(){
       const hasDatedStatus=Boolean(item.status_source_url&&item.status_as_of&&item.current_status!=='not_verified');
       const statusMatches=!verificationFilter.value||(verificationFilter.value==='dated'?hasDatedStatus:!hasDatedStatus);
       return (!query||haystack.includes(query))&&(!tierFilter.value||item.inclusion_tier===tierFilter.value)&&statusMatches;
-    });
+    }).sort((a,b)=>Number(b.instrument_id==='tno-exohspec')-Number(a.instrument_id==='tno-exohspec'));
     document.querySelector('#census-result').textContent=`Showing ${filtered.length} of ${census.length} physical-instrument records`;
     document.querySelector('#census-grid').innerHTML=filtered.map(item=>{const depth=depthFor(item);const facility=facilitiesById.get(item.facility_id);const dated=Boolean(item.status_source_url&&item.status_as_of&&item.current_status!=='not_verified');const located=Boolean(facility&&Number.isFinite(facility.latitude_deg));return `<article class="census-card"><div class="card-top"><span class="tier">${esc(tierLabels[item.inclusion_tier])}</span></div><h3>${esc(item.acronym||item.official_name)}</h3><p>${esc(item.official_name)}</p><div class="evidence-checks" aria-label="Evidence checks"><span class="checked">Existence source</span><span class="${dated?'checked':'open'}">${dated?'Dated status':'Status check open'}</span><span class="${located?'checked':'open'}">${located?'Mapped':'Coordinate open'}</span></div><span class="depth ${esc(depth.className)}">${esc(depth.label)}</span><dl><dt>Site</dt><dd>${esc(item.site)}</dd><dt>Status</dt><dd>${esc(words(item.current_status))}</dd></dl><button type="button" onclick="openInstrumentProfile('${esc(item.instrument_id)}')">Read note and sources</button></article>`}).join('');
   }
@@ -124,7 +125,9 @@ async function main(){
 
   document.querySelector('#barrier-articles').innerHTML=challenges.map((item,index)=>`<article class="barrier-article" id="${esc(item.id)}"><header><span>${String(index+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.question)}</p></div></header><div class="barrier-body"><section><h4>Physical mechanism</h4><p>${esc(item.mechanism)}</p></section><section><h4>Published example</h4><p>${esc(item.evidence)}</p></section><section><h4>Mitigation and remaining limit</h4><p>${esc(item.mitigation)}</p><p><b>Residual:</b> ${esc(item.residual)}</p></section><div class="source-links">${item.sources.map(source=>`<a href="${esc(source.url)}" rel="noreferrer">${esc(source.label)}</a>`).join('')}</div></div></article>`).join('');
 
-  document.querySelector('#featured-dossier').innerHTML=`<header><span class="eyebrow">Instrument reading notes</span><h2>From published measurements to testable project questions</h2><p>Each note follows a selected paper trail, keeps measurement contexts separate, and ends with a proposal to discuss—not a claim that the instrument team has endorsed the idea.</p></header><div class="dossier-index">${dossiers.map(dossier=>`<article><span>${esc(dossier.paper_count)} selected sources</span><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><button type="button" class="button primary" onclick="openInstrumentProfile('${esc(dossier.instrument_id)}')">Read paper notes and project checks</button></article>`).join('')}</div>`;
+  const exohspec=dossiersById.get('tno-exohspec');
+  document.querySelector('#current-focus-card').innerHTML=`<header><span class="eyebrow">Current reading focus</span><h2>EXOhSPEC: what the selected sources establish</h2><p>Design goals, laboratory measurements, deployment history and current status are kept separate. No selected source is used to claim completed stellar-RV performance for the Thai instrument.</p></header><div class="dossier-index"><article><span>${esc(exohspec.paper_count)} selected sources</span><h3>${esc(exohspec.title)}</h3><p>${esc(exohspec.short_summary)}</p><p class="reading-boundary"><b>Status boundary:</b> ${esc(exohspec.current_status)}</p><button type="button" class="button primary" onclick="openInstrumentProfile('tno-exohspec')">Read the EXOhSPEC note</button></article></div>`;
+  document.querySelector('#featured-dossier').innerHTML=`<header><span class="eyebrow">Instrument reading notes</span><h2>From published measurements to open analysis questions</h2><p>Each note follows a selected source trail, keeps measurement contexts separate, and ends with a future analysis question—not a claim of completed research or endorsement.</p></header><div class="dossier-index">${dossiers.map(dossier=>`<article><span>${esc(dossier.paper_count)} selected sources</span><h3>${esc(dossier.title)}</h3><p>${esc(dossier.short_summary)}</p><button type="button" class="button primary" onclick="openInstrumentProfile('${esc(dossier.instrument_id)}')">Read sources and analysis checks</button></article>`).join('')}</div>`;
 
   const hash=decodeURIComponent(location.hash);
   if(hash.startsWith('#instrument=')) openProfile(hash.slice(12),false);

@@ -1,5 +1,49 @@
 [
   {
+    "instrument_id": "tno-exohspec",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 7,
+    "title": "EXOhSPEC: compact active control, fibre tests, and an unresolved deployment status",
+    "reading_boundary": "Seven selected design, laboratory, calibration and official-status sources. No completed on-sky stellar-RV performance paper for the Thai National Telescope instrument was identified in this reading set.",
+    "current_status": "Current NARIT pages conflict: the technology page says installed and tested with the 2.4 m telescope, while the Thai National Observatory roster labels EXOhSPEC under development. The earlier ING deployment was decommissioned in May 2024.",
+    "current_status_url": "https://narit.or.th/th/observatory/thai-national-observatory",
+    "short_summary": "EXOhSPEC's published path demonstrates a compact high-resolution prototype, laboratory active control, fibre modal-noise tests and a thermally controlled metalon experiment. These results belong to specific laboratory or prototype configurations and do not yet establish long-term stellar precision for the Thai instrument.",
+    "latest_problem": "The 2025 metalon experiment measured 8 m/s temporal drift over 470 to 780 nm, or 5 m/s after polynomial flattening, while the spectrograph's active stabilization was not engaged. Current NARIT pages also disagree on whether the telescope instrument is installed and tested or still under development.",
+    "latest_problem_source": "https://academic.oup.com/rasti/article/doi/10.1093/rasti/rzaf036/8230991",
+    "lessons": [
+      "Design requirements, laboratory image-motion tests and stellar time-series precision are different evidence classes.",
+      "The approximately 4 m/s result describes a compact laboratory prototype, not a completed on-sky performance programme.",
+      "Modal-noise mitigation carries a measured throughput trade-off and remains dependent on fibre and illumination configuration.",
+      "Thermal stability of a calibrator enclosure does not by itself establish the drift of the complete spectrograph path.",
+      "A physical deployment and its current operating state must be checked against dated facility evidence rather than inferred from an instrument paper."
+    ],
+    "future_analysis": {
+      "title": "EXOhSPEC laboratory-verification notebook",
+      "status": "future analysis question, not completed research, a publication claim, or an endorsed instrument programme",
+      "question": "Can released measurements reproduce the reported image-motion, modal-noise and calibration-drift values while making the evidence needed for a future stellar test explicit?",
+      "basis": "The selected papers expose reproducible subsystem tests, but the physical setups, active-control states and deployment records must remain separate before combining their numbers.",
+      "steps": [
+        "Create a setup ledger that distinguishes the Hertfordshire prototype, the former ING deployment and the Thai National Telescope instrument.",
+        "Reproduce each reported laboratory statistic in its original unit before converting it to an RV-equivalent value.",
+        "Quantify modal-noise reduction together with throughput loss for every tested fibre and agitation state.",
+        "Recalculate metalon drift with and without flattening and preserve the unstabilized-spectrograph caveat.",
+        "Define a future stellar validation plan with raw identifiers, simultaneous reference data, environmental telemetry and repeated standards.",
+        "Leave current operational status unresolved until a dated NARIT commissioning or availability record resolves the conflicting pages."
+      ],
+      "success_tests": [
+        "Every reproduced value identifies its physical setup, source record and active-control state.",
+        "No laboratory or design value is relabelled as achieved stellar precision.",
+        "Missing raw data produces an explicit blocked result rather than a synthetic replacement.",
+        "The output separates reproduced source results from any later original analysis."
+      ]
+    },
+    "paper_ids": [
+      "EXO-2019-DESIGN", "EXO-2021-PROTOTYPE", "EXO-2024-MODAL", "EXO-2025-METALON",
+      "EXO-2026-NARIT-TECH", "EXO-2026-NARIT-ROSTER", "EXO-2024-ING-HISTORY"
+    ]
+  },
+  {
     "instrument_id": "lowell-expres",
     "research_depth": "full_paper_dossier",
     "reviewed_through": "2026-09-07",
@@ -18,9 +62,9 @@
       "Simultaneous solar observations across instruments provide a practical way to distinguish astrophysical variability from instrument-specific behaviour.",
       "Long-baseline maintenance, temperature and detector-state changes must be modelled as data eras rather than assumed stationary."
     ],
-    "candidate_project": {
+    "future_analysis": {
       "title": "Era-aware EXPRES correction audit with planet-preservation tests",
-      "status": "proposal for discussion, not a completed pipeline and not a statement of the EXPRES team's priorities",
+      "status": "future analysis question, not completed research, a publication claim, or an endorsed instrument programme",
       "question": "Can a correction learned from instrument-state diagnostics remain valid across maintenance and temperature regimes while preserving low-amplitude Keplerian signals?",
       "basis": "This extends the validation questions raised by the 2022 method comparison and the diagnostics demonstrated in the 2026 long-baseline study.",
       "steps": [
@@ -36,8 +80,7 @@
         "Stable coefficients or documented model changes across instrument eras.",
         "No improvement claim based only on training-set RMS.",
         "Reproducible figures and machine-readable fold assignments."
-      ],
-      "first_conversation": "I reviewed the design, commissioning pipeline, wavelength-calibration, stellar-signal comparisons and the seven-year systematics study. I would like to test an era-held-out, injection-recovery extension of the published instrument-state correction. Before building against science products, which diagnostics can be shared and which validation case would be most useful to the team?"
+      ]
     },
     "paper_ids": [
       "EXP-2016-DESIGN", "EXP-2019-TELLURIC", "EXP-2020-PERFORMANCE", "EXP-2020-PIPELINE",
@@ -65,9 +108,9 @@
       "Calibration solutions must be versioned on both sides of hardware changes; one offset is not automatically valid for every spectrum.",
       "The 2026 detector, electronics, cooling and fibre work begins another measurement era whose transfer function still needs a final public characterization."
     ],
-    "candidate_project": {
+    "future_analysis": {
       "title": "HARPS 2015-to-2026 era transfer notebook",
-      "status": "proposal for discussion, blocked on suitable public post-upgrade standards and final performance documentation",
+      "status": "future analysis question, not completed research and blocked on suitable public post-upgrade standards and final performance documentation",
       "question": "Which observable diagnostics best predict star-dependent offsets across the 2015 and 2026 hardware boundaries without absorbing astrophysical signals?",
       "basis": "The 2015 fibre report measured spectral-type-dependent offsets, while the 2019 calibration paper treats the pre/post-2015 solutions separately and ESO now documents a new 2026 era.",
       "steps": [
@@ -82,8 +125,7 @@
         "Recovered injected amplitudes remain unbiased within their stated uncertainty.",
         "Results change transparently when masks or spectral-type groupings change.",
         "No post-2026 performance claim precedes the final instrument characterization."
-      ],
-      "first_conversation": "I traced the wavelength-calibration work, the measured 2015 fibre discontinuity and the current 2026 upgrade notices. I would like to build a small cross-era validation notebook using public standards, with held-out stars and injection tests. Which post-upgrade diagnostics and stable-star set would make that comparison scientifically useful to the HARPS team?"
+      ]
     },
     "paper_ids": [
       "HARPS-2003-COMMISSION", "HARPS-2013-LFC", "HARPS-2015-FIBRES",
@@ -109,9 +151,9 @@
       "Absolute wavelength accuracy for fundamental-constant work and differential repeatability for exoplanet RV work require different tests.",
       "Calibration-source state and fibre-injection geometry should be explicit metadata rather than hidden pipeline assumptions."
     ],
-    "candidate_project": {
+    "future_analysis": {
       "title": "ESPRESSO calibration-consistency monitor",
-      "status": "proposal for discussion, not a completed pipeline and dependent on access to suitable calibration and engineering products",
+      "status": "future analysis question, not completed research and dependent on access to suitable calibration and engineering products",
       "question": "Can an open diagnostic compare ThAr, Fabry-Perot, laser-comb and occasional end-to-end reference measurements without confusing precision with absolute accuracy?",
       "basis": "The 2021 calibration comparison maps structured solution differences, the 2025 iodine experiment tests the science path, and ESO's dated notices show that calibrator state changes with time.",
       "steps": [
@@ -127,8 +169,7 @@
         "Detect known state changes without using science outcomes as labels.",
         "Preserve injected shifts across wavelength and illumination conditions.",
         "Publish uncertainties and missing-metadata flags with every diagnostic."
-      ],
-      "first_conversation": "I followed the commissioning, wavelength-calibration, laser-comb status and iodine-cell validation papers. I would like to test a small calibration-consistency monitor that keeps differential precision, absolute accuracy and illumination sensitivity as separate outputs. Which public calibration products and one validation night would make that exercise useful to the ESPRESSO team?"
+      ]
     },
     "paper_ids": [
       "ESP-2020-PROXIMA", "ESP-2021-INSTRUMENT", "ESP-2021-WAVECAL",
@@ -154,9 +195,9 @@
       "Daily solar granulation and a decade magnetic cycle occupy different timescales and require different validation.",
       "Contemporaneous instruments provide a stronger systematics test than one instrument fitted in isolation."
     ],
-    "candidate_project": {
+    "future_analysis": {
       "title": "HARPS-N solar quality-mask and signal-preservation audit",
-      "status": "proposal for discussion, not a completed pipeline and dependent on the released spectra plus sufficient event metadata",
+      "status": "future analysis question, not completed research and dependent on released spectra plus sufficient event metadata",
       "question": "Can every rejected or corrected solar interval be represented by an auditable quality flag while preserving injected rotation and planet-like signals?",
       "basis": "The three-year paper links improvement to wavelength recipes and calibration timing; the decade release adds explicit weather, drift, blaze and hardware curation across a much longer baseline.",
       "steps": [
@@ -172,8 +213,7 @@
         "Every excluded observation has a human-readable reason and source field.",
         "Held-out signal recovery is reported alongside any RMS improvement.",
         "Results remain traceable to raw product IDs and pipeline versions."
-      ],
-      "first_conversation": "I worked through the instrument paper, the three-year reduction study, the cross-instrument comparison and the decade solar release. I would like to reproduce the quality mask as an auditable table and test how each curation step affects injected signals. Which event metadata and one held-out year would make that validation useful to the HARPS-N solar team?"
+      ]
     },
     "paper_ids": ["HN-2012-DESIGN", "HN-2017-COMB", "HN-2021-SOLAR", "HN-2023-CROSS", "HN-2025-DECADE", "HN-2026-STATUS"]
   },
@@ -196,9 +236,9 @@
       "Solar RMS depends visibly on sky-quality selection and time baseline.",
       "Hardware events and master calibration files define RV eras that must accompany reduced data."
     ],
-    "candidate_project": {
+    "future_analysis": {
       "title": "NEID RV-era and calibration-master validation notebook",
-      "status": "proposal for discussion, not a completed pipeline and dependent on archive products and confirmed event metadata",
+      "status": "future analysis question, not completed research and dependent on archive products and confirmed event metadata",
       "question": "Can a version-aware validation notebook detect order-edge and era-dependent shifts while separating weather and solar variability from instrument changes?",
       "basis": "The fibre paper identifies uncalibratable illumination paths, the cross-instrument study exposes a late-day trend, and DRP 1.5.2 publishes explicit wavelength-master limitations and RV eras.",
       "steps": [
@@ -214,8 +254,7 @@
         "Order-edge diagnostics improve on a held-out era rather than only the training period.",
         "Injected amplitudes remain unbiased within stated uncertainty.",
         "Every output records data IDs, DRP and master-file versions."
-      ],
-      "first_conversation": "I reviewed the environmental-control, solar-feed, operations, fibre-illumination, cross-instrument and current DRP-era material. I would like to build a version-aware validation notebook using public solar and standard-star products, with held-out eras and injection tests. Which master-file transition and validation target would be most useful to the NEID team?"
+      ]
     },
     "paper_ids": ["NEID-2019-ECS", "NEID-2021-SOLAR", "NEID-2022-OPS", "NEID-2023-FIBRE", "NEID-2023-CROSS", "NEID-2024-SOLAR", "NEID-2026-DRP"]
   }

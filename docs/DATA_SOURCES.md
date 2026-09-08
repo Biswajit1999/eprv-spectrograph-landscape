@@ -65,10 +65,13 @@ Access checked: **2026-09-02 to 2026-09-07**.
 - NEID status: [WIYN observer information](https://www.wiyn.org/Instruments/wiynneid_observers.html).
 - HARPS3 phase: [ING instruments](https://www.ing.iac.es/astronomy/instr.html).
 - HARPS3 commissioning/shared-risk phase: [ING 2026B call for proposals](https://www.ing.iac.es/astronomy/observing/ING_CfP_2026B.pdf).
-- EXOhSPEC deployment and testing: [NARIT official page](https://www.narit.or.th/en/technology-development/advanced-optics/EXOhSPEC);
-  design and performance requirement: Lhospice et al.,
-  [University of Hertfordshire record](https://researchprofiles.herts.ac.uk/en/publications/exohspec-folded-design-optimization-and-performance-estimation/);
-  earlier ING deployment status: [ING instrument record](https://www.ing.iac.es/PR/inst.php?inst=EXOhSPEC&tel=int).
+- EXOhSPEC: [2019 design record](https://uhra.herts.ac.uk/id/eprint/14227/),
+  [2021 prototype paper](https://arxiv.org/abs/2011.10526),
+  [2024 modal-noise study](https://academic.oup.com/rasti/article/3/1/8/7505148),
+  [2025 metalon study](https://academic.oup.com/rasti/article/doi/10.1093/rasti/rzaf036/8230991),
+  [NARIT technology page](https://www.narit.or.th/en/technology-development/advanced-optics/EXOhSPEC),
+  [Thai National Observatory roster](https://narit.or.th/th/observatory/thai-national-observatory),
+  and [ING deployment record](https://www.ing.iac.es/PR/inst.php?inst=EXOhSPEC&tel=int).
 - NRES network design and reported accuracy: [LCO instrument page](https://lco.global/observatory/instruments/nres/);
   2026B offering statement: [LCO instrument roster](https://lco.global/observatory/instruments/);
   Wise decommissioning: [LCO status page](https://lco.global/observatory/status/).
@@ -98,8 +101,8 @@ upgrade notices. Numerical statements retain their measurement context; in
 particular, local wavelength-solution distortions and motivating cm/s scales
 are not presented as achieved stellar time-series precision.
 
-`docs/HARPS_READING_NOTE.md` separates source findings from the author's
-candidate era-transfer study. The proposal is blocked on suitable public
+`docs/HARPS_READING_NOTE.md` separates source findings from a future
+era-transfer question. That analysis is blocked on suitable public
 post-upgrade standards and final characterisation.
 
 ## ESPRESSO reading note
@@ -108,7 +111,7 @@ Seven selected records are stored in `data/espresso_papers.csv`. They include
 instrument commissioning, two stellar applications, independent calibration
 work, an end-to-end iodine-cell test and dated ESO laser-comb notices.
 `docs/ESPRESSO_READING_NOTE.md` keeps differential precision, absolute accuracy
-and light-path sensitivity separate and labels the monitoring idea as a proposal.
+and light-path sensitivity separate and labels the monitoring idea as future analysis.
 
 ## HARPS-N and NEID reading notes
 
@@ -121,6 +124,14 @@ comparison, the 3.5-year release and current DRP master-file documentation.
 The corresponding notes are `docs/HARPS_N_READING_NOTE.md` and
 `docs/NEID_READING_NOTE.md`. Counts, filtering fractions, RMS values, design
 requirements and subsystem tests retain their separate contexts.
+
+## EXOhSPEC reading note
+
+Seven selected records in `data/exohspec_papers.csv` separate the 2019 design,
+2021 compact prototype, 2024 modal-noise test, 2025 metalon calibration and
+three official deployment/status records. `docs/EXOHSPEC_READING_NOTE.md`
+records why laboratory results cannot be relabelled as achieved stellar
+precision and why the two current NARIT status statements remain unresolved.
 
 ## Reuse policy
 

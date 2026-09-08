@@ -5,8 +5,7 @@
 
 My source-linked reading guide to precision radial-velocity spectrographs: where
 physical instruments are deployed, what their papers measure, their dated status,
-which problems remain, and which bounded software studies may be worth discussing
-with instrument teams.
+which problems remain, and which bounded questions could support later analysis.
 
 **Public website:** https://biswajit1999.github.io/eprv-spectrograph-landscape/
 
@@ -28,7 +27,7 @@ residuals are different quantities. The data model keeps them separate.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles and nine extended challenge explainers.
 - A selected [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
-  selected primary papers to a clearly labelled candidate validation project.
+  selected primary papers to a clearly labelled future analysis question.
 - A [HARPS reading note](docs/HARPS_READING_NOTE.md) following six technical
   sources through commissioning, wavelength calibration and the 2015/2026
   hardware-era boundaries.
@@ -37,6 +36,9 @@ residuals are different quantities. The data model keeps them separate.
 - [HARPS-N](docs/HARPS_N_READING_NOTE.md) and [NEID](docs/NEID_READING_NOTE.md)
   notes connecting solar data selection, calibration versions and testable
   signal-preservation questions.
+- An [EXOhSPEC reading note](docs/EXOHSPEC_READING_NOTE.md) separating design
+  targets, laboratory results, deployment history and conflicting current-status
+  statements across seven selected sources.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's
@@ -77,8 +79,8 @@ experiments. Read each definition in `data/performance_claims.csv`.
 - Status is dated and kept separate from historical performance.
 - No paper figure, observatory logo or substantial third-party text is copied.
 - The project is independent and not endorsed by a listed facility or team.
-- Proposed projects are the author's research questions, not claims about a
-  team's priorities or completed work.
+- Future analysis questions are not completed research, publication claims, or
+  statements about a facility's priorities.
 
 Code is MIT licensed. Bibliographic metadata and factual specifications remain
 attributed to their primary papers and official facility pages.

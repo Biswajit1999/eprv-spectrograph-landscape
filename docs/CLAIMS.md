@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 instruments, 22 quantitative claims and 39 selected reading-note sources across five instruments | `results/manifest.json` and the five `data/*_papers.csv` tables |
+| 21 instruments, 22 quantitative claims and 46 selected reading-note sources across six instruments | `results/manifest.json` and the six `data/*_papers.csv` tables |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |
@@ -31,8 +31,13 @@ metric, value, sample, baseline and caveat. Derived counts map to
 | EXPRES paired values: 1.17 to 1.05 m/s and 1.32 to 0.43 m/s | `data/expres_metrics.csv`, linked to `EXP-2021-EXCALIBUR` and `EXP-2026-SYSTEMATICS` |
 
 The wider EXPRES reading statements are mapped paper by paper in
-`data/expres_papers.csv`; interpretation and proposal boundaries are stated in
+`data/expres_papers.csv`; interpretation and future-analysis boundaries are stated in
 `docs/EXPRES_READING_NOTE.md`.
+
+EXOhSPEC design, laboratory and status statements are mapped in
+`data/exohspec_papers.csv`. `docs/EXOHSPEC_READING_NOTE.md` explicitly separates
+design specifications, subsystem measurements, deployment history and the
+unresolved NARIT status conflict.
 
 The HARPS commissioning, calibration and hardware-era statements are mapped in
 `data/harps_papers.csv`; their contexts and the boundary around the proposed

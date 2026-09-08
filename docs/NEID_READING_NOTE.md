@@ -40,7 +40,7 @@ calibration-master and era identity carried with them.
 - [3.5-year solar release](https://arxiv.org/abs/2408.13318)
 - [Current wavelength-master documentation](https://neid.ipac.caltech.edu/docs/NEID-DRP/masterfiles.html)
 
-## Candidate project to discuss
+## Future analysis question
 
 A version-aware validation notebook would join each public solar and standard-
 star product to its DRP version, RV era, wavelength master, etalon list and
@@ -48,7 +48,7 @@ observing conditions. It would examine residuals versus order position and
 barycentric velocity, test the reported late-day cross-instrument trend, hold
 out complete hardware eras, and verify injected wavelength-dependent shifts.
 
-This is a proposal for discussion, dependent on archive products and confirmed
-event metadata. It is not a completed correction or a statement of the NEID
-team's priorities. Records are in `data/neid_papers.csv` and
+This is a future analysis question, dependent on archive products and confirmed
+event metadata. It is not completed research or a publication claim. Records
+are in `data/neid_papers.csv` and
 `data/instrument_dossiers.json`.
