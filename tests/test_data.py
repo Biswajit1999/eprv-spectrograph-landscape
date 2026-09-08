@@ -100,11 +100,18 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
             pd.read_csv("data/harpsn_papers.csv"),
             pd.read_csv("data/neid_papers.csv"),
             pd.read_csv("data/exohspec_papers.csv"),
+            pd.read_csv("data/kpf_papers.csv"),
+            pd.read_csv("data/maroonx_papers.csv"),
+            pd.read_csv("data/carmenes_papers.csv"),
+            pd.read_csv("data/hpf_papers.csv"),
+            pd.read_csv("data/spirou_papers.csv"),
+            pd.read_csv("data/nirps_papers.csv"),
+            pd.read_csv("data/pfs_papers.csv"),
         ],
         ignore_index=True,
     )
     paper_ids = set(papers["paper_id"])
-    assert len(paper_ids) == len(papers) == 46
+    assert len(paper_ids) == len(papers) == 88
     assert papers["source_url"].str.startswith("https://").all()
     assert papers["numerical_result"].str.len().min() >= 20
     for dossier in dossiers:
@@ -131,6 +138,17 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     assert exohspec["paper_count"] == 7
     assert "No completed on-sky stellar-RV" in exohspec["reading_boundary"]
     assert "conflict" in exohspec["current_status"].lower()
+    assert len(dossiers) == 13
+    for instrument_id in (
+        "keck-kpf",
+        "gemini-north-maroonx",
+        "calaralto-carmenes",
+        "het-hpf",
+        "cfht-spirou",
+        "lasilla-nirps",
+        "magellan-pfs",
+    ):
+        assert next(item for item in dossiers if item["instrument_id"] == instrument_id)
 
 
 def test_harpsn_now_has_a_dated_current_status_source():

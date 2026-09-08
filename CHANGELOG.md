@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.10.0] - 2026-09-08
+
+- Added 42 selected source records and reading summaries for KPF, MAROON-X,
+  CARMENES, HPF, SPIRou, NIRPS and Magellan PFS.
+- Expanded the public dossier index from six to 13 instruments and the selected
+  reading ledger from 46 to 88 sources.
+- Preserved current operational caveats, instrument eras, sample definitions
+  and design-versus-achieved boundaries in each instrument profile.
+- Added restrained, testable future-analysis questions without presenting them
+  as completed studies, papers or instrument-team priorities.
+
 ## [0.9.0] - 2026-09-08
 
 - Added an EXOhSPEC-first reading note with seven design, laboratory,

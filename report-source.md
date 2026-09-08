@@ -152,3 +152,18 @@ the 2025 metalon test and three official deployment/status records. The current
 NARIT technology and observatory pages conflict, so the status remains unresolved.
 No checked source is used to claim completed stellar-RV performance for the Thai
 National Telescope instrument.
+
+## Seven-instrument priority wave
+
+The combined chapter `docs/PRIORITY_INSTRUMENT_READING_NOTES.md` adds 42 selected
+records for KPF, MAROON-X, CARMENES, HPF, SPIRou, NIRPS and Magellan PFS. The
+matching CSV tables retain each paper's measurement context and interpretation
+limit. Together with the six earlier dossiers, the release contains 88 selected
+sources across 13 instruments.
+
+The KPF status boundary includes Keck's current offline notice. MAROON-X keeps
+the 2024 detector incident separate from later measurements. CARMENES distinguishes
+VIS and NIR information content. HPF and SPIRou keep laboratory calibration and
+stellar time-series results separate. NIRPS marks the September 2026 sky-correction
+record as a preprint. PFS statements are conditioned on sample and hardware era.
+The associated future-analysis questions are study designs, not completed results.

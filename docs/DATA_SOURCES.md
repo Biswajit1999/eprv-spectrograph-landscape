@@ -133,6 +133,19 @@ three official deployment/status records. `docs/EXOHSPEC_READING_NOTE.md`
 records why laboratory results cannot be relabelled as achieved stellar
 precision and why the two current NARIT status statements remain unresolved.
 
+## Seven-instrument reading wave
+
+The paper-level tables `data/kpf_papers.csv`, `data/maroonx_papers.csv`,
+`data/carmenes_papers.csv`, `data/hpf_papers.csv`, `data/spirou_papers.csv`,
+`data/nirps_papers.csv` and `data/pfs_papers.csv` add 42 selected sources. Their
+shared synthesis is `docs/PRIORITY_INSTRUMENT_READING_NOTES.md`.
+
+The selection follows instrument design, calibration, commissioning, stellar
+measurements, reduction limitations and dated facility status. It is not a
+bibliometric census of every paper that used each instrument. Numerical values
+remain attached to their source, sample, timescale and reduction context; the
+tables do not convert unlike quantities into a rank.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

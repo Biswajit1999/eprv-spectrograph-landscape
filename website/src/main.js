@@ -24,7 +24,7 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,exohspecPaperText,expresPaperText,harpsPaperText,espressoPaperText,harpsnPaperText,neidPaperText,beginnerText]=await Promise.all([
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,exohspecPaperText,expresPaperText,harpsPaperText,espressoPaperText,harpsnPaperText,neidPaperText,kpfPaperText,maroonxPaperText,carmenesPaperText,hpfPaperText,spirouPaperText,nirpsPaperText,pfsPaperText,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
@@ -37,11 +37,18 @@ async function main(){
     fetchText('./data/espresso_papers.csv'),
     fetchText('./data/harpsn_papers.csv'),
     fetchText('./data/neid_papers.csv'),
+    fetchText('./data/kpf_papers.csv'),
+    fetchText('./data/maroonx_papers.csv'),
+    fetchText('./data/carmenes_papers.csv'),
+    fetchText('./data/hpf_papers.csv'),
+    fetchText('./data/spirou_papers.csv'),
+    fetchText('./data/nirps_papers.csv'),
+    fetchText('./data/pfs_papers.csv'),
     fetchText('./data/beginner_guide.json'),
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
-  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(exohspecPaperText),...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText),...parseCSV(harpsnPaperText),...parseCSV(neidPaperText)];
+  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(exohspecPaperText),...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText),...parseCSV(harpsnPaperText),...parseCSV(neidPaperText),...parseCSV(kpfPaperText),...parseCSV(maroonxPaperText),...parseCSV(carmenesPaperText),...parseCSV(hpfPaperText),...parseCSV(spirouPaperText),...parseCSV(nirpsPaperText),...parseCSV(pfsPaperText)];
   const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));

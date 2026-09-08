@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 instruments, 22 quantitative claims and 46 selected reading-note sources across six instruments | `results/manifest.json` and the six `data/*_papers.csv` tables |
+| 21 instruments, 22 quantitative claims and 88 selected reading-note sources across 13 instruments | `results/manifest.json` and the 13 `data/*_papers.csv` tables |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |
@@ -52,3 +52,10 @@ and `data/neid_papers.csv`. Their reading notes preserve selection, timescale,
 subsystem and design-versus-achieved boundaries.
 
 The values are not averaged, scored or ranked because their definitions differ.
+
+KPF, MAROON-X, CARMENES, HPF, SPIRou, NIRPS and Magellan PFS statements are
+mapped paper by paper in their matching `data/*_papers.csv` tables and synthesised
+in `docs/PRIORITY_INSTRUMENT_READING_NOTES.md`. Design requirements, laboratory
+tests, commissioning results, stellar measurements and facility-wide statements
+remain separate evidence classes. The chapter's future-analysis questions are
+not quantitative results and are not included in `PERF-001` through `PERF-022`.

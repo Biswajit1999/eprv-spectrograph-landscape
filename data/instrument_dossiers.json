@@ -257,5 +257,278 @@
       ]
     },
     "paper_ids": ["NEID-2019-ECS", "NEID-2021-SOLAR", "NEID-2022-OPS", "NEID-2023-FIBRE", "NEID-2023-CROSS", "NEID-2024-SOLAR", "NEID-2026-DRP"]
+  },
+  {
+    "instrument_id": "keck-kpf",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
+    "title": "KPF: solar diagnostics, reduction eras, and the 2026 vacuum-system outage",
+    "reading_boundary": "Five selected design, instrument, solar, pipeline and current-status sources. It is not a complete KPF science bibliography.",
+    "current_status": "Keck's current status page says KPF is offline until further notice after an April 2026 turbo-pump failure.",
+    "current_status_url": "https://www2.keck.hawaii.edu/realpublic/observing/public_instrument_info/kpf/status/",
+    "short_summary": "KPF combines a broad optical science channel, solar feed and dense calibration with a pipeline that explicitly tracks service missions and instrument eras. Early solar comparisons measured several-hour agreement with NEID, while later hardware and reduction changes prevent a single stationary interpretation.",
+    "latest_problem": "The instrument is currently unavailable after a vacuum-pump failure. Pipeline releases also document evolving era definitions, master calibrations and order-trace fixes, so post-repair products will require an explicit new validation boundary.",
+    "latest_problem_source": "https://www2.keck.hawaii.edu/realpublic/observing/public_instrument_info/kpf/status/",
+    "lessons": [
+      "A 0.50 m/s requirement and 0.30 m/s goal are engineering targets, not achieved stellar RMS.",
+      "Several-hour solar agreement with NEID is valuable but cannot establish multi-year accuracy.",
+      "Solar data exposed early detector and wavelength-calibration problems that a headline precision would hide.",
+      "Pipeline era and service-mission identifiers are part of the scientific measurement definition.",
+      "A return from a vacuum intervention should begin a new validation era rather than inherit pre-failure performance."
+    ],
+    "future_analysis": {
+      "title": "KPF era-aware solar and calibration replay",
+      "status": "future analysis question, not completed research and blocked on post-repair data",
+      "question": "Can public solar products and pipeline metadata reproduce known early issues and quantify changes across service missions without absorbing solar signals?",
+      "basis": "SoCal provides dense public observations while the pipeline and status pages expose dated changes that can define held-out eras.",
+      "steps": [
+        "Join each solar product to pipeline version, KPF era, service mission, calibration master and quality flags.",
+        "Reproduce the several-hour KPF–NEID comparison before extending the baseline.",
+        "Hold out complete service-mission eras and inject wavelength-dependent shifts before correction.",
+        "Start a separate post-repair validation only after new data and a dated return notice exist."
+      ],
+      "success_tests": [
+        "Known early detector or wavelength issues appear in the expected era.",
+        "Injected amplitudes remain unbiased in held-out periods.",
+        "No post-repair precision statement is inferred from pre-failure data.",
+        "Every output records pipeline and instrument-era identifiers."
+      ]
+    },
+    "paper_ids": ["KPF-2018-DESIGN", "KPF-2023-SOCAL", "KPF-2024-SYSTEM", "KPF-2026-DRP", "KPF-2026-STATUS"]
+  },
+  {
+    "instrument_id": "gemini-north-maroonx",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 6,
+    "title": "MAROON-X: short-term precision, run offsets, and interrupted instrument baselines",
+    "reading_boundary": "Six selected design, commissioning, operations, incident and long-baseline sources. Science applications are not exhaustively catalogued.",
+    "current_status": "Gemini's 2026B material schedules MAROON-X in fixed visiting-instrument blocks; the 2024 incident notice warns that existing 2024A reductions were uncertain at about 20 m/s.",
+    "current_status_url": "https://www.gemini.edu/news/instrument-announcements",
+    "short_summary": "MAROON-X moved from a sub-m/s design to regular short-term 0.30 m/s instrumental performance. Its later literature shows the harder problem: etalon drift, run offsets, earthquakes, power loss and reduction changes interrupt the long baseline.",
+    "latest_problem": "The 2025 ensemble study inferred run offsets to about 0.5 m/s and obtained below 0.70 m/s residual RMS for HD 3651 over 29 months. Gemini separately reports two 2024A image shifts that left existing reductions uncertain near 20 m/s.",
+    "latest_problem_source": "https://arxiv.org/abs/2502.15074",
+    "lessons": [
+      "Short-term instrumental precision does not control offsets between observing runs.",
+      "A slowly drifting etalon can be precise within a night while moving the long-term reference.",
+      "Reference-star ensembles add information but also inherit assumptions about stellar variability.",
+      "Earthquakes and power events create physical and reduction-era boundaries.",
+      "Injection recovery is necessary when corrections are learned from the same time series."
+    ],
+    "future_analysis": {
+      "title": "MAROON-X run-offset and incident-era audit",
+      "status": "future analysis question, not completed research and dependent on released era metadata",
+      "question": "How stable is the published ensemble-offset method when entire stars, runs and the 2024 incident era are held out?",
+      "basis": "The 2025 study supplies a tested ensemble framework, while Gemini identifies two external events requiring a distinct validation era.",
+      "steps": [
+        "Encode run, detector, etalon and incident boundaries before fitting offsets.",
+        "Repeat leave-one-star-out and leave-one-run-out tests with published injection settings.",
+        "Compare corrected red and blue channel residuals without pooling them prematurely.",
+        "Treat 2024A as a separate recovery test and publish blocked states where reprocessed products are absent."
+      ],
+      "success_tests": [
+        "Held-out run offsets remain within stated uncertainty.",
+        "Injected long-period amplitudes survive the correction.",
+        "The 2024A result is never mixed with unaffected 2024B data.",
+        "Reference-star assumptions are explicit and sensitivity-tested."
+      ]
+    },
+    "paper_ids": ["MX-2016-DESIGN", "MX-2018-LAB", "MX-2021-COMMISSION", "MX-2022-OPERATIONS", "MX-2024-INCIDENTS", "MX-2025-DRIFT"]
+  },
+  {
+    "instrument_id": "calaralto-carmenes",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 7,
+    "title": "CARMENES: two-channel information, nightly zero points, and chromatic activity",
+    "reading_boundary": "Seven selected instrument, pipeline, survey, activity, precision and availability sources. It is not a complete planet or atmosphere bibliography.",
+    "current_status": "Calar Alto's current 2026 call offers the 3.5 m telescope, and the CARMENES instrument page provides open-time observing instructions.",
+    "current_status_url": "https://www.caha.es/APPS/CfP/public/",
+    "short_summary": "CARMENES joins visible and near-infrared velocities, but their information content and systematic limits are not identical. Public DR1 products expose nightly zero-point corrections, and chromatic indicators help test whether signals arise from stellar line changes.",
+    "latest_problem": "DR1 uses nightly zero points derived from quiet stars, substituting adjacent-night averages when a direct value is unavailable. Later work still describes unexplained night-to-night jumps of a few m/s, so the correction and its uncertainty remain part of any planet search.",
+    "latest_problem_source": "https://www.aanda.org/articles/aa/pdf/2023/02/aa44879-22.pdf",
+    "lessons": [
+      "The VIS and NIR channels carry different Doppler information across M-dwarf spectral type.",
+      "Internal precision is not the same quantity as the RMS of a target time series.",
+      "Nightly zero-point correction borrows information from a reference ensemble and requires self-bias safeguards.",
+      "Chromatic indices can diagnose activity but do not supply a universal activity correction.",
+      "Scaled signal-to-noise precision values are forecasts, not additional achieved survey measurements."
+    ],
+    "future_analysis": {
+      "title": "CARMENES nightly-zero-point uncertainty replay",
+      "status": "future analysis question, not completed research and dependent on DR1 metadata",
+      "question": "How do direct, interpolated and leave-one-target-out nightly zero points change planet-signal recovery in the visible and near-infrared channels?",
+      "basis": "DR1 publishes velocities and nightly zero points, while later studies identify unresolved few-m/s jumps and wavelength-dependent stellar signals.",
+      "steps": [
+        "Reproduce DR1 nightly zero points with the target-under-test excluded.",
+        "Separate direct nightly estimates from adjacent-night replacements.",
+        "Propagate zero-point uncertainty into period searches instead of subtracting one fixed value.",
+        "Compare VIS, NIR and chromatic-index recovery under identical injection grids."
+      ],
+      "success_tests": [
+        "Published DR1 counts and summary statistics reproduce.",
+        "No target contributes to its own zero-point correction.",
+        "Missing-night interpolation is visible in every output.",
+        "Injected amplitudes and false positives are reported by channel."
+      ]
+    },
+    "paper_ids": ["CAR-2016-INSTRUMENT", "CAR-2018-SERVAL", "CAR-2018-INFORMATION", "CAR-2020-CHROMATIC", "CAR-2023-DR1", "CAR-2024-PRECISION", "CAR-2026-STATUS"]
+  },
+  {
+    "instrument_id": "het-hpf",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 7,
+    "title": "HPF: cryogenic stability, calibration transfer, and wavelength-dependent drift",
+    "reading_boundary": "Seven selected design, subsystem, commissioning, calibration and illumination sources. It is not a complete HPF planet bibliography.",
+    "current_status": "The checked HPF project page documents release to full HET science operations in 2019, but a dated 2026 availability source remains open.",
+    "current_status_url": "https://hpf.psu.edu/2019/02/19/hpf-commissioning/",
+    "short_summary": "HPF established stable cryogenic near-infrared spectroscopy with a laser-frequency-comb reference. Its subsystem papers show why one scalar drift is insufficient: thermal control, fibre tracking, detector response, far-field illumination and chromatic etalon evolution contribute differently.",
+    "latest_problem": "A six-month etalon study measured an average drift near 0.02 m/s/day with local wavelength-dependent departures up to plus or minus 0.05 m/s/day. The nightly calibration scale can therefore be strong while longer transfer requires spectrally resolved monitoring.",
+    "latest_problem_source": "https://arxiv.org/abs/2103.08456",
+    "lessons": [
+      "Sub-millikelvin enclosure stability is a subsystem measurement, not stellar precision.",
+      "The laser comb can support calibration far below the RMS of a stellar sequence.",
+      "Etalon drift is chromatic and cannot always be removed by one nightly scalar.",
+      "Large HET pupil changes provide a demanding illumination-transfer test.",
+      "A planet non-detection can expose long-period stellar activity that optical data alone misidentified."
+    ],
+    "future_analysis": {
+      "title": "HPF chromatic-calibration and fibre-transfer notebook",
+      "status": "future analysis question, not completed research and dependent on calibration spectra",
+      "question": "Can order-resolved etalon drift and fibre-transfer diagnostics predict held-out stellar residuals better than one scalar nightly correction?",
+      "basis": "Published comb, etalon and far-field studies quantify different calibration-transfer terms over different timescales.",
+      "steps": [
+        "Reproduce the six-month mode-by-mode etalon drift map.",
+        "Compare scalar, order-wise and smooth chromatic corrections on held-out date blocks.",
+        "Stratify tests by HET pupil geometry and signal-to-noise.",
+        "Inject Doppler shifts before calibration transfer and report wavelength-dependent recovery."
+      ],
+      "success_tests": [
+        "Nightly and ten-day calibration scales reproduce within documented definitions.",
+        "Held-out improvement exceeds a scalar-drift baseline.",
+        "Injected shifts are not absorbed by the chromatic model.",
+        "Stellar RMS is never labelled as calibration-only precision."
+      ]
+    },
+    "paper_ids": ["HPF-2012-DESIGN", "HPF-2014-CALIBRATION", "HPF-2016-THERMAL", "HPF-2019-COMB", "HPF-2021-ETALON", "HPF-2021-SCRAMBLING", "HPF-2019-STATUS"]
+  },
+  {
+    "instrument_id": "cfht-spirou",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
+    "title": "SPIRou: near-infrared velocity, telluric modelling, and magnetic diagnostics",
+    "reading_boundary": "Five selected target, instrument, telluric, activity and current-operations sources. It is not a complete SPIRou Legacy Survey bibliography.",
+    "current_status": "CFHT's observer cookbook says SPIRou has been offered since semester 2019A and supplies current observing guidance.",
+    "current_status_url": "https://www.cfht.hawaii.edu/Instruments/SPIRou/SPIRou_cookbook.php",
+    "short_summary": "SPIRou records YJHK spectra and polarimetry together, providing velocity and magnetic diagnostics from one instrument. Published tests separate excellent internal channel stability from larger stellar scatter shaped by photons, tellurics, persistence and activity.",
+    "latest_problem": "The instrument paper reports 0.07 m/s in a 32-hour dual-channel calibration test but about 2 m/s for mid-M stellar sequences over weeks. It also identifies detector persistence and faint-target crosstalk or telluric limits.",
+    "latest_problem_source": "https://academic.oup.com/mnras/article/498/4/5684/5897365",
+    "lessons": [
+      "Dual-channel calibration stability and stellar time-series RMS answer different questions.",
+      "Telluric absorption is dense and variable across the near infrared.",
+      "Detector persistence depends on earlier exposures and is most consequential for faint targets.",
+      "Polarimetry supplies magnetic information that can constrain, but not automatically remove, activity.",
+      "Different line masks probe different magnetic sensitivity and atmospheric contamination."
+    ],
+    "future_analysis": {
+      "title": "SPIRou telluric and persistence sensitivity table",
+      "status": "future analysis question, not completed research and dependent on exposure-history metadata",
+      "question": "How do telluric model choices, previous-exposure brightness and magnetic line masks change held-out velocity recovery?",
+      "basis": "The selected papers identify each mechanism, but their combined impact is not represented by one published precision number.",
+      "steps": [
+        "Group spectra by water-vapour state, airmass, target brightness and previous-exposure flux.",
+        "Compare empirical and synthetic telluric corrections under the same masks.",
+        "Measure velocity changes for magnetically sensitive and CO-dominated masks.",
+        "Inject shifts before masking and report lost information with residual bias."
+      ],
+      "success_tests": [
+        "Calibration and stellar metrics remain separate.",
+        "Persistence tests use ordered exposure history rather than random splits.",
+        "Telluric-mask trade-offs report both bias and information loss.",
+        "Results are stratified by target brightness and weather."
+      ]
+    },
+    "paper_ids": ["SPI-2018-INPUT", "SPI-2020-INSTRUMENT", "SPI-2022-TELLURIC", "SPI-2024-ACTIVITY", "SPI-2025-STATUS"]
+  },
+  {
+    "instrument_id": "lasilla-nirps",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 6,
+    "title": "NIRPS: adaptive-optics injection, early sub-m/s results, and sky correction",
+    "reading_boundary": "Six selected front-end, commissioning, instrument, archive, status and recent methods sources. The 2026 sky-correction item is explicitly a preprint.",
+    "current_status": "ESO lists NIRPS as offered at the 3.6 m telescope and has released pipeline-reduced spectra from operations beginning in April 2023.",
+    "current_status_url": "https://www.eso.org/sci/facilities/lpo/cfp/cfp118/instruments.html",
+    "short_summary": "NIRPS extends HARPS observations into the near infrared using adaptive-optics-assisted fibre injection and separate efficiency modes. Early work reports selected sub-m/s results, while later sources make mode, sky emission and pipeline version part of the interpretation.",
+    "latest_problem": "A September 2026 preprint tests night-sky emission corrections separately for high-accuracy and high-efficiency modes. It is recent and should be evaluated as a method proposal rather than settled cross-instrument performance.",
+    "latest_problem_source": "https://arxiv.org/abs/2609.03374",
+    "lessons": [
+      "Adaptive optics changes coupling and modal behaviour rather than simply increasing throughput.",
+      "An early better-than-1 m/s result belongs to its targets, cadence and commissioning reduction.",
+      "High-accuracy and high-efficiency modes should not share one performance label.",
+      "Simultaneous HARPS observations enable chromatic tests but require aligned timestamps and models.",
+      "Sky-emission correction can remove bias while adding template and subtraction uncertainty."
+    ],
+    "future_analysis": {
+      "title": "NIRPS mode-aware sky and coupling replay",
+      "status": "future analysis question, not completed research and partly based on a recent preprint",
+      "question": "Can public spectra quantify how mode, adaptive-optics coupling and sky subtraction change velocity recovery across wavelength and conditions?",
+      "basis": "The archive now supplies reduced products, and the front-end and sky-correction papers define testable mode-specific effects.",
+      "steps": [
+        "Version archive products by pipeline, fibre mode and observing configuration.",
+        "Reproduce published early-science cases before generalizing.",
+        "Apply sky corrections with held-out nights and wavelength blocks.",
+        "Use simultaneous HARPS observations only after matching cadence and stellar models."
+      ],
+      "success_tests": [
+        "Mode-specific results are never pooled into one precision value.",
+        "Sky subtraction improves held-out bias without increasing false signals.",
+        "Injected amplitudes survive adaptive-optics and masking strata.",
+        "The 2026 method remains labelled as a preprint until publication."
+      ]
+    },
+    "paper_ids": ["NIR-2022-FRONTEND", "NIR-2024-FIRSTLIGHT", "NIR-2025-INSTRUMENT", "NIR-2026-ARCHIVE", "NIR-2026-STATUS", "NIR-2026-SKY"]
+  },
+  {
+    "instrument_id": "magellan-pfs",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 6,
+    "title": "PFS: iodine-cell measurements, configuration eras, and long-baseline use",
+    "reading_boundary": "Six selected construction, commissioning, science-use, archive and current-roster sources. It is not a complete PFS planet-search bibliography.",
+    "current_status": "Current Carnegie and Las Campanas pages list PFS as a user instrument on Magellan; Carnegie notes that access is through collaboration with the instrument group.",
+    "current_status_url": "https://carnegiescience.edu/our-research/instrumentation/planetary-science-instrumentation",
+    "short_summary": "PFS uses the iodine-cell method on the Magellan Clay telescope and has supported decade-scale programmes. Its early below-1 m/s commissioning result belongs to an early configuration, while later science combines different eras, targets and sometimes instruments.",
+    "latest_problem": "The current institutional page states better-than-1 m/s precision but does not specify the sample, baseline, reduction version or hardware era. The claim therefore remains anchored to the documented commissioning sequence rather than generalized.",
+    "latest_problem_source": "https://carnegiescience.edu/carnegie-planet-finder-spectrograph-integration-and-commissioning",
+    "lessons": [
+      "An iodine-cell velocity is relative and depends on the stellar template and line-spread-function model.",
+      "The first five-month standard-star RMS cannot represent every later hardware configuration.",
+      "Long planet-search baselines gain sensitivity while accumulating instrument and pipeline eras.",
+      "Multi-instrument planet fits do not isolate PFS stability by themselves.",
+      "A current roster establishes availability, not a complete modern performance characterization."
+    ],
+    "future_analysis": {
+      "title": "PFS configuration-era and template audit",
+      "status": "future analysis question, not completed research and dependent on a dated configuration log",
+      "question": "Can public velocities and observing metadata identify configuration and template boundaries strongly enough to test long-period signal recovery?",
+      "basis": "The literature spans commissioning through long-baseline science, but the checked public pages do not expose one complete era table.",
+      "steps": [
+        "Build a dated configuration, detector, slit and reduction-version ledger.",
+        "Keep iodine templates and zero points star-specific.",
+        "Test stable stars across era boundaries before pooling planet targets.",
+        "Inject long-period signals and hold out entire observing seasons."
+      ],
+      "success_tests": [
+        "Every velocity is assigned an era or explicitly marked unresolved.",
+        "Commissioning precision is not propagated to later eras by assumption.",
+        "Long-period recovery is reported under leave-one-season-out tests.",
+        "Multi-instrument offsets remain separate from PFS internal changes."
+      ]
+    },
+    "paper_ids": ["PFS-2008-STATUS", "PFS-2010-COMMISSION", "PFS-2016-LONGBASELINE", "PFS-2024-USE", "PFS-2026-STATUS", "PFS-2026-ROSTER"]
   }
 ]
