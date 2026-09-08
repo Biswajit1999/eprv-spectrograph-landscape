@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.13.0] - 2026-09-08
+
+- Added 44 selected source records and ten reading dossiers for HERMES, UCLES,
+  ESPaDOnS, TRES, IGRINS, CORALIE, FEROS, FIDEOS, PEPSI and Subaru HDS.
+- Expanded the public reading guide to 197 sources across 38 instrument profiles.
+- Kept survey accuracy, commissioning stability, calibration capability and
+  stellar repeatability as separate evidence classes.
+- Added explicit current-status gaps for undated facility pages and separated
+  original IGRINS from the IGRINS-2 successor record.
+
 ## [0.12.0] - 2026-09-08
 
 - Added 28 selected source records for HIRES, UVES, CHIRON, FIES, GHOST and

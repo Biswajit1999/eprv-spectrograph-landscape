@@ -171,6 +171,19 @@ mode. HIRES catalog versions, UVES configurations, CHIRON modes, FIES fibre and
 wavelength-solution eras, GHOST PRV-mode availability and Veloce shared-risk
 operation remain explicit boundaries.
 
+## Survey, legacy, and general-purpose extension
+
+Ten tables—`data/hermes_papers.csv`, `data/ucles_papers.csv`,
+`data/espadons_papers.csv`, `data/tres_papers.csv`, `data/igrins_papers.csv`,
+`data/coralie_papers.csv`, `data/feros_papers.csv`, `data/fideos_papers.csv`,
+`data/pepsi_papers.csv` and `data/hds_papers.csv`—add 44 selected records. The
+shared synthesis is `docs/SURVEY_LEGACY_AND_GENERAL_NOTES.md`.
+
+Facility pages are used for configuration and dated status only when the page
+supports that interpretation. Undated pages remain status gaps. Paper abstracts,
+publisher records, official manuals, and archive metadata support distinct
+statements and are not collapsed into a single precision scale.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

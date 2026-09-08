@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eprv-landscape"
-version = "0.12.0"
+version = "0.13.0"
 description = "Source-linked reading notes, measurements, status, and research questions for precision radial-velocity spectrographs."
 readme = "README.md"
 requires-python = ">=3.10"

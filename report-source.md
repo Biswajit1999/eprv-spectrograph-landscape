@@ -188,3 +188,17 @@ website to 153 sources across 28 instrument profiles. HIRES, UVES, CHIRON, FIES,
 GHOST and Veloce are not ranked against the stabilized core. Each profile keeps
 catalog versions, instrument modes, status evidence and measurement definitions
 attached to its own source.
+
+## Survey, legacy, and general-purpose extension
+
+`docs/SURVEY_LEGACY_AND_GENERAL_NOTES.md` adds 44 selected records for HERMES,
+UCLES, ESPaDOnS, TRES, IGRINS, CORALIE, FEROS, FIDEOS, PEPSI and Subaru HDS. The
+public site now contains 197 selected sources across 38 profiles while EXOhSPEC
+remains the first reading focus.
+
+This wave deliberately spans several measurement regimes. HERMES velocities are
+survey-scale; UCLES and HDS use iodine; ESPaDOnS is a spectropolarimeter; TRES is
+often used for reconnaissance; IGRINS works in the near infrared; CORALIE has a
+long survey baseline; FEROS is general-purpose; FIDEOS has a bounded commissioning
+result; and PEPSI has multiple configurations. Their numbers are therefore never
+placed into one ranking.

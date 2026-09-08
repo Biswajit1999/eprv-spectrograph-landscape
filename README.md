@@ -46,8 +46,10 @@ residuals are different quantities. The data model keeps them separate.
   covering SOPHIE, APF/Levy, iSHELL, IRD, PARVI, PARAS-2, HARPS3, ANDES and
   G-CLEF.
 - An [archive and general-purpose chapter](docs/ARCHIVE_AND_GENERAL_RV_NOTES.md)
-  covering HIRES, UVES, CHIRON, FIES, GHOST and Veloce. Together, the 28
-  dossiers contain 153 selected sources.
+  covering HIRES, UVES, CHIRON, FIES, GHOST and Veloce.
+- A [survey, legacy and general-purpose chapter](docs/SURVEY_LEGACY_AND_GENERAL_NOTES.md)
+  covering HERMES, UCLES, ESPaDOnS, TRES, IGRINS, CORALIE, FEROS, FIDEOS,
+  PEPSI and HDS. Together, the 38 dossiers contain 197 selected sources.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's

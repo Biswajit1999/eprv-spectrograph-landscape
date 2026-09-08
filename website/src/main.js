@@ -24,7 +24,7 @@ async function fetchText(path){
 }
 
 async function main(){
-  const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce'];
+  const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce','hermes','ucles','espadons','tres','igrins','coralie','feros','fideos','pepsi','hds'];
   const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperTexts,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
