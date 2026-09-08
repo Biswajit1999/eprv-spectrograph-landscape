@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 instruments, 22 quantitative claims and 88 selected reading-note sources across 13 instruments | `results/manifest.json` and the 13 `data/*_papers.csv` tables |
+| 21 detailed-core instruments, 22 quantitative claims and 125 selected reading-note sources across 22 dossiers including EXOhSPEC | `results/manifest.json` and the 22 `data/*_papers.csv` tables |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |
@@ -59,3 +59,9 @@ in `docs/PRIORITY_INSTRUMENT_READING_NOTES.md`. Design requirements, laboratory
 tests, commissioning results, stellar measurements and facility-wide statements
 remain separate evidence classes. The chapter's future-analysis questions are
 not quantitative results and are not included in `PERF-001` through `PERF-022`.
+
+The remaining detailed-core records are mapped in the nine paper tables for
+SOPHIE, APF/Levy, iSHELL, IRD, PARVI, PARAS-2, HARPS3, ANDES and G-CLEF.
+`docs/CORE_INSTRUMENT_READING_NOTES.md` preserves conditional simulations,
+commissioning tests, current-status conflicts and planned-instrument requirements
+as different evidence types.

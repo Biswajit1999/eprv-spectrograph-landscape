@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 import pandas as pd
 import pytest
@@ -92,26 +93,10 @@ def test_expres_reading_list_and_paired_metrics_are_linked():
 def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     with open("data/instrument_dossiers.json", encoding="utf-8") as source:
         dossiers = json.load(source)
-    papers = pd.concat(
-        [
-            pd.read_csv("data/expres_papers.csv"),
-            pd.read_csv("data/harps_papers.csv"),
-            pd.read_csv("data/espresso_papers.csv"),
-            pd.read_csv("data/harpsn_papers.csv"),
-            pd.read_csv("data/neid_papers.csv"),
-            pd.read_csv("data/exohspec_papers.csv"),
-            pd.read_csv("data/kpf_papers.csv"),
-            pd.read_csv("data/maroonx_papers.csv"),
-            pd.read_csv("data/carmenes_papers.csv"),
-            pd.read_csv("data/hpf_papers.csv"),
-            pd.read_csv("data/spirou_papers.csv"),
-            pd.read_csv("data/nirps_papers.csv"),
-            pd.read_csv("data/pfs_papers.csv"),
-        ],
-        ignore_index=True,
-    )
+    paper_files = sorted(Path("data").glob("*_papers.csv"))
+    papers = pd.concat([pd.read_csv(path) for path in paper_files], ignore_index=True)
     paper_ids = set(papers["paper_id"])
-    assert len(paper_ids) == len(papers) == 88
+    assert len(paper_ids) == len(papers) == 125
     assert papers["source_url"].str.startswith("https://").all()
     assert papers["numerical_result"].str.len().min() >= 20
     for dossier in dossiers:
@@ -138,7 +123,11 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     assert exohspec["paper_count"] == 7
     assert "No completed on-sky stellar-RV" in exohspec["reading_boundary"]
     assert "conflict" in exohspec["current_status"].lower()
-    assert len(dossiers) == 13
+    census_ids = {
+        row["instrument_id"] for row in load_census("data/census_registry.jsonl", "data/facilities.jsonl")
+    }
+    assert len(dossiers) == 22
+    assert {item["instrument_id"] for item in dossiers} <= census_ids
     for instrument_id in (
         "keck-kpf",
         "gemini-north-maroonx",
@@ -147,6 +136,15 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
         "cfht-spirou",
         "lasilla-nirps",
         "magellan-pfs",
+        "ohp-sophie",
+        "lick-apf-levy",
+        "irtf-ishell",
+        "subaru-ird",
+        "palomar-parvi",
+        "prl-paras2",
+        "ing-harps3",
+        "elt-andes",
+        "gmt-gclef",
     ):
         assert next(item for item in dossiers if item["instrument_id"] == instrument_id)
 

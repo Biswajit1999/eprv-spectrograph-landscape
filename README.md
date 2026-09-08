@@ -41,7 +41,10 @@ residuals are different quantities. The data model keeps them separate.
   statements across seven selected sources.
 - A [seven-instrument reading chapter](docs/PRIORITY_INSTRUMENT_READING_NOTES.md)
   covering 42 selected sources for KPF, MAROON-X, CARMENES, HPF, SPIRou,
-  NIRPS and Magellan PFS. Together, the 13 dossiers contain 88 selected sources.
+  NIRPS and Magellan PFS.
+- A [detailed-core completion chapter](docs/CORE_INSTRUMENT_READING_NOTES.md)
+  covering SOPHIE, APF/Levy, iSHELL, IRD, PARVI, PARAS-2, HARPS3, ANDES and
+  G-CLEF. Together, the 22 dossiers contain 125 selected sources.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's

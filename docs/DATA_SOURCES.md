@@ -146,6 +146,19 @@ bibliometric census of every paper that used each instrument. Numerical values
 remain attached to their source, sample, timescale and reduction context; the
 tables do not convert unlike quantities into a rank.
 
+## Detailed-core completion wave
+
+Nine additional tables—`data/sophie_papers.csv`, `data/apf_papers.csv`,
+`data/ishell_papers.csv`, `data/ird_papers.csv`, `data/parvi_papers.csv`,
+`data/paras2_papers.csv`, `data/harps3_papers.csv`, `data/andes_papers.csv` and
+`data/gclef_papers.csv`—add 37 selected records. The shared synthesis is
+`docs/CORE_INSTRUMENT_READING_NOTES.md`.
+
+HARPS3, ANDES and G-CLEF contain requirements and project milestones rather than
+achieved performance. PARVI retains a status conflict. APF and IRD retain dated
+current-status gaps. These limitations are part of the dataset rather than being
+filled by inference.
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

@@ -24,31 +24,20 @@ async function fetchText(path){
 }
 
 async function main(){
-  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,exohspecPaperText,expresPaperText,harpsPaperText,espressoPaperText,harpsnPaperText,neidPaperText,kpfPaperText,maroonxPaperText,carmenesPaperText,hpfPaperText,spirouPaperText,nirpsPaperText,pfsPaperText,beginnerText]=await Promise.all([
+  const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef'];
+  const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperTexts,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
     fetchText('./data/census_registry.jsonl'),
     fetchText('./data/facilities.jsonl'),
     fetchText('./data/challenge_profiles.json'),
     fetchText('./data/instrument_dossiers.json'),
-    fetchText('./data/exohspec_papers.csv'),
-    fetchText('./data/expres_papers.csv'),
-    fetchText('./data/harps_papers.csv'),
-    fetchText('./data/espresso_papers.csv'),
-    fetchText('./data/harpsn_papers.csv'),
-    fetchText('./data/neid_papers.csv'),
-    fetchText('./data/kpf_papers.csv'),
-    fetchText('./data/maroonx_papers.csv'),
-    fetchText('./data/carmenes_papers.csv'),
-    fetchText('./data/hpf_papers.csv'),
-    fetchText('./data/spirou_papers.csv'),
-    fetchText('./data/nirps_papers.csv'),
-    fetchText('./data/pfs_papers.csv'),
+    Promise.all(paperFiles.map(name=>fetchText(`./data/${name}_papers.csv`))),
     fetchText('./data/beginner_guide.json'),
   ]);
   const instruments=parseCSV(instrumentText), claims=parseCSV(claimText);
   const census=parseJSONL(censusText), facilities=parseJSONL(facilityText), challenges=JSON.parse(challengeText);
-  const dossiers=JSON.parse(dossierText), papers=[...parseCSV(exohspecPaperText),...parseCSV(expresPaperText),...parseCSV(harpsPaperText),...parseCSV(espressoPaperText),...parseCSV(harpsnPaperText),...parseCSV(neidPaperText),...parseCSV(kpfPaperText),...parseCSV(maroonxPaperText),...parseCSV(carmenesPaperText),...parseCSV(hpfPaperText),...parseCSV(spirouPaperText),...parseCSV(nirpsPaperText),...parseCSV(pfsPaperText)];
+  const dossiers=JSON.parse(dossierText), papers=paperTexts.flatMap(parseCSV);
   const beginner=JSON.parse(beginnerText);
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));
@@ -80,8 +69,9 @@ async function main(){
   dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
 
   function matchingClaims(item){
-    const keys=[item.acronym,item.official_name,...(item.aliases||[])].filter(Boolean).map(v=>v.toLowerCase());
-    return claims.filter(claim=>keys.some(key=>claim.instrument.toLowerCase()===key || key.includes(claim.instrument.toLowerCase())));
+    const normalize=value=>String(value??'').toLowerCase().replace(/[^a-z0-9]/g,'');
+    const keys=[item.acronym,item.official_name,...(item.aliases||[])].filter(Boolean).map(normalize);
+    return claims.filter(claim=>keys.includes(normalize(claim.instrument)));
   }
   function depthFor(item){
     const dossier=dossiersById.get(item.instrument_id);

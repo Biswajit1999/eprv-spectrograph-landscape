@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.11.0] - 2026-09-08
+
+- Completed selected-source dossiers for all 21 instruments in the detailed
+  performance core and retained EXOhSPEC as the first public reading focus.
+- Added 37 records for SOPHIE, APF/Levy, iSHELL, IRD, PARVI, PARAS-2, HARPS3,
+  ANDES and G-CLEF, bringing the reading ledger to 125 sources in 22 dossiers.
+- Kept planned-system requirements, commissioning evidence, conditional
+  simulations and on-sky measurements as separate evidence classes.
+- Added current status caveats for the SOPHIE-RED transition, shared-risk HARPS3,
+  preliminary-design ANDES, subsystem-stage G-CLEF and conflicting PARVI pages.
+
 ## [0.10.0] - 2026-09-08
 
 - Added 42 selected source records and reading summaries for KPF, MAROON-X,
