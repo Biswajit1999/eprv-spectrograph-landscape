@@ -14,7 +14,7 @@
     </header>
     <main id="main">
       <section class="hero" id="top">
-        <div class="kicker">Independent literature synthesis · updated 8 September 2026</div>
+        <div class="kicker">Independent literature synthesis · updated 9 September 2026</div>
         <h1>What the papers actually say about precision RV spectrographs.</h1>
         <p class="lede">My source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which questions could support later analysis.</p>
         <div class="hero-actions"><a class="button primary" href="#learn">Begin with the measurement</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
@@ -42,7 +42,20 @@
       </section>
       <section id="map" class="section shade map-section">
         <div class="section-head"><div><span class="eyebrow">Location guide</span><h2>Where the instruments collect light</h2></div><p>Each point uses a cited site or telescope coordinate. Several instruments at one observatory share a marker; this is a reading map, not a survey-grade geodetic product.</p></div>
-        <div class="world-map" id="world-map" role="img" aria-label="Equirectangular world plot of verified observatory coordinates"><div class="map-equator"></div><div class="map-meridian"></div><div class="map-label north">90° N</div><div class="map-label south">90° S</div><div class="map-label west">180° W</div><div class="map-label east">180° E</div></div>
+        <div class="world-map" id="world-map" role="img" aria-label="Equirectangular world map of source-linked observatory coordinates">
+          <svg class="map-land" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M44 112 92 78 158 64 214 82 250 116 239 149 205 154 183 190 152 204 123 174 80 161Z" />
+            <path d="M224 205 265 214 292 252 305 306 287 365 258 420 239 370 245 315 220 272 204 234Z" />
+            <path d="M432 97 482 72 544 78 589 101 639 92 700 104 749 132 810 141 867 177 842 205 787 197 755 224 707 218 665 185 617 183 583 157 540 162 513 143 478 151 448 132Z" />
+            <path d="M494 166 548 169 583 203 592 260 571 329 538 368 507 334 489 278 466 228Z" />
+            <path d="M687 204 726 216 746 251 727 273 699 249 675 226Z" />
+            <path d="M793 328 842 312 892 330 918 363 884 389 832 382 801 355Z" />
+            <path d="M301 55 334 34 365 46 356 78 321 86Z" />
+            <path d="M0 465 100 452 220 461 350 449 500 460 650 448 800 462 1000 451 1000 500 0 500Z" />
+          </svg>
+          <div class="map-equator"></div><div class="map-meridian"></div><div class="map-label north">90° N</div><div class="map-label south">90° S</div><div class="map-label west">180° W</div><div class="map-label east">180° E</div>
+        </div>
+        <div class="map-legend"><span><i class="ground-dot"></i>Ground facility</span><span><i class="space-symbol">◆</i>Space spectrographs appear as comparator notes, not ground-map points</span></div>
         <p id="map-summary" class="result"></p>
         <div id="map-sites" class="map-sites"></div>
       </section>
@@ -82,6 +95,10 @@
         <div class="figure-grid">
           <figure><img src="./figures/wavelength_coverage.png" alt="Horizontal intervals showing wavelength coverage, grouped by current status" width="1600" height="1100" loading="lazy" /><figcaption>Representative wavelength coverage and dated status for the performance core.</figcaption></figure>
           <figure><img src="./figures/reported_velocity_scales.png" alt="Reported velocity values grouped by non-equivalent measurement context" width="1600" height="1100" loading="lazy" /><figcaption>Reported velocity scales separated by measurement context; this is not a ranking.</figcaption></figure>
+          <figure><img src="./figures/resolution_vs_coverage.png" alt="Scatter plot of representative resolving power against nominal wavelength span" width="1800" height="1080" loading="lazy" /><figcaption>Resolving power against nominal wavelength span. Neither axis directly measures long-term radial-velocity accuracy.</figcaption></figure>
+          <figure><img src="./figures/state_of_art_evidence.png" alt="Two panels separating published on-sky examples from requirements commissioning and calibration values" width="2700" height="1620" loading="lazy" /><figcaption>State-of-art evidence split by measurement context. On-sky examples remain separate from requirements and subsystem values.</figcaption></figure>
+          <figure><img src="./figures/expres_published_comparisons.png" alt="Paired before and after measurements reported within selected EXPRES papers" width="1600" height="1100" loading="lazy" /><figcaption>Within-paper EXPRES comparisons. Each pair retains the original paper's metric and scope rather than implying an instrument-wide floor.</figcaption></figure>
+          <figure class="wide"><img src="./figures/keplerian_detectability.png" alt="Ideal radial-velocity semi-amplitude against orbital period for one and five Earth-mass planets around Sun-like and mid-M-dwarf stars" width="1980" height="1260" loading="lazy" /><figcaption>Ideal circular, edge-on Keplerian signals from committed assumptions. The 1 m/s, 30 cm/s and 10 cm/s guides show why the field is moving below one metre per second; stellar variability, cadence and instrument systematics are excluded.</figcaption></figure>
         </div>
       </section>
       <section id="method" class="section method">

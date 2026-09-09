@@ -7,7 +7,7 @@ metric, value, sample, baseline and caveat. Derived counts map to
 
 | Statement | Evidence |
 |---|---|
-| 21 detailed-core instruments, 22 quantitative claims and 197 selected reading-note sources across 38 dossiers | `results/manifest.json` and the 38 `data/*_papers.csv` tables |
+| 21 detailed-core instruments, 22 quantitative claims and 241 selected reading-note sources across 53 dossiers | `results/manifest.json` and the 50 `data/*_papers.csv` tables |
 | 53 physical census records across 33 represented facilities | `data/census_registry.jsonl`, validated against `data/facilities.jsonl` |
 | HARPS near 1 m/s | `PERF-001` |
 | HARPS-N 1.27 to 1.07 m/s | `PERF-002` plus cited paper |

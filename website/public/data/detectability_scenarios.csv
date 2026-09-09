@@ -1,0 +1,5 @@
+scenario,planet_mass_earth,stellar_mass_solar,eccentricity,sin_inclination,line_style
+Earth around Sun,1.0,1.0,0.0,1.0,solid
+Earth around mid-M dwarf,1.0,0.3,0.0,1.0,solid
+Five-Earth-mass planet around Sun,5.0,1.0,0.0,1.0,dashed
+Five-Earth-mass planet around mid-M dwarf,5.0,0.3,0.0,1.0,dashed

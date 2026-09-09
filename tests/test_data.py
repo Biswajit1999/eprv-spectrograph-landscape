@@ -99,9 +99,14 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     paper_files = sorted(Path("data").glob("*_papers.csv"))
     papers = pd.concat([pd.read_csv(path) for path in paper_files], ignore_index=True)
     paper_ids = set(papers["paper_id"])
-    assert len(paper_ids) == len(papers) == 197
+    assert len(paper_ids) == len(papers) == 241
     assert papers["source_url"].str.startswith("https://").all()
     assert papers["numerical_result"].str.len().min() >= 20
+    assert "PARAS-2010-FIRSTLIGHT" in paper_ids
+    assert "HIDES-2005-SURVEY" in paper_ids
+    assert "PARAS-2011-FIRSTRESULTS" not in paper_ids
+    assert "HIDES-2007-SURVEY" not in paper_ids
+    assert "10.1088/0004-637X/744/1/54" not in " ".join(papers["source_url"])
     for dossier in dossiers:
         assert dossier["paper_count"] == len(dossier["paper_ids"])
         assert set(dossier["paper_ids"]) <= paper_ids
@@ -129,8 +134,8 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
     census_ids = {
         row["instrument_id"] for row in load_census("data/census_registry.jsonl", "data/facilities.jsonl")
     }
-    assert len(dossiers) == 38
-    assert {item["instrument_id"] for item in dossiers} <= census_ids
+    assert len(dossiers) == 53
+    assert {item["instrument_id"] for item in dossiers} == census_ids
     for instrument_id in (
         "keck-kpf",
         "gemini-north-maroonx",
@@ -164,6 +169,21 @@ def test_instrument_dossiers_resolve_papers_and_label_future_analysis():
         "lasilla-fideos",
         "lbt-pepsi",
         "subaru-hds",
+        "boao-boes",
+        "calaralto-cafe",
+        "eso-ces",
+        "eso-coravel",
+        "het-hrs",
+        "lick-hamilton",
+        "mcdonald-tull",
+        "ohp-elodie",
+        "okayama-hides",
+        "lco-nres-ctio",
+        "lco-nres-mcdonald",
+        "lco-nres-saao",
+        "lco-nres-wise",
+        "prl-paras",
+        "salt-hrs",
     ):
         assert next(item for item in dossiers if item["instrument_id"] == instrument_id)
 
@@ -182,11 +202,26 @@ def test_beginner_guide_has_sources_boundaries_and_taxonomy():
     assert len(guide["steps"]) == 5
     assert len(guide["techniques"]) >= 3
     assert len(guide["equations"]) >= 3
+    assert all(item["mathml"].startswith("<math") for item in guide["equations"])
     assert all(item["source_url"].startswith("https://") for item in guide["steps"])
     by_name = {item["name"]: item for item in guide["comparators"]}
     assert "Gaia RVS" in by_name
     assert "JWST NIRSpec" in by_name
     assert all(not item["belongs_in_census"] for item in guide["taxonomy"] if "space" in item["class_name"].lower() or "survey" in item["class_name"].lower())
+
+
+def test_salt_hrs_has_dated_current_status_evidence():
+    records = load_census("data/census_registry.jsonl", "data/facilities.jsonl")
+    salt = next(row for row in records if row["instrument_id"] == "salt-hrs")
+    assert salt["current_status"] == "operational"
+    assert salt["status_as_of"] == "2026-2"
+    assert not salt["unresolved_fields"]
+
+
+def test_paras_primary_source_is_the_actual_first_light_paper():
+    records = load_census("data/census_registry.jsonl", "data/facilities.jsonl")
+    paras = next(row for row in records if row["instrument_id"] == "prl-paras")
+    assert paras["primary_source_url"] == "https://arxiv.org/abs/1007.4280"
 
 
 def test_every_represented_facility_has_a_source_linked_map_coordinate():

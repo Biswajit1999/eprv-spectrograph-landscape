@@ -16,7 +16,10 @@ The build validates controlled vocabularies, claim identifiers, numeric values,
 claim-to-instrument references, the EXPRES paper list and its paired figure
 values, then regenerates every file under `results/`.
 The test suite also validates `data/census_registry.jsonl` against
-`data/facilities.jsonl`.
+`data/facilities.jsonl`, resolves every dossier paper identifier, checks that all
+53 census instruments have dossiers, and guards corrected PARAS and HIDES source
+records. The six figures include the idealized scenarios committed in
+`data/detectability_scenarios.csv`; those curves are not fitted to observations.
 
 Build and serve the static website:
 

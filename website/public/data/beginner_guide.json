@@ -104,17 +104,20 @@
   "equations": [
     {
       "name": "Small Doppler shift",
-      "expression": "Delta lambda / lambda approximately equals v_r / c",
+      "expression": "Δλ/λ ≃ vᵣ/c",
+      "mathml": "<math display='block'><mfrac><mrow><mi>Δ</mi><mi>λ</mi></mrow><mi>λ</mi></mfrac><mo>≃</mo><mfrac><msub><mi>v</mi><mi>r</mi></msub><mi>c</mi></mfrac></math>",
       "meaning": "A line pattern shifted by a tiny fraction of its wavelength corresponds to a line-of-sight velocity. Precision comes from combining information across many pixels and lines."
     },
     {
       "name": "Resolving power",
-      "expression": "R = lambda / delta lambda",
+      "expression": "R = λ/Δλ",
+      "mathml": "<math display='block'><mi>R</mi><mo>=</mo><mfrac><mi>λ</mi><mrow><mi>Δ</mi><mi>λ</mi></mrow></mfrac></math>",
       "meaning": "R describes spectral resolution. Sub-pixel modelling of many lines can measure shifts much smaller than one resolution element, but accuracy still depends on calibration and stability."
     },
     {
       "name": "Photon-limited uncertainty",
-      "expression": "sigma_v = c / (Q sqrt(N_e))",
+      "expression": "σᵥ = c/(Q√Nₑ)",
+      "mathml": "<math display='block'><msub><mi>σ</mi><mi>v</mi></msub><mo>=</mo><mfrac><mi>c</mi><mrow><mi>Q</mi><msqrt><msub><mi>N</mi><mi>e</mi></msub></msqrt></mrow></mfrac></math>",
       "meaning": "In the Bouchy et al. formulation, Q represents the Doppler information in the spectrum and N_e is the detected photoelectron count. This is a statistical floor, not a complete long-term error budget."
     }
   ],

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.14.0] - 2026-09-09
+
+- Completed selected-source dossier coverage for all 53 declared census
+  records, with 241 sources across 50 machine-readable paper tables.
+- Added BOES, CAFE, CES, CORAVEL, HET HRS, Hamilton, Tull, ELODIE, HIDES,
+  PARAS-1, SALT HRS and four site-specific NRES reading profiles.
+- Preserved unresolved current-status fields where an undated instrument page
+  could not support a semester-level claim; added dated 2026-2 SALT HRS status.
+- Replaced prose-like formula strings with native accessible mathematical
+  notation and added original evidence-context and Keplerian signal-scale
+  figures generated from committed data.
+- Rebuilt the interactive location section as a recognizable world map with
+  all 33 represented ground facilities and an explicit space-comparator boundary.
+
 ## [0.13.0] - 2026-09-08
 
 - Added 44 selected source records and ten reading dossiers for HERMES, UCLES,

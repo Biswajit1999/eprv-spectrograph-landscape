@@ -39,8 +39,13 @@
       ]
     },
     "paper_ids": [
-      "EXO-2019-DESIGN", "EXO-2021-PROTOTYPE", "EXO-2024-MODAL", "EXO-2025-METALON",
-      "EXO-2026-NARIT-TECH", "EXO-2026-NARIT-ROSTER", "EXO-2024-ING-HISTORY"
+      "EXO-2019-DESIGN",
+      "EXO-2021-PROTOTYPE",
+      "EXO-2024-MODAL",
+      "EXO-2025-METALON",
+      "EXO-2026-NARIT-TECH",
+      "EXO-2026-NARIT-ROSTER",
+      "EXO-2024-ING-HISTORY"
     ]
   },
   {
@@ -83,9 +88,18 @@
       ]
     },
     "paper_ids": [
-      "EXP-2016-DESIGN", "EXP-2019-TELLURIC", "EXP-2020-PERFORMANCE", "EXP-2020-PIPELINE",
-      "EXP-2020-HD3651", "EXP-2020-ESSP1", "EXP-2020-ATMOSPHERE", "EXP-2021-EXCALIBUR",
-      "EXP-2022-ESSP2", "EXP-2023-SOLAR", "EXP-2024-RC", "EXP-2026-SYSTEMATICS",
+      "EXP-2016-DESIGN",
+      "EXP-2019-TELLURIC",
+      "EXP-2020-PERFORMANCE",
+      "EXP-2020-PIPELINE",
+      "EXP-2020-HD3651",
+      "EXP-2020-ESSP1",
+      "EXP-2020-ATMOSPHERE",
+      "EXP-2021-EXCALIBUR",
+      "EXP-2022-ESSP2",
+      "EXP-2023-SOLAR",
+      "EXP-2024-RC",
+      "EXP-2026-SYSTEMATICS",
       "EXP-2026-FACTOR"
     ]
   },
@@ -128,8 +142,12 @@
       ]
     },
     "paper_ids": [
-      "HARPS-2003-COMMISSION", "HARPS-2013-LFC", "HARPS-2015-FIBRES",
-      "HARPS-2019-WAVE", "HARPS-2020-LSF", "HARPS-2026-UPGRADE"
+      "HARPS-2003-COMMISSION",
+      "HARPS-2013-LFC",
+      "HARPS-2015-FIBRES",
+      "HARPS-2019-WAVE",
+      "HARPS-2020-LSF",
+      "HARPS-2026-UPGRADE"
     ]
   },
   {
@@ -172,8 +190,13 @@
       ]
     },
     "paper_ids": [
-      "ESP-2020-PROXIMA", "ESP-2021-INSTRUMENT", "ESP-2021-WAVECAL",
-      "ESP-2022-ALPHA", "ESP-2024-EINDI", "ESP-2025-IODINE", "ESP-2026-LFC"
+      "ESP-2020-PROXIMA",
+      "ESP-2021-INSTRUMENT",
+      "ESP-2021-WAVECAL",
+      "ESP-2022-ALPHA",
+      "ESP-2024-EINDI",
+      "ESP-2025-IODINE",
+      "ESP-2026-LFC"
     ]
   },
   {
@@ -215,7 +238,14 @@
         "Results remain traceable to raw product IDs and pipeline versions."
       ]
     },
-    "paper_ids": ["HN-2012-DESIGN", "HN-2017-COMB", "HN-2021-SOLAR", "HN-2023-CROSS", "HN-2025-DECADE", "HN-2026-STATUS"]
+    "paper_ids": [
+      "HN-2012-DESIGN",
+      "HN-2017-COMB",
+      "HN-2021-SOLAR",
+      "HN-2023-CROSS",
+      "HN-2025-DECADE",
+      "HN-2026-STATUS"
+    ]
   },
   {
     "instrument_id": "wiyn-neid",
@@ -256,7 +286,15 @@
         "Every output records data IDs, DRP and master-file versions."
       ]
     },
-    "paper_ids": ["NEID-2019-ECS", "NEID-2021-SOLAR", "NEID-2022-OPS", "NEID-2023-FIBRE", "NEID-2023-CROSS", "NEID-2024-SOLAR", "NEID-2026-DRP"]
+    "paper_ids": [
+      "NEID-2019-ECS",
+      "NEID-2021-SOLAR",
+      "NEID-2022-OPS",
+      "NEID-2023-FIBRE",
+      "NEID-2023-CROSS",
+      "NEID-2024-SOLAR",
+      "NEID-2026-DRP"
+    ]
   },
   {
     "instrument_id": "keck-kpf",
@@ -295,7 +333,13 @@
         "Every output records pipeline and instrument-era identifiers."
       ]
     },
-    "paper_ids": ["KPF-2018-DESIGN", "KPF-2023-SOCAL", "KPF-2024-SYSTEM", "KPF-2026-DRP", "KPF-2026-STATUS"]
+    "paper_ids": [
+      "KPF-2018-DESIGN",
+      "KPF-2023-SOCAL",
+      "KPF-2024-SYSTEM",
+      "KPF-2026-DRP",
+      "KPF-2026-STATUS"
+    ]
   },
   {
     "instrument_id": "gemini-north-maroonx",
@@ -334,7 +378,14 @@
         "Reference-star assumptions are explicit and sensitivity-tested."
       ]
     },
-    "paper_ids": ["MX-2016-DESIGN", "MX-2018-LAB", "MX-2021-COMMISSION", "MX-2022-OPERATIONS", "MX-2024-INCIDENTS", "MX-2025-DRIFT"]
+    "paper_ids": [
+      "MX-2016-DESIGN",
+      "MX-2018-LAB",
+      "MX-2021-COMMISSION",
+      "MX-2022-OPERATIONS",
+      "MX-2024-INCIDENTS",
+      "MX-2025-DRIFT"
+    ]
   },
   {
     "instrument_id": "calaralto-carmenes",
@@ -373,7 +424,15 @@
         "Injected amplitudes and false positives are reported by channel."
       ]
     },
-    "paper_ids": ["CAR-2016-INSTRUMENT", "CAR-2018-SERVAL", "CAR-2018-INFORMATION", "CAR-2020-CHROMATIC", "CAR-2023-DR1", "CAR-2024-PRECISION", "CAR-2026-STATUS"]
+    "paper_ids": [
+      "CAR-2016-INSTRUMENT",
+      "CAR-2018-SERVAL",
+      "CAR-2018-INFORMATION",
+      "CAR-2020-CHROMATIC",
+      "CAR-2023-DR1",
+      "CAR-2024-PRECISION",
+      "CAR-2026-STATUS"
+    ]
   },
   {
     "instrument_id": "het-hpf",
@@ -412,7 +471,15 @@
         "Stellar RMS is never labelled as calibration-only precision."
       ]
     },
-    "paper_ids": ["HPF-2012-DESIGN", "HPF-2014-CALIBRATION", "HPF-2016-THERMAL", "HPF-2019-COMB", "HPF-2021-ETALON", "HPF-2021-SCRAMBLING", "HPF-2019-STATUS"]
+    "paper_ids": [
+      "HPF-2012-DESIGN",
+      "HPF-2014-CALIBRATION",
+      "HPF-2016-THERMAL",
+      "HPF-2019-COMB",
+      "HPF-2021-ETALON",
+      "HPF-2021-SCRAMBLING",
+      "HPF-2019-STATUS"
+    ]
   },
   {
     "instrument_id": "cfht-spirou",
@@ -451,7 +518,13 @@
         "Results are stratified by target brightness and weather."
       ]
     },
-    "paper_ids": ["SPI-2018-INPUT", "SPI-2020-INSTRUMENT", "SPI-2022-TELLURIC", "SPI-2024-ACTIVITY", "SPI-2025-STATUS"]
+    "paper_ids": [
+      "SPI-2018-INPUT",
+      "SPI-2020-INSTRUMENT",
+      "SPI-2022-TELLURIC",
+      "SPI-2024-ACTIVITY",
+      "SPI-2025-STATUS"
+    ]
   },
   {
     "instrument_id": "lasilla-nirps",
@@ -490,7 +563,14 @@
         "The 2026 method remains labelled as a preprint until publication."
       ]
     },
-    "paper_ids": ["NIR-2022-FRONTEND", "NIR-2024-FIRSTLIGHT", "NIR-2025-INSTRUMENT", "NIR-2026-ARCHIVE", "NIR-2026-STATUS", "NIR-2026-SKY"]
+    "paper_ids": [
+      "NIR-2022-FRONTEND",
+      "NIR-2024-FIRSTLIGHT",
+      "NIR-2025-INSTRUMENT",
+      "NIR-2026-ARCHIVE",
+      "NIR-2026-STATUS",
+      "NIR-2026-SKY"
+    ]
   },
   {
     "instrument_id": "magellan-pfs",
@@ -529,7 +609,14 @@
         "Multi-instrument offsets remain separate from PFS internal changes."
       ]
     },
-    "paper_ids": ["PFS-2008-STATUS", "PFS-2010-COMMISSION", "PFS-2016-LONGBASELINE", "PFS-2024-USE", "PFS-2026-STATUS", "PFS-2026-ROSTER"]
+    "paper_ids": [
+      "PFS-2008-STATUS",
+      "PFS-2010-COMMISSION",
+      "PFS-2016-LONGBASELINE",
+      "PFS-2024-USE",
+      "PFS-2026-STATUS",
+      "PFS-2026-ROSTER"
+    ]
   },
   {
     "instrument_id": "ohp-sophie",
@@ -543,9 +630,38 @@
     "short_summary": "SOPHIE's precision history depends on illumination scrambling, nightly zero-point treatment and hardware era. The 1 to 2 m/s SOPHIE+ result must not be transferred automatically to the new red-camera era.",
     "latest_problem": "The current call describes a conditional upgrade schedule rather than measured post-upgrade performance.",
     "latest_problem_source": "https://programmes.insu.cnrs.fr/categorie-actualites/programmes-aa/",
-    "lessons": ["The octagonal fibre changed illumination stability and begins a distinct era.", "Stable-star repeatability and internal uncertainty are different statistics.", "Ensemble zero points need leave-one-star-out validation.", "A comb test below 400 nm is a calibration experiment, not stellar precision.", "SOPHIE-RED requires its own post-intervention characterization."],
-    "future_analysis": {"title": "SOPHIE hardware-era zero-point replay", "status": "future analysis question, not completed research", "question": "Do zero-point corrections transfer across the fibre and red-camera eras without attenuating long-period stellar signals?", "basis": "Published corrections and hardware changes define testable but non-stationary eras.", "steps": ["Build an exposure-level hardware-era ledger.", "Recompute zero points with each target held out.", "Hold out complete nights and seasons.", "Inject long-period and activity-correlated signals."], "success_tests": ["No target contributes to its own correction.", "Performance is reported separately by era.", "Signal attenuation is bounded by injection tests.", "Post-upgrade claims wait for dated data."]},
-    "paper_ids": ["SOP-2008-INSTRUMENT", "SOP-2013-UPGRADE", "SOP-2015-ZEROPOINT", "SOP-2024-UVCOMB", "SOP-2026-STATUS"]
+    "lessons": [
+      "The octagonal fibre changed illumination stability and begins a distinct era.",
+      "Stable-star repeatability and internal uncertainty are different statistics.",
+      "Ensemble zero points need leave-one-star-out validation.",
+      "A comb test below 400 nm is a calibration experiment, not stellar precision.",
+      "SOPHIE-RED requires its own post-intervention characterization."
+    ],
+    "future_analysis": {
+      "title": "SOPHIE hardware-era zero-point replay",
+      "status": "future analysis question, not completed research",
+      "question": "Do zero-point corrections transfer across the fibre and red-camera eras without attenuating long-period stellar signals?",
+      "basis": "Published corrections and hardware changes define testable but non-stationary eras.",
+      "steps": [
+        "Build an exposure-level hardware-era ledger.",
+        "Recompute zero points with each target held out.",
+        "Hold out complete nights and seasons.",
+        "Inject long-period and activity-correlated signals."
+      ],
+      "success_tests": [
+        "No target contributes to its own correction.",
+        "Performance is reported separately by era.",
+        "Signal attenuation is bounded by injection tests.",
+        "Post-upgrade claims wait for dated data."
+      ]
+    },
+    "paper_ids": [
+      "SOP-2008-INSTRUMENT",
+      "SOP-2013-UPGRADE",
+      "SOP-2015-ZEROPOINT",
+      "SOP-2024-UVCOMB",
+      "SOP-2026-STATUS"
+    ]
   },
   {
     "instrument_id": "lick-apf-levy",
@@ -559,9 +675,37 @@
     "short_summary": "APF couples an automated 2.4 m telescope to the iodine-calibrated Levy spectrograph. Early sub-m/s standards and the later 1.35 m/s median internal uncertainty answer different questions.",
     "latest_problem": "The public instrument page establishes the facility but leaves the current status date unresolved.",
     "latest_problem_source": "https://www.lickobservatory.org/explore/research-telescopes/automated-planet-finder/",
-    "lessons": ["Iodine forward modelling ties velocities to templates and line-spread models.", "Two first-light standards do not describe a survey distribution.", "Median internal uncertainty is not stable-star RMS.", "Dynamic scheduling changes cadence and alias structure.", "A current instrument page needs a dated availability source."],
-    "future_analysis": {"title": "APF cadence and template sensitivity study", "status": "future analysis question, not completed research", "question": "How do dynamic cadence and iodine-template choices affect recovery of long-period signals in public APF time series?", "basis": "The operations literature exposes cadence logic and measurement context, but current configuration metadata must be resolved.", "steps": ["Record schedule, template and reduction eras.", "Select standards independently of correction fitting.", "Compare actual and cadence-scrambled windows.", "Inject signals across period and activity timescales."], "success_tests": ["Templates are never trained on held-out tests.", "Cadence effects are separated from noise effects.", "Results remain target-specific.", "The current-status gap stays visible."]},
-    "paper_ids": ["APF-2014-INSTRUMENT", "APF-2015-PERFORMANCE", "APF-2016-AUTOMATION", "APF-2026-OFFICIAL"]
+    "lessons": [
+      "Iodine forward modelling ties velocities to templates and line-spread models.",
+      "Two first-light standards do not describe a survey distribution.",
+      "Median internal uncertainty is not stable-star RMS.",
+      "Dynamic scheduling changes cadence and alias structure.",
+      "A current instrument page needs a dated availability source."
+    ],
+    "future_analysis": {
+      "title": "APF cadence and template sensitivity study",
+      "status": "future analysis question, not completed research",
+      "question": "How do dynamic cadence and iodine-template choices affect recovery of long-period signals in public APF time series?",
+      "basis": "The operations literature exposes cadence logic and measurement context, but current configuration metadata must be resolved.",
+      "steps": [
+        "Record schedule, template and reduction eras.",
+        "Select standards independently of correction fitting.",
+        "Compare actual and cadence-scrambled windows.",
+        "Inject signals across period and activity timescales."
+      ],
+      "success_tests": [
+        "Templates are never trained on held-out tests.",
+        "Cadence effects are separated from noise effects.",
+        "Results remain target-specific.",
+        "The current-status gap stays visible."
+      ]
+    },
+    "paper_ids": [
+      "APF-2014-INSTRUMENT",
+      "APF-2015-PERFORMANCE",
+      "APF-2016-AUTOMATION",
+      "APF-2026-OFFICIAL"
+    ]
   },
   {
     "instrument_id": "irtf-ishell",
@@ -575,9 +719,37 @@
     "short_summary": "iSHELL is a general infrared spectrograph with a demonstrated gas-cell RV mode. Published 3 to 5 m/s bright-star results and the facility's broader 10 m/s statement retain their target and baseline contexts.",
     "latest_problem": "IRTF states that year-scale RVs are systematics-limited and that only about 25 RV epochs per semester can normally be scheduled.",
     "latest_problem_source": "https://irtfweb.ifa.hawaii.edu/",
-    "lessons": ["General spectral coverage is not an RV precision claim.", "Gas-cell results depend on forward-model and template choices.", "Fringing makes flat-field cadence part of the measurement.", "Bright-star results cannot be assigned to K less than 10 targets generally.", "Sparse semester cadence limits long-period validation."],
-    "future_analysis": {"title": "iSHELL fringing and cadence sensitivity table", "status": "future analysis question, not completed research", "question": "Which flat-field and spectral-order choices dominate gas-cell RV changes under the cadence available in the archive?", "basis": "The facility documents fringing and year-scale systematics while public data can support bounded replay tests.", "steps": ["Select raw data by programme and date.", "Track flats and gas-cell configuration per night.", "Hold out orders and observing runs.", "Inject signals into raw or forward-model spectra."], "success_tests": ["Fringing choices are reported explicitly.", "No 3 to 5 m/s value is generalized beyond its sample.", "Cadence aliases are shown.", "Public selection is reproducible."]},
-    "paper_ids": ["ISH-2016-INSTRUMENT", "ISH-2019-RV", "ISH-2026-ARCHIVE", "ISH-2026-STATUS"]
+    "lessons": [
+      "General spectral coverage is not an RV precision claim.",
+      "Gas-cell results depend on forward-model and template choices.",
+      "Fringing makes flat-field cadence part of the measurement.",
+      "Bright-star results cannot be assigned to K less than 10 targets generally.",
+      "Sparse semester cadence limits long-period validation."
+    ],
+    "future_analysis": {
+      "title": "iSHELL fringing and cadence sensitivity table",
+      "status": "future analysis question, not completed research",
+      "question": "Which flat-field and spectral-order choices dominate gas-cell RV changes under the cadence available in the archive?",
+      "basis": "The facility documents fringing and year-scale systematics while public data can support bounded replay tests.",
+      "steps": [
+        "Select raw data by programme and date.",
+        "Track flats and gas-cell configuration per night.",
+        "Hold out orders and observing runs.",
+        "Inject signals into raw or forward-model spectra."
+      ],
+      "success_tests": [
+        "Fringing choices are reported explicitly.",
+        "No 3 to 5 m/s value is generalized beyond its sample.",
+        "Cadence aliases are shown.",
+        "Public selection is reproducible."
+      ]
+    },
+    "paper_ids": [
+      "ISH-2016-INSTRUMENT",
+      "ISH-2019-RV",
+      "ISH-2026-ARCHIVE",
+      "ISH-2026-STATUS"
+    ]
   },
   {
     "instrument_id": "subaru-ird",
@@ -591,9 +763,37 @@
     "short_summary": "IRD measures near-infrared spectra with simultaneous comb information and segment-wise forward modelling. Below-2 m/s simulations apply to stated stellar and signal-to-noise conditions rather than every observation.",
     "latest_problem": "The new PyIRD software record creates a reduction-version boundary whose RV effect has not yet been established on held-out time series.",
     "latest_problem_source": "https://arxiv.org/abs/2601.12669",
-    "lessons": ["Near-infrared tellurics cannot simply be ignored across most of the band.", "Instantaneous line-spread profiles are segment-specific.", "Simulation precision is not long-term stellar RMS.", "Young-star transit RV errors do not characterize stable targets.", "Pipeline versions need data-level comparison."],
-    "future_analysis": {"title": "IRD telluric and reduction-version replay", "status": "future analysis question, not completed research", "question": "How sensitive are recovered RVs to telluric treatment and PyIRD reduction choices across held-out nights?", "basis": "The published model and new open pipeline expose separable stages for controlled tests.", "steps": ["Create matched legacy and PyIRD reductions.", "Bin diagnostics by water vapour and airmass.", "Hold out nights and wavelength segments.", "Inject shifts before telluric fitting."], "success_tests": ["Simulation and on-sky results remain distinct.", "Telluric masks report lost Doppler information.", "Version differences are target-specific.", "Dated operational status remains unresolved until sourced."]},
-    "paper_ids": ["IRD-2018-INSTRUMENT", "IRD-2020-FORWARD", "IRD-2024-SCIENCE", "IRD-2026-PYIRD"]
+    "lessons": [
+      "Near-infrared tellurics cannot simply be ignored across most of the band.",
+      "Instantaneous line-spread profiles are segment-specific.",
+      "Simulation precision is not long-term stellar RMS.",
+      "Young-star transit RV errors do not characterize stable targets.",
+      "Pipeline versions need data-level comparison."
+    ],
+    "future_analysis": {
+      "title": "IRD telluric and reduction-version replay",
+      "status": "future analysis question, not completed research",
+      "question": "How sensitive are recovered RVs to telluric treatment and PyIRD reduction choices across held-out nights?",
+      "basis": "The published model and new open pipeline expose separable stages for controlled tests.",
+      "steps": [
+        "Create matched legacy and PyIRD reductions.",
+        "Bin diagnostics by water vapour and airmass.",
+        "Hold out nights and wavelength segments.",
+        "Inject shifts before telluric fitting."
+      ],
+      "success_tests": [
+        "Simulation and on-sky results remain distinct.",
+        "Telluric masks report lost Doppler information.",
+        "Version differences are target-specific.",
+        "Dated operational status remains unresolved until sourced."
+      ]
+    },
+    "paper_ids": [
+      "IRD-2018-INSTRUMENT",
+      "IRD-2020-FORWARD",
+      "IRD-2024-SCIENCE",
+      "IRD-2026-PYIRD"
+    ]
   },
   {
     "instrument_id": "palomar-parvi",
@@ -607,9 +807,37 @@
     "short_summary": "PARVI demonstrated single-mode near-infrared commissioning and hot-Jupiter recovery, but its 4 to 10 m/s intra-night scatter did not meet the roughly 1 m/s design aim in that test.",
     "latest_problem": "Current evidence supports research-instrument activity, not a settled operational or retired label.",
     "latest_problem_source": "https://reservations.palomar.caltech.edu/observing_schedule/run/6010/green_sheet/primary/",
-    "lessons": ["A design aim must not replace commissioning scatter.", "Single-mode injection does not remove detector and calibration errors.", "A planet recovery is not an instrument-only stability test.", "Scheduled engineering use does not establish facility access.", "Conflicting status evidence should remain explicit."],
-    "future_analysis": {"title": "PARVI commissioning re-analysis boundary", "status": "future analysis question, not completed research and dependent on public products", "question": "Can commissioning data separate injection, calibration and detector terms well enough to reproduce the reported scatter?", "basis": "Published pipeline methods provide testable diagnostics, but the public data and current access boundary need confirmation.", "steps": ["Inventory released raw and reduced products.", "Reproduce per-night scatter before combining nights.", "Separate calibrator and stellar light paths.", "Inject shifts through extraction and wavelength fitting."], "success_tests": ["The 1 m/s design aim is never plotted as achieved.", "Planet-fit residuals remain separate.", "Missing products are listed.", "Status is not guessed from one page."]},
-    "paper_ids": ["PARVI-2019-FIRSTLIGHT", "PARVI-2023-PIPELINE", "PARVI-2025-RESULTS", "PARVI-2026-SCHEDULE"]
+    "lessons": [
+      "A design aim must not replace commissioning scatter.",
+      "Single-mode injection does not remove detector and calibration errors.",
+      "A planet recovery is not an instrument-only stability test.",
+      "Scheduled engineering use does not establish facility access.",
+      "Conflicting status evidence should remain explicit."
+    ],
+    "future_analysis": {
+      "title": "PARVI commissioning re-analysis boundary",
+      "status": "future analysis question, not completed research and dependent on public products",
+      "question": "Can commissioning data separate injection, calibration and detector terms well enough to reproduce the reported scatter?",
+      "basis": "Published pipeline methods provide testable diagnostics, but the public data and current access boundary need confirmation.",
+      "steps": [
+        "Inventory released raw and reduced products.",
+        "Reproduce per-night scatter before combining nights.",
+        "Separate calibrator and stellar light paths.",
+        "Inject shifts through extraction and wavelength fitting."
+      ],
+      "success_tests": [
+        "The 1 m/s design aim is never plotted as achieved.",
+        "Planet-fit residuals remain separate.",
+        "Missing products are listed.",
+        "Status is not guessed from one page."
+      ]
+    },
+    "paper_ids": [
+      "PARVI-2019-FIRSTLIGHT",
+      "PARVI-2023-PIPELINE",
+      "PARVI-2025-RESULTS",
+      "PARVI-2026-SCHEDULE"
+    ]
   },
   {
     "instrument_id": "prl-paras2",
@@ -623,9 +851,37 @@
     "short_summary": "PARAS-2 has reported a 2.65 m/s daily standard-star dispersion while off-sky inter-fibre drift was much smaller. Current subsystem work shows why these numbers cannot be treated as one precision value.",
     "latest_problem": "The double scrambler, Cassegrain module and liquid-nitrogen control remain active engineering boundaries requiring on-sky validation.",
     "latest_problem_source": "https://www.prl.res.in/~notices/websitedocs/2026/01/21/PRL-AR-2024-2025-ENG-reduced-21-01-2026-11-25-28.pdf",
-    "lessons": ["Off-sky inter-fibre drift is not stellar RV precision.", "Daily dispersion combines instrument, atmosphere and star.", "Coupling and scrambling determine illumination stability.", "Thermal targets require measured exposure-level temperatures.", "Subsystem changes create dated instrument eras."],
-    "future_analysis": {"title": "PARAS-2 light-path error separation", "status": "future analysis question, not completed research", "question": "Which part of the gap between off-sky drift and stellar dispersion is explained by illumination, environment and reduction choices?", "basis": "The published numbers describe different light paths and current subsystem changes provide testable era boundaries.", "steps": ["Align calibration and stellar exposures by time.", "Join environmental and guiding diagnostics.", "Hold out nights before fitting corrections.", "Inject wavelength and illumination perturbations."], "success_tests": ["Light paths are never pooled silently.", "Every result carries an era.", "Corrections improve held-out nights.", "Astrophysical signal recovery is preserved."]},
-    "paper_ids": ["P2-2024-INSTRUMENT", "P2-2024-STABILITY", "P2-2026-CAMPAS", "P2-2026-REPORT"]
+    "lessons": [
+      "Off-sky inter-fibre drift is not stellar RV precision.",
+      "Daily dispersion combines instrument, atmosphere and star.",
+      "Coupling and scrambling determine illumination stability.",
+      "Thermal targets require measured exposure-level temperatures.",
+      "Subsystem changes create dated instrument eras."
+    ],
+    "future_analysis": {
+      "title": "PARAS-2 light-path error separation",
+      "status": "future analysis question, not completed research",
+      "question": "Which part of the gap between off-sky drift and stellar dispersion is explained by illumination, environment and reduction choices?",
+      "basis": "The published numbers describe different light paths and current subsystem changes provide testable era boundaries.",
+      "steps": [
+        "Align calibration and stellar exposures by time.",
+        "Join environmental and guiding diagnostics.",
+        "Hold out nights before fitting corrections.",
+        "Inject wavelength and illumination perturbations."
+      ],
+      "success_tests": [
+        "Light paths are never pooled silently.",
+        "Every result carries an era.",
+        "Corrections improve held-out nights.",
+        "Astrophysical signal recovery is preserved."
+      ]
+    },
+    "paper_ids": [
+      "P2-2024-INSTRUMENT",
+      "P2-2024-STABILITY",
+      "P2-2026-CAMPAS",
+      "P2-2026-REPORT"
+    ]
   },
   {
     "instrument_id": "ing-harps3",
@@ -639,9 +895,37 @@
     "short_summary": "HARPS3 is designed for nightly long-baseline observations with a 0.10 m/s instrumental goal. Current evidence describes integration and shared-risk commissioning, not routine operations or achieved precision.",
     "latest_problem": "Availability and performance are explicitly not promised while commissioning remains incomplete.",
     "latest_problem_source": "https://www.ing.iac.es/astronomy/instr.html",
-    "lessons": ["A 0.10 m/s value is a design goal.", "Ten-year cadence simulations are not observations.", "Robotic operations require independent quality controls.", "Shared-risk time is not completed commissioning.", "The first stable-star sequence must define the achieved baseline."],
-    "future_analysis": {"title": "HARPS3 commissioning acceptance table", "status": "future analysis question, not completed research and blocked on public commissioning data", "question": "Which tests would distinguish design compliance from achieved nightly and seasonal performance?", "basis": "The design and current status define required tests, but suitable public measurements are not yet available.", "steps": ["Record hardware and software configuration per commissioning night.", "Separate calibration tracking from stellar RMS.", "Use standards selected before outcome inspection.", "Publish failures and weather exclusions."], "success_tests": ["No requirement is labelled achieved.", "Shared-risk caveats remain visible.", "All exclusions are machine-readable.", "Seasonal performance waits for sufficient baseline."]},
-    "paper_ids": ["H3-2016-DESIGN", "H3-2025-PROJECT", "H3-2026-CALL", "H3-2026-NEWS"]
+    "lessons": [
+      "A 0.10 m/s value is a design goal.",
+      "Ten-year cadence simulations are not observations.",
+      "Robotic operations require independent quality controls.",
+      "Shared-risk time is not completed commissioning.",
+      "The first stable-star sequence must define the achieved baseline."
+    ],
+    "future_analysis": {
+      "title": "HARPS3 commissioning acceptance table",
+      "status": "future analysis question, not completed research and blocked on public commissioning data",
+      "question": "Which tests would distinguish design compliance from achieved nightly and seasonal performance?",
+      "basis": "The design and current status define required tests, but suitable public measurements are not yet available.",
+      "steps": [
+        "Record hardware and software configuration per commissioning night.",
+        "Separate calibration tracking from stellar RMS.",
+        "Use standards selected before outcome inspection.",
+        "Publish failures and weather exclusions."
+      ],
+      "success_tests": [
+        "No requirement is labelled achieved.",
+        "Shared-risk caveats remain visible.",
+        "All exclusions are machine-readable.",
+        "Seasonal performance waits for sufficient baseline."
+      ]
+    },
+    "paper_ids": [
+      "H3-2016-DESIGN",
+      "H3-2025-PROJECT",
+      "H3-2026-CALL",
+      "H3-2026-NEWS"
+    ]
   },
   {
     "instrument_id": "elt-andes",
@@ -655,9 +939,37 @@
     "short_summary": "ANDES is a planned modular ELT high-resolution spectrograph spanning visible and near-infrared wavelengths. Its precision and coverage values remain requirements at the preliminary-design stage.",
     "latest_problem": "Calibration architecture is mature enough for review but has not been built or validated as a complete system.",
     "latest_problem_source": "https://doi.org/10.1117/12.3104634",
-    "lessons": ["Planned coverage is not delivered coverage.", "A 0.10 m/s goal is not achieved precision.", "Subsystem reviews do not equal system acceptance.", "Multiple arms require cross-arm calibration tests.", "ELT science cases must not be presented as detections."],
-    "future_analysis": {"title": "ANDES requirement-to-verification matrix", "status": "future analysis question based on public design documents, not completed research", "question": "Can each precision requirement be mapped to a measurable subsystem and later acceptance test?", "basis": "Preliminary-design documents expose requirements and interfaces suitable for a transparent traceability table.", "steps": ["Extract requirement language and evidence class.", "Map requirements to calibration and spectrograph subsystems.", "Define laboratory and on-sky acceptance measurements.", "Track review changes without predicting outcomes."], "success_tests": ["Every number is labelled requirement or measurement.", "Interfaces have named verification tests.", "No simulated result is called achieved.", "The matrix updates at dated milestones."]},
-    "paper_ids": ["AND-2024-OVERVIEW", "AND-2024-RIZ", "AND-2026-CALIBRATION", "AND-2026-STATUS"]
+    "lessons": [
+      "Planned coverage is not delivered coverage.",
+      "A 0.10 m/s goal is not achieved precision.",
+      "Subsystem reviews do not equal system acceptance.",
+      "Multiple arms require cross-arm calibration tests.",
+      "ELT science cases must not be presented as detections."
+    ],
+    "future_analysis": {
+      "title": "ANDES requirement-to-verification matrix",
+      "status": "future analysis question based on public design documents, not completed research",
+      "question": "Can each precision requirement be mapped to a measurable subsystem and later acceptance test?",
+      "basis": "Preliminary-design documents expose requirements and interfaces suitable for a transparent traceability table.",
+      "steps": [
+        "Extract requirement language and evidence class.",
+        "Map requirements to calibration and spectrograph subsystems.",
+        "Define laboratory and on-sky acceptance measurements.",
+        "Track review changes without predicting outcomes."
+      ],
+      "success_tests": [
+        "Every number is labelled requirement or measurement.",
+        "Interfaces have named verification tests.",
+        "No simulated result is called achieved.",
+        "The matrix updates at dated milestones."
+      ]
+    },
+    "paper_ids": [
+      "AND-2024-OVERVIEW",
+      "AND-2024-RIZ",
+      "AND-2026-CALIBRATION",
+      "AND-2026-STATUS"
+    ]
   },
   {
     "instrument_id": "gmt-gclef",
@@ -671,184 +983,1407 @@
     "short_summary": "G-CLEF is a planned visible echelle for GMT with several resolution modes and precision-RV capability. The 0.50 m/s requirement and 0.10 m/s goal are design quantities.",
     "latest_problem": "Public milestones refer to individual subsystems and funding, so the full instrument schedule and achieved performance remain open.",
     "latest_problem_source": "https://www.cfa.harvard.edu/news/giant-magellan-telescope-camera-reaches-fundraising-goal",
-    "lessons": ["Requirement and goal must be separate fields.", "Multiple observing modes have different stability paths.", "Exposure-meter design contributes to timing validation.", "A funded camera is not a commissioned spectrograph.", "On-sky performance depends on the future telescope interface."],
-    "future_analysis": {"title": "G-CLEF requirement and subsystem evidence table", "status": "future analysis question based on public design material, not completed research", "question": "Which public subsystem milestones support each precision requirement and which tests remain future?", "basis": "Design papers and current notices can be connected without predicting commissioning results.", "steps": ["Normalize requirement identifiers and modes.", "Map each term to fibre, enclosure, calibration, detector or exposure meter.", "Record only dated subsystem evidence.", "Define later end-to-end tests separately."], "success_tests": ["Requirements never appear as measurements.", "Subsystem completion is not generalized.", "Mode-specific paths stay separate.", "Unknown dates remain unknown."]},
-    "paper_ids": ["GCL-2014-OPTOMECH", "GCL-2016-OVERVIEW", "GCL-2026-DESIGN", "GCL-2026-CAMERA"]
+    "lessons": [
+      "Requirement and goal must be separate fields.",
+      "Multiple observing modes have different stability paths.",
+      "Exposure-meter design contributes to timing validation.",
+      "A funded camera is not a commissioned spectrograph.",
+      "On-sky performance depends on the future telescope interface."
+    ],
+    "future_analysis": {
+      "title": "G-CLEF requirement and subsystem evidence table",
+      "status": "future analysis question based on public design material, not completed research",
+      "question": "Which public subsystem milestones support each precision requirement and which tests remain future?",
+      "basis": "Design papers and current notices can be connected without predicting commissioning results.",
+      "steps": [
+        "Normalize requirement identifiers and modes.",
+        "Map each term to fibre, enclosure, calibration, detector or exposure meter.",
+        "Record only dated subsystem evidence.",
+        "Define later end-to-end tests separately."
+      ],
+      "success_tests": [
+        "Requirements never appear as measurements.",
+        "Subsystem completion is not generalized.",
+        "Mode-specific paths stay separate.",
+        "Unknown dates remain unknown."
+      ]
+    },
+    "paper_ids": [
+      "GCL-2014-OPTOMECH",
+      "GCL-2016-OVERVIEW",
+      "GCL-2026-DESIGN",
+      "GCL-2026-CAMERA"
+    ]
   },
   {
-    "instrument_id": "keck-hires", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 6,
+    "instrument_id": "keck-hires",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 6,
     "title": "HIRES: iodine modelling, archive corrections, and a conditional retirement plan",
     "reading_boundary": "Six selected instrument, method, archive, survey and status sources; not a complete HIRES science bibliography.",
-    "current_status": "HIRES remains in service, with decommissioning planned no earlier than the end of 2027B and conditional on ZShooter and KPF.", "current_status_url": "https://vmnexsci.ipac.caltech.edu/missions/KeckSolicitation/",
+    "current_status": "HIRES remains in service, with decommissioning planned no earlier than the end of 2027B and conditional on ZShooter and KPF.",
+    "current_status_url": "https://vmnexsci.ipac.caltech.edu/missions/KeckSolicitation/",
     "short_summary": "Three decades of HIRES velocities span detector, template and reduction eras. Historical 3 m/s method performance, corrected public catalogs and long-baseline survey results must remain context-specific.",
-    "latest_problem": "The retirement date is conditional, while the public archive has already undergone systematic corrections and extensions.", "latest_problem_source": "https://vmnexsci.ipac.caltech.edu/missions/KeckSolicitation/",
-    "lessons": ["Iodine velocities depend on star-specific templates.", "Detector and reduction changes create non-stationary eras.", "Ensemble zero points need leakage checks.", "Planet-survey residuals do not isolate the instrument.", "Planned retirement is not completed decommissioning."],
-    "future_analysis": {"title": "HIRES catalog-version and hardware-era audit", "status": "future analysis question, not completed research", "question": "How stable are long-period signals across catalog corrections, detector eras and template choices?", "basis": "Multiple public releases and a finite remaining instrument horizon make row-level version tracing testable.", "steps": ["Join spectra and velocities to detector and catalog versions.", "Reproduce published zero-point corrections with held-out stars.", "Separate template epochs.", "Inject long-period signals across complete seasons."], "success_tests": ["Every velocity carries a version and era.", "Targets do not correct themselves.", "Signal attenuation is reported.", "The conditional retirement date remains explicit."]},
-    "paper_ids": ["HIR-1994-INSTRUMENT", "HIR-1996-IODINE", "HIR-2019-CORRECTION", "HIR-2021-LEGACY", "HIR-2025-CATALOG", "HIR-2026-STATUS"]
+    "latest_problem": "The retirement date is conditional, while the public archive has already undergone systematic corrections and extensions.",
+    "latest_problem_source": "https://vmnexsci.ipac.caltech.edu/missions/KeckSolicitation/",
+    "lessons": [
+      "Iodine velocities depend on star-specific templates.",
+      "Detector and reduction changes create non-stationary eras.",
+      "Ensemble zero points need leakage checks.",
+      "Planet-survey residuals do not isolate the instrument.",
+      "Planned retirement is not completed decommissioning."
+    ],
+    "future_analysis": {
+      "title": "HIRES catalog-version and hardware-era audit",
+      "status": "future analysis question, not completed research",
+      "question": "How stable are long-period signals across catalog corrections, detector eras and template choices?",
+      "basis": "Multiple public releases and a finite remaining instrument horizon make row-level version tracing testable.",
+      "steps": [
+        "Join spectra and velocities to detector and catalog versions.",
+        "Reproduce published zero-point corrections with held-out stars.",
+        "Separate template epochs.",
+        "Inject long-period signals across complete seasons."
+      ],
+      "success_tests": [
+        "Every velocity carries a version and era.",
+        "Targets do not correct themselves.",
+        "Signal attenuation is reported.",
+        "The conditional retirement date remains explicit."
+      ]
+    },
+    "paper_ids": [
+      "HIR-1994-INSTRUMENT",
+      "HIR-1996-IODINE",
+      "HIR-2019-CORRECTION",
+      "HIR-2021-LEGACY",
+      "HIR-2025-CATALOG",
+      "HIR-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "paranal-uves", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "paranal-uves",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "UVES: high-resolution versatility and wavelength-scale distortions",
     "reading_boundary": "Four selected instrument, calibration and current-offering sources; UVES is not treated as a dedicated stabilized EPRV instrument.",
-    "current_status": "ESO lists UVES among the instruments offered for Period 118.", "current_status_url": "https://www.eso.org/sci/facilities/lpo/cfp/cfp118/instruments.html",
+    "current_status": "ESO lists UVES among the instruments offered for Period 118.",
+    "current_status_url": "https://www.eso.org/sci/facilities/lpo/cfp/cfp118/instruments.html",
     "short_summary": "UVES offers broad two-arm coverage and an iodine cell, but slit illumination and wavelength distortions limit any simple precision label. Absolute asteroid tests and iodine comparisons answer different questions.",
-    "latest_problem": "Historical wavelength distortions can be setting- and exposure-dependent; current availability does not make archival settings homogeneous.", "latest_problem_source": "https://arxiv.org/abs/1004.3325",
-    "lessons": ["Maximum resolving power is not RV precision.", "Slit illumination differs from fibre scrambling.", "Absolute accuracy differs from differential repeatability.", "Intra-order and long-range distortions need separate models.", "Archive analyses must retain setup metadata."],
-    "future_analysis": {"title": "UVES setting-level wavelength audit", "status": "future analysis question, not completed research", "question": "Which archival settings show repeatable wavelength distortions under independent asteroid or iodine checks?", "basis": "Published comparisons establish the mechanism while the archive supplies many configurations.", "steps": ["Group exposures by arm, setting, slit and detector era.", "Select calibration tests independently.", "Fit intra-order and long-range terms separately.", "Hold out complete nights."], "success_tests": ["No setting borrows another setting's correction.", "Absolute and differential metrics remain separate.", "Calibration scarcity is visible.", "Current offering is not used as a performance claim."]},
-    "paper_ids": ["UVE-2000-INSTRUMENT", "UVE-2008-ASTEROID", "UVE-2010-DISTORTION", "UVE-2026-OFFERING"]
+    "latest_problem": "Historical wavelength distortions can be setting- and exposure-dependent; current availability does not make archival settings homogeneous.",
+    "latest_problem_source": "https://arxiv.org/abs/1004.3325",
+    "lessons": [
+      "Maximum resolving power is not RV precision.",
+      "Slit illumination differs from fibre scrambling.",
+      "Absolute accuracy differs from differential repeatability.",
+      "Intra-order and long-range distortions need separate models.",
+      "Archive analyses must retain setup metadata."
+    ],
+    "future_analysis": {
+      "title": "UVES setting-level wavelength audit",
+      "status": "future analysis question, not completed research",
+      "question": "Which archival settings show repeatable wavelength distortions under independent asteroid or iodine checks?",
+      "basis": "Published comparisons establish the mechanism while the archive supplies many configurations.",
+      "steps": [
+        "Group exposures by arm, setting, slit and detector era.",
+        "Select calibration tests independently.",
+        "Fit intra-order and long-range terms separately.",
+        "Hold out complete nights."
+      ],
+      "success_tests": [
+        "No setting borrows another setting's correction.",
+        "Absolute and differential metrics remain separate.",
+        "Calibration scarcity is visible.",
+        "Current offering is not used as a performance claim."
+      ]
+    },
+    "paper_ids": [
+      "UVE-2000-INSTRUMENT",
+      "UVE-2008-ASTEROID",
+      "UVE-2010-DISTORTION",
+      "UVE-2026-OFFERING"
+    ]
   },
   {
-    "instrument_id": "ctio-chiron", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "ctio-chiron",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "CHIRON: resolution modes, iodine use, and an open dated-status check",
     "reading_boundary": "Four selected design, performance, instrument and official-page sources; not a complete CHIRON observing bibliography.",
-    "current_status": "The CTIO page maintains observer resources and describes CHIRON as operational, but lacks a dated 2026 semester statement.", "current_status_url": "https://www.ctio.noirlab.edu/noao/content/chiron",
+    "current_status": "The CTIO page maintains observer resources and describes CHIRON as operational, but lacks a dated 2026 semester statement.",
+    "current_status_url": "https://www.ctio.noirlab.edu/noao/content/chiron",
     "short_summary": "CHIRON is a fibre-fed visible spectrograph with several resolution modes and an iodine option. Performance statements must retain the selected mode, target, cadence and reduction.",
-    "latest_problem": "The public page is rich in technical material but does not close the dated-current-status field.", "latest_problem_source": "https://www.ctio.noirlab.edu/noao/content/chiron",
-    "lessons": ["Resolution varies strongly by observing mode.", "Iodine and non-iodine paths need separate reductions.", "Commissioning stability has a limited baseline.", "High cadence does not remove stellar variability.", "An undated operational page is not a 2026 availability check."],
-    "future_analysis": {"title": "CHIRON mode and cadence comparison", "status": "future analysis question, not completed research", "question": "How do resolution mode, iodine use and cadence affect stable-star repeatability?", "basis": "The instrument exposes distinct modes whose performance should not be pooled.", "steps": ["Partition by mode and calibration path.", "Match targets and signal-to-noise.", "Hold out observing runs.", "Report cadence windows with RMS."], "success_tests": ["Modes remain separate.", "RMS carries a target and baseline.", "No design goal becomes achieved performance.", "The dated-status gap remains open."]},
-    "paper_ids": ["CHI-2010-DESIGN", "CHI-2012-PERFORMANCE", "CHI-2013-INSTRUMENT", "CHI-2026-STATUS"]
+    "latest_problem": "The public page is rich in technical material but does not close the dated-current-status field.",
+    "latest_problem_source": "https://www.ctio.noirlab.edu/noao/content/chiron",
+    "lessons": [
+      "Resolution varies strongly by observing mode.",
+      "Iodine and non-iodine paths need separate reductions.",
+      "Commissioning stability has a limited baseline.",
+      "High cadence does not remove stellar variability.",
+      "An undated operational page is not a 2026 availability check."
+    ],
+    "future_analysis": {
+      "title": "CHIRON mode and cadence comparison",
+      "status": "future analysis question, not completed research",
+      "question": "How do resolution mode, iodine use and cadence affect stable-star repeatability?",
+      "basis": "The instrument exposes distinct modes whose performance should not be pooled.",
+      "steps": [
+        "Partition by mode and calibration path.",
+        "Match targets and signal-to-noise.",
+        "Hold out observing runs.",
+        "Report cadence windows with RMS."
+      ],
+      "success_tests": [
+        "Modes remain separate.",
+        "RMS carries a target and baseline.",
+        "No design goal becomes achieved performance.",
+        "The dated-status gap remains open."
+      ]
+    },
+    "paper_ids": [
+      "CHI-2010-DESIGN",
+      "CHI-2012-PERFORMANCE",
+      "CHI-2013-INSTRUMENT",
+      "CHI-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "not-fies", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "instrument_id": "not-fies",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
     "title": "FIES: fibre upgrades, wavelength fitting, and ten-month stability",
     "reading_boundary": "Five selected instrument, technical-test and status sources; FIES is a general high-resolution spectrograph with documented RV work.",
-    "current_status": "NOT Period 73 material and the March 2026 schedule list FIES for current observing.", "current_status_url": "https://www.not.iac.es/observing/proposals/P73/",
+    "current_status": "NOT Period 73 material and the March 2026 schedule list FIES for current observing.",
+    "current_status_url": "https://www.not.iac.es/observing/proposals/P73/",
     "short_summary": "FIES was not originally built for extreme stability, but fibre, enclosure and calibration changes improved its RV use. The 3.3 m/s short sequence and 5 m/s ten-month report remain sample-specific.",
-    "latest_problem": "Technical work identifies wavelength-solution structure and exposure-meter placement as material limitations.", "latest_problem_source": "https://www.not.iac.es/instruments/fies/fies-commD.html",
-    "lessons": ["General-purpose design shapes the stability ceiling.", "Octagonal fibres changed scrambling.", "Calibration-only drift excludes the stellar path.", "Seven observations cannot define ten-month behaviour.", "Wavelength-fit complexity can add error."],
-    "future_analysis": {"title": "FIES wavelength-fit replay", "status": "future analysis question, not completed research", "question": "Does a lower-order drift model improve held-out stellar nights without hiding real velocity changes?", "basis": "The technical reports identify a concrete reduction term and provide separate calibration and stellar tests.", "steps": ["Reproduce the published calibration sequence.", "Lock model order before stellar testing.", "Hold out nights and runs.", "Inject spectral shifts before extraction."], "success_tests": ["Calibration and stellar paths stay separate.", "Model choice is preregistered.", "Improvement appears on held-out nights.", "Signal recovery is preserved."]},
-    "paper_ids": ["FIE-2014-INSTRUMENT", "FIE-2017-BUNDLE", "FIE-2023-THAR", "FIE-2025-STANDARD", "FIE-2026-STATUS"]
+    "latest_problem": "Technical work identifies wavelength-solution structure and exposure-meter placement as material limitations.",
+    "latest_problem_source": "https://www.not.iac.es/instruments/fies/fies-commD.html",
+    "lessons": [
+      "General-purpose design shapes the stability ceiling.",
+      "Octagonal fibres changed scrambling.",
+      "Calibration-only drift excludes the stellar path.",
+      "Seven observations cannot define ten-month behaviour.",
+      "Wavelength-fit complexity can add error."
+    ],
+    "future_analysis": {
+      "title": "FIES wavelength-fit replay",
+      "status": "future analysis question, not completed research",
+      "question": "Does a lower-order drift model improve held-out stellar nights without hiding real velocity changes?",
+      "basis": "The technical reports identify a concrete reduction term and provide separate calibration and stellar tests.",
+      "steps": [
+        "Reproduce the published calibration sequence.",
+        "Lock model order before stellar testing.",
+        "Hold out nights and runs.",
+        "Inject spectral shifts before extraction."
+      ],
+      "success_tests": [
+        "Calibration and stellar paths stay separate.",
+        "Model choice is preregistered.",
+        "Improvement appears on held-out nights.",
+        "Signal recovery is preserved."
+      ]
+    },
+    "paper_ids": [
+      "FIE-2014-INSTRUMENT",
+      "FIE-2017-BUNDLE",
+      "FIE-2023-THAR",
+      "FIE-2025-STANDARD",
+      "FIE-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "gemini-south-ghost", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "gemini-south-ghost",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "GHOST: queue operation and a precision-RV mode still under development",
     "reading_boundary": "Four selected performance, integration, roadmap and offering sources; general GHOST operation is separate from PRV-mode availability.",
-    "current_status": "GHOST is operational in standard modes, while 2026A material states that simultaneous-calibration precision-RV mode is not offered.", "current_status_url": "https://kgmt.kasi.re.kr/kgmtscience/node/314",
+    "current_status": "GHOST is operational in standard modes, while 2026A material states that simultaneous-calibration precision-RV mode is not offered.",
+    "current_status_url": "https://kgmt.kasi.re.kr/kgmtscience/node/314",
     "short_summary": "GHOST provides broad high-resolution optical spectra in Gemini South queue operations. Its proposed 1–10 m/s PRV range remains a roadmap estimate, not an offered-mode validation.",
-    "latest_problem": "The instrument is operational but its specialist simultaneous-calibration PRV mode is not currently offered.", "latest_problem_source": "https://kgmt.kasi.re.kr/kgmtscience/node/314",
-    "lessons": ["General queue status and PRV-mode status differ.", "Expected metre-per-second performance is not achieved performance.", "Resolution modes have different fibre formats.", "ThXe calibration needs end-to-end validation.", "Exploratory standard sequences do not define a facility floor."],
-    "future_analysis": {"title": "GHOST PRV-mode acceptance table", "status": "future analysis question, not completed research and dependent on released mode data", "question": "Which on-sky tests are needed before the PRV roadmap can become a measured facility specification?", "basis": "The performance paper and roadmap define components while the current offering sets a clear boundary.", "steps": ["Separate standard and high-resolution modes.", "Track calibration and pseudo-slit diagnostics.", "Use predetermined standards.", "Report failures and unoffered configurations."], "success_tests": ["No roadmap estimate is called achieved.", "Mode availability is dated.", "Calibration and stellar metrics are separate.", "Queue acceptance requires held-out data."]},
-    "paper_ids": ["GHO-2024-PERFORMANCE", "GHO-2024-INTEGRATION", "GHO-2024-ROADMAP", "GHO-2026-OFFERING"]
+    "latest_problem": "The instrument is operational but its specialist simultaneous-calibration PRV mode is not currently offered.",
+    "latest_problem_source": "https://kgmt.kasi.re.kr/kgmtscience/node/314",
+    "lessons": [
+      "General queue status and PRV-mode status differ.",
+      "Expected metre-per-second performance is not achieved performance.",
+      "Resolution modes have different fibre formats.",
+      "ThXe calibration needs end-to-end validation.",
+      "Exploratory standard sequences do not define a facility floor."
+    ],
+    "future_analysis": {
+      "title": "GHOST PRV-mode acceptance table",
+      "status": "future analysis question, not completed research and dependent on released mode data",
+      "question": "Which on-sky tests are needed before the PRV roadmap can become a measured facility specification?",
+      "basis": "The performance paper and roadmap define components while the current offering sets a clear boundary.",
+      "steps": [
+        "Separate standard and high-resolution modes.",
+        "Track calibration and pseudo-slit diagnostics.",
+        "Use predetermined standards.",
+        "Report failures and unoffered configurations."
+      ],
+      "success_tests": [
+        "No roadmap estimate is called achieved.",
+        "Mode availability is dated.",
+        "Calibration and stellar metrics are separate.",
+        "Queue acceptance requires held-out data."
+      ]
+    },
+    "paper_ids": [
+      "GHO-2024-PERFORMANCE",
+      "GHO-2024-INTEGRATION",
+      "GHO-2024-ROADMAP",
+      "GHO-2026-OFFERING"
+    ]
   },
   {
-    "instrument_id": "aat-veloce", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "instrument_id": "aat-veloce",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
     "title": "Veloce: three-arm growth, fibre overlap, and shared-risk access",
     "reading_boundary": "Five selected design, upgrade, verification, pipeline and status sources; sub-m/s language is retained as design intent.",
-    "current_status": "AAT lists Veloce Rosso as available on a shared-risk basis.", "current_status_url": "https://aat.anu.edu.au/science/instruments/current/status",
+    "current_status": "AAT lists Veloce Rosso as available on a shared-risk basis.",
+    "current_status_url": "https://aat.anu.edu.au/science/instruments/current/status",
     "short_summary": "Veloce expanded from Rosso to three arms, but overlapping fibre images complicate extraction and wavelength calibration. Its current public pipeline is explicitly for non-RV science.",
-    "latest_problem": "The 2026 pipeline paper identifies fibre-image overlap as limiting RV precision and does not claim a validated precision-RV reduction.", "latest_problem_source": "https://doi.org/10.1017/pasa.2026.10241",
-    "lessons": ["Sub-m/s was a design objective.", "Three-arm installation creates new extraction boundaries.", "Fibre-image overlap can produce cross-talk.", "A non-RV pipeline must not be used to claim RV accuracy.", "Shared-risk access is not routine acceptance."],
-    "future_analysis": {"title": "Veloce overlap-aware extraction test", "status": "future analysis question, not completed research", "question": "Can a cross-talk-aware extraction improve calibration consistency without distorting stellar line profiles?", "basis": "The current paper identifies the mechanism and supplies a public baseline for non-RV extraction.", "steps": ["Model neighbouring fibre profiles jointly.", "Hold out orders and calibration exposures.", "Compare line-shape residuals before RV fitting.", "Inject shifts and flux contrast changes."], "success_tests": ["The non-RV baseline remains labelled.", "Cross-talk falls on held-out orders.", "Line shapes are preserved.", "No shared-risk mode is called fully commissioned."]},
-    "paper_ids": ["VEL-2018-ROSSO", "VEL-2023-THREEARM", "VEL-2024-UPGRADE", "VEL-2026-PIPELINE", "VEL-2026-STATUS"]
+    "latest_problem": "The 2026 pipeline paper identifies fibre-image overlap as limiting RV precision and does not claim a validated precision-RV reduction.",
+    "latest_problem_source": "https://doi.org/10.1017/pasa.2026.10241",
+    "lessons": [
+      "Sub-m/s was a design objective.",
+      "Three-arm installation creates new extraction boundaries.",
+      "Fibre-image overlap can produce cross-talk.",
+      "A non-RV pipeline must not be used to claim RV accuracy.",
+      "Shared-risk access is not routine acceptance."
+    ],
+    "future_analysis": {
+      "title": "Veloce overlap-aware extraction test",
+      "status": "future analysis question, not completed research",
+      "question": "Can a cross-talk-aware extraction improve calibration consistency without distorting stellar line profiles?",
+      "basis": "The current paper identifies the mechanism and supplies a public baseline for non-RV extraction.",
+      "steps": [
+        "Model neighbouring fibre profiles jointly.",
+        "Hold out orders and calibration exposures.",
+        "Compare line-shape residuals before RV fitting.",
+        "Inject shifts and flux contrast changes."
+      ],
+      "success_tests": [
+        "The non-RV baseline remains labelled.",
+        "Cross-talk falls on held-out orders.",
+        "Line shapes are preserved.",
+        "No shared-risk mode is called fully commissioned."
+      ]
+    },
+    "paper_ids": [
+      "VEL-2018-ROSSO",
+      "VEL-2023-THREEARM",
+      "VEL-2024-UPGRADE",
+      "VEL-2026-PIPELINE",
+      "VEL-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "aat-hermes", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "instrument_id": "aat-hermes",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
     "title": "HERMES: survey velocities, fibre cross-talk, and external zero points",
     "reading_boundary": "Five selected instrument, pipeline, catalogue and facility sources; HERMES is treated as a survey spectrograph rather than a dedicated precision-RV instrument.",
-    "current_status": "AAT lists HERMES in its current instrument roster, with 392 science fibres through 2dF.", "current_status_url": "https://aat.anu.edu.au/science/instruments/current",
+    "current_status": "AAT lists HERMES in its current instrument roster, with 392 science fibres through 2dF.",
+    "current_status_url": "https://aat.anu.edu.au/science/instruments/current",
     "short_summary": "HERMES trades metre-per-second stability for multiplexed, four-channel stellar spectroscopy. GALAH results report roughly 0.1 km/s velocity accuracy at large scale, with fibre cross-talk, wavelength calibration and population-dependent zero points remaining relevant.",
-    "latest_problem": "Improved templates reduce uncertainties, but external offsets vary with stellar group and repeated visits expose intrinsic variables.", "latest_problem_source": "https://arxiv.org/abs/2012.12201",
-    "lessons": ["Survey RV accuracy is not planet-search precision.", "Each fibre can carry a different calibration history.", "Cross-talk and scattered light affect both spectra and labels.", "Template mismatch can create population-dependent offsets.", "External comparisons need common stars and epoch metadata."],
-    "future_analysis": {"title": "HERMES fibre and template stability map", "status": "future analysis question, not completed research", "question": "Which fibre, epoch and stellar-template terms explain repeat-visit velocity residuals?", "basis": "GALAH publishes large repeat samples and documents measurable cross-talk and wavelength terms.", "steps": ["Partition visits by fibre and observing run.", "Select stable stars without using measured residuals.", "Compare template and external-catalogue groups.", "Hold out fibres and nights."], "success_tests": ["No survey accuracy is labelled EPRV precision.", "Intrinsic variables are excluded independently.", "Fibre effects generalize to held-out visits.", "Offsets remain population-specific."]},
-    "paper_ids": ["HER-2015-FIRSTLIGHT", "HER-2016-PIPELINE", "HER-2018-RV", "HER-2020-GALAHPLUS", "HER-2026-STATUS"]
+    "latest_problem": "Improved templates reduce uncertainties, but external offsets vary with stellar group and repeated visits expose intrinsic variables.",
+    "latest_problem_source": "https://arxiv.org/abs/2012.12201",
+    "lessons": [
+      "Survey RV accuracy is not planet-search precision.",
+      "Each fibre can carry a different calibration history.",
+      "Cross-talk and scattered light affect both spectra and labels.",
+      "Template mismatch can create population-dependent offsets.",
+      "External comparisons need common stars and epoch metadata."
+    ],
+    "future_analysis": {
+      "title": "HERMES fibre and template stability map",
+      "status": "future analysis question, not completed research",
+      "question": "Which fibre, epoch and stellar-template terms explain repeat-visit velocity residuals?",
+      "basis": "GALAH publishes large repeat samples and documents measurable cross-talk and wavelength terms.",
+      "steps": [
+        "Partition visits by fibre and observing run.",
+        "Select stable stars without using measured residuals.",
+        "Compare template and external-catalogue groups.",
+        "Hold out fibres and nights."
+      ],
+      "success_tests": [
+        "No survey accuracy is labelled EPRV precision.",
+        "Intrinsic variables are excluded independently.",
+        "Fibre effects generalize to held-out visits.",
+        "Offsets remain population-specific."
+      ]
+    },
+    "paper_ids": [
+      "HER-2015-FIRSTLIGHT",
+      "HER-2016-PIPELINE",
+      "HER-2018-RV",
+      "HER-2020-GALAHPLUS",
+      "HER-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "aat-ucles", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "aat-ucles",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "UCLES: iodine-cell velocities across a historical instrument record",
     "reading_boundary": "Four selected method, facility and survey-context sources; the exact decommissioning date remains unresolved.",
-    "current_status": "AAT places UCLES under decommissioned instruments; the reviewed page does not give a precise retirement date.", "current_status_url": "https://aat.anu.edu.au/science/instruments/decommissioned/UCLES/observing",
+    "current_status": "AAT places UCLES under decommissioned instruments; the reviewed page does not give a precise retirement date.",
+    "current_status_url": "https://aat.anu.edu.au/science/instruments/decommissioned/UCLES/observing",
     "short_summary": "UCLES supported the Anglo-Australian Planet Search with a cell placed directly behind the slit. Its long baseline is scientifically valuable, but templates, detectors, slit illumination and observing eras must remain visible in any combined analysis.",
-    "latest_problem": "The surviving technical guide is archival, so retirement chronology and configuration boundaries require a dated source audit.", "latest_problem_source": "https://aat.anu.edu.au/science/instruments/decommissioned/UCLES/observing",
-    "lessons": ["An iodine cell models the contemporaneous instrumental profile.", "Star-specific templates bind velocities to reduction choices.", "Slit illumination remains part of the error budget.", "Long baselines cross hardware and software eras.", "Decommissioned status does not erase archive value."],
-    "future_analysis": {"title": "UCLES observing-era reconstruction", "status": "future analysis question, not completed research", "question": "Can archive headers and publications recover configuration boundaries well enough for long-period signal tests?", "basis": "The historical survey spans decades while the official guide exposes the iodine configuration.", "steps": ["Build a dated detector and cell timeline.", "Join velocities to templates and slit setups.", "Fit offsets only on training stars.", "Inject long-period signals across era boundaries."], "success_tests": ["Every datum carries an era.", "Retirement date remains unknown until sourced.", "Corrections do not attenuate injected signals.", "Templates are never pooled silently."]},
-    "paper_ids": ["UCL-1996-IODINE", "UCL-1998-CELL", "UCL-2001-AAPS", "UCL-2026-ARCHIVE"]
+    "latest_problem": "The surviving technical guide is archival, so retirement chronology and configuration boundaries require a dated source audit.",
+    "latest_problem_source": "https://aat.anu.edu.au/science/instruments/decommissioned/UCLES/observing",
+    "lessons": [
+      "An iodine cell models the contemporaneous instrumental profile.",
+      "Star-specific templates bind velocities to reduction choices.",
+      "Slit illumination remains part of the error budget.",
+      "Long baselines cross hardware and software eras.",
+      "Decommissioned status does not erase archive value."
+    ],
+    "future_analysis": {
+      "title": "UCLES observing-era reconstruction",
+      "status": "future analysis question, not completed research",
+      "question": "Can archive headers and publications recover configuration boundaries well enough for long-period signal tests?",
+      "basis": "The historical survey spans decades while the official guide exposes the iodine configuration.",
+      "steps": [
+        "Build a dated detector and cell timeline.",
+        "Join velocities to templates and slit setups.",
+        "Fit offsets only on training stars.",
+        "Inject long-period signals across era boundaries."
+      ],
+      "success_tests": [
+        "Every datum carries an era.",
+        "Retirement date remains unknown until sourced.",
+        "Corrections do not attenuate injected signals.",
+        "Templates are never pooled silently."
+      ]
+    },
+    "paper_ids": [
+      "UCL-1996-IODINE",
+      "UCL-1998-CELL",
+      "UCL-2001-AAPS",
+      "UCL-2026-ARCHIVE"
+    ]
   },
   {
-    "instrument_id": "cfht-espadons", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "instrument_id": "cfht-espadons",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
     "title": "ESPaDOnS: spectropolarimetry, nightly drift, and reduction boundaries",
     "reading_boundary": "Five selected instrument, application, operations and reduction sources; not a complete spectropolarimetry bibliography.",
-    "current_status": "CFHT maintains current observer and processed-data pages for ESPaDOnS, but a dated semester availability source was not located in this pass.", "current_status_url": "https://www.cfht.hawaii.edu/Instruments/Spectroscopy/Espadons/",
+    "current_status": "CFHT maintains current observer and processed-data pages for ESPaDOnS, but a dated semester availability source was not located in this pass.",
+    "current_status_url": "https://www.cfht.hawaii.edu/Instruments/Spectroscopy/Espadons/",
     "short_summary": "ESPaDOnS is a broad-band high-resolution spectropolarimeter, not a dedicated stabilized EPRV machine. Published young-star work reached 10–15 m/s run residuals, while the official reduction documentation describes calibration accuracy, drift correction and important omitted operations.",
-    "latest_problem": "Nightly wavelength drift and telluric correction interact with pipeline choice; Libre-ESpRIT does not co-add exposures or perform downstream science analysis.", "latest_problem_source": "https://www.cfht.hawaii.edu/Instruments/Spectroscopy/Espadons/Espadons_esprit.html",
-    "lessons": ["Spectral sampling is not RV precision.", "Polarimetric and intensity modes have different products.", "Telluric drift correction needs independent validation.", "Young-star residuals include activity modelling.", "Pipeline omissions belong in reproducibility records."],
-    "future_analysis": {"title": "ESPaDOnS nightly-drift replay", "status": "future analysis question, not completed research", "question": "How much velocity improvement survives held-out nights when telluric drift and stellar activity are separated?", "basis": "Official documentation gives the reduction stages and published work gives a run-level test case.", "steps": ["Reprocess raw and official products side by side.", "Keep observing modes separate.", "Estimate drift without target leakage.", "Hold out complete nights."], "success_tests": ["Calibration RMS is not called stellar precision.", "Mode and pipeline versions are recorded.", "Activity filtering preserves injected planets.", "Current status remains qualified."]},
-    "paper_ids": ["ESPAD-2006-INSTRUMENT", "ESPAD-2007-RV", "ESPAD-2015-NEWS", "ESPAD-2026-PIPELINE", "ESPAD-2026-STATUS"]
+    "latest_problem": "Nightly wavelength drift and telluric correction interact with pipeline choice; Libre-ESpRIT does not co-add exposures or perform downstream science analysis.",
+    "latest_problem_source": "https://www.cfht.hawaii.edu/Instruments/Spectroscopy/Espadons/Espadons_esprit.html",
+    "lessons": [
+      "Spectral sampling is not RV precision.",
+      "Polarimetric and intensity modes have different products.",
+      "Telluric drift correction needs independent validation.",
+      "Young-star residuals include activity modelling.",
+      "Pipeline omissions belong in reproducibility records."
+    ],
+    "future_analysis": {
+      "title": "ESPaDOnS nightly-drift replay",
+      "status": "future analysis question, not completed research",
+      "question": "How much velocity improvement survives held-out nights when telluric drift and stellar activity are separated?",
+      "basis": "Official documentation gives the reduction stages and published work gives a run-level test case.",
+      "steps": [
+        "Reprocess raw and official products side by side.",
+        "Keep observing modes separate.",
+        "Estimate drift without target leakage.",
+        "Hold out complete nights."
+      ],
+      "success_tests": [
+        "Calibration RMS is not called stellar precision.",
+        "Mode and pipeline versions are recorded.",
+        "Activity filtering preserves injected planets.",
+        "Current status remains qualified."
+      ]
+    },
+    "paper_ids": [
+      "ESPAD-2006-INSTRUMENT",
+      "ESPAD-2007-RV",
+      "ESPAD-2015-NEWS",
+      "ESPAD-2026-PIPELINE",
+      "ESPAD-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "flwo-tres", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "flwo-tres",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "TRES: reconnaissance velocities and multi-order consistency",
     "reading_boundary": "Four selected instrument, method, catalogue and data-release sources; no dated facility-status page was verified.",
-    "current_status": "Recent public TESS follow-up products contain TRES observations, but this pass did not locate a dated 2026 FLWO instrument roster.", "current_status_url": "https://zenodo.org/records/5130626",
+    "current_status": "Recent public TESS follow-up products contain TRES observations, but this pass did not locate a dated 2026 FLWO instrument roster.",
+    "current_status_url": "https://zenodo.org/records/5130626",
     "short_summary": "TRES is widely used for reconnaissance spectra, stellar parameters and relative velocities. Its resolving power near 44,000 and large follow-up archive support consistency studies, but do not imply a single precision value across targets and reductions.",
-    "latest_problem": "Public products combine heterogeneous targets and analysis purposes, so a global precision label would hide visit quality and stellar rotation.", "latest_problem_source": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/J/AJ/158/141",
-    "lessons": ["Reconnaissance and orbital monitoring answer different questions.", "Multi-order agreement is an internal diagnostic.", "Rotation and line density change RV information.", "Relative and absolute zero points must be separate.", "Public counts do not establish current facility status."],
-    "future_analysis": {"title": "TRES order and target-class residual study", "status": "future analysis question, not completed research", "question": "Which orders and stellar classes dominate repeat-visit residuals in public follow-up spectra?", "basis": "Reusable spectra and catalogue products allow a stratified analysis without claiming a new facility result.", "steps": ["Define quality cuts before fitting.", "Group residuals by order and stellar class.", "Hold out targets rather than visits.", "Compare relative and absolute products separately."], "success_tests": ["No target appears in train and test.", "Fast rotators remain a separate group.", "Order exclusions are reported.", "Current status is not inferred from archive size."]},
-    "paper_ids": ["TRE-2008-INSTRUMENT", "TRE-2010-HATP16", "TRE-2019-ARCHIVE", "TRE-2026-SPC"]
+    "latest_problem": "Public products combine heterogeneous targets and analysis purposes, so a global precision label would hide visit quality and stellar rotation.",
+    "latest_problem_source": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/J/AJ/158/141",
+    "lessons": [
+      "Reconnaissance and orbital monitoring answer different questions.",
+      "Multi-order agreement is an internal diagnostic.",
+      "Rotation and line density change RV information.",
+      "Relative and absolute zero points must be separate.",
+      "Public counts do not establish current facility status."
+    ],
+    "future_analysis": {
+      "title": "TRES order and target-class residual study",
+      "status": "future analysis question, not completed research",
+      "question": "Which orders and stellar classes dominate repeat-visit residuals in public follow-up spectra?",
+      "basis": "Reusable spectra and catalogue products allow a stratified analysis without claiming a new facility result.",
+      "steps": [
+        "Define quality cuts before fitting.",
+        "Group residuals by order and stellar class.",
+        "Hold out targets rather than visits.",
+        "Compare relative and absolute products separately."
+      ],
+      "success_tests": [
+        "No target appears in train and test.",
+        "Fast rotators remain a separate group.",
+        "Order exclusions are reported.",
+        "Current status is not inferred from archive size."
+      ]
+    },
+    "paper_ids": [
+      "TRE-2008-INSTRUMENT",
+      "TRE-2010-HATP16",
+      "TRE-2019-ARCHIVE",
+      "TRE-2026-SPC"
+    ]
   },
   {
-    "instrument_id": "gemini-south-igrins", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "instrument_id": "gemini-south-igrins",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
     "title": "IGRINS: near-infrared forward modelling and deployment ambiguity",
     "reading_boundary": "Five selected instrument, pipeline, software and status sources; original IGRINS and IGRINS-2 are not treated as the same physical instrument.",
-    "current_status": "Gemini's current calculator roster lists IGRINS-2; this does not verify that the original travelling IGRINS remains deployed at Gemini South.", "current_status_url": "https://www.gemini.edu/observing/resources/itc",
+    "current_status": "Gemini's current calculator roster lists IGRINS-2; this does not verify that the original travelling IGRINS remains deployed at Gemini South.",
+    "current_status_url": "https://www.gemini.edu/observing/resources/itc",
     "short_summary": "IGRINS provides simultaneous H- and K-band high-resolution spectra. The public RV pipeline uses nightly telluric standards for common-path calibration and reported 26.8 m/s in K and 31.1 m/s in H for narrow-line standards, with strong workflow dependence.",
-    "latest_problem": "Pipeline convergence depends on starting velocity and rotation, while instrument identity and current deployment need an explicit IGRINS versus IGRINS-2 reconciliation.", "latest_problem_source": "https://igrins-rv.readthedocs.io/en/latest/Overview%20and%20Workflow.html",
-    "lessons": ["Tellurics are both calibrators and contaminants.", "H and K results must remain separate.", "Defocus eras alter the line-spread function.", "Initial guesses can affect convergence.", "A successor name cannot silently inherit an instrument record."],
-    "future_analysis": {"title": "IGRINS pipeline sensitivity and identity audit", "status": "future analysis question, not completed research", "question": "How stable are recovered velocities across initial guesses, telluric nights, band and physical instrument deployment?", "basis": "The open workflow identifies testable dependencies and the Gemini roster exposes an identity ambiguity.", "steps": ["Resolve physical-instrument serial and site metadata.", "Perturb initial RV and rotation values.", "Hold out telluric standards and nights.", "Report H and K independently."], "success_tests": ["IGRINS and IGRINS-2 never merge without evidence.", "Convergence failures remain visible.", "Band-specific precision is preserved.", "Recovered planet signals survive perturbations."]},
-    "paper_ids": ["IGR-2014-INSTRUMENT", "IGR-2021-RV", "IGR-2021-SOFTWARE", "IGR-2022-WORKFLOW", "IGR-2026-STATUS"]
+    "latest_problem": "Pipeline convergence depends on starting velocity and rotation, while instrument identity and current deployment need an explicit IGRINS versus IGRINS-2 reconciliation.",
+    "latest_problem_source": "https://igrins-rv.readthedocs.io/en/latest/Overview%20and%20Workflow.html",
+    "lessons": [
+      "Tellurics are both calibrators and contaminants.",
+      "H and K results must remain separate.",
+      "Defocus eras alter the line-spread function.",
+      "Initial guesses can affect convergence.",
+      "A successor name cannot silently inherit an instrument record."
+    ],
+    "future_analysis": {
+      "title": "IGRINS pipeline sensitivity and identity audit",
+      "status": "future analysis question, not completed research",
+      "question": "How stable are recovered velocities across initial guesses, telluric nights, band and physical instrument deployment?",
+      "basis": "The open workflow identifies testable dependencies and the Gemini roster exposes an identity ambiguity.",
+      "steps": [
+        "Resolve physical-instrument serial and site metadata.",
+        "Perturb initial RV and rotation values.",
+        "Hold out telluric standards and nights.",
+        "Report H and K independently."
+      ],
+      "success_tests": [
+        "IGRINS and IGRINS-2 never merge without evidence.",
+        "Convergence failures remain visible.",
+        "Band-specific precision is preserved.",
+        "Recovered planet signals survive perturbations."
+      ]
+    },
+    "paper_ids": [
+      "IGR-2014-INSTRUMENT",
+      "IGR-2021-RV",
+      "IGR-2021-SOFTWARE",
+      "IGR-2022-WORKFLOW",
+      "IGR-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "lasilla-coralie", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "lasilla-coralie",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "CORALIE: simultaneous reference and a twenty-five-year survey record",
     "reading_boundary": "Four selected instrument, survey and official-description sources; hardware generations are not yet fully enumerated.",
-    "current_status": "ESO maintains CORALIE as an instrument on the Euler telescope, but the reviewed page lacks a dated semester availability statement.", "current_status_url": "https://www.eso.org/public/teles-instr/lasilla/swiss/coralie/",
+    "current_status": "ESO maintains CORALIE as an instrument on the Euler telescope, but the reviewed page lacks a dated semester availability statement.",
+    "current_status_url": "https://www.eso.org/public/teles-instr/lasilla/swiss/coralie/",
     "short_summary": "CORALIE couples a double-scrambled fibre feed with simultaneous thorium referencing and automated cross-correlation. Its 25-year survey is a rich long-baseline record whose upgrades and offsets must be modelled as distinct eras.",
-    "latest_problem": "A long-baseline catalogue crosses instrument upgrades, so companion inference can be sensitive to zero points and stellar variability.", "latest_problem_source": "https://arxiv.org/abs/2303.16717",
-    "lessons": ["Simultaneous thorium tracks only its reference path.", "A public precision description is not universal RMS.", "Survey duration increases sensitivity to long periods and era offsets.", "Cross-correlation masks are spectrum-dependent.", "Hardware upgrades need explicit breakpoints."],
-    "future_analysis": {"title": "CORALIE generation-aware archive study", "status": "future analysis question, not completed research", "question": "Which long-period signals remain stable after instrument-generation and activity terms are jointly tested?", "basis": "The survey publishes a 25-year sample while technical sources establish simultaneous reference and upgrades.", "steps": ["Construct a dated generation table.", "Join velocities to masks and calibration states.", "Use inactive controls selected before fitting.", "Inject periods spanning era boundaries."], "success_tests": ["Every velocity has a generation.", "Controls do not learn from their own residuals.", "Injected long periods are recovered.", "Availability remains explicitly undated."]},
-    "paper_ids": ["COR-2001-INSTRUMENT", "COR-2012-LONGBASE", "COR-2023-CENSUS", "COR-2026-OVERVIEW"]
+    "latest_problem": "A long-baseline catalogue crosses instrument upgrades, so companion inference can be sensitive to zero points and stellar variability.",
+    "latest_problem_source": "https://arxiv.org/abs/2303.16717",
+    "lessons": [
+      "Simultaneous thorium tracks only its reference path.",
+      "A public precision description is not universal RMS.",
+      "Survey duration increases sensitivity to long periods and era offsets.",
+      "Cross-correlation masks are spectrum-dependent.",
+      "Hardware upgrades need explicit breakpoints."
+    ],
+    "future_analysis": {
+      "title": "CORALIE generation-aware archive study",
+      "status": "future analysis question, not completed research",
+      "question": "Which long-period signals remain stable after instrument-generation and activity terms are jointly tested?",
+      "basis": "The survey publishes a 25-year sample while technical sources establish simultaneous reference and upgrades.",
+      "steps": [
+        "Construct a dated generation table.",
+        "Join velocities to masks and calibration states.",
+        "Use inactive controls selected before fitting.",
+        "Inject periods spanning era boundaries."
+      ],
+      "success_tests": [
+        "Every velocity has a generation.",
+        "Controls do not learn from their own residuals.",
+        "Injected long periods are recovered.",
+        "Availability remains explicitly undated."
+      ]
+    },
+    "paper_ids": [
+      "COR-2001-INSTRUMENT",
+      "COR-2012-LONGBASE",
+      "COR-2023-CENSUS",
+      "COR-2026-OVERVIEW"
+    ]
   },
   {
-    "instrument_id": "lasilla-feros", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "lasilla-feros",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "FEROS: broad coverage, early stability, and reduction dependence",
     "reading_boundary": "Four selected instrument, early-performance, pipeline and official-documentation sources; FEROS is not classified as a dedicated EPRV instrument.",
-    "current_status": "ESO maintains FEROS technical documentation, but this pass did not verify current availability in a dated call.", "current_status_url": "https://www.eso.org/sci/facilities/lasilla/instruments/feros/overview.html",
+    "current_status": "ESO maintains FEROS technical documentation, but this pass did not verify current availability in a dated call.",
+    "current_status_url": "https://www.eso.org/sci/facilities/lasilla/instruments/feros/overview.html",
     "short_summary": "FEROS covers a broad optical range at resolving power near 48,000. Early Tau Ceti results reached 8.3 m/s RMS over 245 days, while ESO explicitly notes that the instrument was not intended as an RV machine and gives a more conservative general capability statement.",
-    "latest_problem": "Published performance depends strongly on object-calibration mode and reduction, and current official documentation does not establish a modern long-baseline floor.", "latest_problem_source": "https://www.eso.org/sci/facilities/lasilla/instruments/feros/overview.html",
-    "lessons": ["One stable star does not define facility precision.", "Broad wavelength coverage is not stability.", "Simultaneous calibration omits some stellar-path errors.", "A shared pipeline still needs instrument validation.", "Official conservative guidance should frame archival best cases."],
-    "future_analysis": {"title": "FEROS reduction and configuration replay", "status": "future analysis question, not completed research", "question": "Do early stability results reproduce under modern reductions across multiple standards and configurations?", "basis": "A published single-star sequence and CERES offer a concrete comparison starting point.", "steps": ["Recover the early configuration and target sequence.", "Run archived and modern reductions.", "Add independent stable standards.", "Hold out epochs and orders."], "success_tests": ["The 8.3 m/s result retains its target and baseline.", "Configurations do not pool silently.", "Improvements reproduce on held-out data.", "Current availability remains unresolved."]},
-    "paper_ids": ["FER-1999-INSTRUMENT", "FER-2000-STABILITY", "FER-2016-CERES", "FER-2026-OVERVIEW"]
+    "latest_problem": "Published performance depends strongly on object-calibration mode and reduction, and current official documentation does not establish a modern long-baseline floor.",
+    "latest_problem_source": "https://www.eso.org/sci/facilities/lasilla/instruments/feros/overview.html",
+    "lessons": [
+      "One stable star does not define facility precision.",
+      "Broad wavelength coverage is not stability.",
+      "Simultaneous calibration omits some stellar-path errors.",
+      "A shared pipeline still needs instrument validation.",
+      "Official conservative guidance should frame archival best cases."
+    ],
+    "future_analysis": {
+      "title": "FEROS reduction and configuration replay",
+      "status": "future analysis question, not completed research",
+      "question": "Do early stability results reproduce under modern reductions across multiple standards and configurations?",
+      "basis": "A published single-star sequence and CERES offer a concrete comparison starting point.",
+      "steps": [
+        "Recover the early configuration and target sequence.",
+        "Run archived and modern reductions.",
+        "Add independent stable standards.",
+        "Hold out epochs and orders."
+      ],
+      "success_tests": [
+        "The 8.3 m/s result retains its target and baseline.",
+        "Configurations do not pool silently.",
+        "Improvements reproduce on held-out data.",
+        "Current availability remains unresolved."
+      ]
+    },
+    "paper_ids": [
+      "FER-1999-INSTRUMENT",
+      "FER-2000-STABILITY",
+      "FER-2016-CERES",
+      "FER-2026-OVERVIEW"
+    ]
   },
   {
-    "instrument_id": "lasilla-fideos", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "lasilla-fideos",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "FIDEOS: consecutive-night commissioning and the missing long baseline",
     "reading_boundary": "Four selected design, commissioning, pipeline and official-description sources; no seasonal performance is inferred.",
-    "current_status": "ESO hosts a current public instrument description, but a dated observing-availability source was not verified.", "current_status_url": "https://eso.org/public/teles-instr/lasilla/1metre/fideos/",
+    "current_status": "ESO hosts a current public instrument description, but a dated observing-availability source was not verified.",
+    "current_status_url": "https://eso.org/public/teles-instr/lasilla/1metre/fideos/",
     "short_summary": "FIDEOS is a fibre-fed, thermally controlled echelle on the ESO 1 m telescope. Its reported approximately 8 m/s stability covers several consecutive nights and should remain a commissioning result rather than a long-term precision claim.",
-    "latest_problem": "The public evidence does not extend the stability measurement to seasons or fully document present availability.", "latest_problem_source": "https://arxiv.org/abs/1804.07441",
-    "lessons": ["Consecutive nights are not seasonal validation.", "Octagonal fibres improve but do not perfect scrambling.", "Simultaneous calibration follows a different fibre.", "Limiting magnitude and RV precision are different metrics.", "Pipeline portability requires instrument-specific tests."],
-    "future_analysis": {"title": "FIDEOS seasonal stability extension", "status": "future analysis question, not completed research and dependent on archive coverage", "question": "Does the commissioning stability persist across seasons, standards and environmental states?", "basis": "The commissioning result provides a bounded baseline and explicit hardware architecture.", "steps": ["Identify public standards across seasons.", "Retain fibre and calibration metadata.", "Model environmental terms on training nights.", "Test complete held-out runs."], "success_tests": ["Commissioning and seasonal metrics stay separate.", "No missing season is interpolated.", "Corrections transfer to held-out runs.", "Availability is not inferred from a web page alone."]},
-    "paper_ids": ["FID-2014-DESIGN", "FID-2018-COMMISSION", "FID-2016-CERES", "FID-2026-OVERVIEW"]
+    "latest_problem": "The public evidence does not extend the stability measurement to seasons or fully document present availability.",
+    "latest_problem_source": "https://arxiv.org/abs/1804.07441",
+    "lessons": [
+      "Consecutive nights are not seasonal validation.",
+      "Octagonal fibres improve but do not perfect scrambling.",
+      "Simultaneous calibration follows a different fibre.",
+      "Limiting magnitude and RV precision are different metrics.",
+      "Pipeline portability requires instrument-specific tests."
+    ],
+    "future_analysis": {
+      "title": "FIDEOS seasonal stability extension",
+      "status": "future analysis question, not completed research and dependent on archive coverage",
+      "question": "Does the commissioning stability persist across seasons, standards and environmental states?",
+      "basis": "The commissioning result provides a bounded baseline and explicit hardware architecture.",
+      "steps": [
+        "Identify public standards across seasons.",
+        "Retain fibre and calibration metadata.",
+        "Model environmental terms on training nights.",
+        "Test complete held-out runs."
+      ],
+      "success_tests": [
+        "Commissioning and seasonal metrics stay separate.",
+        "No missing season is interpolated.",
+        "Corrections transfer to held-out runs.",
+        "Availability is not inferred from a web page alone."
+      ]
+    },
+    "paper_ids": [
+      "FID-2014-DESIGN",
+      "FID-2018-COMMISSION",
+      "FID-2016-CERES",
+      "FID-2026-OVERVIEW"
+    ]
   },
   {
-    "instrument_id": "lbt-pepsi", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 4,
+    "instrument_id": "lbt-pepsi",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
     "title": "PEPSI: multiple resolution modes and a capability without an RV floor",
     "reading_boundary": "Four selected instrument, solar-reference, reduction and facility sources; Fabry-Perot capability is not treated as achieved precision.",
-    "current_status": "LBTO presents PEPSI in its current instruments overview; the reviewed page does not state a dated RV floor.", "current_status_url": "https://www.lbto.org/instruments-overview/",
+    "current_status": "LBTO presents PEPSI in its current instruments overview; the reviewed page does not state a dated RV floor.",
+    "current_status_url": "https://www.lbto.org/instruments-overview/",
     "short_summary": "PEPSI spans three resolution modes, six cross-dispersers and several telescope feeds. It can accept a stabilized Fabry-Perot reference, but its solar atlases and high resolving power answer different questions from night-time stellar RV repeatability.",
-    "latest_problem": "Mode, cross-disperser, feed and polarimetric state multiply the configurations that a precision analysis must keep separate.", "latest_problem_source": "https://arxiv.org/abs/1505.06492",
-    "lessons": ["Resolving power is not Doppler precision.", "Solar-feed spectra do not test the night telescope feed.", "Cross-dispersers define separate wavelength settings.", "Polarimetric optics change the light path.", "Fabry-Perot availability is only a calibration capability."],
-    "future_analysis": {"title": "PEPSI configuration transfer matrix", "status": "future analysis question, not completed research", "question": "Which calibration and line-shape terms transfer across resolution modes, cross-dispersers and feeds?", "basis": "The instrument and pipeline papers enumerate the configuration axes required for a controlled comparison.", "steps": ["Create immutable configuration identifiers.", "Compare calibration residuals by cross-disperser.", "Separate solar, VATT and LBT feeds.", "Hold out complete configurations."], "success_tests": ["No mode borrows another mode's metric.", "Solar and stellar results remain separate.", "Line-shape changes are quantified.", "No achieved RV floor is invented."]},
-    "paper_ids": ["PEP-2015-INSTRUMENT", "PEP-2018-SOLAR", "PEP-2026-REDUCTION", "PEP-2026-STATUS"]
+    "latest_problem": "Mode, cross-disperser, feed and polarimetric state multiply the configurations that a precision analysis must keep separate.",
+    "latest_problem_source": "https://arxiv.org/abs/1505.06492",
+    "lessons": [
+      "Resolving power is not Doppler precision.",
+      "Solar-feed spectra do not test the night telescope feed.",
+      "Cross-dispersers define separate wavelength settings.",
+      "Polarimetric optics change the light path.",
+      "Fabry-Perot availability is only a calibration capability."
+    ],
+    "future_analysis": {
+      "title": "PEPSI configuration transfer matrix",
+      "status": "future analysis question, not completed research",
+      "question": "Which calibration and line-shape terms transfer across resolution modes, cross-dispersers and feeds?",
+      "basis": "The instrument and pipeline papers enumerate the configuration axes required for a controlled comparison.",
+      "steps": [
+        "Create immutable configuration identifiers.",
+        "Compare calibration residuals by cross-disperser.",
+        "Separate solar, VATT and LBT feeds.",
+        "Hold out complete configurations."
+      ],
+      "success_tests": [
+        "No mode borrows another mode's metric.",
+        "Solar and stellar results remain separate.",
+        "Line-shape changes are quantified.",
+        "No achieved RV floor is invented."
+      ]
+    },
+    "paper_ids": [
+      "PEP-2015-INSTRUMENT",
+      "PEP-2018-SOLAR",
+      "PEP-2026-REDUCTION",
+      "PEP-2026-STATUS"
+    ]
   },
   {
-    "instrument_id": "subaru-hds", "research_depth": "selected_source_dossier", "reviewed_through": "2026-09-08", "paper_count": 5,
+    "instrument_id": "subaru-hds",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
     "title": "HDS: iodine calibration, detector nonlinearity, and current throughput caveats",
     "reading_boundary": "Five selected instrument, detector, image-slicer and current official sources; no universal stellar precision is assigned.",
-    "current_status": "HDS remains offered, with a July 2026 warning that both optical image rotators have degraded reflectivity.", "current_status_url": "https://subarutelescope.org/Instruments/HDS/",
+    "current_status": "HDS remains offered, with a July 2026 warning that both optical image rotators have degraded reflectivity.",
+    "current_status_url": "https://subarutelescope.org/Instruments/HDS/",
     "short_summary": "Subaru HDS is a configurable slit spectrograph with an iodine cell and image slicers reaching resolving powers up to about 165,000. Detector nonlinearity, slicer illumination, cell throughput and degraded image-rotator reflectivity all require setup-level treatment.",
-    "latest_problem": "The current image-rotator warning affects throughput, while detector nonlinearity differs between the two CCDs and grows at high counts.", "latest_problem_source": "https://subarutelescope.org/Instruments/HDS/",
-    "lessons": ["Iodine covers only part of the full wavelength range.", "Detector nonlinearity is chip- and signal-dependent.", "Image slicers change both resolution and illumination.", "Flux-weighted timing hardware is currently unavailable.", "Throughput degradation is not automatically an RV offset."],
-    "future_analysis": {"title": "HDS setup-level iodine reanalysis", "status": "future analysis question, not completed research", "question": "How do chip nonlinearity, slicer choice and image-rotator state affect iodine-region repeatability?", "basis": "Official pages document each mechanism and current operational caveat.", "steps": ["Partition spectra by detector, slicer and rotator.", "Apply signal-dependent nonlinearity tests.", "Compare iodine chunks across count levels.", "Hold out stars and nights."], "success_tests": ["Setup metadata are mandatory.", "Nonlinearity correction is validated on held-out levels.", "Throughput and velocity effects remain separate.", "The July 2026 caveat remains dated."]},
-    "paper_ids": ["HDS-2002-INSTRUMENT", "HDS-2010-NONLINEARITY", "HDS-2012-SLICER", "HDS-2026-IODINE", "HDS-2026-STATUS"]
+    "latest_problem": "The current image-rotator warning affects throughput, while detector nonlinearity differs between the two CCDs and grows at high counts.",
+    "latest_problem_source": "https://subarutelescope.org/Instruments/HDS/",
+    "lessons": [
+      "Iodine covers only part of the full wavelength range.",
+      "Detector nonlinearity is chip- and signal-dependent.",
+      "Image slicers change both resolution and illumination.",
+      "Flux-weighted timing hardware is currently unavailable.",
+      "Throughput degradation is not automatically an RV offset."
+    ],
+    "future_analysis": {
+      "title": "HDS setup-level iodine reanalysis",
+      "status": "future analysis question, not completed research",
+      "question": "How do chip nonlinearity, slicer choice and image-rotator state affect iodine-region repeatability?",
+      "basis": "Official pages document each mechanism and current operational caveat.",
+      "steps": [
+        "Partition spectra by detector, slicer and rotator.",
+        "Apply signal-dependent nonlinearity tests.",
+        "Compare iodine chunks across count levels.",
+        "Hold out stars and nights."
+      ],
+      "success_tests": [
+        "Setup metadata are mandatory.",
+        "Nonlinearity correction is validated on held-out levels.",
+        "Throughput and velocity effects remain separate.",
+        "The July 2026 caveat remains dated."
+      ]
+    },
+    "paper_ids": [
+      "HDS-2002-INSTRUMENT",
+      "HDS-2010-NONLINEARITY",
+      "HDS-2012-SLICER",
+      "HDS-2026-IODINE",
+      "HDS-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "boao-boes",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 3,
+    "title": "BOES: fibre modes, iodine precision, and a decade-long giant-star survey",
+    "reading_boundary": "Three selected instrument, survey and official sources; present observing availability remains unverified.",
+    "current_status": "Documented as installed; no dated semester-level availability source was found.",
+    "current_status_url": "https://www.kasi.re.kr/boao/pageView/259",
+    "short_summary": "BOES combines three fibre-dependent resolving powers with an iodine path. Its sub-5 m/s facility statement and published giant-star results are different evidence.",
+    "latest_problem": "The official precision sentence does not specify sample size, cadence, estimator or observing span.",
+    "latest_problem_source": "https://www.kasi.re.kr/boao/pageView/259",
+    "lessons": [
+      "Fibre choice changes resolving power.",
+      "An iodine result applies only to its calibrated interval.",
+      "A facility summary is not a precision distribution.",
+      "Giant-star variability can exceed instrumental errors.",
+      "Installation does not prove scheduled availability."
+    ],
+    "future_analysis": {
+      "title": "BOES fibre- and epoch-aware repeatability study",
+      "status": "future analysis question, not completed research",
+      "question": "Can archive metadata support a fibre- and epoch-aware repeatability model?",
+      "basis": "The sources expose mode changes, a long survey baseline and an underspecified precision claim.",
+      "steps": [
+        "Recover fibre and iodine metadata.",
+        "Segment detector and intervention eras.",
+        "Fit stable stars separately from giants.",
+        "Hold out observing seasons."
+      ],
+      "success_tests": [
+        "Report each fibre mode separately.",
+        "State sample selection.",
+        "Do not generalize the facility claim.",
+        "Retain the open status field."
+      ]
+    },
+    "paper_ids": [
+      "BOES-2007-INSTRUMENT",
+      "BOES-2014-GIANTS",
+      "BOES-2026-OFFICIAL"
+    ]
+  },
+  {
+    "instrument_id": "calaralto-cafe",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 3,
+    "title": "CAFE: commissioning, the CAFE2 rebuild, and present observer documentation",
+    "reading_boundary": "Three selected sources define the original instrument, CAFE2 commissioning and current configuration; they are not a complete bibliography.",
+    "current_status": "A current observer page exists, but this reading found no dated 2026 availability notice.",
+    "current_status_url": "https://www.caha.es/es/telescope-2-2m-2/cafe",
+    "short_summary": "CAFE2 changed the stability enclosure and pipeline. The 3 m/s lamp and 8 m/s one-night stellar results are not a long-term survey floor.",
+    "latest_problem": "Multi-semester zero-point stability after CAFE2 commissioning is not quantified by the selected sources.",
+    "latest_problem_source": "https://arxiv.org/abs/1906.04060",
+    "lessons": [
+      "CAFE and CAFE2 are instrument eras.",
+      "Lamp and stellar stability differ.",
+      "The 8 m/s result is one-night and S/N selected.",
+      "Published ranges are configuration dependent.",
+      "Pipeline availability does not prove accuracy."
+    ],
+    "future_analysis": {
+      "title": "CAFE2 multi-season stability study",
+      "status": "future analysis question, not completed research",
+      "question": "What long-baseline precision survives an era-aware re-reduction?",
+      "basis": "The upgrade paper gives a commissioning baseline but not a multi-season result.",
+      "steps": [
+        "Build an intervention timeline.",
+        "Reprocess stable stars by pipeline version.",
+        "Separate lamp and stellar residuals.",
+        "Hold out semesters."
+      ],
+      "success_tests": [
+        "Fit pre/post-upgrade offsets.",
+        "State S/N selection.",
+        "Separate lamp and stellar metrics.",
+        "Keep status evidence dated."
+      ]
+    },
+    "paper_ids": [
+      "CAFE-2013-INSTRUMENT",
+      "CAFE-2020-UPGRADE",
+      "CAFE-2026-OFFICIAL"
+    ]
+  },
+  {
+    "instrument_id": "eso-ces",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 3,
+    "title": "CES: extreme resolving power without a universal Doppler claim",
+    "reading_boundary": "Three selected technical and official sources; no claim is made about every CES programme.",
+    "current_status": "ESO lists CES as decommissioned.",
+    "current_status_url": "https://www.hq.eso.org/sci/facilities/lasilla/decommissioned.html",
+    "short_summary": "CES achieved very high resolving power in narrow spectral settings. That capability is not evidence of metre-per-second long-term stability.",
+    "latest_problem": "Archive reuse requires mode-level calibration metadata before any velocity comparison is defensible.",
+    "latest_problem_source": "https://www.ls.eso.org/sci/facilities/lasilla/instruments/ces/CES_UserMan.pdf",
+    "lessons": [
+      "Resolving power is not RV accuracy.",
+      "CES recorded narrow intervals by setup.",
+      "Image slicing changes the line-spread function.",
+      "Calibration history is programme dependent.",
+      "Decommissioned data can remain useful."
+    ],
+    "future_analysis": {
+      "title": "CES archive calibration audit",
+      "status": "future analysis question, not completed research",
+      "question": "Which archive subsets permit reproducible differential line-shift measurements?",
+      "basis": "The manual defines capability while individual programmes determine calibration continuity.",
+      "steps": [
+        "Inventory camera and slicer modes.",
+        "Locate lamps and standards.",
+        "Measure intra-order stability.",
+        "Validate on held-out nights."
+      ],
+      "success_tests": [
+        "Do not quote R as velocity precision.",
+        "Require setup metadata.",
+        "Separate absolute and differential shifts.",
+        "Publish missing metadata."
+      ]
+    },
+    "paper_ids": [
+      "CES-1992-INSTRUMENT",
+      "CES-2000-MANUAL",
+      "CES-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "eso-coravel",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
+    "title": "CORAVEL: physical-mask correlation and the pre-CCD velocity scale",
+    "reading_boundary": "Four selected instrument, commissioning, science and status sources; target-level catalogue auditing remains future work.",
+    "current_status": "ESO lists the La Silla CORAVEL as decommissioned.",
+    "current_status_url": "https://www.hq.eso.org/sci/facilities/lasilla/decommissioned.html",
+    "short_summary": "CORAVEL measured a scanned correlation dip rather than retaining a modern pixel spectrum. Accuracy depends on mask, target type and zero-point practice.",
+    "latest_problem": "Catalogue transfer must preserve physical-mask and programme zero-point limitations.",
+    "latest_problem_source": "https://www.eso.org/sci/publications/messenger/archive/no.25-sep81/messenger-no25-6-7.pdf",
+    "lessons": [
+      "The observable was a physical-mask correlation.",
+      "A typical 0.5 km/s value is not universal.",
+      "Cluster results depend on spectral match.",
+      "Iron-lamp checks set the zero point.",
+      "Pixel-level re-extraction may be impossible."
+    ],
+    "future_analysis": {
+      "title": "CORAVEL catalogue zero-point comparison",
+      "status": "future analysis question, not completed research",
+      "question": "How consistent are zero points across programmes and epochs?",
+      "basis": "The reports expose both measurement mechanism and programme-specific accuracy.",
+      "steps": [
+        "Find standards shared by catalogues.",
+        "Model programme and epoch offsets.",
+        "Test spectral-type dependence.",
+        "Propagate catalogue uncertainty."
+      ],
+      "success_tests": [
+        "Preserve km/s units.",
+        "Keep mask identity.",
+        "Use overlapping standards.",
+        "Report archive limits."
+      ]
+    },
+    "paper_ids": [
+      "CORAVEL-1979-INSTRUMENT",
+      "CORAVEL-1981-FIRSTLIGHT",
+      "CORAVEL-1985-CLUSTERS",
+      "CORAVEL-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "het-hrs",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 3,
+    "title": "HET HRS: fibre configurations, iodine performance, and reference-temperature calibration",
+    "reading_boundary": "Three selected design, performance and calibration sources; current operating state remains unresolved.",
+    "current_status": "Current HET HRS availability is unverified; the legacy page is not a dated call.",
+    "current_status_url": "https://het.as.utexas.edu/HET/hetweb/Instruments/HRS/hrs.html",
+    "short_summary": "HET HRS supported metre-per-second iodine work, but reported repeatability combines target selection, reduction and instrument configuration.",
+    "latest_problem": "An iodine FTS mismatch showed that a calibration reference can be internally precise yet systematically wrong.",
+    "latest_problem_source": "https://arxiv.org/abs/1910.10756",
+    "lessons": [
+      "R about 60000 describes one survey mode.",
+      "Best-star repeatability is not the sample median.",
+      "Iodine spectra depend on temperature.",
+      "Queue cadence aided long baselines.",
+      "Current status needs dated evidence."
+    ],
+    "future_analysis": {
+      "title": "HET HRS iodine-reference reprocessing",
+      "status": "future analysis question, not completed research",
+      "question": "How much do corrected iodine references change the archived velocity zero point?",
+      "basis": "The calibration paper identifies a concrete reference-spectrum error.",
+      "steps": [
+        "Recreate old and corrected templates.",
+        "Reprocess identical chunks.",
+        "Compare epoch offsets.",
+        "Test injected signals."
+      ],
+      "success_tests": [
+        "Blind template labels.",
+        "Report per-star distributions.",
+        "Separate FTS error from stellar noise.",
+        "Do not infer present operations."
+      ]
+    },
+    "paper_ids": [
+      "HETHRS-1998-INSTRUMENT",
+      "HETHRS-2004-PERFORMANCE",
+      "HETHRS-2020-IODINE"
+    ]
+  },
+  {
+    "instrument_id": "lick-hamilton",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
+    "title": "Hamilton: a 25-year iodine survey with explicit instrument eras",
+    "reading_boundary": "Four selected instrument, survey, reanalysis and facility sources; not every Hamilton science paper was reviewed.",
+    "current_status": "The iodine planet-search series ended after a cell failure; present hardware availability is not established here.",
+    "current_status_url": "https://arxiv.org/abs/1310.7315",
+    "short_summary": "The homogeneous release contains more than 14000 velocities, but its long baseline crosses upgrades and a terminal iodine-cell failure.",
+    "latest_problem": "A survey ending and restricted CAT access do not establish physical decommissioning.",
+    "latest_problem_source": "https://www.lickobservatory.org/explore/research-telescopes/coude-auxiliary-telescope/",
+    "lessons": [
+      "Precision changed across hardware eras.",
+      "One re-reduction cannot erase history.",
+      "Giant-star variability affects long periods.",
+      "Iodine anchors a limited interval.",
+      "Restricted access is not instrument status."
+    ],
+    "future_analysis": {
+      "title": "Hamilton era-boundary residual study",
+      "status": "future analysis question, not completed research",
+      "question": "Can era boundaries explain residual long-period structure without erasing companions?",
+      "basis": "The public release and Aldebaran reanalysis make an era-aware test possible.",
+      "steps": [
+        "Encode interventions.",
+        "Fit offsets and jitter.",
+        "Compare activity-sensitive lines.",
+        "Leave one era out."
+      ],
+      "success_tests": [
+        "Preserve the selection function.",
+        "Do not label all residuals instrumental.",
+        "Publish era definitions.",
+        "Keep retirement wording precise."
+      ]
+    },
+    "paper_ids": [
+      "HAMILTON-1987-INSTRUMENT",
+      "HAMILTON-2014-SURVEY",
+      "HAMILTON-2019-ALDEBARAN",
+      "HAMILTON-2026-CAT"
+    ]
+  },
+  {
+    "instrument_id": "mcdonald-tull",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 3,
+    "title": "Tull: multiple optical configurations and an independent iodine-spectrum check",
+    "reading_boundary": "Three selected design, calibration and official sources; this is not a complete science bibliography.",
+    "current_status": "McDonald describes the configurations, but the undated page does not prove semester availability.",
+    "current_status_url": "https://mcdonaldobservatory.org/research/instruments/robert-g-tull-coud%C3%A9-spectrograph",
+    "short_summary": "Tull is a configurable high-resolution spectrograph rather than one fixed RV mode. TS12 provided an independent check on iodine FTS spectra.",
+    "latest_problem": "Configuration identity is essential before combining archive spectra or assigning performance.",
+    "latest_problem_source": "https://arxiv.org/abs/1910.10756",
+    "lessons": [
+      "Four configurations belong to one instrument.",
+      "Very high R helps iodine validation.",
+      "R does not imply stability.",
+      "Detector and slit define the line-spread function.",
+      "Availability is undated."
+    ],
+    "future_analysis": {
+      "title": "Tull iodine-reference audit trail",
+      "status": "future analysis question, not completed research",
+      "question": "Can calibration exposures detect iodine-reference changes over time?",
+      "basis": "The selected work demonstrates a useful cross-check role.",
+      "steps": [
+        "Index cell and configuration metadata.",
+        "Compare echelle and FTS scans.",
+        "Measure temperature-sensitive ratios.",
+        "Track discrepancies by epoch."
+      ],
+      "success_tests": [
+        "Resolve modes before fitting.",
+        "Use laboratory truth.",
+        "Separate mismatch from RV impact.",
+        "Retain status uncertainty."
+      ]
+    },
+    "paper_ids": [
+      "TULL-1995-INSTRUMENT",
+      "TULL-2020-IODINE",
+      "TULL-2026-OFFICIAL"
+    ]
+  },
+  {
+    "instrument_id": "ohp-elodie",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
+    "title": "ELODIE: automated cross-correlation from 51 Pegasi to its successor",
+    "reading_boundary": "Four selected discovery, instrument, survey and successor sources; not a complete ELODIE bibliography.",
+    "current_status": "ELODIE was replaced by SOPHIE on the OHP 1.93 m in 2006.",
+    "current_status_url": "https://ohp.osupytheas.fr/sophie-echelle-spectrograph/",
+    "short_summary": "ELODIE joined a fibre-fed echelle, simultaneous reference and automatic mask correlation into an operational survey system.",
+    "latest_problem": "The better-than-15 m/s statement depends on target brightness and spectral suitability.",
+    "latest_problem_source": "https://doi.org/10.1051/aas:1996251",
+    "lessons": [
+      "The 51 Peg signal is not an instrument test.",
+      "Mask matching affects velocities.",
+      "Online reduction changed survey operations.",
+      "Long periods depend on cadence.",
+      "SOPHIE defines an era boundary."
+    ],
+    "future_analysis": {
+      "title": "ELODIE-to-SOPHIE overlap calibration",
+      "status": "future analysis question, not completed research",
+      "question": "How can velocities be joined without hiding mask- and era-dependent offsets?",
+      "basis": "Survey and successor sources support a transparent overlap calibration.",
+      "steps": [
+        "Identify common stable stars.",
+        "Separate mask groups.",
+        "Fit era offsets.",
+        "Inject long-period signals."
+      ],
+      "success_tests": [
+        "Do not transfer precision labels.",
+        "State minimum-mass convention.",
+        "Model cadence.",
+        "Separate discovery from validation."
+      ]
+    },
+    "paper_ids": [
+      "ELODIE-1995-51PEG",
+      "ELODIE-1996-INSTRUMENT",
+      "ELODIE-2003-SURVEY",
+      "ELODIE-2006-SUCCESSOR"
+    ]
+  },
+  {
+    "instrument_id": "okayama-hides",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-09",
+    "paper_count": 4,
+    "title": "HIDES: iodine calibration, slit-to-fibre change, and giant-star variability",
+    "reading_boundary": "Four selected calibration, survey, upgrade and official sources; other science applications are excluded.",
+    "current_status": "An official instrument page exists, but no dated semester availability statement was found.",
+    "current_status_url": "https://www.oao.nao.ac.jp/en/telescope/instruments/hides/",
+    "short_summary": "HIDES developed from a slit iodine programme into a fibre-fed system. In the first three survey years, the most stable giants reached 6–8 m/s while typical scatter depended strongly on colour.",
+    "latest_problem": "Slit and fibre epochs should not share one line-spread-function or zero-point model.",
+    "latest_problem_source": "https://academic.oup.com/pasj/article/65/1/15/2901854",
+    "lessons": [
+      "The cell was optimized for solar-type spectra.",
+      "Giant surveys measure star plus instrument.",
+      "Fibre feeding changed illumination.",
+      "Typical target scatter exceeded best repeatability.",
+      "Status remains open."
+    ],
+    "future_analysis": {
+      "title": "HIDES slit-to-fibre transfer study",
+      "status": "future analysis question, not completed research",
+      "question": "How large are the mode offset and residual illumination terms?",
+      "basis": "Upgrade and survey sources expose a before-and-after comparison.",
+      "steps": [
+        "Find stars in both modes.",
+        "Fit mode-specific profiles.",
+        "Use quiet standards.",
+        "Model giant oscillations separately."
+      ],
+      "success_tests": [
+        "Do not assign one few-m/s value to every target.",
+        "Preserve mode flags.",
+        "Hold out transition seasons.",
+        "Separate stellar variance."
+      ]
+    },
+    "paper_ids": [
+      "HIDES-2002-IODINE",
+      "HIDES-2005-SURVEY",
+      "HIDES-2013-FIBER",
+      "HIDES-2026-OFFICIAL"
+    ]
+  },
+  {
+    "instrument_id": "lco-nres-ctio",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
+    "title": "NRES CTIO: one physical unit inside a four-site network",
+    "reading_boundary": "Five network sources interpreted for the CTIO unit; unit-level raw-data analysis is not completed.",
+    "current_status": "Not offered from 2026B; no decommissioning claim is made for this unit.",
+    "current_status_url": "https://lco.global/news/callforproposals2026b/",
+    "short_summary": "CTIO shares a design and pipeline with NRES but requires its own environmental, acquisition and calibration history.",
+    "latest_problem": "Network averages can hide unit-specific systematics.",
+    "latest_problem_source": "https://conference.ipac.caltech.edu/eprv5/system/media_files/binaries/106/original/EPRV5_Santa_Barbara_2023_NRES_poster.pdf",
+    "lessons": [
+      "Four physical units need separate records.",
+      "Achieved 10–20 m/s statements differ from a 3 m/s goal.",
+      "Calibration is two-dimensional.",
+      "The network stopped being offered in 2026B.",
+      "This unit is not labelled decommissioned."
+    ],
+    "future_analysis": {
+      "title": "NRES CTIO unit precision distribution",
+      "status": "future analysis question, not completed research",
+      "question": "How does precision depend on magnitude, type and epoch?",
+      "basis": "Shared records permit unit-specific tests.",
+      "steps": [
+        "Select stable stars by unit.",
+        "Model S/N.",
+        "Track calibration residual maps.",
+        "Hold out seasons."
+      ],
+      "success_tests": [
+        "Keep goal separate.",
+        "Report CTIO independently.",
+        "Retain availability dates.",
+        "Publish sample counts."
+      ]
+    },
+    "paper_ids": [
+      "NRES-2018-INSTRUMENT",
+      "NRES-2020-CALIBRATION",
+      "NRES-2023-PERFORMANCE",
+      "NRES-2026-OFFICIAL",
+      "NRES-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "lco-nres-mcdonald",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
+    "title": "NRES McDonald: one physical unit inside a four-site network",
+    "reading_boundary": "Five network sources interpreted for the McDonald unit; unit-level raw-data analysis is not completed.",
+    "current_status": "Not offered from 2026B; no decommissioning claim is made for this unit.",
+    "current_status_url": "https://lco.global/news/callforproposals2026b/",
+    "short_summary": "The unit shares pipeline code with NRES, but its telescope feeds and environment remain site-specific.",
+    "latest_problem": "A network precision number cannot substitute for a McDonald distribution.",
+    "latest_problem_source": "https://lco.global/observatory/instruments/nres/nres-performance/",
+    "lessons": [
+      "Physical units need separate records.",
+      "Acquisition affects illumination.",
+      "Pipeline changes affect units differently.",
+      "Goal and current precision differ.",
+      "Not offered is not decommissioned."
+    ],
+    "future_analysis": {
+      "title": "NRES McDonald repeatability study",
+      "status": "future analysis question, not completed research",
+      "question": "What is unit repeatability after observing-condition controls?",
+      "basis": "Architecture and pipeline papers define variables for a site audit.",
+      "steps": [
+        "Select repeated standards.",
+        "Join weather metadata.",
+        "Measure calibration structure.",
+        "Cross-check other units."
+      ],
+      "success_tests": [
+        "Use identical selection rules.",
+        "Keep unit offsets explicit.",
+        "Hold out nights.",
+        "Do not overstate status."
+      ]
+    },
+    "paper_ids": [
+      "NRES-2018-INSTRUMENT",
+      "NRES-2020-CALIBRATION",
+      "NRES-2023-PERFORMANCE",
+      "NRES-2026-OFFICIAL",
+      "NRES-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "lco-nres-saao",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
+    "title": "NRES SAAO: one physical unit inside a four-site network",
+    "reading_boundary": "Five network sources interpreted for the SAAO unit; unit-level raw-data analysis is not completed.",
+    "current_status": "Not offered from 2026B; no decommissioning claim is made for this unit.",
+    "current_status_url": "https://lco.global/news/callforproposals2026b/",
+    "short_summary": "The SAAO unit contributes southern coverage, but network-level precision language requires unit-level validation.",
+    "latest_problem": "A representative value does not describe every star or the unit's full lifetime.",
+    "latest_problem_source": "https://conference.ipac.caltech.edu/eprv5/system/media_files/binaries/106/original/EPRV5_Santa_Barbara_2023_NRES_poster.pdf",
+    "lessons": [
+      "Longitude coverage is a network property.",
+      "Science results include target noise.",
+      "Calibration can vary by site.",
+      "Three m/s remains a goal.",
+      "Availability ended without a decommissioning notice."
+    ],
+    "future_analysis": {
+      "title": "NRES SAAO colour and season study",
+      "status": "future analysis question, not completed research",
+      "question": "How does performance depend on colour, magnitude and season?",
+      "basis": "The sources support a stratified reanalysis.",
+      "steps": [
+        "Build a unit-only table.",
+        "Stratify by colour and S/N.",
+        "Track wavelength residuals.",
+        "Compare standards."
+      ],
+      "success_tests": [
+        "Use target-level uncertainties.",
+        "Report sample sizes.",
+        "Separate pipeline versions.",
+        "Retain status distinction."
+      ]
+    },
+    "paper_ids": [
+      "NRES-2018-INSTRUMENT",
+      "NRES-2020-CALIBRATION",
+      "NRES-2023-PERFORMANCE",
+      "NRES-2026-OFFICIAL",
+      "NRES-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "lco-nres-wise",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 5,
+    "title": "NRES Wise: a decommissioned unit with a distinct interruption history",
+    "reading_boundary": "Five network and status sources interpreted for Wise; no reprocessing is claimed.",
+    "current_status": "LCO records the Wise unit as decommissioned from 1 August 2026.",
+    "current_status_url": "https://lco.global/observatory/status/",
+    "short_summary": "Wise cannot be represented by a network average because control and fibre interruptions create a distinct timeline.",
+    "latest_problem": "The unit-specific decommissioning date must not be projected onto other NRES units.",
+    "latest_problem_source": "https://lco.global/observatory/status/",
+    "lessons": [
+      "Wise is one physical spectrograph.",
+      "Its history differs from other units.",
+      "Fibre repair is an era boundary.",
+      "Network specifications are context.",
+      "Archive value persists after decommissioning."
+    ],
+    "future_analysis": {
+      "title": "NRES Wise intervention study",
+      "status": "future analysis question, not completed research",
+      "question": "What changed around the fibre interruption and repair?",
+      "basis": "The status history supplies a natural boundary.",
+      "steps": [
+        "Build an intervention timeline.",
+        "Compare standards around repair.",
+        "Inspect wavelength maps.",
+        "Test transfer cautiously."
+      ],
+      "success_tests": [
+        "Use Wise-only status.",
+        "Do not infer other units retired.",
+        "Report missing intervals.",
+        "Separate repair from stellar noise."
+      ]
+    },
+    "paper_ids": [
+      "NRES-2018-INSTRUMENT",
+      "NRES-2020-CALIBRATION",
+      "NRES-2023-PERFORMANCE",
+      "NRES-2026-OFFICIAL",
+      "NRES-2026-STATUS"
+    ]
+  },
+  {
+    "instrument_id": "prl-paras",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-09",
+    "paper_count": 4,
+    "title": "PARAS-1: stabilized design, bright-standard repeatability, and uranium calibration",
+    "reading_boundary": "Four selected commissioning, instrument, calibration and official sources; current scheduling remains unresolved.",
+    "current_status": "PRL describes PARAS-1, but a dated 2026 observing-status notice was not found.",
+    "current_status_url": "https://www.prl.res.in/~miro/paras.html",
+    "short_summary": "PARAS-1 pairs environmental stabilization with simultaneous lamps. First-light work measured 3.7 m/s short-term stability; its later best standard-star results are selected time series, not an all-target floor.",
+    "latest_problem": "The transition to PARAS-2 makes a dated PARAS-1 intervention history important.",
+    "latest_problem_source": "https://www.prl.res.in/~miro/paras.html",
+    "lessons": [
+      "The RV interval is narrower than the recorded spectrum.",
+      "The first-light 1 m/s value was an expectation, not a measurement.",
+      "Uranium and thorium need separate validation.",
+      "Stability does not remove stellar noise.",
+      "PARAS-1 and PARAS-2 are separate hardware."
+    ],
+    "future_analysis": {
+      "title": "PARAS-1 to PARAS-2 transfer study",
+      "status": "future analysis question, not completed research",
+      "question": "Can common standards transfer velocities between the two instruments?",
+      "basis": "The sources provide foundations but not a completed transfer.",
+      "steps": [
+        "Identify overlap standards.",
+        "Freeze line lists.",
+        "Fit instrument zero points.",
+        "Validate unseen epochs."
+      ],
+      "success_tests": [
+        "Separate full and RV ranges.",
+        "Do not generalize best-star RMS.",
+        "Report lamp version.",
+        "Retain status uncertainty."
+      ]
+    },
+    "paper_ids": [
+      "PARAS-2010-FIRSTLIGHT",
+      "PARAS-2014-INSTRUMENT",
+      "PARAS-2021-URANIUM",
+      "PARAS-2026-OFFICIAL"
+    ]
+  },
+  {
+    "instrument_id": "salt-hrs",
+    "research_depth": "selected_source_dossier",
+    "reviewed_through": "2026-09-08",
+    "paper_count": 4,
+    "title": "SALT HRS: nominal modes, extracted resolution, and pipeline-dependent velocity accuracy",
+    "reading_boundary": "Four selected instrument, calibration, pipeline and current-call sources; no new reduction is claimed.",
+    "current_status": "SALT's 2026-2 call states that regular HRS science continues.",
+    "current_status_url": "https://pysalt.salt.ac.za/proposal_calls/current/ProposalCall.html",
+    "short_summary": "HRS is operational, but nominal HR mode and the current pipeline's recovered resolution differ. Default pipeline accuracy is distinct from dedicated iodine work.",
+    "latest_problem": "The current extraction does not fully model tilted lines and leaves resolution information unused.",
+    "latest_problem_source": "https://pysalt.salt.ac.za/proposal_calls/current/ProposalCall.html",
+    "lessons": [
+      "Nominal and measured R differ.",
+      "Default MIDAS accuracy is not the iodine limit.",
+      "Blue and red arms need separate diagnostics.",
+      "Daily products favour robustness.",
+      "The 2026 call establishes availability."
+    ],
+    "future_analysis": {
+      "title": "SALT HRS tilted-line extraction test",
+      "status": "future analysis question, not completed research",
+      "question": "How much velocity information does a two-dimensional extraction recover?",
+      "basis": "The official call identifies a specific pipeline limitation.",
+      "steps": [
+        "Use identical MR and HR frames.",
+        "Fit tilted 2D profiles.",
+        "Compare R and RV scatter.",
+        "Hold out nights."
+      ],
+      "success_tests": [
+        "Use identical inputs.",
+        "Report both arms.",
+        "Separate R gain from RV gain.",
+        "Do not claim team endorsement."
+      ]
+    },
+    "paper_ids": [
+      "SALTHRS-2014-INSTRUMENT",
+      "SALTHRS-2018-IODINE",
+      "SALTHRS-2026-PIPELINE",
+      "SALTHRS-2026-STATUS"
+    ]
   }
 ]

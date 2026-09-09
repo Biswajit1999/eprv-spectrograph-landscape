@@ -24,7 +24,7 @@ async function fetchText(path){
 }
 
 async function main(){
-  const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce','hermes','ucles','espadons','tres','igrins','coralie','feros','fideos','pepsi','hds'];
+  const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce','hermes','ucles','espadons','tres','igrins','coralie','feros','fideos','pepsi','hds','boes','cafe','ces','coravel','het_hrs','hamilton','tull','elodie','hides','nres','paras','salt_hrs'];
   const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperTexts,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
     fetchText('./data/performance_claims.csv'),
@@ -47,7 +47,7 @@ async function main(){
   document.querySelector('#verified-count').textContent=census.filter(d=>d.verification_state==='verified').length;
 
   document.querySelector('#measurement-flow').innerHTML=beginner.steps.map(step=>`<article><span>${esc(step.number)}</span><h3>${esc(step.title)}</h3><p>${esc(step.plain_language)}</p><details><summary>Technical note and source</summary><p>${esc(step.technical_note)}</p><a href="${esc(step.source_url)}" rel="noreferrer">${esc(step.source_label)}</a></details></article>`).join('');
-  document.querySelector('#equation-grid').innerHTML=beginner.equations.map(item=>`<article><span>${esc(item.name)}</span><strong>${esc(item.expression)}</strong><p>${esc(item.meaning)}</p></article>`).join('');
+  document.querySelector('#equation-grid').innerHTML=beginner.equations.map(item=>`<article><span>${esc(item.name)}</span><div class="display-equation" aria-label="${esc(item.expression)}">${item.mathml}</div><p>${esc(item.meaning)}</p></article>`).join('');
   document.querySelector('#technique-grid').innerHTML=beginner.techniques.map(item=>`<article><h4>${esc(item.name)}</h4><dl><dt>Reference path</dt><dd>${esc(item.reference_path)}</dd><dt>What it solves</dt><dd>${esc(item.what_it_solves)}</dd><dt>Trade-off</dt><dd>${esc(item.tradeoff)}</dd><dt>Example</dt><dd>${esc(item.example)}</dd></dl><a href="${esc(item.source_url)}" rel="noreferrer">Method source</a></article>`).join('');
   document.querySelector('#taxonomy-boundary').textContent=beginner.boundary;
   document.querySelector('#taxonomy-body').innerHTML=beginner.taxonomy.map(item=>`<tr><td>${esc(item.class_name)}</td><td>${esc(item.example)}</td><td>${esc(item.typical_scale)}</td><td><span class="scope-badge ${item.belongs_in_census?'inside':'outside'}">${item.belongs_in_census?'Yes':'Comparator only'}</span></td></tr>`).join('');

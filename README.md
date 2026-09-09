@@ -23,7 +23,8 @@ residuals are different quantities. The data model keeps them separate.
   caveat, source and access date.
 - A literature-based [scientific report](docs/REPORT.md), explicit
   [inclusion protocol](docs/METHODS.md) and [claim ledger](docs/CLAIMS.md).
-- Four original figures generated only from committed CSV data.
+- Six original figures generated only from committed CSV data, including a
+  context-separated state-of-art view and an ideal Keplerian signal-scale plot.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles and nine extended challenge explainers.
 - A selected [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
@@ -49,7 +50,11 @@ residuals are different quantities. The data model keeps them separate.
   covering HIRES, UVES, CHIRON, FIES, GHOST and Veloce.
 - A [survey, legacy and general-purpose chapter](docs/SURVEY_LEGACY_AND_GENERAL_NOTES.md)
   covering HERMES, UCLES, ESPaDOnS, TRES, IGRINS, CORALIE, FEROS, FIDEOS,
-  PEPSI and HDS. Together, the 38 dossiers contain 197 selected sources.
+  PEPSI and HDS.
+- A [census-completion chapter](docs/CENSUS_COMPLETION_NOTES.md) covering BOES,
+  CAFE, CES, CORAVEL, HET HRS, Hamilton, Tull, ELODIE, HIDES, all four NRES
+  units, PARAS-1 and SALT HRS. Together, all 53 dossiers contain 241 selected
+  sources.
 - A tested Python package and command-line build.
 
 The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's
@@ -80,8 +85,14 @@ sequence and website instructions.
 
 ![Within-paper EXPRES before and after comparisons](results/figures/expres_published_comparisons.png)
 
-The third figure is deliberately not a ranking: its bars describe different
-experiments. Read each definition in `data/performance_claims.csv`.
+![State-of-art evidence separated by measurement context](results/figures/state_of_art_evidence.png)
+
+![Ideal Keplerian signal scales from committed scenarios](results/figures/keplerian_detectability.png)
+
+The velocity figures are deliberately not rankings: their values describe
+different experiments. Read each definition in `data/performance_claims.csv`.
+The Keplerian curves use the assumptions in `data/detectability_scenarios.csv`
+and exclude stellar and instrumental noise.
 
 ## Scientific boundary
 
