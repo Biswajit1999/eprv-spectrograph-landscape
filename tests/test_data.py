@@ -247,3 +247,16 @@ def test_website_uses_natural_earth_geometry_not_schematic_shapes():
     assert "geoEquirectangular" in script
     assert "M44 112 92 78" not in html
     assert "@cublya/world-atlas" in package["dependencies"]
+
+
+def test_site_frames_the_work_as_a_learning_report():
+    html = Path("website/index.html").read_text(encoding="utf-8")
+    script = Path("website/src/main.js").read_text(encoding="utf-8")
+
+    assert "while working on EXOhSPEC" in html
+    assert "This is a learning record, not an authoritative review" in html
+    assert "Independent literature report by Biswajit Jana" in html
+    assert "Independent research software" not in html
+    assert "Many hours of design, integration, testing and analysis" in script
+    assert "earlier EXOhSPEC designs, prototypes and subsystem experiments" in script
+    assert "intended for a future publication" in script

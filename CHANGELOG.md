@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.14.2] - 2026-09-09
+
+- Added a first-person note explaining that the report grew from several years
+  of reading during EXOhSPEC work and remains an open learning process.
+- Clarified that the EXOhSPEC source set covers earlier designs, prototypes and
+  subsystem experiments, while the present system is reserved for future work.
+- Reframed the site footer as an independent literature report rather than
+  research software.
+
 ## [0.14.1] - 2026-09-09
 
 - Replaced the schematic continent illustration with projected Natural Earth
