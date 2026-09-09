@@ -235,3 +235,15 @@ def test_every_represented_facility_has_a_source_linked_map_coordinate():
         assert -90 <= facility["latitude_deg"] <= 90
         assert -180 <= facility["longitude_deg"] <= 180
         assert facility["coordinate_source_url"].startswith("https://")
+
+
+def test_website_uses_natural_earth_geometry_not_schematic_shapes():
+    html = Path("website/index.html").read_text(encoding="utf-8")
+    script = Path("website/src/main.js").read_text(encoding="utf-8")
+    package = json.loads(Path("website/package.json").read_text(encoding="utf-8"))
+    assert "Natural Earth 1:110 million" in html
+    assert 'id="map-countries"' in html
+    assert "@cublya/world-atlas/countries-110m.json" in script
+    assert "geoEquirectangular" in script
+    assert "M44 112 92 78" not in html
+    assert "@cublya/world-atlas" in package["dependencies"]

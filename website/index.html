@@ -43,19 +43,16 @@
       <section id="map" class="section shade map-section">
         <div class="section-head"><div><span class="eyebrow">Location guide</span><h2>Where the instruments collect light</h2></div><p>Each point uses a cited site or telescope coordinate. Several instruments at one observatory share a marker; this is a reading map, not a survey-grade geodetic product.</p></div>
         <div class="world-map" id="world-map" role="img" aria-label="Equirectangular world map of source-linked observatory coordinates">
-          <svg class="map-land" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M44 112 92 78 158 64 214 82 250 116 239 149 205 154 183 190 152 204 123 174 80 161Z" />
-            <path d="M224 205 265 214 292 252 305 306 287 365 258 420 239 370 245 315 220 272 204 234Z" />
-            <path d="M432 97 482 72 544 78 589 101 639 92 700 104 749 132 810 141 867 177 842 205 787 197 755 224 707 218 665 185 617 183 583 157 540 162 513 143 478 151 448 132Z" />
-            <path d="M494 166 548 169 583 203 592 260 571 329 538 368 507 334 489 278 466 228Z" />
-            <path d="M687 204 726 216 746 251 727 273 699 249 675 226Z" />
-            <path d="M793 328 842 312 892 330 918 363 884 389 832 382 801 355Z" />
-            <path d="M301 55 334 34 365 46 356 78 321 86Z" />
-            <path d="M0 465 100 452 220 461 350 449 500 460 650 448 800 462 1000 451 1000 500 0 500Z" />
+          <svg class="map-land" id="map-geometry" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+            <path class="map-sphere" id="map-sphere" />
+            <path class="map-graticule" id="map-graticule" />
+            <path class="map-countries" id="map-countries" />
+            <path class="map-borders" id="map-borders" />
           </svg>
-          <div class="map-equator"></div><div class="map-meridian"></div><div class="map-label north">90° N</div><div class="map-label south">90° S</div><div class="map-label west">180° W</div><div class="map-label east">180° E</div>
+          <div class="map-label north">90° N</div><div class="map-label south">90° S</div><div class="map-label west">180° W</div><div class="map-label east">180° E</div>
         </div>
         <div class="map-legend"><span><i class="ground-dot"></i>Ground facility</span><span><i class="space-symbol">◆</i>Space spectrographs appear as comparator notes, not ground-map points</span></div>
+        <p class="map-credit">Base geography: <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/" rel="noreferrer">Natural Earth 1:110 million</a>, public-domain vector data rendered with a UN-style boundary view. Boundaries provide geographic context and do not imply a position on disputed territory.</p>
         <p id="map-summary" class="result"></p>
         <div id="map-sites" class="map-sites"></div>
       </section>

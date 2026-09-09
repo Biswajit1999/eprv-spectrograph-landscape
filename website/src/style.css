@@ -22,3 +22,13 @@ dialog{width:min(1120px,calc(100% - 2rem))}.depth{display:inline-block;align-sel
 .display-equation{display:block;font:700 clamp(1.35rem,2.2vw,2rem) Georgia,serif;margin:.9rem 0;color:#fff;overflow-x:auto}.display-equation math{font-size:1.15em}.equation-grid strong{display:none}.world-map{background-color:#dcecf0;background-image:linear-gradient(to right,transparent 24.8%,rgba(9,37,74,.12) 25%,transparent 25.2%,transparent 49.8%,rgba(9,37,74,.12) 50%,transparent 50.2%,transparent 74.8%,rgba(9,37,74,.12) 75%,transparent 75.2%),linear-gradient(to bottom,transparent 24.8%,rgba(9,37,74,.12) 25%,transparent 25.2%,transparent 49.8%,rgba(9,37,74,.12) 50%,transparent 50.2%,transparent 74.8%,rgba(9,37,74,.12) 75%,transparent 75.2%)}.map-land{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.map-land path{fill:#d4ddce;stroke:#7b927b;stroke-width:1.4;vector-effect:non-scaling-stroke}.map-legend{display:flex;flex-wrap:wrap;gap:1.2rem;margin:.8rem 0;color:var(--muted);font-size:.78rem}.map-legend span{display:flex;align-items:center;gap:.4rem}.ground-dot{width:13px;height:13px;border-radius:50%;background:var(--orange);border:2px solid #fff;box-shadow:0 0 0 1px var(--orange)}.space-symbol{color:var(--blue);font-style:normal}.figure-grid figure.wide{grid-column:1/-1}.figure-grid figure.wide img{max-height:760px;object-fit:contain}
 @media(max-width:580px){.map-marker{width:24px;height:24px;font-size:.68rem}}
 .display-equation{overflow:visible;line-height:1.2}.display-equation math{font-size:1.08em}
+
+/* Natural Earth geography replaces the former schematic continent shapes. */
+.world-map{background:#dcecf0;background-image:none}
+.map-land .map-sphere{fill:#dcecf0;stroke:#7892ae;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.map-land .map-graticule{fill:none;stroke:#87a8be;stroke-width:.55;stroke-opacity:.48}
+.map-land .map-countries{fill:#d4ddce;stroke:none}
+.map-land .map-borders{fill:none;stroke:#758a75;stroke-width:.75;stroke-opacity:.9}
+.map-credit{max-width:78ch;margin:.7rem 0 1rem;color:var(--muted);font-size:.76rem;line-height:1.55}.map-credit a{color:var(--blue)}
+.map-label.west{left:42px}
+@media(max-width:580px){.world-map{aspect-ratio:2/1}}

@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.14.1] - 2026-09-09
+
+- Replaced the schematic continent illustration with projected Natural Earth
+  1:110 million country geometry and internal borders.
+- Kept all 33 source-linked facility markers in the same equirectangular
+  coordinate system and retained the facility list as an accessible fallback.
+- Added an explicit basemap source, boundary-view note and third-party licence
+  record.
+
 ## [0.14.0] - 2026-09-09
 
 - Completed selected-source dossier coverage for all 53 declared census

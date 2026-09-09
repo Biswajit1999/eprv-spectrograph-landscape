@@ -184,6 +184,19 @@ supports that interpretation. Undated pages remain status gaps. Paper abstracts,
 publisher records, official manuals, and archive metadata support distinct
 statements and are not collapsed into a single precision scale.
 
+## Map geography
+
+The website basemap is rendered from Natural Earth 1:110 million Admin-0
+geometry, version 5.1.2, distributed as TopoJSON by
+`@cublya/world-atlas`. Natural Earth places its vector map data in the public
+domain. The default world-atlas file uses its documented UN-style boundary view;
+the map is included only as geographic context for the facility coordinates.
+
+- Dataset: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/
+- Terms: https://www.naturalearthdata.com/about/terms-of-use/
+- TopoJSON distribution: https://github.com/cublya/world-atlas
+- Accessed: 2026-09-09
+
 ## Reuse policy
 
 Only factual metadata and original paraphrases are stored. Links point to

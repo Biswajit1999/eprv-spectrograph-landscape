@@ -26,7 +26,8 @@ residuals are different quantities. The data model keeps them separate.
 - Six original figures generated only from committed CSV data, including a
   context-separated state-of-art view and an ideal Keplerian signal-scale plot.
 - An accessible, filterable [research website](website/) with source-linked
-  instrument profiles and nine extended challenge explainers.
+  instrument profiles, a Natural Earth location map and nine extended challenge
+  explainers.
 - A selected [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
   selected primary papers to a clearly labelled future analysis question.
 - A [HARPS reading note](docs/HARPS_READING_NOTE.md) following six technical
@@ -105,4 +106,6 @@ and exclude stellar and instrumental noise.
   statements about a facility's priorities.
 
 Code is MIT licensed. Bibliographic metadata and factual specifications remain
-attributed to their primary papers and official facility pages.
+attributed to their primary papers and official facility pages. The map uses
+public-domain Natural Earth geography; dependency notices are recorded in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

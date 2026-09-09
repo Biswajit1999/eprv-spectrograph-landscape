@@ -1,4 +1,7 @@
 import './style.css';
+import world from '@cublya/world-atlas/countries-110m.json';
+import { geoEquirectangular, geoGraticule10, geoPath } from 'd3-geo';
+import { feature, mesh } from 'topojson-client';
 
 const parseCSV = text => {
   const rows=[]; let row=[], field='', quoted=false;
@@ -17,6 +20,18 @@ const tierLabels = {
   D_funded_construction_or_commissioning: 'D · Construction or commissioning',
 };
 
+const mapProjection=geoEquirectangular().scale(1000/(2*Math.PI)).translate([500,250]).precision(.1);
+const mapPath=geoPath(mapProjection);
+
+function renderBaseMap(){
+  const countries=feature(world,world.objects.countries);
+  const borders=mesh(world,world.objects.countries,(a,b)=>a!==b);
+  document.querySelector('#map-sphere').setAttribute('d',mapPath({type:'Sphere'}));
+  document.querySelector('#map-graticule').setAttribute('d',mapPath(geoGraticule10()));
+  document.querySelector('#map-countries').setAttribute('d',mapPath(countries));
+  document.querySelector('#map-borders').setAttribute('d',mapPath(borders));
+}
+
 async function fetchText(path){
   const response=await fetch(path);
   if(!response.ok) throw new Error(`${path} unavailable`);
@@ -24,6 +39,7 @@ async function fetchText(path){
 }
 
 async function main(){
+  renderBaseMap();
   const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce','hermes','ucles','espadons','tres','igrins','coralie','feros','fideos','pepsi','hds','boes','cafe','ces','coravel','het_hrs','hamilton','tull','elodie','hides','nres','paras','salt_hrs'];
   const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperTexts,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),

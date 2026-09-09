@@ -1,7 +1,7 @@
 {
   "name": "eprv-spectrograph-landscape-site",
   "private": true,
-  "version": "0.14.0",
+  "version": "0.14.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -11,5 +11,10 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260831.1",
     "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "@cublya/world-atlas": "3.0.0-beta.2",
+    "d3-geo": "3.1.1",
+    "topojson-client": "3.1.0"
   }
 }
