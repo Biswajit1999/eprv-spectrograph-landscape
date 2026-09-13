@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Reading notes, published measurements, current status and research questions for precision radial-velocity spectrographs." />
     <title>Precision RV Spectrograph Reading Guide</title>
+    <style>
+      .hero-layout{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(380px,.94fr);gap:clamp(2rem,4vw,5rem);align-items:start}
+      .hero-copy{min-width:0}
+      .hero-layout h1{font-size:clamp(3rem,5.15vw,5.75rem);max-width:780px}
+      .hero-layout .lede,.hero-layout .research-note,.hero-layout .notice{max-width:none}
+      .hero-illustration{margin:0;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-start}
+      .hero-illustration img{display:block;width:100%;height:auto;max-height:min(78vh,900px);object-fit:contain;object-position:top center;filter:drop-shadow(0 18px 30px rgba(9,37,74,.13))}
+      .hero-illustration figcaption{margin:.75rem .25rem 0;color:#5d6878;font-size:.78rem;line-height:1.45}
+      @media(max-width:1050px){.hero-layout{grid-template-columns:1fr;gap:2.25rem}.hero-layout h1{max-width:1000px}.hero-illustration{max-width:760px}.hero-illustration img{max-height:none}}
+      @media(max-width:580px){.hero-illustration figcaption{font-size:.72rem}}
+    </style>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -14,17 +25,25 @@
     </header>
     <main id="main">
       <section class="hero" id="top">
-        <div class="kicker">Independent literature synthesis · updated 9 September 2026</div>
-        <h1>What the papers actually say about precision RV spectrographs.</h1>
-        <p class="lede">My source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which questions could support later analysis.</p>
-        <aside class="research-note" aria-labelledby="research-note-title">
-          <span class="eyebrow">Why I made this report</span>
-          <h2 id="research-note-title">Notes from an ongoing learning process</h2>
-          <p>Over the last few years, while working on EXOhSPEC, I have read papers and technical material on spectrograph design, calibration, environmental control, fibre illumination, detectors and radial-velocity analysis. This report is my structured summary of that reading: what different instruments have achieved, how those results were measured, and which problems remain open.</p>
-          <p>This is a learning record, not an authoritative review. I may have misunderstood or missed details, and I welcome corrections; checking and revising the report is part of the learning process.</p>
-        </aside>
-        <div class="hero-actions"><a class="button primary" href="#learn">Begin with the measurement</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
-        <div class="notice"><strong>A careful boundary.</strong> A design goal, calibration test, formal uncertainty and stellar time-series RMS are different measurements. “Selected reading note” means I reviewed the listed sources; it does not mean every paper ever written about that instrument.</div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="kicker">Independent literature synthesis · updated 13 September 2026</div>
+            <h1>What the papers actually say about precision RV spectrographs.</h1>
+            <p class="lede">My source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which questions could support later analysis.</p>
+            <aside class="research-note" aria-labelledby="research-note-title">
+              <span class="eyebrow">Why I made this report</span>
+              <h2 id="research-note-title">Notes from an ongoing learning process</h2>
+              <p>Over the last few years, while working on EXOhSPEC, I have read papers and technical material on spectrograph design, calibration, environmental control, fibre illumination, detectors and radial-velocity analysis. This report is my structured summary of that reading: what different instruments have achieved, how those results were measured, and which problems remain open.</p>
+              <p>This is a learning record, not an authoritative review. I may have misunderstood or missed details, and I welcome corrections; checking and revising the report is part of the learning process.</p>
+            </aside>
+            <div class="hero-actions"><a class="button primary" href="#learn">Begin with the measurement</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
+            <div class="notice"><strong>A careful boundary.</strong> A design goal, calibration test, formal uncertainty and stellar time-series RMS are different measurements. “Selected reading note” means I reviewed the listed sources; it does not mean every paper ever written about that instrument.</div>
+          </div>
+          <figure class="hero-illustration">
+            <img src="./figures/rv-exoplanet-notebook.svg" alt="Hand-drawn physics notebook showing how an orbiting planet makes its star wobble, how a fibre-fed echelle spectrograph measures Doppler shifts in absorption lines, and how those shifts become a periodic radial-velocity curve." width="900" height="1120" decoding="async" fetchpriority="high" />
+            <figcaption>How a tiny Doppler shift becomes evidence for an unseen world — notebook sketch by Biswajit Jana, 11th August 2025.</figcaption>
+          </figure>
+        </div>
       </section>
       <section id="current-focus" class="section shade featured-dossier"><div id="current-focus-card"></div></section>
       <section id="learn" class="section learn-section">
