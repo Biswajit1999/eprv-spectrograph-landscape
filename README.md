@@ -81,13 +81,13 @@ sequence and website instructions.
 
 ## Visual measurement guide
 
-The website hero now includes a hand-drawn, physics-notebook style walkthrough
+The website hero includes the red-and-black, hand-drawn physics-notebook walkthrough
 of how a planet's gravity produces a stellar wobble, how a fibre-fed echelle
 spectrograph turns starlight into a high-resolution spectrum, how Doppler shifts
 become a radial-velocity time series, and why those small shifts matter for
 exoplanet detection.
 
-![Hand-drawn radial-velocity exoplanet detection notebook guide](website/public/figures/rv-exoplanet-notebook.svg)
+![Hand-drawn radial-velocity exoplanet detection notebook guide](website/public/figures/Precision%20RV%20spectrograph%20github.png)
 
 The notebook artwork is signed **Biswajit Jana** and dated **11th August 2025**.
 It is an explanatory project illustration rather than a quantitative data figure.
