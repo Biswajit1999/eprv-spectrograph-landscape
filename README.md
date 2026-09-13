@@ -28,6 +28,9 @@ residuals are different quantities. The data model keeps them separate.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles, a Natural Earth location map and nine extended challenge
   explainers.
+- A notebook-style visual explainer of the RV exoplanet-detection chain, from
+  stellar wobble through a fibre-fed echelle spectrum to a periodic
+  radial-velocity curve.
 - A selected [EXPRES reading note](docs/EXPRES_READING_NOTE.md) connecting 13
   selected primary papers to a clearly labelled future analysis question.
 - A [HARPS reading note](docs/HARPS_READING_NOTE.md) following six technical
@@ -75,6 +78,19 @@ eprv-landscape build --data data/instruments.csv --claims data/performance_claim
 
 See [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for a clean-environment
 sequence and website instructions.
+
+## Visual measurement guide
+
+The website hero now includes a hand-drawn, physics-notebook style walkthrough
+of how a planet's gravity produces a stellar wobble, how a fibre-fed echelle
+spectrograph turns starlight into a high-resolution spectrum, how Doppler shifts
+become a radial-velocity time series, and why those small shifts matter for
+exoplanet detection.
+
+![Hand-drawn radial-velocity exoplanet detection notebook guide](website/public/figures/rv-exoplanet-notebook.svg)
+
+The notebook artwork is signed **Biswajit Jana** and dated **11th August 2025**.
+It is an explanatory project illustration rather than a quantitative data figure.
 
 ## Figures
 
