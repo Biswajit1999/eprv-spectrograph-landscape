@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eprv-landscape"
-version = "0.14.2"
+version = "0.15.0"
 description = "Source-linked reading notes, measurements, status, and research questions for precision radial-velocity spectrographs."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Biswajit Jana"}]
-dependencies = ["pandas>=2.0", "matplotlib>=3.7", "click>=8.1"]
+dependencies = ["numpy>=1.24", "pandas>=2.0", "matplotlib>=3.7", "click>=8.1"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.4", "ruff>=0.4"]

@@ -90,7 +90,7 @@ def plot_claim_context(claims: pd.DataFrame, output: str | Path) -> None:
 def plot_expres_paired_metrics(metrics: pd.DataFrame, output: str | Path) -> None:
     """Plot only before/after values reported within the same paper and context."""
     fig, axes = plt.subplots(1, len(metrics), figsize=(10, 5), squeeze=False)
-    for axis, row in zip(axes[0], metrics.itertuples(), strict=True):
+    for axis, row in zip(axes[0], metrics.itertuples()):
         values = [row.before_mps, row.after_mps]
         axis.plot([0, 1], values, color="#174ea6", linewidth=2.5, marker="o", markersize=8)
         for index, value in enumerate(values):
@@ -145,7 +145,7 @@ def plot_keplerian_detectability(scenarios: pd.DataFrame, output: str | Path) ->
     periods = [10 ** (-0.3 + index * (3.3 / 179)) for index in range(180)]
     fig, ax = plt.subplots(figsize=(11, 7))
     palette = ["#082f49", "#0284c7", "#9a3412", "#f97316"]
-    for colour, row in zip(palette, scenarios.itertuples(), strict=True):
+    for colour, row in zip(palette, scenarios.itertuples()):
         planet_mass = row.planet_mass_earth * earth_mass_kg
         stellar_mass = row.stellar_mass_solar * solar_mass_kg
         values = []

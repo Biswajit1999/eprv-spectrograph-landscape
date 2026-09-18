@@ -14,7 +14,7 @@ def spectral_coverage_summary(df: pd.DataFrame) -> pd.DataFrame:
     result = df[["instrument", "wave_min_nm", "wave_max_nm", "resolving_power"]].copy()
     result["wavelength_span_nm"] = result["wave_max_nm"] - result["wave_min_nm"]
     result["wavelength_ratio"] = result["wave_max_nm"] / result["wave_min_nm"]
-    return result.sort_values("wave_min_nm").reset_index(drop=True)
+    return result.sort_values(["wave_min_nm", "instrument"]).reset_index(drop=True)
 
 
 def performance_evidence_summary(df: pd.DataFrame) -> pd.DataFrame:

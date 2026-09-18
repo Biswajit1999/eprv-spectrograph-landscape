@@ -12,5 +12,17 @@
     "laboratory_calibration",
     "on_sky_stability"
   ],
+  "doppler_information_experiment": {
+    "n_scenarios": 15,
+    "n_monte_carlo_validated": 4,
+    "gain_r100k_to_r150k_fraction_by_intrinsic_sigma": {
+      "sigma_1_kms": 0.371334,
+      "sigma_2.5_kms": 0.110749,
+      "sigma_5_kms": 0.024828
+    },
+    "null_hypothesis": "For intrinsic sigma = 5 km/s, R=100,000 to 150,000 improves the controlled photon limit by less than 10%.",
+    "null_outcome": "not rejected",
+    "boundary": "Synthetic equal-photon experiment; not an instrument ranking or achieved precision."
+  },
   "warning": "Reported performance statements use non-equivalent definitions and are not ranked."
 }

@@ -19,6 +19,7 @@ from .data import (
     load_instruments,
     load_performance_claims,
 )
+from .doppler_information import plot_information_experiment, run_information_experiment
 from .plots import (
     plot_claim_context,
     plot_expres_paired_metrics,
@@ -61,6 +62,27 @@ def build_cmd(data_path: str, out_dir: str, claims_path: str) -> None:
     plot_state_of_art_evidence(claims, figures / "state_of_art_evidence.png")
     scenarios = pd.read_csv("data/detectability_scenarios.csv")
     plot_keplerian_detectability(scenarios, figures / "keplerian_detectability.png")
+    information_results = run_information_experiment(
+        "data/information_experiment_scenarios.csv",
+        out / "doppler_information_experiment.csv",
+    )
+    plot_information_experiment(
+        information_results,
+        figures / "doppler_information_experiment.png",
+    )
+    resolution_gains = {}
+    for line_width in (1.0, 2.5, 5.0):
+        subset = information_results[
+            information_results["intrinsic_sigma_kms"].eq(line_width)
+        ].set_index("resolving_power")
+        resolution_gains[f"sigma_{line_width:g}_kms"] = round(
+            float(
+                1.0
+                - subset.loc[150000, "photon_limit_mps"]
+                / subset.loc[100000, "photon_limit_mps"]
+            ),
+            6,
+        )
     manifest = {
         "n_instruments": len(df),
         "n_quantitative_claims": len(claims),
@@ -70,6 +92,21 @@ def build_cmd(data_path: str, out_dir: str, claims_path: str) -> None:
         "status_as_of_min": str(df["status_as_of"].min()),
         "status_as_of_max": str(df["status_as_of"].max()),
         "performance_classes": sorted(df["performance_class"].unique()),
+        "doppler_information_experiment": {
+            "n_scenarios": len(information_results),
+            "n_monte_carlo_validated": int(
+                information_results["mc_empirical_sigma_mps"].notna().sum()
+            ),
+            "gain_r100k_to_r150k_fraction_by_intrinsic_sigma": resolution_gains,
+            "null_hypothesis": (
+                "For intrinsic sigma = 5 km/s, R=100,000 to 150,000 improves the "
+                "controlled photon limit by less than 10%."
+            ),
+            "null_outcome": "not rejected",
+            "boundary": (
+                "Synthetic equal-photon experiment; not an instrument ranking or achieved precision."
+            ),
+        },
         "warning": "Reported performance statements use non-equivalent definitions and are not ranked.",
     }
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2))
