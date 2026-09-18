@@ -1,0 +1,11 @@
+dimension,max_score,before_score,after_score,before_evidence,after_evidence
+Falsifiable question and hypotheses,10,6,10,"Broad research question; no executed null hypothesis","Predeclared broad-line null, alternative, threshold and outcome"
+Primary literature and provenance,10,10,10,"241 selected sources; claim-level links; dated status sources","Existing source graph retained; Bouchy 2001 method source added"
+Data and schema discipline,10,9,9,"Controlled vocabularies, census validation and machine-readable claims","Versioned experiment scenario table and result schema added"
+Independent scientific analysis,10,3,8,"Descriptive summaries and literature-derived figures","Fisher-information sensitivity experiment across 15 controlled scenarios"
+Uncertainty and statistical calibration,10,3,8,"Contextual caveats but no new uncertainty experiment","Cramer-Rao bounds, Monte Carlo standard errors and one-sigma coverage"
+Ground-truth recovery tests,10,0,9,"No injection-recovery experiment","Four seeded 1000-trial Poisson shift-recovery validations"
+Automated and numerical testing,10,7,9,"20 passing tests; lint and build gates","27 passing tests including scaling, recovery, schema and documentation guards"
+Reproducible environments and CI,10,7,9,"Single Python 3.12 CI job plus website build","Python 3.10, 3.12 and 3.13 matrix with independent website build"
+Claim and limitation discipline,10,9,10,"Strong claim ledger and explicit non-ranking boundary","New generated claims tied to results; synthetic-to-real boundary explicit"
+Research dissemination,10,9,10,"Accessible public reading guide and downloadable evidence","Study, figure and exact result table integrated into website and manuscript"

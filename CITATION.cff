@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: "Jana"
     given-names: "Biswajit"
-version: 0.14.2
-date-released: 2026-09-09
+version: 0.15.0
+date-released: 2026-09-18
 url: "https://github.com/Biswajit1999/eprv-spectrograph-landscape"
 license: MIT
 keywords:

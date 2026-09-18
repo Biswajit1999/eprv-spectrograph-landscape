@@ -25,6 +25,11 @@ residuals are different quantities. The data model keeps them separate.
   [inclusion protocol](docs/METHODS.md) and [claim ledger](docs/CLAIMS.md).
 - Six original figures generated only from committed CSV data, including a
   context-separated state-of-art view and an ideal Keplerian signal-scale plot.
+- A falsifiable [controlled Doppler-information experiment](docs/DOPPLER_INFORMATION_STUDY.md)
+  with 15 resolution/line-width scenarios and four seeded Poisson
+  injection-recovery validations.
+- A scored [before/after research-maturity audit](research/RESEARCH_MATURITY_AUDIT.md)
+  tied to repository evidence rather than commit volume.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles, a Natural Earth location map and nine extended challenge
   explainers.
@@ -106,14 +111,21 @@ It is an explanatory project illustration rather than a quantitative data figure
 
 ![Ideal Keplerian signal scales from committed scenarios](results/figures/keplerian_detectability.png)
 
+![Controlled photon-limited information experiment](results/figures/doppler_information_experiment.png)
+
 The velocity figures are deliberately not rankings: their values describe
 different experiments. Read each definition in `data/performance_claims.csv`.
 The Keplerian curves use the assumptions in `data/detectability_scenarios.csv`
 and exclude stellar and instrumental noise.
+The information experiment holds its synthetic line ensemble and photon
+normalization fixed. Its absolute values are not achieved instrument precision;
+the result is the measured interaction between resolving power and line width.
 
 ## Scientific boundary
 
 - No planet detection or occurrence-rate inference is performed.
+- The synthetic information study is a controlled sensitivity experiment, not
+  a model or ranking of any named instrument.
 - Design goals are never represented as achieved performance.
 - Status is dated and kept separate from historical performance.
 - No paper figure, observatory logo or substantial third-party text is copied.

@@ -11,6 +11,11 @@ Access checked: **2026-09-02 to 2026-09-08**.
 - Burt, Dumusque & Halverson, *Precise Radial Velocities*,
   [doi:10.1146/annurev-astro-120425-105551](https://doi.org/10.1146/annurev-astro-120425-105551).
   Defines the detailed 19-system core; it is not an exhaustive census.
+- Bouchy, Pepe & Queloz, *Fundamental photon noise limit to radial velocity
+  measurements*, [doi:10.1051/0004-6361:20010730](https://doi.org/10.1051/0004-6361:20010730).
+  Primary methodological basis for spectral-gradient Doppler information and
+  photon-limited uncertainty. The repository reimplements the underlying local
+  Fisher calculation; it does not reproduce a paper figure or synthetic grid.
 
 ## Instrument and performance references
 

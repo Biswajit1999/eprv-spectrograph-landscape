@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.15.0] - 2026-09-18
+
+- Added a falsifiable, controlled Doppler-information experiment with 15
+  resolving-power and intrinsic-line-width scenarios.
+- Conserved line equivalent width and held the photon normalization fixed so
+  the resolution sensitivity does not silently change the line list or counts.
+- Added four 1,000-trial seeded Poisson injection-recovery validations and
+  tests for photon scaling, broadening, diminishing returns, calibration and
+  output schema.
+- Found a 37.1%, 11.1% and 2.48% R=100,000 to 150,000 improvement for 1.0,
+  2.5 and 5.0 km/s intrinsic Gaussian widths respectively; the predeclared
+  broad-line null is not rejected.
+- Corrected the manuscript's instrument count from 22 to the generated value
+  of 21 while retaining the separate count of 22 quantitative claims.
+- Documented why the synthetic absolute values cannot be interpreted as named
+  instrument precision or a performance ranking.
+
 ## [0.14.2] - 2026-09-09
 
 - Added a first-person note explaining that the report grew from several years

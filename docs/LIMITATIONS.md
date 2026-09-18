@@ -27,6 +27,11 @@
   the Wise unit has an explicit decommissioning date.
 - The report is a structured literature synthesis, not an independent
   re-reduction of raw spectra from all instruments.
+- The Doppler-information experiment uses idealized Gaussian absorption lines,
+  fixed photons per velocity bin and a local small-shift estimator. It omits
+  real stellar spectra, throughput, detector sampling, tellurics, calibration
+  drift, template mismatch, stellar variability and correlated noise. Its
+  absolute uncertainties are not predictions for named instruments.
 - No paper figures, instrument logos, or copyrighted diagrams are copied.
   Repository figures are generated from the original synthesis table.
 - ANDES, G-CLEF and HARPS3 entries describe planned/commissioning systems; their

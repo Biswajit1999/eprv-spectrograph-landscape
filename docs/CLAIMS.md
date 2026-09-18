@@ -29,6 +29,9 @@ metric, value, sample, baseline and caveat. Derived counts map to
 | NIRPS below 1 m/s commissioning result | `PERF-019` |
 | HARPS3, ANDES, G-CLEF 0.10 m/s goals | `PERF-020`–`PERF-022` |
 | EXPRES paired values: 1.17 to 1.05 m/s and 1.32 to 0.43 m/s | `data/expres_metrics.csv`, linked to `EXP-2021-EXCALIBUR` and `EXP-2026-SYSTEMATICS` |
+| In the equal-photon synthetic experiment, increasing R from 100,000 to 150,000 improves the local bound by 37.1%, 11.1% and 2.48% for intrinsic Gaussian widths of 1.0, 2.5 and 5.0 km/s | `data/information_experiment_scenarios.csv`, `results/doppler_information_experiment.csv`, `results/manifest.json` |
+| The predeclared broad-line null (less than 10% improvement) is not rejected | `docs/DOPPLER_INFORMATION_STUDY.md`, `results/manifest.json` |
+| Four seeded Poisson validations give 0.697-0.710 empirical one-sigma coverage | `results/doppler_information_experiment.csv`; implementation tests in `tests/test_doppler_information.py` |
 
 The wider EXPRES reading statements are mapped paper by paper in
 `data/expres_papers.csv`; interpretation and future-analysis boundaries are stated in

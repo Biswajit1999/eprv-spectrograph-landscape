@@ -75,3 +75,17 @@ summaries, three plots, and `results/manifest.json`. Every plotted number is
 read from committed CSV data; no values are embedded in plotting code.
 `load_census` separately enforces unique physical identifiers, resolved facility
 references, HTTPS sources, controlled inclusion tiers, and declared open fields.
+
+## Controlled Doppler-information experiment
+
+The literature synthesis is supplemented by one independently executed,
+falsifiable experiment. A deterministic synthetic absorption-line ensemble is
+broadened by intrinsic and instrumental Gaussian kernels while line equivalent
+widths, velocity sampling and continuum photons per bin remain fixed. Local
+Doppler information is calculated from the spectral gradient and validated by
+seeded Poisson injection-recovery trials.
+
+The predeclared null, equations, scenario table, acceptance boundary and
+results are documented in `docs/DOPPLER_INFORMATION_STUDY.md`. The experiment
+does not use the heterogeneous instrument rows as inputs and cannot support an
+instrument ranking.
