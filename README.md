@@ -28,7 +28,6 @@ residuals are different quantities. The data model keeps them separate.
 - A falsifiable [controlled Doppler-information experiment](docs/DOPPLER_INFORMATION_STUDY.md)
   with 15 resolution/line-width scenarios and four seeded Poisson
   injection-recovery validations.
-- A scored [before/after research-maturity audit](research/RESEARCH_MATURITY_AUDIT.md)
   tied to repository evidence rather than commit volume.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles, a Natural Earth location map and nine extended challenge
