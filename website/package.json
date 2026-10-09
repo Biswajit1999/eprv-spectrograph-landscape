@@ -1,12 +1,13 @@
 {
   "name": "eprv-spectrograph-landscape-site",
   "private": true,
-  "version": "0.15.0",
+  "version": "0.16.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260831.1",

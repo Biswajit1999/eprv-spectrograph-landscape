@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.16.0] - 2026-10-09
+
+- Added an accessible interactive Doppler-shift worked example to the beginner
+  chapter, with velocity presets, wavelength choices and a signed visual track.
+- Connected radial velocity to wavelength displacement and to the fraction of
+  one resolution element at R = 100,000 using the first-order Doppler relation.
+- Kept the model boundary visible: the interaction demonstrates scale and does
+  not represent line-shape recovery, noise, stellar variability or achieved
+  instrument precision.
+- Added dependency-free unit tests for the calculation, wired them into CI and
+  refreshed the public update date and package metadata.
+
 ## [0.15.0] - 2026-09-18
 
 - Added a falsifiable, controlled Doppler-information experiment with 15

@@ -2,7 +2,7 @@
 
 | Topic | Current evidence | State | Next defensible extension |
 |---|---|---|---|
-| Beginner measurement guide | 13 primary or official sources; five-step chain, three calibration/extraction families, three equations | complete for v0.5 | Add an interactive worked example using synthetic lines |
+| Beginner measurement guide | 13 primary or official sources; five-step chain, three calibration/extraction families, three equations and an interactive first-order Doppler worked example | complete for v0.16 | Extend the interaction only when photon-noise and line-shape assumptions can remain explicit |
 | Spectrograph taxonomy | Dedicated PRV, general high-resolution, survey-RV and general space spectroscopy separated | complete for v0.5 | Revisit only if scope definition changes |
 | Review-defined EPRV core | 19 systems reconciled | complete | Track new review editions |
 | Current instrument status | dated official pages | complete for published rows | Recheck after 180 days |

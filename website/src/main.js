@@ -2,6 +2,7 @@ import './style.css';
 import world from '@cublya/world-atlas/countries-110m.json';
 import { geoEquirectangular, geoGraticule10, geoPath } from 'd3-geo';
 import { feature, mesh } from 'topojson-client';
+import { calculateDopplerShift } from './doppler.js';
 
 const parseCSV = text => {
   const rows=[]; let row=[], field='', quoted=false;
@@ -23,6 +24,46 @@ const tierLabels = {
 const mapProjection=geoEquirectangular().scale(1000/(2*Math.PI)).translate([500,250]).precision(.1);
 const mapPath=geoPath(mapProjection);
 
+function formatSigned(value, digits) {
+  const number=Number(value);
+  const sign=number>0?'+':number<0?'−':'';
+  return `${sign}${Math.abs(number).toFixed(digits)}`;
+}
+
+function setupDopplerLab(){
+  const velocityInput=document.querySelector('#rv-velocity');
+  const wavelengthInput=document.querySelector('#rv-wavelength');
+  const velocityOutput=document.querySelector('#rv-velocity-output');
+  const observedLine=document.querySelector('#observed-line');
+  const plotSummary=document.querySelector('#velocity-plot-summary');
+  const presetButtons=[...document.querySelectorAll('[data-velocity]')];
+  if(!velocityInput||!wavelengthInput)return;
+
+  function render(){
+    const velocity=Number(velocityInput.value);
+    const wavelength=Number(wavelengthInput.value);
+    const result=calculateDopplerShift({velocityMps:velocity,wavelengthNm:wavelength});
+    const position=Math.max(0,Math.min(100,(velocity+100)/2));
+    const directionPhrase=result.direction==='redshift'?'to the red of':result.direction==='blueshift'?'to the blue of':'aligned with';
+    const exponent=result.fractionalShift===0?0:Math.floor(Math.log10(Math.abs(result.fractionalShift)));
+    const mantissa=result.fractionalShift===0?0:result.fractionalShift/(10**exponent);
+
+    velocityOutput.value=`${formatSigned(velocity,1)} m/s`;
+    observedLine.style.left=`${position}%`;
+    document.querySelector('#shifted-wavelength').textContent=`${result.shiftedWavelengthNm.toFixed(9)} nm`;
+    document.querySelector('#wavelength-shift').textContent=`${formatSigned(result.deltaWavelengthPm,6)} pm`;
+    document.querySelector('#fractional-shift').textContent=result.fractionalShift===0?'0':`${formatSigned(mantissa,3)} × 10${String(exponent).replace('-','⁻').replaceAll('0','⁰').replaceAll('1','¹').replaceAll('2','²').replaceAll('3','³').replaceAll('4','⁴').replaceAll('5','⁵').replaceAll('6','⁶').replaceAll('7','⁷').replaceAll('8','⁸').replaceAll('9','⁹')}`;
+    document.querySelector('#resolution-fraction').textContent=`${result.resolutionElementPercent.toFixed(4)}% of one resolution element`;
+    plotSummary.textContent=velocity===0?'Observed and rest lines are aligned.':`Observed line is ${Math.abs(velocity).toFixed(1)} m/s ${directionPhrase} the rest line.`;
+    presetButtons.forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.velocity)===velocity)));
+  }
+
+  velocityInput.addEventListener('input',render);
+  wavelengthInput.addEventListener('change',render);
+  presetButtons.forEach(button=>button.addEventListener('click',()=>{velocityInput.value=button.dataset.velocity;render();velocityInput.focus();}));
+  render();
+}
+
 function renderBaseMap(){
   const countries=feature(world,world.objects.countries);
   const borders=mesh(world,world.objects.countries,(a,b)=>a!==b);
@@ -40,6 +81,7 @@ async function fetchText(path){
 
 async function main(){
   renderBaseMap();
+  setupDopplerLab();
   const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce','hermes','ucles','espadons','tres','igrins','coralie','feros','fideos','pepsi','hds','boes','cafe','ces','coravel','het_hrs','hamilton','tull','elodie','hides','nres','paras','salt_hrs'];
   const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperTexts,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),

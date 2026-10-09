@@ -27,7 +27,7 @@
       <section class="hero" id="top">
         <div class="hero-layout">
           <div class="hero-copy">
-            <div class="kicker">Independent literature synthesis · updated 13 September 2026</div>
+            <div class="kicker">Independent literature synthesis · updated 9 October 2026</div>
             <h1>What the papers actually say about precision RV spectrographs.</h1>
             <p class="lede">My source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which questions could support later analysis.</p>
             <aside class="research-note" aria-labelledby="research-note-title">
@@ -50,6 +50,52 @@
         <div class="section-head"><div><span class="eyebrow">Begin here</span><h2>From starlight to a velocity time series</h2></div><p>A five-step measurement chain, the equations behind it, and the places where apparently similar spectrographs become scientifically different.</p></div>
         <div id="measurement-flow" class="measurement-flow"></div>
         <div class="equation-grid" id="equation-grid"></div>
+        <section class="doppler-lab" aria-labelledby="doppler-lab-title">
+          <div class="doppler-lab-copy">
+            <span class="eyebrow">Interactive worked example</span>
+            <h3 id="doppler-lab-title">Make the invisible shift visible</h3>
+            <p>Move a star toward or away from us and see how a radial velocity becomes a wavelength displacement. The track is drawn in velocity space so tiny shifts stay visible.</p>
+            <div class="lab-boundary"><strong>Model boundary.</strong> This uses the first-order relation Δλ/λ ≈ v/c. It illustrates scale only; it does not model line shape, photon noise, stellar variability, calibration error or achieved instrument precision.</div>
+          </div>
+          <div class="doppler-controls">
+            <label for="rv-wavelength">Rest wavelength
+              <select id="rv-wavelength">
+                <option value="400">400 nm · blue</option>
+                <option value="550" selected>550 nm · visible green</option>
+                <option value="1000">1,000 nm · near infrared</option>
+              </select>
+            </label>
+            <label for="rv-velocity">Radial velocity
+              <div class="range-heading"><span>Approaching</span><output id="rv-velocity-output" for="rv-velocity">+1.0 m/s</output><span>Receding</span></div>
+              <input id="rv-velocity" type="range" min="-100" max="100" step="0.1" value="1" aria-describedby="rv-helper" />
+            </label>
+            <p id="rv-helper">Negative values produce a blueshift; positive values produce a redshift.</p>
+            <div class="velocity-presets" aria-label="Example velocity scales">
+              <span>Try a scale</span>
+              <button type="button" data-velocity="0.1">0.1 m/s</button>
+              <button type="button" data-velocity="1" aria-pressed="true">1 m/s</button>
+              <button type="button" data-velocity="10">10 m/s</button>
+              <button type="button" data-velocity="100">100 m/s</button>
+            </div>
+          </div>
+          <div class="velocity-plot" role="img" aria-labelledby="velocity-plot-title velocity-plot-summary">
+            <div class="plot-title" id="velocity-plot-title">Line position in radial-velocity space</div>
+            <div class="plot-track" aria-hidden="true">
+              <div class="plot-zone blue-zone"></div><div class="plot-zone red-zone"></div>
+              <span class="spectral-line rest-line"><b>Rest</b></span>
+              <span class="spectral-line observed-line" id="observed-line"><b>Observed</b></span>
+            </div>
+            <div class="plot-axis" aria-hidden="true"><span>−100 m/s</span><span>0</span><span>+100 m/s</span></div>
+            <p id="velocity-plot-summary">Observed line is 1.0 m/s to the red of the rest line.</p>
+          </div>
+          <dl class="doppler-readout" aria-label="Calculated Doppler shift">
+            <div><dt>Shifted wavelength</dt><dd id="shifted-wavelength">550.000001835 nm</dd></div>
+            <div><dt>Wavelength shift</dt><dd id="wavelength-shift">+0.001835 pm</dd></div>
+            <div><dt>Fractional shift</dt><dd id="fractional-shift">+3.336 × 10⁻⁹</dd></div>
+            <div><dt>At R = 100,000</dt><dd id="resolution-fraction">0.0334% of one resolution element</dd></div>
+          </dl>
+          <p class="lab-source">The calculation follows the same first-order Doppler relation introduced above. For the controlled line-width and resolving-power experiment, see the <a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/DOPPLER_INFORMATION_STUDY.md">Doppler-information study</a>.</p>
+        </section>
         <div class="section-subhead"><span class="eyebrow">Calibration and extraction</span><h3>Three common measurement architectures</h3></div>
         <div id="technique-grid" class="technique-grid"></div>
         <div class="taxonomy-panel">

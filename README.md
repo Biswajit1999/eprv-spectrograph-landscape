@@ -28,7 +28,8 @@ residuals are different quantities. The data model keeps them separate.
 - A falsifiable [controlled Doppler-information experiment](docs/DOPPLER_INFORMATION_STUDY.md)
   with 15 resolution/line-width scenarios and four seeded Poisson
   injection-recovery validations.
-  tied to repository evidence rather than commit volume.
+- An interactive first-order Doppler worked example that connects signed radial
+  velocity to wavelength displacement and the scale of one resolution element.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles, a Natural Earth location map and nine extended challenge
   explainers.
