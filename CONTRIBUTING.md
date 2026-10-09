@@ -14,3 +14,9 @@ For a new instrument or updated status:
 
 Corrections to specifications, source interpretation, accessibility, and
 plot clarity are especially useful.
+
+Instrument scientists and team members can use the
+[instrument-team correction form](https://github.com/Biswajit1999/eprv-spectrograph-landscape/issues/new?template=instrument-team-correction.yml).
+Please identify the exact claim, explain the proposed change, and link a primary
+paper or dated official source. Affiliation is optional and a contribution does
+not imply institutional endorsement.

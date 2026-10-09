@@ -28,13 +28,14 @@ An instrument is included in the detailed comparison when it satisfies all of th
 4. Its inclusion adds a distinct generation, wavelength domain,
    calibration approach, or operational lesson.
 
-The 19-system performance core follows Table 1 of Burt, Dumusque & Halverson
-(2026), which covers current or upcoming visible instruments capable of at
-least 1 m/s or near-infrared instruments capable of at least 3 m/s. ANDES and
-G-CLEF are tracked as planned systems; PARAS-2 is a regional addition supported
-by a 2024 on-sky paper. The list is not exhaustive. A physical instrument, an
-observing mode, a detector upgrade and a pipeline version are not counted as
-four independent instruments.
+The committed performance core contains **21 physical instruments** and uses
+Table 1 of Burt, Dumusque & Halverson (2026) as its principal reference frame.
+Planned systems and the regional PARAS-2 case are explicitly labelled rather
+than implied to be homogeneous with operating instruments. The 22-row claim
+table is larger than the instrument table because EXPRES has separate
+laboratory-calibration and on-sky claims. The list is not exhaustive. A physical
+instrument, an observing mode, a detector upgrade and a pipeline version are not
+counted as four independent instruments.
 
 ## Evidence hierarchy
 

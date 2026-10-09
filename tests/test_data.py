@@ -15,7 +15,8 @@ from eprv_landscape.data import (
 
 def test_committed_instrument_table_is_valid():
     df = load_instruments("data/instruments.csv")
-    assert len(df) >= 12
+    assert len(df) == 21
+    assert df["instrument"].is_unique
     assert {"optical", "near_infrared", "optical_and_near_infrared"} <= set(df.spectral_domain)
 
 
@@ -45,11 +46,14 @@ def test_performance_claims_are_linked_and_caveated():
     assert set(claims["instrument"]).issubset(set(instruments["instrument"]))
     assert claims["caveat"].str.len().min() >= 10
     assert claims["source_url"].str.startswith(("https://", "http://")).all()
+    assert len(claims) == 22
+    assert claims["instrument"].nunique() == 21
 
 
 def test_broader_census_is_structurally_valid():
     records = load_census("data/census_registry.jsonl", "data/facilities.jsonl")
-    assert len(records) >= 50
+    assert len(records) == 53
+    assert len({row["instrument_id"] for row in records}) == 53
     assert all(row["entity_type"] == "physical_instrument" for row in records)
 
 
@@ -249,14 +253,36 @@ def test_website_uses_natural_earth_geometry_not_schematic_shapes():
     assert "@cublya/world-atlas" in package["dependencies"]
 
 
-def test_site_frames_the_work_as_a_learning_report():
+def test_site_frames_the_work_as_an_independent_literature_synthesis():
     html = Path("website/index.html").read_text(encoding="utf-8")
     script = Path("website/src/main.js").read_text(encoding="utf-8")
 
-    assert "while working on EXOhSPEC" in html
-    assert "This is a learning record, not an authoritative review" in html
-    assert "Independent literature report by Biswajit Jana" in html
+    assert "literature review while working on the EXOhSPEC testbed" in html
+    assert "has not been formally validated by every principal investigator" in html
+    assert "Independent literature synthesis by Biswajit Jana" in html
     assert "Independent research software" not in html
     assert "Many hours of design, integration, testing and analysis" in script
     assert "earlier EXOhSPEC designs, prototypes and subsystem experiments" in script
     assert "intended for a future publication" in script
+
+
+def test_site_explains_extraction_validation_and_claim_counts():
+    html = Path("website/index.html").read_text(encoding="utf-8")
+    assert "The pipeline is part of the measurement" in html
+    assert "Cross-correlation function" in html
+    assert "Template matching and forward models" in html
+    assert "Why solar feeds matter" in html
+    assert "21 instruments and 22 quantitative claims" in html
+    assert "effectively infinite signal-to-noise and perfect detector sampling" in html
+
+
+def test_every_site_image_has_descriptive_alt_text():
+    import re
+
+    html = Path("website/index.html").read_text(encoding="utf-8")
+    image_tags = re.findall(r"<img\b[^>]*>", html)
+    assert image_tags
+    for tag in image_tags:
+        match = re.search(r'alt="([^"]+)"', tag)
+        assert match, tag
+        assert len(match.group(1).strip()) >= 30, tag

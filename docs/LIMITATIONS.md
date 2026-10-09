@@ -27,6 +27,9 @@
   the Wise unit has an explicit decommissioning date.
 - The report is a structured literature synthesis, not an independent
   re-reduction of raw spectra from all instruments.
+- The project has not been formally validated by every principal investigator
+  or instrument team. Sourced corrections can change the synthesis without
+  implying endorsement by the contributor's institution.
 - The Doppler-information experiment uses idealized Gaussian absorption lines,
   fixed photons per velocity bin and a local small-shift estimator. It omits
   real stellar spectra, throughput, detector sampling, tellurics, calibration

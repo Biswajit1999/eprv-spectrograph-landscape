@@ -30,6 +30,9 @@ residuals are different quantities. The data model keeps them separate.
   injection-recovery validations.
 - An interactive first-order Doppler worked example that connects signed radial
   velocity to wavelength displacement and the scale of one resolution element.
+- A source-linked extraction and validation chapter covering cross-correlation,
+  empirical-template and forward-model approaches, photon-weighted barycentric
+  correction, detector systematics and Sun-as-a-star feeds.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles, a Natural Earth location map and nine extended challenge
   explainers.
@@ -66,8 +69,9 @@ residuals are different quantities. The data model keeps them separate.
   sources.
 - A tested Python package and command-line build.
 
-The detailed performance core follows the instrument set in Burt, Dumusque & Halverson's
-2026 review, with planned and regional additions clearly labelled. This is a
+The 21-instrument performance core uses Burt, Dumusque & Halverson's 2026 review
+as its principal frame, with planned and regional additions clearly labelled.
+It contains 22 claims because EXPRES has distinct calibration and on-sky rows. This is a
 structured reading set, not a claim to enumerate every astronomical echelle or
 every observing mode ever built. The broader directory is stored separately in
 `data/census_registry.jsonl`; unresolved fields are part of each record rather
@@ -130,6 +134,8 @@ the result is the measured interaction between resolving power and line width.
 - Status is dated and kept separate from historical performance.
 - No paper figure, observatory logo or substantial third-party text is copied.
 - The project is independent and not endorsed by a listed facility or team.
+- It has not been formally validated by every principal investigator or
+  instrument team; sourced corrections are explicitly invited.
 - Future analysis questions are not completed research, publication claims, or
   statements about a facility's priorities.
 

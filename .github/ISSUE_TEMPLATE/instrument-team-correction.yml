@@ -1,0 +1,64 @@
+name: Instrument-team correction
+description: Propose a sourced correction to an instrument record, performance claim, status or interpretation.
+title: "[instrument correction] "
+labels:
+  - correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep this independent literature synthesis accurate. A contribution does not imply endorsement by you, your institution or an instrument team.
+  - type: input
+    id: instrument
+    attributes:
+      label: Instrument or section
+      description: Name the instrument, figure, table or passage that needs correction.
+      placeholder: e.g. HARPS-N performance claim
+    validations:
+      required: true
+  - type: textarea
+    id: current_claim
+    attributes:
+      label: Current claim
+      description: Quote or link the exact wording, value or status that should change.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_correction
+    attributes:
+      label: Proposed correction
+      description: State the replacement and explain whether it is a design goal, calibration result, commissioning result, internal uncertainty, on-sky RMS or another evidence class.
+    validations:
+      required: true
+  - type: input
+    id: primary_source
+    attributes:
+      label: Primary or official source
+      description: Provide a DOI, journal URL, observatory page or dated instrument-team notice.
+      placeholder: https://doi.org/...
+    validations:
+      required: true
+  - type: input
+    id: context_date
+    attributes:
+      label: Applicable date or instrument era
+      description: Give the observing dates, hardware era, pipeline version or status date when relevant.
+      placeholder: e.g. post-2015 fibre upgrade; status checked 2026-10-10
+    validations:
+      required: false
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Note caveats, conflicting sources or anything the public wording must not imply.
+    validations:
+      required: false
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I have linked evidence that readers can inspect.
+          required: true
+        - label: I understand that submitting this correction does not imply institutional endorsement.
+          required: true

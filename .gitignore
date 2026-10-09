@@ -9,3 +9,4 @@ website/dist/
 /site-app/
 /design-system/
 .wrangler/
+/tmp/

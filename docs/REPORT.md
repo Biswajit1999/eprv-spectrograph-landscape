@@ -1,6 +1,6 @@
 # Precision radial-velocity spectrographs: evidence and open problems
 
-Status and sources checked between **2 and 7 September 2026**. This is an independent
+Status and sources checked between **2 September and 10 October 2026**. This is an independent
 literature synthesis, not an observatory or consortium product.
 
 ## Summary
@@ -12,12 +12,12 @@ routine across ordinary Sun-like stars and multi-year baselines. The remaining
 gap is a coupled measurement problem involving the star, atmosphere, telescope,
 fibre feed, calibration transfer, detector, cadence and reduction software.
 
-The comparison contains 22 quantitative claims for 21 instruments. Nineteen
-current or upcoming systems form the detailed performance core identified in
-the 2026 *Annual Review of Astronomy and Astrophysics* review of precise radial
-velocities. ANDES and G-CLEF are included only as planned systems. PARAS-2 adds
-an operational southern instrument with a published 2024 stellar stability
-test. No single-number ranking is calculated.
+The comparison contains 22 quantitative claims for 21 physical instruments.
+The 2026 *Annual Review of Astronomy and Astrophysics* review of precise radial
+velocities provides the principal reference frame; planned systems and the
+regional PARAS-2 case are explicitly labelled additions. EXPRES has two rows
+because its subsystem-calibration and on-sky results are different evidence
+classes. No single-number ranking is calculated.
 
 ## Broader census and instrument profiles
 
@@ -123,7 +123,7 @@ mid-to-late M dwarfs at S/N at least 100 per pixel.
 SPIRou joins near-infrared velocimetry and spectropolarimetry. Standard stars
 showed about 2 m/s RMS over weeks although photon uncertainty approached
 0.5 m/s. NIRPS operates simultaneously with HARPS; first-light work reported
-accuracy better than 1 m/s on a limited sample. PARVI commissioning observations
+radial-velocity precision better than 1 m/s on a limited sample. PARVI commissioning observations
 instead yielded 4–10 m/s intra-night stability against a roughly 1 m/s design
 goal. The Caltech laboratory now lists PARVI as legacy; the gap between goal and
 commissioning result remains useful evidence.
@@ -166,6 +166,31 @@ below is an index to those longer source-linked explanations.
    exposure midpoint wavelength dependent.
 9. **Pipelines:** extraction, wavelength solutions, templates, masks and outlier
    policies affect published precision and must be versioned.
+
+## Extraction and validation are part of the instrument
+
+The detector image is not itself a radial velocity. A cross-correlation function
+compresses selected lines against a weighted mask; empirical-template methods
+instead fit each observation against a high-signal template, often order by
+order. Forward models can additionally fit the wavelength solution, line-spread
+function, calibration and contamination. None of these choices is neutral: the
+mask or template, rejected pixels, telluric treatment and profile model define
+what information enters the reported velocity.
+
+The observer's motion must then be transformed to a barycentric reference frame.
+At centimetre-per-second scales, the correction is relativistic and must follow
+the photon-weighted exposure, including chromatic flux variations; the shutter
+midpoint is not generally sufficient. Detector block stitching, charge transfer,
+non-linearity and intrapixel response can also produce structured signals that a
+simultaneous reference does not automatically remove.
+
+Sun-as-a-star feeds on HARPS-N and NEID provide dense, disk-integrated time
+series through the same spectrograph and pipeline used for night-time targets.
+They are powerful systems tests because solar surface information and Solar
+System dynamics provide external context. Their RMS still includes solar
+variability, atmosphere, cadence and reduction choices, so it is not a universal
+instrumental floor. Primary sources and boundaries are collected in
+`docs/EXTRACTION_AND_VALIDATION.md`.
 
 ## Reporting standard and conclusion
 

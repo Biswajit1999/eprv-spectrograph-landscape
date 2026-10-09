@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.17.0] - 2026-10-10
+
+- Added a source-linked explanation of cross-correlation, empirical-template and
+  forward-model RV extraction, photon-weighted barycentric correction, detector
+  systematics and Sun-as-a-star validation.
+- Replaced the informal learning-note introduction with a precise independence,
+  authorship and instrument-team validation disclosure while retaining the
+  project's personal EXOhSPEC origin.
+- Made the 53-record census, 21-instrument performance layer and 22 claim rows
+  explicit and added exact-count and unique-identifier regression tests.
+- Added a structured instrument-team correction issue form and linked it from
+  the site, methods area and contribution guide.
+- Expanded scientific figure alternatives, tightened precision-versus-accuracy
+  wording and stated the Doppler demo's ideal signal-to-noise and sampling
+  assumptions.
+
 ## [0.16.0] - 2026-10-09
 
 - Added an accessible interactive Doppler-shift worked example to the beginner

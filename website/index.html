@@ -27,16 +27,16 @@
       <section class="hero" id="top">
         <div class="hero-layout">
           <div class="hero-copy">
-            <div class="kicker">Independent literature synthesis · updated 9 October 2026</div>
+            <div class="kicker">Independent literature synthesis · updated 10 October 2026</div>
             <h1>What the papers actually say about precision RV spectrographs.</h1>
-            <p class="lede">My source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which questions could support later analysis.</p>
+            <p class="lede">A source-linked reading guide to optical and near-infrared Doppler instruments: where they work, which numbers their papers report, what remains difficult, and which questions could support later analysis.</p>
             <aside class="research-note" aria-labelledby="research-note-title">
-              <span class="eyebrow">Why I made this report</span>
-              <h2 id="research-note-title">Notes from an ongoing learning process</h2>
-              <p>Over the last few years, while working on EXOhSPEC, I have read papers and technical material on spectrograph design, calibration, environmental control, fibre illumination, detectors and radial-velocity analysis. This report is my structured summary of that reading: what different instruments have achieved, how those results were measured, and which problems remain open.</p>
-              <p>This is a learning record, not an authoritative review. I may have misunderstood or missed details, and I welcome corrections; checking and revising the report is part of the learning process.</p>
+              <span class="eyebrow">Scope and authorship</span>
+              <h2 id="research-note-title">An independent, source-linked synthesis</h2>
+              <p>This guide grew from Biswajit Jana's literature review while working on the EXOhSPEC testbed. It summarizes published instrument designs, calibration strategies, performance measurements and unresolved challenges; it does not present an independent re-reduction of every instrument's data.</p>
+              <p>The work has not been formally validated by every principal investigator or instrument team. Primary papers and dated observatory sources are linked so that claims can be checked, challenged and revised.</p>
             </aside>
-            <div class="hero-actions"><a class="button primary" href="#learn">Begin with the measurement</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a></div>
+            <div class="hero-actions"><a class="button primary" href="#learn">Begin with the measurement</a><a class="button" href="#census">Browse all instruments</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape">View data and code</a><a class="button" href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/issues/new?template=instrument-team-correction.yml">Propose a correction</a></div>
             <div class="notice"><strong>A careful boundary.</strong> A design goal, calibration test, formal uncertainty and stellar time-series RMS are different measurements. “Selected reading note” means I reviewed the listed sources; it does not mean every paper ever written about that instrument.</div>
           </div>
           <figure class="hero-illustration">
@@ -55,7 +55,7 @@
             <span class="eyebrow">Interactive worked example</span>
             <h3 id="doppler-lab-title">Make the invisible shift visible</h3>
             <p>Move a star toward or away from us and see how a radial velocity becomes a wavelength displacement. The track is drawn in velocity space so tiny shifts stay visible.</p>
-            <div class="lab-boundary"><strong>Model boundary.</strong> This uses the first-order relation Δλ/λ ≈ v/c. It illustrates scale only; it does not model line shape, photon noise, stellar variability, calibration error or achieved instrument precision.</div>
+            <div class="lab-boundary"><strong>Model boundary.</strong> This uses the first-order relation Δλ/λ ≈ v/c and assumes effectively infinite signal-to-noise and perfect detector sampling. It illustrates scale only; it does not model line shape, photon noise, stellar variability, calibration error or achieved instrument precision.</div>
           </div>
           <div class="doppler-controls">
             <label for="rv-wavelength">Rest wavelength
@@ -98,6 +98,24 @@
         </section>
         <div class="section-subhead"><span class="eyebrow">Calibration and extraction</span><h3>Three common measurement architectures</h3></div>
         <div id="technique-grid" class="technique-grid"></div>
+        <section class="analysis-chain" aria-labelledby="analysis-chain-title">
+          <div class="section-subhead">
+            <span class="eyebrow">From extracted spectrum to velocity</span>
+            <h3 id="analysis-chain-title">The pipeline is part of the measurement</h3>
+            <p>A stable optical bench is necessary, but the reported radial velocity also depends on how pixels, wavelengths, tellurics, templates and timestamps are modelled.</p>
+          </div>
+          <div class="pipeline-grid">
+            <article><span>01</span><h4>Cross-correlation function</h4><p>A weighted line mask compresses thousands of spectral lines into an average profile. It is fast and interpretable, but the mask, rejected regions and profile fit define the measurement.</p><a href="https://doi.org/10.1051/aas:1996251" rel="noreferrer">Baranne et al. (1996)</a></article>
+            <article><span>02</span><h4>Template matching and forward models</h4><p>Least-squares methods compare each observation with a high-signal empirical template; broader forward models can also fit the wavelength solution, line-spread function, calibration and contamination. More retained information also means more assumptions to validate.</p><a href="https://doi.org/10.1051/0004-6361/201731483" rel="noreferrer">Zechmeister et al. (2018)</a></article>
+            <article><span>03</span><h4>Reference frame and exposure time</h4><p>Earth's orbital and rotational motion is removed with a relativistic barycentric correction. At EPRV scales, the correction must follow the photon-weighted exposure—often as a function of wavelength—not just the shutter midpoint.</p><a href="https://doi.org/10.1086/678541" rel="noreferrer">Wright &amp; Eastman (2014)</a> · <a href="https://doi.org/10.1093/mnras/stz2181" rel="noreferrer">Tronsgaard et al. (2019)</a></article>
+            <article><span>04</span><h4>Detector and atmosphere</h4><p>Pixel stitching, charge transfer, persistence, non-linearity and micro-tellurics can move or reshape lines. Calibration cannot automatically remove effects that do not share the stellar light path or the same detector response.</p><a href="https://doi.org/10.1088/0004-637X/808/2/171" rel="noreferrer">Dumusque et al. (2015)</a></article>
+          </div>
+          <aside class="solar-callout">
+            <div><span class="eyebrow">Why solar feeds matter</span><h4>The nearest star becomes a high-cadence systems test</h4></div>
+            <div><p>Small solar telescopes feed disk-integrated sunlight through the same spectrograph and reduction chain used at night. The dense cadence and external solar context help expose instrumental, calibration and stellar line-shape effects. A solar RMS still mixes weather, observing strategy, pipeline choices and solar variability, so it is not a universal instrument floor or a promise for other stars.</p><p class="source-links"><a href="https://doi.org/10.1093/mnras/stz1215" rel="noreferrer">HARPS-N Sun-as-a-star study</a><a href="https://arxiv.org/abs/2112.05711" rel="noreferrer">NEID solar-feed study</a></p></div>
+          </aside>
+          <p class="chapter-link"><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/EXTRACTION_AND_VALIDATION.md">Read the extraction and validation note with primary sources</a></p>
+        </section>
         <div class="taxonomy-panel">
           <div><span class="eyebrow">Scope boundary</span><h3>Not every spectrograph is an EPRV instrument</h3><p id="taxonomy-boundary"></p></div>
           <div class="table-wrap"><table class="taxonomy-table"><thead><tr><th>Class</th><th>Examples</th><th>Measurement emphasis</th><th>In directory?</th></tr></thead><tbody id="taxonomy-body"></tbody></table></div>
@@ -140,7 +158,7 @@
       </section>
       <section id="dossiers" class="section shade featured-dossier"><div id="featured-dossier"></div></section>
       <section id="instruments" class="section">
-        <div class="section-head"><div><span class="eyebrow">Numbers from published studies</span><h2>Compare specifications only within context</h2></div><p>These 21 records have a numerical result tied to a paper. Wavelength limits and resolving power are representative modes, not acceptance-test values.</p></div>
+        <div class="section-head"><div><span class="eyebrow">Numbers from published studies</span><h2>Compare specifications only within context</h2></div><p>The performance layer contains 21 instruments and 22 quantitative claims because EXPRES has separate calibration and on-sky rows. Wavelength limits and resolving power are representative modes, not acceptance-test values.</p></div>
         <div class="filters" role="search">
           <label>Search <input id="search" type="search" placeholder="Instrument or facility" /></label>
           <label>Status <select id="status-filter"><option value="">All statuses</option></select></label>
@@ -161,22 +179,23 @@
       <section id="figures" class="section shade">
         <div class="section-head"><div><span class="eyebrow">Original figures</span><h2>Context before comparison</h2></div><p>Figures are generated from the committed tables. No third-party paper figure is reproduced.</p></div>
         <div class="figure-grid">
-          <figure><img src="./figures/wavelength_coverage.png" alt="Horizontal intervals showing wavelength coverage, grouped by current status" width="1600" height="1100" loading="lazy" /><figcaption>Representative wavelength coverage and dated status for the performance core.</figcaption></figure>
-          <figure><img src="./figures/reported_velocity_scales.png" alt="Reported velocity values grouped by non-equivalent measurement context" width="1600" height="1100" loading="lazy" /><figcaption>Reported velocity scales separated by measurement context; this is not a ranking.</figcaption></figure>
-          <figure><img src="./figures/resolution_vs_coverage.png" alt="Scatter plot of representative resolving power against nominal wavelength span" width="1800" height="1080" loading="lazy" /><figcaption>Resolving power against nominal wavelength span. Neither axis directly measures long-term radial-velocity accuracy.</figcaption></figure>
-          <figure><img src="./figures/state_of_art_evidence.png" alt="Two panels separating published on-sky examples from requirements commissioning and calibration values" width="2700" height="1620" loading="lazy" /><figcaption>State-of-art evidence split by measurement context. On-sky examples remain separate from requirements and subsystem values.</figcaption></figure>
-          <figure><img src="./figures/expres_published_comparisons.png" alt="Paired before and after measurements reported within selected EXPRES papers" width="1600" height="1100" loading="lazy" /><figcaption>Within-paper EXPRES comparisons. Each pair retains the original paper's metric and scope rather than implying an instrument-wide floor.</figcaption></figure>
-          <figure class="wide"><img src="./figures/keplerian_detectability.png" alt="Ideal radial-velocity semi-amplitude against orbital period for one and five Earth-mass planets around Sun-like and mid-M-dwarf stars" width="1980" height="1260" loading="lazy" /><figcaption>Ideal circular, edge-on Keplerian signals from committed assumptions. The 1 m/s, 30 cm/s and 10 cm/s guides show why the field is moving below one metre per second; stellar variability, cadence and instrument systematics are excluded.</figcaption></figure>
-          <figure class="wide"><img src="./figures/doppler_information_experiment.png" alt="Curves of idealized local radial-velocity uncertainty against resolving power for three intrinsic absorption-line widths" width="1800" height="1170" loading="lazy" /><figcaption>Controlled equal-photon experiment: resolution gains are large for narrow synthetic lines and diminish for broad lines. Absolute values are not achieved precision for any named instrument. <a href="./data/doppler_information_experiment.csv">Download the result table</a>.</figcaption></figure>
+          <figure><img src="./figures/wavelength_coverage.png" alt="Horizontal wavelength intervals for the 21 performance-core instruments, grouped by dated operational status; optical systems cluster below 1,000 nanometres while several infrared instruments extend beyond 2,000 nanometres." width="1600" height="1100" loading="lazy" /><figcaption>Representative wavelength coverage and dated status for the performance core.</figcaption></figure>
+          <figure><img src="./figures/reported_velocity_scales.png" alt="Reported velocity values separated into non-equivalent design, calibration, commissioning and on-sky contexts; the spread demonstrates why the values cannot form an instrument ranking." width="1600" height="1100" loading="lazy" /><figcaption>Reported velocity scales separated by measurement context; this is not a ranking.</figcaption></figure>
+          <figure><img src="./figures/resolution_vs_coverage.png" alt="Scatter plot of representative resolving power against nominal wavelength span for the performance core; instruments with similar resolving power can have very different spectral coverage." width="1800" height="1080" loading="lazy" /><figcaption>Resolving power against nominal wavelength span. Neither axis directly measures long-term radial-velocity precision or stability.</figcaption></figure>
+          <figure><img src="./figures/state_of_art_evidence.png" alt="Two-panel comparison that keeps published on-sky examples separate from design requirements, commissioning results and subsystem calibration values." width="2700" height="1620" loading="lazy" /><figcaption>State-of-art evidence split by measurement context. On-sky examples remain separate from requirements and subsystem values.</figcaption></figure>
+          <figure><img src="./figures/expres_published_comparisons.png" alt="Paired before-and-after EXPRES measurements from selected papers, showing improvements within each paper while retaining different metrics and samples." width="1600" height="1100" loading="lazy" /><figcaption>Within-paper EXPRES comparisons. Each pair retains the original paper's metric and scope rather than implying an instrument-wide floor.</figcaption></figure>
+          <figure class="wide"><img src="./figures/keplerian_detectability.png" alt="Ideal circular edge-on radial-velocity semi-amplitude versus orbital period for one- and five-Earth-mass planets around Sun-like and mid-M-dwarf stars, with reference lines at 1 metre per second, 30 centimetres per second and 10 centimetres per second." width="1980" height="1260" loading="lazy" /><figcaption>Ideal circular, edge-on Keplerian signals from committed assumptions. The 1 m/s, 30 cm/s and 10 cm/s guides show why the field is moving below one metre per second; stellar variability, cadence and instrument systematics are excluded.</figcaption></figure>
+          <figure class="wide"><img src="./figures/doppler_information_experiment.png" alt="Idealized local radial-velocity uncertainty versus resolving power for three intrinsic Gaussian line widths; gains remain strong for narrow lines and flatten for broader lines under fixed-photon assumptions." width="1800" height="1170" loading="lazy" /><figcaption>Controlled equal-photon experiment: resolution gains are large for narrow synthetic lines and diminish for broad lines. Absolute values are not achieved precision for any named instrument. <a href="./data/doppler_information_experiment.csv">Download the result table</a>.</figcaption></figure>
         </div>
       </section>
       <section id="method" class="section method">
         <div><span class="eyebrow">How this was made</span><h2>Every number points back to a source</h2><p>Each numerical row records the metric, measurement context, target or sample, baseline, limitation, source URL and access date. Automated checks reject unknown instruments, duplicate identifiers and rows without a stated limitation.</p></div>
-        <div class="method-links"><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/METHODS.md">Inclusion protocol</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/DOPPLER_INFORMATION_STUDY.md">Doppler-information study</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/CLAIMS.md">Claim ledger</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/REPORT.md">Scientific report</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/tree/main/data">Download tables</a></div>
+        <div class="method-links"><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/METHODS.md">Inclusion protocol</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/EXTRACTION_AND_VALIDATION.md">Extraction and validation note</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/DOPPLER_INFORMATION_STUDY.md">Doppler-information study</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/CLAIMS.md">Claim ledger</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/REPORT.md">Scientific report</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/tree/main/data">Download tables</a><a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/issues/new?template=instrument-team-correction.yml">Submit a sourced correction</a></div>
+        <aside class="independence-note"><strong>Independence and correction policy.</strong> This resource is an independent educational synthesis, not an official publication of any observatory, consortium or instrument team. It has not been formally validated by every principal investigator. Statements are bounded by their cited sources and access dates; newer primary evidence supersedes this snapshot. Instrument-team corrections, missing references and reproducible counter-evidence are welcome.</aside>
       </section>
     </main>
     <dialog id="instrument-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><span class="eyebrow">Instrument reading note</span><button id="dialog-close" type="button" aria-label="Close instrument reading note">Close</button></div><div id="dialog-content"></div></dialog>
-    <footer><p>Independent literature report by Biswajit Jana. No observatory or consortium endorsement is implied.</p><p>Report text and original analysis by Biswajit Jana · External facts remain attributed to their cited sources · Website code: MIT</p></footer>
+    <footer><p>Independent literature synthesis by Biswajit Jana. No observatory, consortium or instrument-team endorsement is implied.</p><p>Content checked through 10 October 2026 · External facts remain attributed to their cited sources · Website code: MIT</p></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
