@@ -23,8 +23,9 @@ residuals are different quantities. The data model keeps them separate.
   caveat, source and access date.
 - A literature-based [scientific report](docs/REPORT.md), explicit
   [inclusion protocol](docs/METHODS.md) and [claim ledger](docs/CLAIMS.md).
-- Six original figures generated only from committed CSV data, including a
-  context-separated state-of-art view and an ideal Keplerian signal-scale plot.
+- Eight original figures generated only from committed CSV data and styled with
+  SciencePlots, including a context-separated EPRV landscape atlas and an ideal
+  Keplerian signal-scale plot.
 - A falsifiable [controlled Doppler-information experiment](docs/DOPPLER_INFORMATION_STUDY.md)
   with 15 resolution/line-width scenarios and four seeded Poisson
   injection-recovery validations.
@@ -103,6 +104,8 @@ It is an explanatory project illustration rather than a quantitative data figure
 
 ## Figures
 
+![EPRV wavelength and published-velocity landscape](results/figures/eprv_landscape_atlas.png)
+
 ![Wavelength coverage and current status](results/figures/wavelength_coverage.png)
 
 ![Resolution and spectral grasp](results/figures/resolution_vs_coverage.png)
@@ -117,7 +120,7 @@ It is an explanatory project illustration rather than a quantitative data figure
 
 ![Controlled photon-limited information experiment](results/figures/doppler_information_experiment.png)
 
-The velocity figures are deliberately not rankings: their values describe
+The landscape and velocity figures are deliberately not rankings: their values describe
 different experiments. Read each definition in `data/performance_claims.csv`.
 The Keplerian curves use the assumptions in `data/detectability_scenarios.csv`
 and exclude stellar and instrumental noise.

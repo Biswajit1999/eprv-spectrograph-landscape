@@ -42,3 +42,7 @@ dialog{width:min(1120px,calc(100% - 2rem))}.depth{display:inline-block;align-sel
 @media(max-width:900px){.doppler-lab{grid-template-columns:1fr}.doppler-readout{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.doppler-lab{padding:1rem}.doppler-readout{grid-template-columns:1fr}.range-heading{grid-template-columns:1fr auto}.range-heading span:last-child{display:none}.velocity-presets button{flex:1 1 calc(50% - .5rem)}.pipeline-grid,.solar-callout{grid-template-columns:1fr}.solar-callout{gap:.5rem}.pipeline-grid article{padding:1.1rem}}
 @media(max-width:580px){.hero-actions .button{flex:1 0 100%;text-align:center}}
+
+/* Publication-style overview figure placed before the detailed instrument census. */
+.landscape-overview{background:#fff}.overview-figure{margin:0;border-top:4px solid var(--navy);padding-top:1rem}.overview-figure img{display:block;width:100%;height:auto;background:#fff}.overview-figure figcaption{max-width:92ch;margin:1rem auto 0;color:var(--muted);font-size:.9rem;text-align:center}.overview-figure figcaption strong{color:var(--navy)}
+@media(max-width:680px){.landscape-overview{padding-inline:.75rem}.overview-figure{overflow-x:auto}.overview-figure img{min-width:720px}.overview-figure figcaption{position:sticky;left:0;max-width:calc(100vw - 1.5rem);text-align:left}}

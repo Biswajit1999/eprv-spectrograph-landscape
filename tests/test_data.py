@@ -276,6 +276,14 @@ def test_site_explains_extraction_validation_and_claim_counts():
     assert "effectively infinite signal-to-noise and perfect detector sampling" in html
 
 
+def test_site_leads_with_a_context_separated_eprv_landscape_atlas():
+    html = Path("website/index.html").read_text(encoding="utf-8")
+    assert "Where precision-RV spectrographs sit" in html
+    assert "eprv_landscape_atlas.png" in html
+    assert "on-sky measurements separate from requirements" in html
+    assert "These values are not interchangeable performance scores" in html
+
+
 def test_every_site_image_has_descriptive_alt_text():
     import re
 

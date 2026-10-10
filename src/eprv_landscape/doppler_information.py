@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from .plot_style import MUTED, PALETTE, save_figure, scientific_plot
+
 SPEED_OF_LIGHT_KMS = 299_792.458
 GAUSSIAN_FWHM_TO_SIGMA = 2.0 * np.sqrt(2.0 * np.log(2.0))
 
@@ -271,11 +273,16 @@ def run_information_experiment(
     return frame
 
 
+@scientific_plot
 def plot_information_experiment(results: pd.DataFrame, output: str | Path) -> None:
     """Plot the simultaneous resolution/broadening sensitivity analysis."""
     fig, ax = plt.subplots(figsize=(10, 6.5))
     markers = {1.0: "o", 2.5: "s", 5.0: "^"}
-    colours = {1.0: "#0f766e", 2.5: "#2563eb", 5.0: "#c2410c"}
+    colours = {
+        1.0: PALETTE["green"],
+        2.5: PALETTE["blue"],
+        5.0: PALETTE["vermilion"],
+    }
     for width, frame in results.groupby("intrinsic_sigma_kms"):
         ordered = frame.sort_values("resolving_power")
         ax.plot(
@@ -284,6 +291,8 @@ def plot_information_experiment(results: pd.DataFrame, output: str | Path) -> No
             marker=markers[float(width)],
             color=colours[float(width)],
             linewidth=2.2,
+            markeredgecolor="white",
+            markeredgewidth=0.8,
             label=f"intrinsic sigma = {width:g} km/s",
         )
         validated = ordered.dropna(subset=["mc_empirical_sigma_mps"])
@@ -295,19 +304,21 @@ def plot_information_experiment(results: pd.DataFrame, output: str | Path) -> No
                 fmt="none",
                 ecolor=colours[float(width)],
                 capsize=3,
-                alpha=0.8,
+                alpha=0.9,
             )
     ax.set_xlabel("Resolving power, R")
     ax.set_ylabel("Idealized local RV uncertainty (m/s)")
     ax.set_title("Photon-limited information depends jointly on resolution and line width")
-    ax.grid(alpha=0.22)
+    ax.grid(which="major")
+    ax.grid(which="minor", alpha=0.3)
     ax.legend(frameon=False)
     fig.text(
         0.5,
         0.01,
         "Fixed synthetic line ensemble and photons per 50 m/s grid bin; no stellar variability, tellurics, calibration drift or throughput model.",
         ha="center",
+        color=MUTED,
+        fontsize=8,
     )
     fig.tight_layout(rect=(0, 0.04, 1, 1))
-    fig.savefig(output, dpi=180)
-    plt.close(fig)
+    save_figure(fig, output)

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.0] - 2026-10-10
+
+- Rebuilt all repository-native plots with a shared SciencePlots publication
+  theme, high-resolution export, colourblind-safe encodings and clearer labels.
+- Added a two-panel EPRV landscape atlas that combines nominal wavelength
+  coverage with source-linked velocity scales while separating on-sky evidence
+  from requirements, commissioning and subsystem calibration.
+- Added the atlas near the top of the public site and retained the explicit
+  warning that non-equivalent metrics are not an instrument ranking.
+- Marked the derived Earth–Sun analogue on the Keplerian detectability figure
+  and improved its scientific annotations.
+
 ## [0.17.0] - 2026-10-10
 
 - Added a source-linked explanation of cross-correlation, empirical-template and

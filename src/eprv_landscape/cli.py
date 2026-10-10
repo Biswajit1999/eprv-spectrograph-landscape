@@ -23,6 +23,7 @@ from .doppler_information import plot_information_experiment, run_information_ex
 from .plots import (
     plot_claim_context,
     plot_expres_paired_metrics,
+    plot_instrument_landscape,
     plot_keplerian_detectability,
     plot_resolution_coverage,
     plot_state_of_art_evidence,
@@ -60,6 +61,7 @@ def build_cmd(data_path: str, out_dir: str, claims_path: str) -> None:
     plot_claim_context(claims, figures / "reported_velocity_scales.png")
     plot_expres_paired_metrics(expres_metrics, figures / "expres_published_comparisons.png")
     plot_state_of_art_evidence(claims, figures / "state_of_art_evidence.png")
+    plot_instrument_landscape(df, claims, figures / "eprv_landscape_atlas.png")
     scenarios = pd.read_csv("data/detectability_scenarios.csv")
     plot_keplerian_detectability(scenarios, figures / "keplerian_detectability.png")
     information_results = run_information_experiment(
