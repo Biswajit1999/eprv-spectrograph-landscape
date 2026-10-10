@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.patches import Patch
 
-from .plot_style import INK, MUTED, PALETTE, save_figure, scientific_plot
+from .plot_style import GRID, INK, MUTED, PALETTE, save_figure, scientific_plot
 
 STATUS_COLOURS = {
     "operational": PALETTE["green"],
@@ -42,19 +42,39 @@ def _claim_family(context: str) -> str:
 @scientific_plot
 def plot_wavelength_coverage(df: pd.DataFrame, output: str | Path) -> None:
     ordered = df.sort_values(["wave_min_nm", "wave_max_nm"]).reset_index(drop=True)
-    fig, ax = plt.subplots(figsize=(10, 7))
+    marker_by_status = {
+        "operational": "o",
+        "operational_with_caveat": "P",
+        "commissioning": "D",
+        "planned": "^",
+        "offline": "X",
+        "legacy": "s",
+    }
+    fig, ax = plt.subplots(figsize=(10, 7.4))
     for index, row in ordered.iterrows():
-        ax.barh(index, row.wave_max_nm - row.wave_min_nm, left=row.wave_min_nm,
-                color=STATUS_COLOURS[row.status], edgecolor="white", linewidth=0.5)
+        colour = BAND_COLOURS[row.spectral_domain]
+        midpoint = math.sqrt(row.wave_min_nm * row.wave_max_nm)
+        ax.hlines(index, row.wave_min_nm, row.wave_max_nm, color=colour, linewidth=4.2)
+        ax.vlines([row.wave_min_nm, row.wave_max_nm], index - 0.12, index + 0.12,
+                  color=colour, linewidth=1.0)
+        ax.scatter(midpoint, index, marker=marker_by_status[row.status], s=42,
+                   color=STATUS_COLOURS[row.status], edgecolor="white", linewidth=0.7, zorder=3)
     ax.set_yticks(range(len(ordered)), ordered["instrument"])
-    ax.set_xlabel("Nominal simultaneous wavelength coverage (nm)")
-    ax.set_title("Spectral coverage and operational status")
+    ax.set_xscale("log")
+    ax.set_xlabel("Nominal simultaneous wavelength coverage (nm; logarithmic axis)")
     ax.grid(axis="x", which="major")
     ax.grid(axis="y", visible=False)
     ax.invert_yaxis()
-    statuses = list(dict.fromkeys(ordered["status"]))
-    ax.legend(handles=[Patch(facecolor=STATUS_COLOURS[s], label=s.replace("_", " ")) for s in statuses],
-              loc="lower right", frameon=False)
+    band_handles = [
+        plt.Line2D([0], [0], color=colour, lw=4, label=band.replace("_", " "))
+        for band, colour in BAND_COLOURS.items()
+    ]
+    status_handles = [
+        plt.Line2D([0], [0], marker=marker_by_status[status], linestyle="none",
+                   color=STATUS_COLOURS[status], markeredgecolor="white", label=status.replace("_", " "))
+        for status in dict.fromkeys(ordered["status"])
+    ]
+    ax.legend(handles=band_handles + status_handles, loc="lower right", ncol=2, frameon=False)
     fig.tight_layout()
     save_figure(fig, output)
 
@@ -62,18 +82,51 @@ def plot_wavelength_coverage(df: pd.DataFrame, output: str | Path) -> None:
 @scientific_plot
 def plot_resolution_coverage(df: pd.DataFrame, output: str | Path) -> None:
     fig, ax = plt.subplots(figsize=(10, 6))
+    label_positions = {
+        "PFS": (300, 124000),
+        "HARPS": (460, 122000),
+        "HARPS3": (390, 118000),
+        "HARPS-N": (285, 113500),
+        "NEID": (650, 114500),
+        "APF-Levy": (700, 108000),
+        "PARAS-2": (300, 109500),
+        "G-CLEF": (700, 104500),
+    }
     offsets = {
-        "HARPS-N": (8, -2), "HARPS3": (8, 8), "EXPRES": (8, 8),
-        "ESPRESSO": (8, -16), "ANDES": (8, 6),
+        "PFS": (8, 16), "HARPS": (44, -17), "HARPS-N": (8, -4),
+        "HARPS3": (8, 17), "EXPRES": (8, 10), "ESPRESSO": (8, -13),
+        "NEID": (12, 13), "APF-Levy": (16, -15), "PARAS-2": (8, 8),
+        "G-CLEF": (16, 10), "PARVI": (8, -10), "ANDES": (8, 8),
+        "KPF": (8, 8), "MAROON-X": (8, 8), "CARMENES": (8, 8),
+        "HPF": (8, -2), "SPIRou": (8, 8), "IRD": (8, 8),
+        "NIRPS": (8, 8), "SOPHIE+": (8, 8), "iSHELL": (-8, 8),
     }
     for row in df.itertuples():
-        ax.scatter(row.wave_max_nm - row.wave_min_nm, row.resolving_power,
+        x_value = row.wave_max_nm - row.wave_min_nm
+        if row.instrument == "HARPS-N":
+            x_value -= 7
+        elif row.instrument == "HARPS3":
+            x_value += 7
+        ax.scatter(x_value, row.resolving_power,
                    color=STATUS_COLOURS[row.status], edgecolor="white", linewidth=0.7, s=64)
-        ax.annotate(row.instrument, (row.wave_max_nm - row.wave_min_nm, row.resolving_power),
-                    xytext=offsets.get(row.instrument, (6, 6)), textcoords="offset points", fontsize=8)
+        if row.instrument in label_positions:
+            label_x, label_y = label_positions[row.instrument]
+            ax.annotate(
+                row.instrument,
+                (x_value, row.resolving_power),
+                xytext=(label_x, label_y),
+                textcoords="data",
+                ha="left",
+                va="center",
+                fontsize=7.7,
+                arrowprops={"arrowstyle": "-", "color": GRID, "lw": 0.65},
+            )
+        else:
+            ax.annotate(row.instrument, (x_value, row.resolving_power),
+                        xytext=offsets.get(row.instrument, (6, 6)),
+                        textcoords="offset points", fontsize=8)
     ax.set_xlabel("Nominal wavelength span (nm)")
     ax.set_ylabel("Representative resolving power, R")
-    ax.set_title("Resolution versus spectral grasp (not a performance ranking)")
     ax.grid(which="major")
     statuses = list(dict.fromkeys(df["status"]))
     ax.legend(handles=[Patch(facecolor=STATUS_COLOURS[s], label=s.replace("_", " ")) for s in statuses],
@@ -93,25 +146,31 @@ def plot_claim_context(claims: pd.DataFrame, output: str | Path) -> None:
         "Solar time series": PALETTE["sky"],
     }
     ordered = claims.sort_values("value_mps", ascending=False).reset_index(drop=True)
-    fig, ax = plt.subplots(figsize=(11, 9))
+    family_markers = {
+        "Design / requirement": "^",
+        "Subsystem calibration": "s",
+        "Commissioning": "D",
+        "On-sky stellar": "o",
+        "Solar time series": "*",
+    }
+    fig, ax = plt.subplots(figsize=(11, 9.2))
     families = ordered.measurement_context.map(_claim_family)
-    colours = [family_colours[value] for value in families]
-    ax.barh(ordered.index, ordered.value_mps, color=colours, edgecolor="white", linewidth=0.45)
+    for family in family_colours:
+        mask = families.eq(family)
+        frame = ordered.loc[mask]
+        ax.scatter(frame.value_mps, frame.index, color=family_colours[family],
+                   marker=family_markers[family], s=54 if family != "Solar time series" else 78,
+                   edgecolor="white", linewidth=0.7, zorder=3, label=family)
+        for row in frame.itertuples():
+            ax.annotate(f"{row.value_mps:g}", (row.value_mps, row.Index), xytext=(6, 0),
+                        textcoords="offset points", va="center", fontsize=7, color=MUTED)
     ax.set_yticks(ordered.index, ordered.instrument + " · " + ordered.metric.str.replace("_", " "))
     ax.set_xscale("log")
     ax.set_xlabel("Reported velocity scale (m/s, logarithmic axis)")
-    ax.set_title("Published numbers describe different experiments — not an instrument ranking")
     ax.grid(axis="x", which="both")
     ax.grid(axis="y", visible=False)
     ax.invert_yaxis()
-    ax.legend(
-        handles=[
-            Patch(facecolor=colour, edgecolor="none", label=family)
-            for family, colour in family_colours.items()
-        ],
-        loc="lower right",
-        ncol=2,
-    )
+    ax.legend(loc="lower right", ncol=2)
     fig.tight_layout()
     save_figure(fig, output)
 
@@ -134,8 +193,6 @@ def plot_expres_paired_metrics(metrics: pd.DataFrame, output: str | Path) -> Non
         axis.set_ylim(0, max(values) * 1.25)
         axis.grid(axis="y")
         axis.grid(axis="x", visible=False)
-    fig.suptitle("EXPRES before/after results within their original measurement contexts")
-    fig.supxlabel("These panels are not comparable instrument rankings")
     fig.tight_layout()
     save_figure(fig, output)
 
@@ -164,9 +221,8 @@ def plot_state_of_art_evidence(claims: pd.DataFrame, output: str | Path) -> None
         axis.grid(axis="y", visible=False)
     axes[0].set_xlabel("Reported scale (m/s; metrics remain non-equivalent)")
     axes[1].set_xlabel("Reported scale (m/s; not achieved unless source says so)")
-    fig.suptitle("Precision-RV evidence snapshot: measurement context before comparison")
     fig.text(0.5, 0.015, "Dashed: 1 m/s reference · dotted: 0.3 m/s reference", ha="center")
-    fig.tight_layout(rect=(0, 0.035, 1, 0.96))
+    fig.tight_layout(rect=(0, 0.035, 1, 1))
     save_figure(fig, output)
 
 
@@ -309,12 +365,11 @@ def plot_instrument_landscape(
     fig.legend(
         handles=band_handles + family_handles,
         loc="upper center",
-        bbox_to_anchor=(0.5, 0.94),
+        bbox_to_anchor=(0.5, 0.985),
         ncol=4,
         columnspacing=1.3,
         handletextpad=0.5,
     )
-    fig.suptitle("The EPRV landscape: wavelength grasp and published velocity scales", y=0.995)
     fig.text(
         0.5,
         0.012,
@@ -323,7 +378,7 @@ def plot_instrument_landscape(
         color=MUTED,
         fontsize=8,
     )
-    fig.tight_layout(rect=(0, 0.045, 1, 0.88), w_pad=2.0)
+    fig.tight_layout(rect=(0, 0.045, 1, 0.90), w_pad=2.0)
     save_figure(fig, output)
 
 
@@ -369,7 +424,6 @@ def plot_keplerian_detectability(scenarios: pd.DataFrame, output: str | Path) ->
     ax.set_xlim(min(periods), max(periods))
     ax.set_xlabel("Orbital period, P (days)")
     ax.set_ylabel("Ideal Keplerian semi-amplitude, K (m/s)")
-    ax.set_title("Why sub-m/s radial velocities matter")
     ax.grid(which="both")
     ax.legend(frameon=False, loc="lower left")
     fig.text(0.5, 0.01, "Circular, edge-on examples; stellar variability, cadence and instrument systematics are not included.", ha="center")

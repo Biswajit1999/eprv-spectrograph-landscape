@@ -1,9 +1,9 @@
-# Precision Radial-Velocity Spectrograph Reading Guide
+# Precision Radial-Velocity Spectrograph Literature Atlas
 
 [![CI](https://github.com/Biswajit1999/eprv-spectrograph-landscape/actions/workflows/ci.yml/badge.svg)](https://github.com/Biswajit1999/eprv-spectrograph-landscape/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-My source-linked reading guide to precision radial-velocity spectrographs: where
+My source-linked literature atlas of precision radial-velocity spectrographs: where
 physical instruments are deployed, what their papers measure, their dated status,
 which problems remain, and which bounded questions could support later analysis.
 
@@ -19,10 +19,10 @@ residuals are different quantities. The data model keeps them separate.
   and partially verified rows visibly separated.
 - **21 performance-core records** spanning operational, caveated, offline,
   commissioning, legacy and planned systems.
-- **22 quantitative claim records**, each with a metric, sample, baseline,
+- **22 source-linked numerical records**, each with a metric, sample, baseline,
   caveat, source and access date.
 - A literature-based [scientific report](docs/REPORT.md), explicit
-  [inclusion protocol](docs/METHODS.md) and [claim ledger](docs/CLAIMS.md).
+  [selection and scope method](docs/METHODS.md) and [measurement register](docs/CLAIMS.md).
 - Eight original figures generated only from committed CSV data and styled with
   SciencePlots, including a context-separated EPRV landscape atlas and an ideal
   Keplerian signal-scale plot.
@@ -72,8 +72,8 @@ residuals are different quantities. The data model keeps them separate.
 
 The 21-instrument performance core uses Burt, Dumusque & Halverson's 2026 review
 as its principal frame, with planned and regional additions clearly labelled.
-It contains 22 claims because EXPRES has distinct calibration and on-sky rows. This is a
-structured reading set, not a claim to enumerate every astronomical echelle or
+It contains 22 numerical records because EXPRES has distinct calibration and on-sky rows. This is a
+structured reading set, not an attempt to enumerate every astronomical echelle or
 every observing mode ever built. The broader directory is stored separately in
 `data/census_registry.jsonl`; unresolved fields are part of each record rather
 than hidden.
@@ -139,7 +139,7 @@ the result is the measured interaction between resolving power and line width.
 - The project is independent and not endorsed by a listed facility or team.
 - It has not been formally validated by every principal investigator or
   instrument team; sourced corrections are explicitly invited.
-- Future analysis questions are not completed research, publication claims, or
+- Future analysis questions are not completed research, publication results, or
   statements about a facility's priorities.
 
 Code is MIT licensed. Bibliographic metadata and factual specifications remain

@@ -308,7 +308,6 @@ def plot_information_experiment(results: pd.DataFrame, output: str | Path) -> No
             )
     ax.set_xlabel("Resolving power, R")
     ax.set_ylabel("Idealized local RV uncertainty (m/s)")
-    ax.set_title("Photon-limited information depends jointly on resolution and line width")
     ax.grid(which="major")
     ax.grid(which="minor", alpha=0.3)
     ax.legend(frameon=False)

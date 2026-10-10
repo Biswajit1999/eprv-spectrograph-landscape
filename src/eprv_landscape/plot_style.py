@@ -9,17 +9,17 @@ from typing import Any, TypeVar, cast
 import matplotlib.pyplot as plt
 import scienceplots  # noqa: F401  # Registers the SciencePlots style sheets.
 
-INK = "#102a43"
-MUTED = "#627d98"
-GRID = "#d9e2ec"
+INK = "#202621"
+MUTED = "#62685f"
+GRID = "#ded8cc"
 PALETTE = {
-    "blue": "#0072B2",
-    "sky": "#56B4E9",
-    "green": "#009E73",
-    "orange": "#E69F00",
-    "vermilion": "#D55E00",
-    "purple": "#CC79A7",
-    "grey": "#7B8794",
+    "blue": "#236B73",
+    "sky": "#6E9E9A",
+    "green": "#5F7250",
+    "orange": "#B57B2A",
+    "vermilion": "#A64B36",
+    "purple": "#76658A",
+    "grey": "#7A7D75",
     "navy": INK,
 }
 
@@ -36,8 +36,8 @@ def scientific_plot(function: PlotFunction) -> PlotFunction:
                 "axes.edgecolor": INK,
                 "axes.labelcolor": INK,
                 "axes.titlecolor": INK,
-                "axes.titlesize": 13,
-                "axes.titleweight": "bold",
+                "axes.titlesize": 11,
+                "axes.titleweight": "normal",
                 "axes.labelsize": 10,
                 "axes.linewidth": 0.8,
                 "axes.grid": True,
@@ -46,7 +46,7 @@ def scientific_plot(function: PlotFunction) -> PlotFunction:
                 "grid.linewidth": 0.55,
                 "grid.alpha": 0.75,
                 "font.family": "DejaVu Sans",
-                "font.size": 9,
+                "font.size": 9.5,
                 "legend.fontsize": 8,
                 "legend.frameon": False,
                 "lines.linewidth": 2.0,

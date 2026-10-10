@@ -248,7 +248,7 @@ def test_website_uses_natural_earth_geometry_not_schematic_shapes():
     assert "Natural Earth 1:110 million" in html
     assert 'id="map-countries"' in html
     assert "@cublya/world-atlas/countries-110m.json" in script
-    assert "geoEquirectangular" in script
+    assert "geoNaturalEarth1" in script
     assert "M44 112 92 78" not in html
     assert "@cublya/world-atlas" in package["dependencies"]
 
@@ -261,9 +261,9 @@ def test_site_frames_the_work_as_an_independent_literature_synthesis():
     assert "has not been formally validated by every principal investigator" in html
     assert "Independent literature synthesis by Biswajit Jana" in html
     assert "Independent research software" not in html
-    assert "Many hours of design, integration, testing and analysis" in script
-    assert "earlier EXOhSPEC designs, prototypes and subsystem experiments" in script
-    assert "intended for a future publication" in script
+    assert "EXOhSPEC is the practical origin of this literature study" in script
+    assert "earlier designs, prototypes and subsystem experiments" in script
+    assert "do not validate the present instrument configuration" in script
 
 
 def test_site_explains_extraction_validation_and_claim_counts():
@@ -272,7 +272,7 @@ def test_site_explains_extraction_validation_and_claim_counts():
     assert "Cross-correlation function" in html
     assert "Template matching and forward models" in html
     assert "Why solar feeds matter" in html
-    assert "21 instruments and 22 quantitative claims" in html
+    assert "21 instruments and 22 source-linked numerical records" in html
     assert "effectively infinite signal-to-noise and perfect detector sampling" in html
 
 
@@ -294,3 +294,15 @@ def test_every_site_image_has_descriptive_alt_text():
         match = re.search(r'alt="([^"]+)"', tag)
         assert match, tag
         assert len(match.group(1).strip()) >= 30, tag
+
+
+def test_site_exposes_paper_notes_map_detail_and_full_resolution_figures():
+    html = Path("website/index.html").read_text(encoding="utf-8")
+    script = Path("website/src/main.js").read_text(encoding="utf-8")
+    assert "Precision RV Spectrograph Literature Atlas" in html
+    assert 'id="map-detail"' in html
+    assert 'id="figure-dialog"' in html
+    assert html.count('class="figure-open"') == 8
+    assert "Paper-by-Paper" in script
+    assert "Author's Next Check" in script
+    assert "Questions, Results and Remaining Tests" in script

@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.19.0] - 2026-10-10
+
+- Replaced the previous blue-and-white interface with a warm scientific-editorial
+  identity built around archival paper, charcoal, copper and restrained teal.
+- Rebuilt instrument profiles around paper-by-paper questions, reported results,
+  unresolved limitations and clearly labelled author-proposed next checks.
+- Upgraded the observatory map to a Natural Earth projection with scaled,
+  selectable facility markers and source-linked instrument details.
+- Added an accessible full-resolution figure viewer and removed redundant titles
+  from generated plots in favour of explanatory website captions.
+- Reworked wavelength coverage as an interval plot and velocity evidence as a
+  context-coded dot plot rather than a leaderboard-like bar chart.
+
 ## [0.18.0] - 2026-10-10
 
 - Rebuilt all repository-native plots with a shared SciencePlots publication
