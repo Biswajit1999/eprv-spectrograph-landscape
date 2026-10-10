@@ -155,10 +155,10 @@ def plot_claim_context(claims: pd.DataFrame, output: str | Path) -> None:
     }
     fig, ax = plt.subplots(figsize=(11, 9.2))
     families = ordered.measurement_context.map(_claim_family)
-    for family in family_colours:
+    for family, colour in family_colours.items():
         mask = families.eq(family)
         frame = ordered.loc[mask]
-        ax.scatter(frame.value_mps, frame.index, color=family_colours[family],
+        ax.scatter(frame.value_mps, frame.index, color=colour,
                    marker=family_markers[family], s=54 if family != "Solar time series" else 78,
                    edgecolor="white", linewidth=0.7, zorder=3, label=family)
         for row in frame.itertuples():
