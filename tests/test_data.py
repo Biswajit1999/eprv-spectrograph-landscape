@@ -303,6 +303,10 @@ def test_site_exposes_paper_notes_map_detail_and_full_resolution_figures():
     assert 'id="map-detail"' in html
     assert 'id="figure-dialog"' in html
     assert html.count('class="figure-open"') == 8
+    assert 'id="paper-count"' in html
+    assert 'class="mobile-navigation"' in html
     assert "Paper-by-Paper" in script
-    assert "Author's Next Check" in script
+    assert "Author's Proposed Follow-up" in script
+    assert "Source trail summary" in script
+    assert "reviewed ${esc(paper.reviewed_on)}" in script
     assert "Questions, Results and Remaining Tests" in script

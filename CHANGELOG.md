@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.20.0] - 2026-10-11
+
+- Made the 241-paper and technical-source reading set a visible headline
+  statistic alongside the instrument, facility and measurement counts.
+- Added source-trail summaries to every instrument note, separating research
+  studies, technical or commissioning material and official records.
+- Reworked every author-proposed follow-up so that it identifies the source
+  year and evidence type, preserves the paper's comparison boundary and states
+  a test appropriate to the unresolved limitation.
+- Added an accessible mobile navigation menu instead of removing navigation at
+  tablet and phone widths.
+- Added source host and review-date metadata to every paper-level note.
+
 ## [0.19.0] - 2026-10-10
 
 - Replaced the previous blue-and-white interface with a warm scientific-editorial

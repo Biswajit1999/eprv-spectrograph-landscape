@@ -37,6 +37,9 @@ residuals are different quantities. The data model keeps them separate.
 - An accessible, filterable [research website](website/) with source-linked
   instrument profiles, a Natural Earth location map and nine extended challenge
   explainers.
+- Source-trail summaries and paper-by-paper research notes for 241 selected
+  papers, technical reports and official records, including dated review
+  metadata and explicitly bounded author-proposed follow-ups.
 - A notebook-style visual explainer of the RV exoplanet-detection chain, from
   stellar wobble through a fibre-fed echelle spectrum to a periodic
   radial-velocity curve.

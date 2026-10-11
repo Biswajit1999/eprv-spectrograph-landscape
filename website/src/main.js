@@ -108,6 +108,12 @@ function setupFigureViewer(){
   dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog();});
 }
 
+function setupMobileNavigation(){
+  const menu=document.querySelector('.mobile-navigation');
+  if(!menu)return;
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.open=false;}));
+}
+
 async function fetchText(path){
   const response=await fetch(path);
   if(!response.ok) throw new Error(`${path} unavailable`);
@@ -118,6 +124,7 @@ async function main(){
   renderBaseMap();
   setupDopplerLab();
   setupFigureViewer();
+  setupMobileNavigation();
   const paperFiles=['exohspec','expres','harps','espresso','harpsn','neid','kpf','maroonx','carmenes','hpf','spirou','nirps','pfs','sophie','apf','ishell','ird','parvi','paras2','harps3','andes','gclef','hires','uves','chiron','fies','ghost','veloce','hermes','ucles','espadons','tres','igrins','coralie','feros','fideos','pepsi','hds','boes','cafe','ces','coravel','het_hrs','hamilton','tull','elodie','hides','nres','paras','salt_hrs'];
   const [instrumentText,claimText,censusText,facilityText,challengeText,dossierText,paperTexts,beginnerText]=await Promise.all([
     fetchText('./data/instruments.csv'),
@@ -136,6 +143,7 @@ async function main(){
   const dossiersById=new Map(dossiers.map(item=>[item.instrument_id,item]));
   const facilitiesById=new Map(facilities.map(item=>[item.facility_id,item]));
   document.querySelector('#census-count').textContent=census.length;
+  document.querySelector('#paper-count').textContent=papers.length;
   document.querySelector('#claim-count').textContent=claims.length;
   document.querySelector('#facility-count').textContent=new Set(census.map(d=>d.facility_id)).size;
   document.querySelector('#verified-count').textContent=census.filter(d=>d.verification_state==='verified').length;
@@ -185,25 +193,38 @@ async function main(){
     if(matchingClaims(item).length)return {label:'Numbers from published studies',className:'quantitative'};
     return {label:'Source-linked instrument note',className:'source'};
   }
+  function sourceFamily(paper){
+    const type=paper.paper_type.toLowerCase();
+    if(/official|status|schedule|roster|instrument page|archive documentation|observer manual/.test(type))return 'Official record';
+    if(/paper|study|analysis|method|science|data release|reanalysis|preprint|discovery/.test(type))return 'Research paper or study';
+    return 'Technical, design or commissioning source';
+  }
+  function sourceHost(url){
+    try{return new URL(url).hostname.replace(/^www\./,'');}catch{return 'linked source';}
+  }
   function proposedNextCheck(paper,project,index){
     const text=`${paper.what_was_studied} ${paper.remaining_question}`.toLowerCase();
-    if(/not been built|requirement|design study|future milestone|construction/.test(text))return 'Compare the published requirement with a dated as-built acceptance or commissioning measurement using the same metric and configuration.';
-    if(/status|availability|available|operat|decommission|first light/.test(text))return 'Locate a dated observatory operations record and separate physical installation, commissioning, offered availability and routine science use.';
-    if(/internal uncertainty|formal uncertainty|rms|scatter|different quantities|sample/.test(text))return 'Report formal uncertainty, repeatability and residual RMS side by side for a common target set and an explicitly stated time baseline.';
-    if(/calibrat|wavelength|drift|comb|etalon|metalon/.test(text))return 'Test whether the calibration diagnostic predicts held-out stellar or solar velocities across nights, instrument states and maintenance eras.';
-    if(/activity|line shape|planet|kepler|stellar signal/.test(text))return 'Use time-blocked validation and injected Keplerian signals to measure correction bias, signal recovery and false positives.';
-    if(/fibre|fiber|modal|illumination|scrambl|throughput/.test(text))return 'Measure stability and throughput together across illumination, fibre and agitation states so that a gain in one quantity does not hide a loss in another.';
-    if(/pipeline|template|reduction|algorithm|method/.test(text))return 'Freeze the software and calibration inputs, then compare methods on the same exposures with blinded or held-out epochs.';
-    if(/telluric|atmospher|water|airmass/.test(text))return 'Compare masking and forward modelling on matched spectra spanning airmass and water-vapour conditions, with wavelength-dependent residuals reported.';
-    if(/long-term|year|era|maintenance|temperature|thermal/.test(text))return 'Define instrument eras before fitting and validate on complete held-out time blocks that include maintenance or environmental transitions.';
-    return project?.steps?.[index%project.steps.length]||'Reproduce the reported number from identified data and configuration records before extending the analysis.';
+    const frame=`For the ${paper.year} ${editorialText(paper.paper_type).toLowerCase()}, `;
+    if(/not been built|requirement|design study|future milestone|construction/.test(text))return `${frame}compare the stated requirement with a dated as-built acceptance or commissioning measurement using the same metric, spectral mode and configuration.`;
+    if(/status|availability|available|operat|decommission|first light/.test(text))return `${frame}resolve the chronology with a dated observatory operations record, separating physical installation, commissioning, offered availability and routine science use.`;
+    if(/internal uncertainty|formal uncertainty|rms|scatter|different quantities|sample/.test(text))return `${frame}report formal uncertainty, repeatability and residual RMS side by side for the stated target set and an explicit time baseline.`;
+    if(/calibrat|wavelength|drift|comb|etalon|metalon/.test(text))return `${frame}test whether the reported calibration diagnostic predicts held-out stellar or solar velocities across nights, instrument states and maintenance eras.`;
+    if(/activity|line shape|planet|kepler|stellar signal/.test(text))return `${frame}use time-blocked validation and injected Keplerian signals to measure correction bias, signal recovery and false-positive behaviour on the stated sample.`;
+    if(/fibre|fiber|modal|illumination|scrambl|throughput/.test(text))return `${frame}measure stability and throughput together across the reported illumination, fibre and agitation states so that improvement in one quantity does not hide loss in another.`;
+    if(/pipeline|template|reduction|algorithm|method/.test(text))return `${frame}freeze the software and calibration inputs, then compare methods on identical exposures with blinded or held-out epochs.`;
+    if(/telluric|atmospher|water|airmass/.test(text))return `${frame}compare masking and forward modelling on matched spectra spanning airmass and water-vapour conditions, reporting wavelength-dependent residuals.`;
+    if(/long-term|year|era|maintenance|temperature|thermal/.test(text))return `${frame}define instrument eras before fitting and validate on complete held-out time blocks that include the relevant maintenance or environmental transitions.`;
+    const extension=project?.steps?.[index%project.steps.length]||'reproduce the reported result from identified data and configuration records before extending the analysis';
+    return `${frame}${extension.charAt(0).toLowerCase()}${extension.slice(1).replace(/[.]$/,'')}. Preserve the paper's stated sample, metric and configuration as the comparison boundary.`;
   }
   function renderDossier(dossier){
     if(!dossier)return '';
     const selected=papers.filter(paper=>dossier.paper_ids.includes(paper.paper_id));
     const project=dossier.future_analysis;
     const text=value=>esc(editorialText(value));
-    return `<section class="dossier-block"><div class="dossier-label">Research note · ${esc(dossier.paper_count)} sources · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${text(dossier.title)}</h3><p class="dossier-summary">${text(dossier.short_summary)}</p><p class="reading-boundary"><b>Scope:</b> ${text(dossier.reading_boundary)}</p><div class="latest-reading"><span class="eyebrow">Latest Source</span><h4>What changes in the current picture?</h4><p>${text(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the latest primary or official source</a></div><h4>Cross-Paper Synthesis</h4><ol class="synthesis-list">${dossier.lessons.map(item=>`<li>${text(item)}</li>`).join('')}</ol><div class="paper-section-head"><div><span class="eyebrow">Paper-by-Paper</span><h4>Questions, Results and Remaining Tests</h4></div><p>Each note separates the team's published result from my proposed next check.</p></div><div class="paper-list">${selected.map((paper,index)=>`<details class="paper-note" ${index===0?'open':''}><summary><span>${esc(paper.year)} · ${text(paper.paper_type)}</span><strong>${text(paper.title)}</strong><small>${text(paper.authors)}</small></summary><div class="paper-qa"><section><h5>Question Addressed</h5><p>${text(paper.what_was_studied)}</p></section><section><h5>What the Team Reported</h5><p>${text(paper.numerical_result)}</p></section><section><h5>What Remains Unresolved</h5><p>${text(paper.remaining_question)}</p></section><section class="author-check"><h5>Author's Next Check</h5><p>${text(proposedNextCheck(paper,project,index))}</p><small>Interpretation by Biswajit Jana; not an endorsed recommendation from the paper's authors or instrument team.</small></section><a href="${esc(paper.source_url)}" rel="noreferrer">Open Primary or Official Source</a></div></details>`).join('')}</div><div class="project-note"><span class="dossier-label">Proposed Research Extension</span><h4>${text(project.title)}</h4><p><b>Research question:</b> ${text(project.question)}</p><p>${text(project.basis)}</p><p class="reading-boundary"><b>Status:</b> ${text(project.status)}.</p><h5>Tests That Would Make the Result Stronger</h5><ol>${project.steps.map(item=>`<li>${text(item)}</li>`).join('')}</ol></div></section>`;
+    const sourceCounts=selected.reduce((counts,paper)=>{const family=sourceFamily(paper);counts[family]=(counts[family]||0)+1;return counts;},{});
+    const sourceTrail=Object.entries(sourceCounts).map(([label,count])=>`<span><b>${count}</b> ${esc(label)}</span>`).join('');
+    return `<section class="dossier-block"><div class="dossier-label">Research note · ${esc(dossier.paper_count)} sources · reviewed through ${esc(dossier.reviewed_through)}</div><h3>${text(dossier.title)}</h3><p class="dossier-summary">${text(dossier.short_summary)}</p><p class="reading-boundary"><b>Scope:</b> ${text(dossier.reading_boundary)}</p><div class="source-trail" aria-label="Source trail summary">${sourceTrail}</div><div class="latest-reading"><span class="eyebrow">Latest Source</span><h4>What changes in the current picture?</h4><p>${text(dossier.latest_problem)}</p><a href="${esc(dossier.latest_problem_source)}" rel="noreferrer">Read the latest primary or official source</a></div><h4>Cross-Paper Synthesis</h4><ol class="synthesis-list">${dossier.lessons.map(item=>`<li>${text(item)}</li>`).join('')}</ol><div class="paper-section-head"><div><span class="eyebrow">Paper-by-Paper</span><h4>Questions, Results and Remaining Tests</h4></div><p>Each note separates the team's published result from a source-specific follow-up proposed by this synthesis.</p></div><div class="paper-list">${selected.map((paper,index)=>`<details class="paper-note" ${index===0?'open':''}><summary><span>${esc(paper.year)} · ${text(paper.paper_type)}</span><strong>${text(paper.title)}</strong><small>${text(paper.authors)}</small></summary><div class="paper-qa"><section><h5>Question Addressed</h5><p>${text(paper.what_was_studied)}</p></section><section><h5>What the Team Reported</h5><p>${text(paper.numerical_result)}</p></section><section><h5>What Remains Unresolved</h5><p>${text(paper.remaining_question)}</p></section><section class="author-check"><h5>Author's Proposed Follow-up</h5><p>${text(proposedNextCheck(paper,project,index))}</p><small>Interpretation by Biswajit Jana; not an endorsed recommendation from the paper's authors or instrument team.</small></section><div class="paper-source"><span>${esc(sourceFamily(paper))} · ${esc(sourceHost(paper.source_url))} · reviewed ${esc(paper.reviewed_on)}</span><a href="${esc(paper.source_url)}" rel="noreferrer">Open Primary or Official Source</a></div></div></details>`).join('')}</div><div class="project-note"><span class="dossier-label">Proposed Research Extension</span><h4>${text(project.title)}</h4><p><b>Research question:</b> ${text(project.question)}</p><p>${text(project.basis)}</p><p class="reading-boundary"><b>Status:</b> ${text(project.status)}.</p><h5>Tests That Would Make the Result Stronger</h5><ol>${project.steps.map(item=>`<li>${text(item)}</li>`).join('')}</ol></div></section>`;
   }
   function openProfile(id,updateHistory=true){
     const item=census.find(row=>row.instrument_id===id); if(!item)return;
