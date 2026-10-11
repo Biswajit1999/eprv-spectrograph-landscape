@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.21.0] - 2026-10-11
+
+- Added a compact author identity to the desktop header with a direct link to
+  Biswajit Jana's academic portfolio and a matching mobile-menu destination.
+- Replaced the minimal two-line page ending with a structured author footer
+  linking the academic portfolio, GitHub, LinkedIn, ORCID, project repository,
+  methods and correction route.
+- Removed the generic content-check date from the header and footer while
+  retaining source-specific review dates inside the research notes.
+
 ## [0.20.0] - 2026-10-11
 
 - Made the 241-paper and technical-source reading set a visible headline

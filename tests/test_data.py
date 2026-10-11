@@ -259,7 +259,13 @@ def test_site_frames_the_work_as_an_independent_literature_synthesis():
 
     assert "literature review while working on the EXOhSPEC testbed" in html
     assert "has not been formally validated by every principal investigator" in html
-    assert "Independent literature synthesis by Biswajit Jana" in html
+    assert "Independent literature synthesis" in html
+    assert "Visit Academic Portfolio" in html
+    assert "https://github.com/Biswajit1999" in html
+    assert "https://www.linkedin.com/in/biswajit-jana-27011a151/" in html
+    assert "https://orcid.org/0009-0002-2411-1891" in html
+    assert "Content checked through" not in html
+    assert "Updated 10 October 2026" not in html
     assert "Independent research software" not in html
     assert "EXOhSPEC is the practical origin of this literature study" in script
     assert "earlier designs, prototypes and subsystem experiments" in script

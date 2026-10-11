@@ -20,15 +20,18 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Precision RV Spectrograph Literature Atlas home"><span class="brand-mark" aria-hidden="true">RV</span><span class="brand-name">Spectrograph Literature Atlas</span></a>
+      <div class="site-identity">
+        <a class="brand" href="#top" aria-label="Precision RV Spectrograph Literature Atlas home"><span class="brand-mark" aria-hidden="true">RV</span><span class="brand-name">Spectrograph Literature Atlas</span></a>
+        <a class="author-link" href="https://biswajit1999.github.io/Biswajit_Jana.github.io/" target="_blank" rel="me noreferrer" aria-label="Visit Biswajit Jana's academic portfolio"><span>Curated by</span><strong>Biswajit Jana</strong></a>
+      </div>
       <nav aria-label="Primary"><a href="#current-focus">EXOhSPEC</a><a href="#learn">Measurement</a><a href="#map">Observatories</a><a href="#census">Instruments</a><a href="#dossiers">Research Notes</a><a href="#figures">Figures</a><a href="#method">Methods</a></nav>
-      <details class="mobile-navigation"><summary>Explore</summary><nav aria-label="Mobile primary"><a href="#current-focus">EXOhSPEC</a><a href="#learn">Measurement</a><a href="#map">Observatories</a><a href="#census">Instruments</a><a href="#dossiers">Research Notes</a><a href="#figures">Figures</a><a href="#method">Methods</a></nav></details>
+      <details class="mobile-navigation"><summary>Explore</summary><nav aria-label="Mobile primary"><a href="#current-focus">EXOhSPEC</a><a href="#learn">Measurement</a><a href="#map">Observatories</a><a href="#census">Instruments</a><a href="#dossiers">Research Notes</a><a href="#figures">Figures</a><a href="#method">Methods</a><a href="https://biswajit1999.github.io/Biswajit_Jana.github.io/" target="_blank" rel="me noreferrer">About Biswajit Jana ↗</a></nav></details>
     </header>
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-layout">
           <div class="hero-copy">
-            <div class="kicker">Independent Literature Synthesis · Updated 10 October 2026</div>
+            <div class="kicker">Independent Literature Synthesis · Precision Spectroscopy</div>
             <h1>Precision RV Spectrograph Literature Atlas</h1>
             <p class="lede">A paper-by-paper account of optical and near-infrared Doppler instruments: how each system is configured, what its authors tested, what the measurements establish, what remains difficult, and which next checks may be useful.</p>
             <aside class="research-note" aria-labelledby="research-note-title">
@@ -206,7 +209,28 @@
     </main>
     <dialog id="instrument-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><span class="eyebrow">Instrument Research Note</span><button id="dialog-close" type="button" aria-label="Close instrument research note">Close</button></div><div id="dialog-content"></div></dialog>
     <dialog id="figure-dialog" class="figure-dialog" aria-labelledby="figure-dialog-title"><div class="dialog-head"><span class="eyebrow" id="figure-dialog-title">Full-Resolution Figure</span><div class="figure-dialog-actions"><button id="figure-size" type="button" aria-pressed="false">View at 100%</button><button id="figure-close" type="button">Close</button></div></div><div class="figure-dialog-body"><img id="figure-dialog-image" alt="Full-resolution scientific figure selected from the literature atlas" /><p id="figure-dialog-caption"></p></div></dialog>
-    <footer><p>Independent literature synthesis by Biswajit Jana. No observatory, consortium or instrument-team endorsement is implied.</p><p>Content checked through 10 October 2026 · External facts remain attributed to their cited sources · Website code: MIT</p></footer>
+    <footer id="about-author" class="site-footer">
+      <div class="footer-author">
+        <span class="eyebrow">About the Author</span>
+        <h2>Biswajit Jana</h2>
+        <p>Astrophysics and instrumentation researcher working across precision spectroscopy, scientific computing, electronics and experimental measurement.</p>
+        <a class="footer-primary-link" href="https://biswajit1999.github.io/Biswajit_Jana.github.io/" target="_blank" rel="me noreferrer">Visit Academic Portfolio <span aria-hidden="true">↗</span></a>
+      </div>
+      <nav class="footer-column" aria-label="Author profiles">
+        <h3>Research Profiles</h3>
+        <a href="https://github.com/Biswajit1999" target="_blank" rel="me noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/biswajit-jana-27011a151/" target="_blank" rel="me noreferrer">LinkedIn</a>
+        <a href="https://orcid.org/0009-0002-2411-1891" target="_blank" rel="me noreferrer">ORCID</a>
+      </nav>
+      <nav class="footer-column" aria-label="Project links">
+        <h3>Atlas</h3>
+        <a href="#top">Return to Top</a>
+        <a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape" target="_blank" rel="noreferrer">Project Repository</a>
+        <a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/blob/main/docs/METHODS.md" target="_blank" rel="noreferrer">Methods and Scope</a>
+        <a href="https://github.com/Biswajit1999/eprv-spectrograph-landscape/issues/new?template=instrument-team-correction.yml" target="_blank" rel="noreferrer">Suggest a Correction</a>
+      </nav>
+      <div class="footer-meta"><p>Independent literature synthesis. No observatory, consortium or instrument-team endorsement is implied.</p><p>Biswajit Jana · External facts remain attributed to their cited sources · Website code released under the MIT License.</p></div>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
