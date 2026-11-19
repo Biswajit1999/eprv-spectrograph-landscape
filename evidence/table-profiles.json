@@ -1,0 +1,1038 @@
+{
+  "schema": 1,
+  "project": "Precision Radial-Velocity Spectrograph Literature Atlas",
+  "tables": [
+    {
+      "path": "data/andes_papers.csv",
+      "label": "Andes papers",
+      "role": "Data and provenance",
+      "rows": 4,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 2024.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/apf_papers.csv",
+      "label": "Apf papers",
+      "role": "Data and provenance",
+      "rows": 4,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 2014.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/boes_papers.csv",
+      "label": "Boes papers",
+      "role": "Data and provenance",
+      "rows": 3,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 3,
+          "nonfinite": 0,
+          "minimum": 2007.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/cafe_papers.csv",
+      "label": "Cafe papers",
+      "role": "Data and provenance",
+      "rows": 3,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 3,
+          "nonfinite": 0,
+          "minimum": 2013.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/carmenes_papers.csv",
+      "label": "Carmenes papers",
+      "role": "Data and provenance",
+      "rows": 7,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 7,
+          "nonfinite": 0,
+          "minimum": 2016.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 7,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/ces_papers.csv",
+      "label": "Ces papers",
+      "role": "Data and provenance",
+      "rows": 3,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 3,
+          "nonfinite": 0,
+          "minimum": 1992.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 3,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/challenge_evidence.csv",
+      "label": "Challenge evidence",
+      "role": "Data and provenance",
+      "rows": 9,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "challenge",
+          "blank": 0,
+          "text": 9,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "physical_origin",
+          "blank": 0,
+          "text": 9,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "why_it_matters",
+          "blank": 0,
+          "text": 9,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "representative_mitigation",
+          "blank": 0,
+          "text": 9,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "residual_problem",
+          "blank": 0,
+          "text": 9,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "primary_source",
+          "blank": 0,
+          "text": 9,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/chiron_papers.csv",
+      "label": "Chiron papers",
+      "role": "Data and provenance",
+      "rows": 4,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 2010.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/coralie_papers.csv",
+      "label": "Coralie papers",
+      "role": "Data and provenance",
+      "rows": 4,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 2001.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "data/coravel_papers.csv",
+      "label": "Coravel papers",
+      "role": "Data and provenance",
+      "rows": 4,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "paper_id",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "year",
+          "blank": 0,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 1979.0,
+          "maximum": 2026.0
+        },
+        {
+          "name": "title",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "authors",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "paper_type",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "what_was_studied",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "numerical_result",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "remaining_question",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "source_url",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "reviewed_on",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "path": "results/claim_context_summary.csv",
+      "label": "Claim context summary",
+      "role": "Tables and numerical results",
+      "rows": 17,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "measurement_context",
+          "blank": 0,
+          "text": 17,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "n_claims",
+          "blank": 0,
+          "text": 0,
+          "finite": 17,
+          "nonfinite": 0,
+          "minimum": 1.0,
+          "maximum": 3.0
+        }
+      ]
+    },
+    {
+      "path": "results/doppler_information_experiment.csv",
+      "label": "Doppler information experiment",
+      "role": "Tables and numerical results",
+      "rows": 15,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "scenario_id",
+          "blank": 0,
+          "text": 15,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "resolving_power",
+          "blank": 0,
+          "text": 0,
+          "finite": 15,
+          "nonfinite": 0,
+          "minimum": 50000.0,
+          "maximum": 200000.0
+        },
+        {
+          "name": "intrinsic_sigma_kms",
+          "blank": 0,
+          "text": 0,
+          "finite": 15,
+          "nonfinite": 0,
+          "minimum": 1.0,
+          "maximum": 5.0
+        },
+        {
+          "name": "continuum_photons_per_bin",
+          "blank": 0,
+          "text": 0,
+          "finite": 15,
+          "nonfinite": 0,
+          "minimum": 50000.0,
+          "maximum": 50000.0
+        },
+        {
+          "name": "read_noise_e",
+          "blank": 0,
+          "text": 0,
+          "finite": 15,
+          "nonfinite": 0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "photon_limit_mps",
+          "blank": 0,
+          "text": 0,
+          "finite": 15,
+          "nonfinite": 0,
+          "minimum": 1.2108847,
+          "maximum": 27.898203
+        },
+        {
+          "name": "monte_carlo_trials",
+          "blank": 0,
+          "text": 0,
+          "finite": 15,
+          "nonfinite": 0,
+          "minimum": 0.0,
+          "maximum": 1000.0
+        },
+        {
+          "name": "mc_bias_mps",
+          "blank": 11,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": -1.6264801,
+          "maximum": 0.011374332
+        },
+        {
+          "name": "mc_empirical_sigma_mps",
+          "blank": 11,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 2.2745022,
+          "maximum": 24.33347
+        },
+        {
+          "name": "mc_empirical_sigma_standard_error_mps",
+          "blank": 11,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 0.071926074,
+          "maximum": 0.76949187
+        },
+        {
+          "name": "mc_coverage_1sigma",
+          "blank": 11,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 0.697,
+          "maximum": 0.71
+        },
+        {
+          "name": "mc_coverage_standard_error",
+          "blank": 11,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 0.014751271,
+          "maximum": 0.014751271
+        }
+      ]
+    },
+    {
+      "path": "results/performance_evidence_summary.csv",
+      "label": "Performance evidence summary",
+      "role": "Tables and numerical results",
+      "rows": 4,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "performance_class",
+          "blank": 0,
+          "text": 4,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "n_instruments",
+          "blank": 0,
+          "text": 0,
+          "finite": 4,
+          "nonfinite": 0,
+          "minimum": 1.0,
+          "maximum": 14.0
+        }
+      ]
+    },
+    {
+      "path": "results/spectral_coverage_summary.csv",
+      "label": "Spectral coverage summary",
+      "role": "Tables and numerical results",
+      "rows": 21,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "instrument",
+          "blank": 0,
+          "text": 21,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "wave_min_nm",
+          "blank": 0,
+          "text": 0,
+          "finite": 21,
+          "nonfinite": 0,
+          "minimum": 350.0,
+          "maximum": 1200.0
+        },
+        {
+          "name": "wave_max_nm",
+          "blank": 0,
+          "text": 0,
+          "finite": 21,
+          "nonfinite": 0,
+          "minimum": 668.0,
+          "maximum": 5300.0
+        },
+        {
+          "name": "resolving_power",
+          "blank": 0,
+          "text": 0,
+          "finite": 21,
+          "nonfinite": 0,
+          "minimum": 55000.0,
+          "maximum": 140000.0
+        },
+        {
+          "name": "wavelength_span_nm",
+          "blank": 0,
+          "text": 0,
+          "finite": 21,
+          "nonfinite": 0,
+          "minimum": 280.0,
+          "maximum": 4200.0
+        },
+        {
+          "name": "wavelength_ratio",
+          "blank": 0,
+          "text": 0,
+          "finite": 21,
+          "nonfinite": 0,
+          "minimum": 1.5,
+          "maximum": 4.818181818181818
+        }
+      ]
+    },
+    {
+      "path": "results/status_summary.csv",
+      "label": "Status summary",
+      "role": "Tables and numerical results",
+      "rows": 6,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "status",
+          "blank": 0,
+          "text": 6,
+          "finite": 0,
+          "nonfinite": 0
+        },
+        {
+          "name": "n_instruments",
+          "blank": 0,
+          "text": 0,
+          "finite": 6,
+          "nonfinite": 0,
+          "minimum": 1.0,
+          "maximum": 15.0
+        }
+      ]
+    }
+  ],
+  "excluded": []
+}
