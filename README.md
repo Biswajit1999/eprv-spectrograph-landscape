@@ -151,3 +151,18 @@ Code is MIT licensed. Bibliographic metadata and factual specifications remain
 attributed to their primary papers and official facility pages. The map uses
 public-domain Natural Earth geography; dependency notices are recorded in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Research evidence and downloads
+
+- [Download the machine-readable table profiles](evidence/table-profiles.json) for 15 archived tables. Open `table-evidence.html` from the checkout for the coverage chart.
+- Start with [Claim context summary](results/claim_context_summary.csv), [Doppler information experiment](results/doppler_information_experiment.csv), [Performance evidence summary](results/performance_evidence_summary.csv).
+- [View Doppler information experiment](results/figures/doppler_information_experiment.png).
+
+Run these commands from the repository root to rebuild the published evidence.
+
+```sh
+python scripts/evidence_catalog.py
+python scripts/render_evidence_page.py
+python scripts/profile_evidence_tables.py
+python scripts/render_table_profiles.py
+```
