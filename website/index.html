@@ -226,6 +226,12 @@
       <section id="evidence" class="section shade">
         <div class="section-head"><div><span class="eyebrow">Read the number in context</span><h2>What did each number measure?</h2></div><p>Open a card to see its target, baseline, limitation and primary paper.</p></div>
         <div class="context-key"><span><i class="goal"></i>Goal or requirement</span><span><i class="cal"></i>Calibration</span><span><i class="sky"></i>On-sky result</span></div>
+        <div class="filters" role="search" aria-label="Filter published velocity evidence">
+          <label>Search evidence <input id="claim-search" type="search" placeholder="Instrument, target or context" /></label>
+          <label>Published metric <select id="claim-metric"><option value="">All metrics</option></select></label>
+        </div>
+        <p id="claim-result" class="result" aria-live="polite"></p>
+        <p><a href="./data/performance_claims.csv" download>Download all published evidence records as CSV</a></p>
         <div id="claim-grid" class="claim-grid"></div>
       </section>
       <section id="barriers" class="section">

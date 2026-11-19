@@ -259,7 +259,25 @@ async function main(){
   [search,statusSelect,bandSelect].forEach(el=>el.addEventListener('input',renderInstruments));renderInstruments();
 
   const cardClass=c=>c.measurement_context.includes('requirement')?'requirement':c.measurement_context.includes('calibration')?'calibration':'sky';
-  document.querySelector('#claim-grid').innerHTML=claims.map(c=>`<article class="claim ${cardClass(c)}"><header><h3>${esc(c.instrument)}</h3><span class="value">${esc(c.comparison==='upper_bound'?'< ':c.comparison==='approximately'?'≈ ':'')}${esc(c.value_mps)} m/s</span></header><p>${esc(editorialText(c.reported_result))}</p><p class="context">${esc(words(c.measurement_context))}</p><details><summary>Context and source</summary><dl><dt>Metric</dt><dd>${esc(words(c.metric))}</dd><dt>Sample</dt><dd>${esc(editorialText(c.target_or_sample))}</dd><dt>Baseline</dt><dd>${esc(editorialText(c.baseline))}</dd><dt>Limit</dt><dd>${esc(editorialText(c.caveat))}</dd></dl><a href="${esc(c.source_url)}" rel="noreferrer">Primary source</a></details></article>`).join('');
+  const claimSearch = document.querySelector('#claim-search');
+  const claimMetric = document.querySelector('#claim-metric');
+  [...new Set(claims.map(record => record.metric))].sort()
+    .forEach(metric => claimMetric.add(new Option(words(metric), metric)));
+  function renderClaims() {
+    const searchTerms = claimSearch.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    const selection = claims.filter(record => {
+      const haystack = [record.instrument, record.target_or_sample, words(record.measurement_context)]
+        .join(' ').toLowerCase();
+      return (!claimMetric.value || record.metric === claimMetric.value)
+        && searchTerms.every(term => haystack.includes(term));
+    });
+    document.querySelector('#claim-result').textContent =
+      `Showing ${selection.length} of ${claims.length} numerical evidence records`;
+    document.querySelector('#claim-grid').innerHTML=selection.map(c=>`<article class="claim ${cardClass(c)}"><header><h3>${esc(c.instrument)}</h3><span class="value">${esc(c.comparison==='upper_bound'?'< ':c.comparison==='approximately'?'≈ ':'')}${esc(c.value_mps)} m/s</span></header><p>${esc(editorialText(c.reported_result))}</p><p class="context">${esc(words(c.measurement_context))}</p><details><summary>Context and source</summary><dl><dt>Metric</dt><dd>${esc(words(c.metric))}</dd><dt>Sample</dt><dd>${esc(editorialText(c.target_or_sample))}</dd><dt>Baseline</dt><dd>${esc(editorialText(c.baseline))}</dd><dt>Limit</dt><dd>${esc(editorialText(c.caveat))}</dd></dl><a href="${esc(c.source_url)}" rel="noreferrer">Primary source</a></details></article>`).join('');
+  }
+  claimSearch.addEventListener('input', renderClaims);
+  claimMetric.addEventListener('change', renderClaims);
+  renderClaims();
 
   document.querySelector('#barrier-articles').innerHTML=challenges.map((item,index)=>`<article class="barrier-article" id="${esc(item.id)}"><header><span>${String(index+1).padStart(2,'0')}</span><div><h3>${esc(editorialText(item.title))}</h3><p>${esc(editorialText(item.question))}</p></div></header><div class="barrier-body"><section><h4>Physical mechanism</h4><p>${esc(editorialText(item.mechanism))}</p></section><section><h4>Published example</h4><p>${esc(editorialText(item.evidence))}</p></section><section><h4>Mitigation and remaining limit</h4><p>${esc(editorialText(item.mitigation))}</p><p><b>Residual:</b> ${esc(editorialText(item.residual))}</p></section><div class="source-links">${item.sources.map(source=>`<a href="${esc(source.url)}" rel="noreferrer">${esc(editorialText(source.label))}</a>`).join('')}</div></div></article>`).join('');
 
