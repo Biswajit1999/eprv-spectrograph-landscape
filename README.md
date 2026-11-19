@@ -9,6 +9,8 @@ which problems remain, and which bounded questions could support later analysis.
 
 **Public website:** https://biswajit1999.github.io/eprv-spectrograph-landscape/
 
+[Browse the numerical evidence by metric](https://biswajit1999.github.io/eprv-spectrograph-landscape/#evidence). You can filter the cards by the published metric, search by instrument or target, and open the original source with its baseline and caveat. [Download the complete evidence table](data/performance_claims.csv) for the underlying records.
+
 The repository does not calculate a “best instrument” score. Requirements,
 calibration residuals, internal uncertainties, stellar RMS and planet-fit
 residuals are different quantities. The data model keeps them separate.
