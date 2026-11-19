@@ -1,0 +1,863 @@
+{
+  "schema": 1,
+  "project": "Precision Radial-Velocity Spectrograph Literature Atlas",
+  "repository": "https://github.com/Biswajit1999/eprv-spectrograph-landscape",
+  "files": [
+    {
+      "label": "Andes papers",
+      "path": "data/andes_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1585,
+      "sha256": "aca6ffe3535a0fb517117657854bfb7e38575f5116b2fd515047baf4c7b6224c",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 4,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "AND-2024-OVERVIEW",
+          "2024",
+          "ANDES science goals project overview and future developments",
+          "Marconi et al.",
+          "project overview",
+          "Science cases, modular architecture and project phase",
+          "The baseline targets simultaneous 0.4 to 1.8 micrometre coverage at resolving power about 100000"
+        ],
+        [
+          "AND-2024-RIZ",
+          "2024",
+          "ANDES RIZ spectrograph preliminary design",
+          "Genoni et al.",
+          "design study",
+          "Visible RIZ module at preliminary-design stage",
+          "The paper documents design choices rather than an as-built subsystem or measured on-sky performance"
+        ],
+        [
+          "AND-2026-CALIBRATION",
+          "2026",
+          "ANDES status of the calibration unit design",
+          "Seemann et al.",
+          "conference paper",
+          "Three-unit calibration architecture and subsystem preliminary design reviews",
+          "Subsystem reviews were complete and system preliminary design review preparation was underway"
+        ],
+        [
+          "AND-2026-STATUS",
+          "2026",
+          "ANDES preliminary design review news",
+          "ANDES consortium",
+          "official status",
+          "Current project milestone",
+          "Documentation entered system-level preliminary design review in June 2026 with the meeting planned for October"
+        ]
+      ]
+    },
+    {
+      "label": "Apf papers",
+      "path": "data/apf_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1830,
+      "sha256": "c519985d29cc34bc6d818f27fb953d1b5ec67c5f65fe1d24c3d6ae2f43e96773",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 4,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "APF-2014-INSTRUMENT",
+          "2014",
+          "APF the Lick Observatory Automated Planet Finder",
+          "Vogt et al.",
+          "instrument report",
+          "Automated telescope, Levy spectrograph, iodine-cell method and first-light tests",
+          "Coverage is 374 to 970 nm; resolving power reaches 150000; selected standards showed sub-m/s RMS over three months"
+        ],
+        [
+          "APF-2015-PERFORMANCE",
+          "2015",
+          "Capabilities and performance of the Automated Planet Finder Telescope with a dynamic scheduler",
+          "Burt et al.",
+          "operations study",
+          "Six hundred observing hours, scheduling efficiency and RV performance",
+          "For 4954 velocities of 80 stars the median internal uncertainty was 1.35 m/s"
+        ],
+        [
+          "APF-2016-AUTOMATION",
+          "2016",
+          "The Automated Planet Finder telescope automation and first three years of planet detections",
+          "Burt",
+          "doctoral thesis",
+          "Early operations, stability, scheduling and science use",
+          "Bright RV standards reached about 1 m/s internal precision in the reported analysis"
+        ],
+        [
+          "APF-2026-OFFICIAL",
+          "2026",
+          "Automated Planet Finder",
+          "Lick Observatory",
+          "official instrument page",
+          "Current facility description and access point for APF",
+          "The page identifies the 2.4 m automated telescope and Levy spectrograph but gives no dated performance validation"
+        ]
+      ]
+    },
+    {
+      "label": "Beginner guide",
+      "path": "data/beginner_guide.json",
+      "role": "Data and provenance",
+      "bytes": 8432,
+      "sha256": "313e1ddd106366c9a9c59bccca7512852628deb44bc9454586f124557ab2c1ae",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "updated",
+        "title",
+        "boundary",
+        "steps",
+        "techniques",
+        "taxonomy",
+        "equations"
+      ],
+      "arrays": {
+        "steps": 5,
+        "techniques": 3,
+        "taxonomy": 4,
+        "equations": 3,
+        "comparators": 2
+      }
+    },
+    {
+      "label": "Boes papers",
+      "path": "data/boes_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1472,
+      "sha256": "d12db0e36b22d53ec3e0e1375aea0289c260e382e13d94cdbd84c72911d6206a",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 3,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "BOES-2007-INSTRUMENT",
+          "2007",
+          "Development of Bohyunsan Observatory Echelle Spectrograph",
+          "Kim et al.",
+          "instrument paper",
+          "Optical layout, fibre modes, wavelength coverage and commissioning performance",
+          "BOES covers about 350 to 1050 nm with resolving powers of about 30000, 45000 or 90000 depending on fibre"
+        ],
+        [
+          "BOES-2014-GIANTS",
+          "2014",
+          "Planetary companions in K giants beta Cancri mu Leonis and beta Ursae Minoris",
+          "Lee et al.",
+          "stellar RV study",
+          "Long-baseline iodine-cell velocities from the BOES giant-star programme",
+          "The study used BOES observations obtained from 2003 to 2013 and reported periodic RV signals for three K giants"
+        ],
+        [
+          "BOES-2026-OFFICIAL",
+          "2026",
+          "BOES instrument characteristics",
+          "Korea Astronomy and Space Science Institute",
+          "official documentation",
+          "Installed hardware, fibre choices, wavelength range and iodine-cell performance statement",
+          "KASI lists 360 to 1050 nm, resolving powers of 30000, 45000 and 90000, and iodine-cell RV precision below 5 m/s"
+        ]
+      ]
+    },
+    {
+      "label": "Cafe papers",
+      "path": "data/cafe_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1359,
+      "sha256": "921678428eb900bb45552eb3a2954cbaba73c48924cd4aa2e656f6cb2f5225a1",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 3,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "CAFE-2013-INSTRUMENT",
+          "2013",
+          "CAFE Calar Alto Fiber-fed Echelle spectrograph",
+          "Aceituno et al.",
+          "instrument paper",
+          "Design, commissioning and initial radial-velocity stability",
+          "The first configuration covered roughly 365 to 980 nm at resolving power near 70000 and targeted precision of a few tens of m/s"
+        ],
+        [
+          "CAFE-2020-UPGRADE",
+          "2020",
+          "CAFE2 an upgrade to the CAFE high-resolution spectrograph",
+          "Lillo-Box et al.",
+          "instrument upgrade",
+          "Thermal control, throughput, wavelength calibration, pipeline and on-sky commissioning",
+          "CAFE2 reported about 3 m/s ThAr stability and about 8 m/s on-sky precision in one night for spectra with S/N above 50"
+        ],
+        [
+          "CAFE-2026-OFFICIAL",
+          "2026",
+          "CAFE observer information",
+          "Calar Alto Observatory",
+          "official documentation",
+          "Current observing configuration and links to the reduction pipeline",
+          "The current page lists 407 to 925 nm and resolving power 62000 plus or minus 5000"
+        ]
+      ]
+    },
+    {
+      "label": "Carmenes papers",
+      "path": "data/carmenes_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 3762,
+      "sha256": "5db2e2d754a2dc1139a5567b820c08795ebade6cbbc40be61b0842aaf53e2e2b",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 7,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "CAR-2016-INSTRUMENT",
+          "2016",
+          "CARMENES an overview six months after first light",
+          "Quirrenbach et al.",
+          "instrument report",
+          "Dual visible and near-infrared spectrographs, fibre feed, vacuum systems and early operation",
+          "VIS covers 520 to 960 nm and NIR 960 to 1710 nm at resolving power above 80000"
+        ],
+        [
+          "CAR-2018-SERVAL",
+          "2018",
+          "SERVAL SpEctrum Radial Velocity AnaLyser",
+          "Zechmeister et al.",
+          "pipeline method",
+          "Template-matching velocities, differential line width, chromatic index and activity indicators",
+          "The method demonstrated m/s-scale differential velocities on high-resolution spectra; exact scatter depends on instrument, star..."
+        ],
+        [
+          "CAR-2018-INFORMATION",
+          "2018",
+          "High-resolution optical and near-infrared spectroscopy of 324 survey stars",
+          "Reiners et al.",
+          "survey information study",
+          "Empirical Doppler information across spectral type and wavelength from more than 6500 observations",
+          "For M dwarfs the highest information generally occurred at 700 to 900 nm; longer wavelengths became competitive mainly for M8 t..."
+        ],
+        [
+          "CAR-2020-CHROMATIC",
+          "2020",
+          "Convective shift and starspot constraints from chromatic radial velocities",
+          "Baroch et al.",
+          "stellar-activity study",
+          "Chromatic index and wavelength-dependent velocities used to constrain activity mechanisms",
+          "The study found that wavelength-dependent RV behaviour can distinguish spot and convective contributions in selected active stars"
+        ]
+      ]
+    },
+    {
+      "label": "Ces papers",
+      "path": "data/ces_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1313,
+      "sha256": "834690bc4ebbbc6926306d6dfa5c400439d4cbeec907261d05b2f0406b6d82bf",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 3,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "CES-1992-INSTRUMENT",
+          "1992",
+          "The ESO Coude Echelle Spectrometer",
+          "Dekker et al.",
+          "instrument report",
+          "High-resolution architecture and observing modes",
+          "The CES provided very high resolving power through narrow single-order wavelength settings"
+        ],
+        [
+          "CES-2000-MANUAL",
+          "2000",
+          "CES Users Manual",
+          "European Southern Observatory",
+          "observer manual",
+          "Fibre feed, image slicing and Very Long Camera configuration",
+          "The manual gives resolving power of 220000 to 235000 for the fibre-fed Very Long Camera configuration"
+        ],
+        [
+          "CES-2026-STATUS",
+          "2026",
+          "La Silla decommissioned instruments",
+          "European Southern Observatory",
+          "official status",
+          "Present archival classification of former La Silla instruments",
+          "ESO lists CES at the 3.6 m among decommissioned instruments"
+        ]
+      ]
+    },
+    {
+      "label": "Challenge evidence",
+      "path": "data/challenge_evidence.csv",
+      "role": "Data and provenance",
+      "bytes": 3027,
+      "sha256": "a15b366d667b37e6c70221167b6ac0a05ef677611ad49b12c3ab9b358fe619b7",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 9,
+      "columns": 6,
+      "headers": [
+        "challenge",
+        "physical_origin",
+        "why_it_matters",
+        "representative_mitigation",
+        "residual_problem",
+        "primary_source"
+      ],
+      "preview": [
+        [
+          "stellar_photospheres",
+          "spots, faculae, granulation, oscillations, magnetic cycles",
+          "apparent line-profile shifts can exceed an Earth analogue signal",
+          "multi-line indicators, cadence design, photometry, Gaussian-process or physical models",
+          "activity is wavelength-, line-, and timescale-dependent and is not an instrumental calibration term",
+          "https://arxiv.org/abs/2107.14291"
+        ],
+        [
+          "photon_and_sampling_noise",
+          "finite photons and incomplete line information",
+          "sets a target-, exposure-, and wavelength-dependent floor",
+          "high throughput, broad spectral grasp, exposure-time control",
+          "headline instrument precision cannot be transferred between stars",
+          "https://arxiv.org/abs/2107.14291"
+        ],
+        [
+          "wavelength_calibration",
+          "reference drift, line density, detector mapping",
+          "cm/s work requires a stable wavelength solution across years",
+          "laser frequency combs, stabilized etalons, hollow-cathode lamps",
+          "calibrator stability does not remove illumination or stellar errors",
+          "https://doi.org/10.3847/1538-3881/ab811d"
+        ],
+        [
+          "illumination_and_modal_noise",
+          "variable near/far-field fibre illumination and coherent speckle",
+          "moves or reshapes the spectrograph line-spread function",
+          "octagonal fibres, double scramblers, agitation, tip-tilt guiding",
+          "some illumination errors are not tracked by simultaneous calibration",
+          "https://arxiv.org/abs/2307.12403"
+        ]
+      ]
+    },
+    {
+      "label": "Challenge profiles",
+      "path": "data/challenge_profiles.json",
+      "role": "Data and provenance",
+      "bytes": 10189,
+      "sha256": "d612841d39a905fd3feb5b8d273c0c15195fedbcbf545c05fc9debf626b2a679",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "records": 9,
+      "fields": [
+        "id",
+        "title",
+        "question",
+        "mechanism",
+        "evidence",
+        "mitigation",
+        "residual"
+      ]
+    },
+    {
+      "label": "Chiron papers",
+      "path": "data/chiron_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1617,
+      "sha256": "3dc23446c908eee409059eac38f1512c2c5111506c36a2425007a0a4f66475d9",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 4,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "CHI-2010-DESIGN",
+          "2010",
+          "Design of the CHIRON high-resolution spectrometer at CTIO",
+          "Schwab et al.",
+          "design report",
+          "Fibre feed, enclosure and optical design",
+          "The design targeted a fixed 410 to 870 nm format with multiple resolution modes"
+        ],
+        [
+          "CHI-2012-PERFORMANCE",
+          "2012",
+          "Performance of the CHIRON high-resolution echelle spectrograph",
+          "Schwab et al.",
+          "performance report",
+          "Commissioning stability, throughput and resolution",
+          "The report characterizes resolution modes up to about 140000 and early stability tests"
+        ],
+        [
+          "CHI-2013-INSTRUMENT",
+          "2013",
+          "CHIRON a fiber-fed spectrometer for precise radial velocities",
+          "Tokovinin et al.",
+          "instrument paper",
+          "As-built design and on-sky operation",
+          "CHIRON provides 410 to 870 nm coverage and resolving power about 80000 with the slicer"
+        ],
+        [
+          "CHI-2026-STATUS",
+          "2026",
+          "CHIRON instrument page",
+          "CTIO and NOIRLab",
+          "official status",
+          "Instrument documentation and observing access",
+          "The page states operational history and links monitoring, manuals and scheduling resources"
+        ]
+      ]
+    },
+    {
+      "label": "Coralie papers",
+      "path": "data/coralie_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1743,
+      "sha256": "333deae82b5adec8dbfb5d03d45e4df84f6b62279a76482acd003685abc69e8d",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 4,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "COR-2001-INSTRUMENT",
+          "2001",
+          "The CORALIE spectrograph and southern planet search",
+          "Udry et al.",
+          "instrument report",
+          "Fibre feed, simultaneous thorium reference, automation and survey design",
+          "The report describes few-m/s measurements and a resolving power up to about 100000, while standard operation used lower resolution"
+        ],
+        [
+          "COR-2012-LONGBASE",
+          "2012",
+          "The CORALIE survey XVII long-period planets",
+          "Marmier et al.",
+          "survey paper",
+          "Fourteen-year southern planet-search baseline",
+          "Seven new planets and updated orbits for three known systems were reported"
+        ],
+        [
+          "COR-2023-CENSUS",
+          "2023",
+          "The CORALIE survey XIX brown dwarfs and stellar companions",
+          "Rickman et al.",
+          "survey paper",
+          "Twenty-five years of observations for 1647 nearby southern main-sequence stars",
+          "The study reports a 25-year survey baseline and a sample of 1647 stars"
+        ],
+        [
+          "COR-2026-OVERVIEW",
+          "2026",
+          "CORALIE instrument overview",
+          "European Southern Observatory",
+          "official instrument page",
+          "Facility, wavelength range, resolution and science role",
+          "ESO lists 390 to 680 nm, resolving power near 60000 and a public precision description of about 11 km/h"
+        ]
+      ]
+    },
+    {
+      "label": "Coravel papers",
+      "path": "data/coravel_papers.csv",
+      "role": "Data and provenance",
+      "bytes": 1827,
+      "sha256": "ed6a45f8b2836b650864e89d09d311e42816b8ebca67f26b57fe0ace0e45d776",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 4,
+      "columns": 10,
+      "headers": [
+        "paper_id",
+        "year",
+        "title",
+        "authors",
+        "paper_type",
+        "what_was_studied",
+        "numerical_result"
+      ],
+      "preview": [
+        [
+          "CORAVEL-1979-INSTRUMENT",
+          "1979",
+          "CORAVEL a new tool for radial velocity measurements",
+          "Baranne Mayor and Poncet",
+          "instrument paper",
+          "Physical-mask cross-correlation and photoelectric velocity measurement",
+          "The design converted a scanned correlation dip into a stellar radial velocity rather than recording a modern CCD echelle spectrum"
+        ],
+        [
+          "CORAVEL-1981-FIRSTLIGHT",
+          "1981",
+          "First observations with CORAVEL at La Silla",
+          "Prevot et al.",
+          "commissioning report",
+          "La Silla implementation on the Danish 1.54 m telescope",
+          "The report describes a 5 Hz scan and typical single-measurement accuracy near 0.5 km/s"
+        ],
+        [
+          "CORAVEL-1985-CLUSTERS",
+          "1985",
+          "Accurate radial velocities thanks to CORAVEL",
+          "Mayor et al.",
+          "science report",
+          "Cluster stellar velocities from the La Silla instrument",
+          "Mean per-measurement accuracies of 0.6 and 0.9 km/s were reported for the 47 Tuc and omega Centauri programmes"
+        ],
+        [
+          "CORAVEL-2026-STATUS",
+          "2026",
+          "La Silla decommissioned instruments",
+          "European Southern Observatory",
+          "official status",
+          "Present archival classification",
+          "ESO lists CORAVEL at the Danish 1.54 m among decommissioned instruments"
+        ]
+      ]
+    },
+    {
+      "label": "Claim context summary",
+      "path": "results/claim_context_summary.csv",
+      "role": "Tables and numerical results",
+      "bytes": 500,
+      "sha256": "fca6ee9b0b1205db11f7e9cc992c34665fce42547ec29db5acc0e6bc96562e1a",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 17,
+      "columns": 2,
+      "headers": [
+        "measurement_context",
+        "n_claims"
+      ],
+      "preview": [
+        [
+          "commissioning stellar exposure",
+          "1"
+        ],
+        [
+          "design requirement",
+          "3"
+        ],
+        [
+          "engineering requirement",
+          "1"
+        ],
+        [
+          "on-sky commissioning",
+          "3"
+        ]
+      ]
+    },
+    {
+      "label": "Doppler information experiment",
+      "path": "results/doppler_information_experiment.csv",
+      "role": "Tables and numerical results",
+      "bytes": 1144,
+      "sha256": "e1b8025c27e4b8574a006794d9ed8118cf5b7e93bc2f5b126a4f114d32cbc57b",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 15,
+      "columns": 12,
+      "headers": [
+        "scenario_id",
+        "resolving_power",
+        "intrinsic_sigma_kms",
+        "continuum_photons_per_bin",
+        "read_noise_e",
+        "photon_limit_mps",
+        "monte_carlo_trials"
+      ],
+      "preview": [
+        [
+          "narrow-r050k",
+          "50000",
+          "1",
+          "50000",
+          "0",
+          "8.6919959",
+          "0"
+        ],
+        [
+          "narrow-r075k",
+          "75000",
+          "1",
+          "50000",
+          "0",
+          "3.9148847",
+          "0"
+        ],
+        [
+          "narrow-r100k",
+          "100000",
+          "1",
+          "50000",
+          "0",
+          "2.331286",
+          "1000"
+        ],
+        [
+          "narrow-r150k",
+          "150000",
+          "1",
+          "50000",
+          "0",
+          "1.4655993",
+          "0"
+        ]
+      ]
+    },
+    {
+      "label": "Performance evidence summary",
+      "path": "results/performance_evidence_summary.csv",
+      "role": "Tables and numerical results",
+      "bytes": 121,
+      "sha256": "2bce0aa94f786fca90666532e010630bc1cc253ca33b11c929f84de607358b5c",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 4,
+      "columns": 2,
+      "headers": [
+        "performance_class",
+        "n_instruments"
+      ],
+      "preview": [
+        [
+          "commissioning_report",
+          "2"
+        ],
+        [
+          "design_requirement",
+          "4"
+        ],
+        [
+          "laboratory_calibration",
+          "1"
+        ],
+        [
+          "on_sky_stability",
+          "14"
+        ]
+      ]
+    },
+    {
+      "label": "Spectral coverage summary",
+      "path": "results/spectral_coverage_summary.csv",
+      "role": "Tables and numerical results",
+      "bytes": 981,
+      "sha256": "27aa66d960627101060adb0698ce22cb9550cfe02f53b7d7c8d0a659a00239e5",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 21,
+      "columns": 6,
+      "headers": [
+        "instrument",
+        "wave_min_nm",
+        "wave_max_nm",
+        "resolving_power",
+        "wavelength_span_nm",
+        "wavelength_ratio"
+      ],
+      "preview": [
+        [
+          "G-CLEF",
+          "350",
+          "950",
+          "105000",
+          "600",
+          "2.7142857142857144"
+        ],
+        [
+          "APF-Levy",
+          "374",
+          "970",
+          "110000",
+          "596",
+          "2.593582887700535"
+        ],
+        [
+          "HARPS",
+          "378",
+          "691",
+          "120000",
+          "313",
+          "1.8280423280423281"
+        ],
+        [
+          "ESPRESSO",
+          "380",
+          "788",
+          "140000",
+          "408",
+          "2.0736842105263156"
+        ]
+      ]
+    },
+    {
+      "label": "Status summary",
+      "path": "results/status_summary.csv",
+      "role": "Tables and numerical results",
+      "bytes": 107,
+      "sha256": "3a614a9e7cc7ad245f61bdcee77874011fcda41cd07a152115a7dc64af0c7a8d",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 6,
+      "columns": 2,
+      "headers": [
+        "status",
+        "n_instruments"
+      ],
+      "preview": [
+        [
+          "commissioning",
+          "1"
+        ],
+        [
+          "legacy",
+          "1"
+        ],
+        [
+          "offline",
+          "1"
+        ],
+        [
+          "operational",
+          "15"
+        ]
+      ]
+    },
+    {
+      "label": "Doppler information experiment",
+      "path": "results/figures/doppler_information_experiment.png",
+      "role": "Figures",
+      "bytes": 206003,
+      "sha256": "5d7d9b84cfb8d4a6102594a5137b32dae93c1eade9376e1c5312ead0245b75be",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Eprv landscape atlas",
+      "path": "results/figures/eprv_landscape_atlas.png",
+      "role": "Figures",
+      "bytes": 297395,
+      "sha256": "1c7687acd05ae59c0a0ef0e9e4b6f523e6e90a4a06c44bb6f0abaef1b7b75e28",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Expres published comparisons",
+      "path": "results/figures/expres_published_comparisons.png",
+      "role": "Figures",
+      "bytes": 138010,
+      "sha256": "c5b1b05bd127390530c1618ddb30009895efef27d8b0bfeed46f1ce626ad10de",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Keplerian detectability",
+      "path": "results/figures/keplerian_detectability.png",
+      "role": "Figures",
+      "bytes": 395566,
+      "sha256": "9e40ed6e092f69e0e6e36db7efe2d7d8139cfc97a8e930fd4ab59b7e0e17f213",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Reported velocity scales",
+      "path": "results/figures/reported_velocity_scales.png",
+      "role": "Figures",
+      "bytes": 353864,
+      "sha256": "dd70abf084f0899d7ae638b82d2d1d6bcf3c9bd02973ba7b43d318edc2d42fc2",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Resolution vs coverage",
+      "path": "results/figures/resolution_vs_coverage.png",
+      "role": "Figures",
+      "bytes": 177920,
+      "sha256": "d258daaba2e28b12d36b8d5a5e1be3b0b86891c32f16fc2c8ce9e6d8267024eb",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    }
+  ]
+}

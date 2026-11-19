@@ -1,0 +1,121 @@
+{
+  "project": "Precision Radial-Velocity Spectrograph Literature Atlas",
+  "repository": "https://github.com/Biswajit1999/eprv-spectrograph-landscape",
+  "files": [
+    {
+      "label": "Andes papers",
+      "path": "data/andes_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Apf papers",
+      "path": "data/apf_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Beginner guide",
+      "path": "data/beginner_guide.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Boes papers",
+      "path": "data/boes_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Cafe papers",
+      "path": "data/cafe_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Carmenes papers",
+      "path": "data/carmenes_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Ces papers",
+      "path": "data/ces_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Challenge evidence",
+      "path": "data/challenge_evidence.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Challenge profiles",
+      "path": "data/challenge_profiles.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Chiron papers",
+      "path": "data/chiron_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Coralie papers",
+      "path": "data/coralie_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Coravel papers",
+      "path": "data/coravel_papers.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Claim context summary",
+      "path": "results/claim_context_summary.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Doppler information experiment",
+      "path": "results/doppler_information_experiment.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Performance evidence summary",
+      "path": "results/performance_evidence_summary.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Spectral coverage summary",
+      "path": "results/spectral_coverage_summary.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Status summary",
+      "path": "results/status_summary.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Doppler information experiment",
+      "path": "results/figures/doppler_information_experiment.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Eprv landscape atlas",
+      "path": "results/figures/eprv_landscape_atlas.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Expres published comparisons",
+      "path": "results/figures/expres_published_comparisons.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Keplerian detectability",
+      "path": "results/figures/keplerian_detectability.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Reported velocity scales",
+      "path": "results/figures/reported_velocity_scales.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Resolution vs coverage",
+      "path": "results/figures/resolution_vs_coverage.png",
+      "role": "Figures"
+    }
+  ]
+}
